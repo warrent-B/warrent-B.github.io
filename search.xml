@@ -226,24 +226,24 @@
 
 <h1 id="什么是交互概述图"><a href="#什么是交互概述图" class="headerlink" title="什么是交互概述图"></a>什么是交互概述图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-interaction-overview-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-interaction-overview-diagram/</a></p>
 <p><code>UML</code>交互概述图提供了交互模型的高级抽象。它是活动图的变体，其中节点是交互或交互发生。交互概述图侧重于交互控制流的概述，它还可以显示图表之间的活动流。换句话说，您可以链接“真实”图表，并在交互概览图中的图表之间实现高度可导航性。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/assets/0216150659.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/0216150659.png" alt="img"></p>
 <h1 id="一、交互概览图概览"><a href="#一、交互概览图概览" class="headerlink" title="一、交互概览图概览"></a>一、交互概览图概览</h1><p>交互概览图是统一建模语言 (UML) 的 14 种图表类型之一，它可以描绘带有节点的控制流，这些节点可以包含交互图，显示在各种场景中如何启动一组片段。交互概述图侧重于节点是<strong>交互</strong>(sd) 或<strong>交互使用</strong>(ref) 的控制流的概述。</p>
 <p>交互概览图的其他符号元素与活动图和序列图相同。这些包括初始、最终、决策、合并、分叉和连接节点。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/assets/0216161233.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/0216161233.png" alt="img"></p>
 <p>上面的例子显示了一个被大学录取的学生。首先，学生必须接受或拒绝录取。接受后，学生必须同时注册课程和申请住房。两者都完成后，学生必须向注册商付款。如果未及时收到付款，则注册服务商将学生排除在外。</p>
-<h1 id="二、交互概述图符号"><a href="#二、交互概述图符号" class="headerlink" title="二、交互概述图符号"></a>二、交互概述图符号</h1><h2 id="2-1-相互作用符号"><a href="#2-1-相互作用符号" class="headerlink" title="2.1 相互作用符号"></a>2.1 相互作用符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/assets/0216161650.png" alt="img"></p>
+<h1 id="二、交互概述图符号"><a href="#二、交互概述图符号" class="headerlink" title="二、交互概述图符号"></a>二、交互概述图符号</h1><h2 id="2-1-相互作用符号"><a href="#2-1-相互作用符号" class="headerlink" title="2.1 相互作用符号"></a>2.1 相互作用符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/0216161650.png" alt="img"></p>
 <p>任何类型的交互图都可以内联显示为活动调用。</p>
-<h2 id="2-2-交互使用符号"><a href="#2-2-交互使用符号" class="headerlink" title="2.2 交互使用符号"></a>2.2 交互使用符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/assets/0216161851.png" alt="img"></p>
+<h2 id="2-2-交互使用符号"><a href="#2-2-交互使用符号" class="headerlink" title="2.2 交互使用符号"></a>2.2 交互使用符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/0216161851.png" alt="img"></p>
 <p>大型和复杂的序列图可以通过交互使用来简化。在其他几个交互之间重用一些交互也很常见。</p>
 <h1 id="三、交互图示例"><a href="#三、交互图示例" class="headerlink" title="三、交互图示例"></a>三、交互图示例</h1><h2 id="3-1-访问控制系统"><a href="#3-1-访问控制系统" class="headerlink" title="3.1 访问控制系统"></a>3.1 访问控制系统</h2><ul>
 <li>交互建立访问首先出现参数“非法 PIN”，然后是与消息 CardOut 的交互，该消息显示在一个内联交互中。</li>
 <li>然后还有一个替代方案，因为我们在其中一个分支上找到了一个带有 InteractionConstraint 的决策节点。</li>
 <li>沿着该控制流，我们在序列中找到另一个内联交互和一个 InteractionUse。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/assets/0216162001.png" alt="img"></p>
-<h2 id="3-2-调度系统"><a href="#3-2-调度系统" class="headerlink" title="3.2 调度系统"></a>3.2 调度系统</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/assets/0216162046.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/0216162001.png" alt="img"></p>
+<h2 id="3-2-调度系统"><a href="#3-2-调度系统" class="headerlink" title="3.2 调度系统"></a>3.2 调度系统</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/0216162046.png" alt="img"></p>
 <h2 id="3-3-订单报告"><a href="#3-3-订单报告" class="headerlink" title="3.3 订单报告"></a>3.3 订单报告</h2><p>在此图中，我们要生成和格式化订单汇总报告。如果客户是外部的，我们从 XML 中获取信息；如果是内部的，我们从数据库中获取它。小序列图显示了这两种选择。一旦我们得到数据，我们就格式化报告；在这种情况下，我们不显示序列图，而只是用一个参考交互框架来引用它。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/assets/0216162124.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/0216162124.png" alt="img"></p>
 <h2 id="3-4-房间预订"><a href="#3-4-房间预订" class="headerlink" title="3.4 房间预订"></a>3.4 房间预订</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/assets/0216162150.png" alt="img"></p>
 ]]></content>
       <categories>
@@ -262,7 +262,7 @@
 <h1 id="什么是复合结构图"><a href="#什么是复合结构图" class="headerlink" title="什么是复合结构图"></a>什么是复合结构图</h1><p>源文连接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-composite-structure-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-composite-structure-diagram/</a></p>
 <p>复合结构图是添加到<code>UML2.0</code>中的新项目之一。复合结构图是一种<code>UML</code>结构图，它包含类、接口、包及其关系，并提供全部或部分软件系统的逻辑视图。它显示结构化类图或协作的内部结构（包括组件和连接器）。</p>
 <p>复合结构图的作用与类图类似，但允许您进一步详细说明描述多个类的内部结构并显示它们之间的交互。您可以以图形方式表示内部类和组件，并显示类之间和类内的关联。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/assets/0208173505.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/0208173505.png" alt="img"></p>
 <h1 id="一、复合结构图的用途"><a href="#一、复合结构图的用途" class="headerlink" title="一、复合结构图的用途"></a>一、复合结构图的用途</h1><ul>
 <li>复合结构图允许用户”窥视”对象内部，以准确查看它由什么组成。</li>
 <li>可以详细描述类的内部操作，包括嵌套类的关系。</li>
@@ -273,15 +273,15 @@
 <li>组件的名称定义为：组件名称：组件类型[多重性]</li>
 <li>聚合类是类的一部分，但组件不一定是类，组件是用于组成包含类的任何元素。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/assets/0209093220.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/0209093220.png" alt="img"></p>
 <h1 id="三、从类图派生复合结构图"><a href="#三、从类图派生复合结构图" class="headerlink" title="三、从类图派生复合结构图"></a>三、从类图派生复合结构图</h1><blockquote>
 <p>网上商店</p>
 <p>假设我们正在为在线商店建模系统。客户告诉我们，客户可以加入会员计划，该计划将为他们提供特别优惠和折扣运费，因此我们扩展了客户对象以提供会员和标准选项。</p>
 </blockquote>
 <p>让我们使用类图对在线商店进行建模</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/assets/0209094325.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/0209094325.png" alt="img"></p>
 <p>我们有一个Item类，它可能由Order类聚合，该类由Customer类组成，而Customer类本身由StoreManager类组成。我们有很多对象最终位于其他对象中，所有内容看起来都像是最终在StoreManager中结束的。因此我们可以创建一个复合结构图来真正了解它是有什么构成的。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/assets/0209095412.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/0209095412.png" alt="img"></p>
 <p>在上面的例子中，我们可以看到：</p>
 <ul>
 <li>StoreManager从它自己的角度来看，而不是整个系统。</li>
@@ -295,14 +295,14 @@
 <p>答：在类图中，”描述”和”定价”之间的引用是模棱两可的，严格来说，它们并不完全相同。</p>
 <p>​    1.类图明确显示，”描述”对象将引用”价格”对象。</p>
 <p>​    2.但它没有指定两个对象之间的引用是否显示包含在项中。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/assets/0209101237.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/0209101237.png" alt="img"></p>
 <p>如果我们使用复合结构图，则包含关联关系的含义是明确的。</p>
 <ul>
 <li>“描述”和”价格”对象之间的引用包含在由Item组合的对象中。</li>
 <li>可以清楚地对对象活动地特定实现进行建模。</li>
 </ul>
 <h1 id="五、对外部组件的引用"><a href="#五、对外部组件的引用" class="headerlink" title="五、对外部组件的引用"></a>五、对外部组件的引用</h1><p>我们已经看到了复合结构图如何擅长描述聚合的示例，但您的模型还需要包含对正在建模的类之外的对象的引用。但是，使用复合结构图引用外部对象(如下面的示例)怎么样？</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/assets/0209104751.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/0209104751.png" alt="img"></p>
 <ul>
 <li>对外部对象的引用，使用带有虚线矩形的部件进行表示。</li>
 <li>即使它们引用对象在类之外，引用本身也在建模类中，并且是显示其实现的重要步骤。</li>
@@ -312,7 +312,7 @@
 <p>协作藐视了协作组件(角色)的结构。协作通过协作使用附加到操作或类。当您只想定义完成协作的特定目标所需的角色和连接时，可以使用协作。</p>
 <p>例如，协作的目标可以是定义类的角色或组件。通过隔离主要角色，协助做简化了结构并阐明了模型中的行为。</p>
 <p>在此示例中，车轮和发动机是协作部件，前桥和后轴是连接器。汽车时显示零件和零件之间连接的复合结构。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/assets/0209105643.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/0209105643.png" alt="img"></p>
 <p><strong>组件</strong></p>
 <p>组件是一个关系图元素，它表示包含结构化类的一个或多个实例的集合。组件描述实例在类中的角色。您可以在类的结构间隔中以及在多个<code>UML</code>关系图（如复合结构图、类图、对象图、组件图、部署图和包图）中创建组件。</p>
 <p><strong>端口</strong></p>
@@ -330,7 +330,7 @@
 <li>内存模块(MM)</li>
 </ul>
 <p>我们暂时假设主板是内置声卡和显示适配器的类型：</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/assets/0209111801.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/0209111801.png" alt="img"></p>
 ]]></content>
       <categories>
         <category>UML知识</category>
@@ -347,7 +347,7 @@
 
 <h1 id="什么是对象图"><a href="#什么是对象图" class="headerlink" title="什么是对象图"></a>什么是对象图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-object-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-object-diagram/</a></p>
 <p>对象是运行时特定时刻的类实例，它可以有自己的状态和数据值。同样，静态<code>UML</code>对象图是类图的一个实例。它显示了系统在某个时间点的详细状态的快照。因此对象图包含对象及其关系，可以将其视为类图或通讯图的特殊情况。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114134401.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/0114134401.png" alt="img"></p>
 <h1 id="一、对象图的目的"><a href="#一、对象图的目的" class="headerlink" title="一、对象图的目的"></a>一、对象图的目的</h1><p>对象图的使用相当有限，主要是为了展示数据结构的例子。</p>
 <ul>
 <li>在项目的分析阶段，您可能回创建一个类图来表述系统的结构，然后创建一组对象图作为测试用例来验证类图的准确性和完整性。</li>
@@ -356,21 +356,21 @@
 <h1 id="二、对象图概览"><a href="#二、对象图概览" class="headerlink" title="二、对象图概览"></a>二、对象图概览</h1><p>对象图显示了实例化类与定义类之间的这种关系，以及系统中这些对象之间的关系。当您的系统类图非常复杂时，它们对于解释系统的较小部分很有用，有时还可以在途中建模递归关系。</p>
 <p>说明对象图的最佳方式是显示从相应类图派生的对象图。</p>
 <p>以下订单管理系统显示了它们的关系。这个小类图显示了一个大学部门可以包含许多其他部门，下面的对象图实例化了类图，并用一个具体的例子替代了它。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114140859.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/0114140859.png" alt="img"></p>
 <p><strong>类到对象图示例-订单系统</strong></p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114142732.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/0114142732.png" alt="img"></p>
 <h1 id="三、对象图的符号"><a href="#三、对象图的符号" class="headerlink" title="三、对象图的符号"></a>三、对象图的符号</h1><h2 id="3-1-对象名称"><a href="#3-1-对象名称" class="headerlink" title="3.1 对象名称"></a>3.1 对象名称</h2><ul>
 <li>每个对象实际上都像一个矩形一样被符号化，它提供了对象的名称及其来自的类，用冒号分隔，底部加上下划线，对象名称在左，来自的类在右。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114143610.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/0114143610.png" alt="img"></p>
 <h2 id="3-2-对象属性"><a href="#3-2-对象属性" class="headerlink" title="3.2 对象属性"></a>3.2 对象属性</h2><ul>
 <li>与类类似，您可以在单独的方框中列出对象属性。但是与类不同的是，对象的属性应该明确它们的数值。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114144152.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/0114144152.png" alt="img"></p>
 <h2 id="3-3-关联关系"><a href="#3-3-关联关系" class="headerlink" title="3.3 关联关系"></a>3.3 关联关系</h2><ul>
 <li>您可以使用类图中使用的线条来绘制对象图的关联关系。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114144414.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/0114144414.png" alt="img"></p>
 <h1 id="四、类图与对象图"><a href="#四、类图与对象图" class="headerlink" title="四、类图与对象图"></a>四、类图与对象图</h1><p>在<code>UML</code>中，对象图提供系统中类实例的快照以及类实例之间的关系。通过在类图中实例化模型元素，您可以探索系统在某个时间点的行为。</p>
 <ul>
 <li>对象图是现实模型中类实例的<code>UML</code>结构图。</li>
@@ -379,9 +379,9 @@
 <li>对象图显示了这些类的特定实例以及在某个时间点这些实例之间的链接。</li>
 <li>您可以通过在类、部署、组件和用例图中实例化类来创建对象图。</li>
 </ul>
-<h1 id="五、对象图示例"><a href="#五、对象图示例" class="headerlink" title="五、对象图示例"></a>五、对象图示例</h1><h2 id="5-1-对象图示例1-公司结构"><a href="#5-1-对象图示例1-公司结构" class="headerlink" title="5.1 对象图示例1-公司结构"></a>5.1 对象图示例1-公司结构</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117202342.png" alt="img"></p>
-<h2 id="5-2-对象图示例2-POS"><a href="#5-2-对象图示例2-POS" class="headerlink" title="5.2 对象图示例2-POS"></a>5.2 对象图示例2-POS</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117203950.png" alt="img"></p>
-<h2 id="5-3-对象图示例3-编写器"><a href="#5-3-对象图示例3-编写器" class="headerlink" title="5.3 对象图示例3-编写器"></a>5.3 对象图示例3-编写器</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117205240.png" alt="img"></p>
+<h1 id="五、对象图示例"><a href="#五、对象图示例" class="headerlink" title="五、对象图示例"></a>五、对象图示例</h1><h2 id="5-1-对象图示例1-公司结构"><a href="#5-1-对象图示例1-公司结构" class="headerlink" title="5.1 对象图示例1-公司结构"></a>5.1 对象图示例1-公司结构</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/0117202342.png" alt="img"></p>
+<h2 id="5-2-对象图示例2-POS"><a href="#5-2-对象图示例2-POS" class="headerlink" title="5.2 对象图示例2-POS"></a>5.2 对象图示例2-POS</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/0117203950.png" alt="img"></p>
+<h2 id="5-3-对象图示例3-编写器"><a href="#5-3-对象图示例3-编写器" class="headerlink" title="5.3 对象图示例3-编写器"></a>5.3 对象图示例3-编写器</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/0117205240.png" alt="img"></p>
 <h2 id="5-4-对象结构建模的步骤"><a href="#5-4-对象结构建模的步骤" class="headerlink" title="5.4 对象结构建模的步骤"></a>5.4 对象结构建模的步骤</h2><p>没有消息的通讯图（在以前版本的UML中称为协作）也称为对象图，对象之间的关系称为链接。对象关系图必须是静态类图的有效实例化。对象必须具有类，对象之间的链接必须是类之间关联的实例。这可以用作快速一致性检查。为此，我们可以使用以下步骤开发对象图：</p>
 <ul>
 <li>确定要建模的机制。机制表示您正在建模的系统部分的某些功能或行为，这些功能或行为来自于类，接口和其他事物之间的交互。</li>
@@ -392,9 +392,9 @@
 <h2 id="5-5-对象图实例4-机器人移动行为"><a href="#5-5-对象图实例4-机器人移动行为" class="headerlink" title="5.5 对象图实例4-机器人移动行为"></a>5.5 对象图实例4-机器人移动行为</h2><p>同样，公开这些对象之间的链接，表示它们之间的关联实例。</p>
 <p>如图果实，一个对象表示机器人本身(r:Robot的一个实例)，r当前处于标记为移动的状态。这个对象有一个连接到(W:World)的实例，它表示机器人世界模型的抽象。此对象具有指向多个对象的链接，该对象由Element实例组成，这些实例表示机器人已标识但尚未在其他世界视图中分配的实体。这些元素被标记为机器人全局状态的一部分。</p>
 <p>此时此刻，W连接到Area的两个实例。其中一个(a2)显示有指向三个墙和一个门对象的连接。这些墙中的每一个都有标上其当前宽度，并且每个墙都显示与其相邻的墙的相关联。正如这个对象图所指示的那样，机器人已经识别出这个封闭的区域，该区域的三面都有墙壁，第四面有一扇门。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117212134.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/0117212134.png" alt="img"></p>
 <h2 id="5-6-对象图示例5-派生类似于通讯图的对象结构"><a href="#5-6-对象图示例5-派生类似于通讯图的对象结构" class="headerlink" title="5.6 对象图示例5-派生类似于通讯图的对象结构"></a>5.6 对象图示例5-派生类似于通讯图的对象结构</h2><p>处理显示对象在特定时间点的状态外，对象图还可用于标识运行时类之间交互的发生次数。结果看起来有点像通讯图。下图提供了此类类图及其相应对象图的示例。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117213546.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/0117213546.png" alt="img"></p>
 ]]></content>
       <categories>
         <category>UML知识</category>
@@ -416,7 +416,7 @@
 <li>在实现用例或操作（实例图或通用图）的协作中发送的交互。</li>
 <li>系统用户与系统之间、系统与其他系统之间或子系统之间的高级交互（有时称为系统序列图）</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0214104513.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/0214104513.png" alt="img"></p>
 <h1 id="一、序列图的目的"><a href="#一、序列图的目的" class="headerlink" title="一、序列图的目的"></a>一、序列图的目的</h1><ul>
 <li>对系统中活动对象之间的高级交互进行建模</li>
 <li>对实现用例的协作中的对象实例之间的交互进行建模</li>
@@ -436,9 +436,9 @@
 <p>注意：序列图中的事件完全是关于排序，而不是持续时间。交互图中的垂直空间与交互的持续时间无关。</p>
 <h1 id="三、序列图示例"><a href="#三、序列图示例" class="headerlink" title="三、序列图示例"></a>三、序列图示例</h1><h2 id="3-1-酒店系统"><a href="#3-1-酒店系统" class="headerlink" title="3.1 酒店系统"></a>3.1 酒店系统</h2><p>序列图是一个交互图，详细说明了操作是如何执行的——发送什么消息以及何时发送。序列图是按时间组织的。随着您向下浏览页面，时间会逐渐增加。操作中涉及的对象按照它们参与消息序列的时间从左到右列出。</p>
 <p>下面是进行酒店预订的序列图。启动消息序列的对象是一个预约窗口。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216114013.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/0216114013.png" alt="img"></p>
 <p>注意：类和对象图是静态模型视图。交互图是动态的。它们描述了对象如何协作。</p>
-<h1 id="四、序列图符号"><a href="#四、序列图符号" class="headerlink" title="四、序列图符号"></a>四、序列图符号</h1><h2 id="4-1-演员-角色-符号"><a href="#4-1-演员-角色-符号" class="headerlink" title="4.1 演员(角色)符号"></a>4.1 演员(角色)符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216114742.png" alt="img"></p>
+<h1 id="四、序列图符号"><a href="#四、序列图符号" class="headerlink" title="四、序列图符号"></a>四、序列图符号</h1><h2 id="4-1-演员-角色-符号"><a href="#4-1-演员-角色-符号" class="headerlink" title="4.1 演员(角色)符号"></a>4.1 演员(角色)符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/0216114742.png" alt="img"></p>
 <ul>
 <li>与主体交互的实体所扮演的一种角色（例如：通过交换信息和数据）</li>
 <li>在主体之外（即，在某种意义上，参与者的实例不是其对应主体的实例的一部分）。</li>
@@ -449,51 +449,51 @@
 <li>参与者不一定代表特定的物理实体，而是某个实体的特定角色</li>
 <li>一个人可以扮演几个不同的演员（角色），相反，一个给定的角色可能由多个不同的人扮演。</li>
 </ul>
-<h2 id="4-2-生命线符号"><a href="#4-2-生命线符号" class="headerlink" title="4.2 生命线符号"></a>4.2 生命线符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115039.png" alt="img"></p>
+<h2 id="4-2-生命线符号"><a href="#4-2-生命线符号" class="headerlink" title="4.2 生命线符号"></a>4.2 生命线符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/0216115039.png" alt="img"></p>
 <ul>
 <li>生命线代表交互中的个人参与者。</li>
 </ul>
-<h2 id="4-3-生命周期符号"><a href="#4-3-生命周期符号" class="headerlink" title="4.3 生命周期符号"></a>4.3 生命周期符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115126.png" alt="img"></p>
+<h2 id="4-3-生命周期符号"><a href="#4-3-生命周期符号" class="headerlink" title="4.3 生命周期符号"></a>4.3 生命周期符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/0216115126.png" alt="img"></p>
 <ul>
 <li>生命线上的细矩形表示元素执行操作的时间段。</li>
 <li>矩形的顶部和底部分别与启动和完成时间对齐</li>
 </ul>
-<h2 id="4-4-请求信息符号"><a href="#4-4-请求信息符号" class="headerlink" title="4.4 请求信息符号"></a>4.4 请求信息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115156.png" alt="img"></p>
+<h2 id="4-4-请求信息符号"><a href="#4-4-请求信息符号" class="headerlink" title="4.4 请求信息符号"></a>4.4 请求信息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/0216115156.png" alt="img"></p>
 <ul>
 <li>消息定义了交互生命线之间的特定通信。</li>
 <li>调用消息是一种表示目标生命线操作调用的消息。</li>
 </ul>
-<h2 id="4-5-返回信息符号"><a href="#4-5-返回信息符号" class="headerlink" title="4.5 返回信息符号"></a>4.5 返回信息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115225.png" alt="img"></p>
+<h2 id="4-5-返回信息符号"><a href="#4-5-返回信息符号" class="headerlink" title="4.5 返回信息符号"></a>4.5 返回信息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/0216115225.png" alt="img"></p>
 <ul>
 <li>消息定义了交互生命线之间的特定通信。</li>
 <li>返回消息是一种消息，表示将信息传递回对应的先前消息的调用者。</li>
 </ul>
-<h2 id="4-6-自我信息符号"><a href="#4-6-自我信息符号" class="headerlink" title="4.6 自我信息符号"></a>4.6 自我信息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115249.png" alt="img"></p>
+<h2 id="4-6-自我信息符号"><a href="#4-6-自我信息符号" class="headerlink" title="4.6 自我信息符号"></a>4.6 自我信息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/0216115249.png" alt="img"></p>
 <ul>
 <li>消息定义了交互生命线之间的特定通信。</li>
 <li>自我消息是一种消息，代表同一生命线消息的调用。</li>
 </ul>
-<h2 id="4-7-递归信息符号"><a href="#4-7-递归信息符号" class="headerlink" title="4.7 递归信息符号"></a>4.7 递归信息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115315.png" alt="img"></p>
+<h2 id="4-7-递归信息符号"><a href="#4-7-递归信息符号" class="headerlink" title="4.7 递归信息符号"></a>4.7 递归信息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/0216115315.png" alt="img"></p>
 <ul>
 <li>消息定义了交互生命线之间的特定通信。</li>
 <li>递归消息是一种表示同一生命线消息的调用的消息。它的目标指向调用消息的激活之上的激活。</li>
 </ul>
-<h2 id="4-8-创建消息符号"><a href="#4-8-创建消息符号" class="headerlink" title="4.8 创建消息符号"></a>4.8 创建消息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115344.png" alt="img"></p>
+<h2 id="4-8-创建消息符号"><a href="#4-8-创建消息符号" class="headerlink" title="4.8 创建消息符号"></a>4.8 创建消息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/0216115344.png" alt="img"></p>
 <ul>
 <li>消息定义了交互生命线之间的特定通信。</li>
 <li>创建消息是一种表示（目标）生命线实例化的消息。</li>
 </ul>
-<h2 id="4-9-销毁消息符号"><a href="#4-9-销毁消息符号" class="headerlink" title="4.9 销毁消息符号"></a>4.9 销毁消息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115510.png" alt="img"></p>
+<h2 id="4-9-销毁消息符号"><a href="#4-9-销毁消息符号" class="headerlink" title="4.9 销毁消息符号"></a>4.9 销毁消息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/0216115510.png" alt="img"></p>
 <ul>
 <li>消息定义了交互生命线之间的特定通信。</li>
 <li>销毁消息是一种表示销毁目标生命线生命周期的请求的消息。</li>
 </ul>
-<h2 id="4-10-持续时间消息符号"><a href="#4-10-持续时间消息符号" class="headerlink" title="4.10 持续时间消息符号"></a>4.10 持续时间消息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115541.png" alt="img"></p>
+<h2 id="4-10-持续时间消息符号"><a href="#4-10-持续时间消息符号" class="headerlink" title="4.10 持续时间消息符号"></a>4.10 持续时间消息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/0216115541.png" alt="img"></p>
 <ul>
 <li>消息定义了交互生命线之间的特定通信。</li>
 <li>持续时间消息显示消息调用的两个时间点之间的距离。</li>
 </ul>
-<h2 id="4-11-笔记符号"><a href="#4-11-笔记符号" class="headerlink" title="4.11 笔记符号"></a>4.11 笔记符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115603.png" alt="img"></p>
+<h2 id="4-11-笔记符号"><a href="#4-11-笔记符号" class="headerlink" title="4.11 笔记符号"></a>4.11 笔记符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/0216115603.png" alt="img"></p>
 <p>注释（注释）提供了将各种注释附加到元素的能力。注释不带有语义力量，但可能包含对建模者有用的信息。</p>
 <h2 id="4-12-信息和控制焦点"><a href="#4-12-信息和控制焦点" class="headerlink" title="4.12 信息和控制焦点"></a>4.12 信息和控制焦点</h2><ul>
 <li>事件是交互中发生某事的任何点。</li>
@@ -501,14 +501,14 @@
 <li>它在生命线上显示为又高又细的矩形</li>
 <li>它表示元素执行操作的时间段。矩形的顶部和底部分别与开始时间和完成时间对齐。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115734.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/0216115734.png" alt="img"></p>
 <h1 id="五、序列片段"><a href="#五、序列片段" class="headerlink" title="五、序列片段"></a>五、序列片段</h1><ul>
 <li><code>UML2.0</code>引入了序列(或交互)片段。序列片段使创建和维护准确的序列图变得更加容易。</li>
 <li>序列片段表示为一个框，称为组合片段，它将部分交互包含在序列图中。</li>
 <li>片段运算符(在左上角)指示片段的类型。</li>
 <li>片段类型：ref、assert、loop、break、alt、opt、neg</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216135531.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/0216135531.png" alt="img"></p>
 <table>
 <thead>
 <tr>
@@ -555,11 +555,11 @@
 <li>组合片段关键字：alt、opt、break、par、seq、strict、neg、critical、ignore、conside、assert和loop。</li>
 <li>约束通常用于显示消息的时序约束。它们可以应用于一条消息的时间或消息之间的间隔。</li>
 </ul>
-<h2 id="5-1-组合片段示例"><a href="#5-1-组合片段示例" class="headerlink" title="5.1 组合片段示例"></a>5.1 组合片段示例</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216140338.png" alt="img"></p>
+<h2 id="5-1-组合片段示例"><a href="#5-1-组合片段示例" class="headerlink" title="5.1 组合片段示例"></a>5.1 组合片段示例</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/0216140338.png" alt="img"></p>
 <h2 id="5-2-用于建模用例场景的序列图"><a href="#5-2-用于建模用例场景的序列图" class="headerlink" title="5.2 用于建模用例场景的序列图"></a>5.2 用于建模用例场景的序列图</h2><p>用户需求被捕获为细化为场景的用例。用例是外部参与者和系统之间交互的集合。在<code>UML</code>中，一个用例是：</p>
 <p><em>“系统（或实体）可以执行的一系列动作的规范，包括变体，与系统的参与者交互。”</em></p>
 <p>场景是通过用例的一条路径或流程，它描述了在系统的一个特定执行期间发生的一系列事件，通常由序列图表示。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216140425.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/0216140425.png" alt="img"></p>
 <h2 id="5-3-序列图-代码之前的模型"><a href="#5-3-序列图-代码之前的模型" class="headerlink" title="5.3 序列图 - 代码之前的模型"></a>5.3 序列图 - 代码之前的模型</h2><p>序列图可能有点接近代码级别，那么为什么不直接编写该算法而不是将其绘制为序列图呢？</p>
 <ul>
 <li>一个好的序列图还是有点高于真实代码的水平</li>
@@ -584,36 +584,36 @@
 
 <h1 id="什么是时序图"><a href="#什么是时序图" class="headerlink" title="什么是时序图"></a>什么是时序图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-timing-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-timing-diagram/</a></p>
 <p>时序图是<code>UML</code>交互图，用于显示当图的主要目的是推理时间时的交互。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216163318.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/0216163318.png" alt="img"></p>
 <p>时序图侧重于沿线性时间轴在生命线内和生命线之间变化的条件。时序图描述了单个分类器的行为和分类器的交互，重点关注导致生命线建模条件变化的事件发生时间。</p>
 <h1 id="一、时间图概览"><a href="#一、时间图概览" class="headerlink" title="一、时间图概览"></a>一、时间图概览</h1><h2 id="1-1-状态时间线表示"><a href="#1-1-状态时间线表示" class="headerlink" title="1.1 状态时间线表示"></a>1.1 状态时间线表示</h2><p>从一种<strong>状态</strong>到另一种状态<strong>的变化由生命线级别的变化</strong>表示。对于对象处于给定状态的时间段，时间线与该状态平行运行。状态变化表现为从一个水平到另一个水平的垂直变化。与状态图或序列图中的情况一样，更改的原因是收到消息、导致更改的事件、系统内的条件，甚至只是时间的流逝。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216163538.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/0216163538.png" alt="img"></p>
 <h2 id="1-2-价值生命线代表"><a href="#1-2-价值生命线代表" class="headerlink" title="1.2 价值生命线代表"></a>1.2 价值生命线代表</h2><p>下图显示了 UML 时序图的另一种表示法。每次状态变化时，它都会在相互交叉的两条水平线之间显示对象的状态。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216163602.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/0216163602.png" alt="img"></p>
 <h1 id="二、时序图的基本概念"><a href="#二、时序图的基本概念" class="headerlink" title="二、时序图的基本概念"></a>二、时序图的基本概念</h1><p>时序 UML 图的主要元素 - 生命线、时间线、状态或条件、消息、持续时间约束、时序标尺。</p>
 <h2 id="2-1-生命线"><a href="#2-1-生命线" class="headerlink" title="2.1 生命线"></a>2.1 生命线</h2><p>时序图中的生命线在帧的内容区域内形成一个矩形空间。生命线是一个命名元素，它代表交互中的个人参与者。它通常水平对齐以从左到右阅读。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216163642.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/0216163642.png" alt="img"></p>
 <p>多条生命线可以堆叠在同一框架内，以模拟它们之间的交互。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216163753.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/0216163753.png" alt="img"></p>
 <h2 id="2-2-时序图中的状态时间线"><a href="#2-2-时序图中的状态时间线" class="headerlink" title="2.2 时序图中的状态时间线"></a>2.2 时序图中的状态时间线</h2><p>状态或条件时间线表示一组有效状态和时间。状态从上到下堆叠在生命线的左边距。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216163818.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/0216163818.png" alt="img"></p>
 <p>与状态或序列图中的情况一样，更改的原因是收到消息、导致更改的事件、系统内的条件，甚至只是时间的流逝。</p>
 <h2 id="2-3-多个分隔"><a href="#2-3-多个分隔" class="headerlink" title="2.3 多个分隔"></a>2.3 多个分隔</h2><p>可以在同一个时序图中堆叠几条不同对象的生命线。一条生命线高于另一条生命线。从一个对象发送到另一个对象的消息可以使用简单的箭头来描述。每个箭头的起点和终点指示每条消息的发送时间和接收时间。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216163926.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/0216163926.png" alt="img"></p>
 <h2 id="2-4-状态生命线"><a href="#2-4-状态生命线" class="headerlink" title="2.4 状态生命线"></a>2.4 状态生命线</h2><p>状态生命线显示项目状态随时间的变化。X 轴以选择的任何单位显示经过的时间，而 Y 轴标有给定的状态列表。状态生命线如下所示：</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216164003.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/0216164003.png" alt="img"></p>
 <h2 id="2-5-价值生命线"><a href="#2-5-价值生命线" class="headerlink" title="2.5 价值生命线"></a>2.5 价值生命线</h2><p>价值生命线显示项目价值随时间的变化。X 轴以所选单位显示经过的时间，与状态生命线相同。该值显示在水平线对之间，水平线在每次值变化时交叉。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216164028.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/0216164028.png" alt="img"></p>
 <h2 id="2-6-时间线和约束"><a href="#2-6-时间线和约束" class="headerlink" title="2.6 时间线和约束"></a>2.6 时间线和约束</h2><p>我们可以使用时间线的长度来指示对象通过从左到右读取它保持在特定状态的时间。要关联时间测量，您可以在框架的底部在线显示刻度线。</p>
 <p>下面的示例显示在序列开始后三个时间单位接收到 Login 事件。要显示相对时间，您可以使用变量名称及时标记特定实例。该图将接收到 sendMail 事件的时间标记为时间</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216164142.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/0216164142.png" alt="img"></p>
 <p>您可以在约束中使用相对时间标记来指示必须在指定的时间内接收到消息。</p>
 <h2 id="2-7-状态和价值生命线并排"><a href="#2-7-状态和价值生命线并排" class="headerlink" title="2.7 状态和价值生命线并排"></a>2.7 状态和价值生命线并排</h2><p>状态和价值生命线可以以任意组合依次排列。消息可以从一条生命线传递到另一条生命线。每个状态或值转换都可以具有定义的事件、指示事件何时必须发生的时间约束以及指示状态或值必须有效多长时间的持续时间约束。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216164255.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/0216164255.png" alt="img"></p>
 <h1 id="三、交互图之间的模型一致性"><a href="#三、交互图之间的模型一致性" class="headerlink" title="三、交互图之间的模型一致性"></a>三、交互图之间的模型一致性</h1><p>时序图应始终与相关的时序图和状态机保持一致。为此，我们可以在生命线中为序列图中的每个对象附加状态。然后，通过检查对象之间传递的消息与生命线中附加的状态，我们可以更容易地得出相应的时序图。下面的 Carpark 示例显示了两个交互图之间的模型一致性。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216164354.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/0216164354.png" alt="img"></p>
 <p>上图是停车场示例的时序图，下图是停车场示例对应的时序图。时序图的各个部分参考时序图的内容。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216164418.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/0216164418.png" alt="img"></p>
 ]]></content>
       <categories>
         <category>UML知识</category>
@@ -630,7 +630,7 @@
 
 <h1 id="什么是活动图"><a href="#什么是活动图" class="headerlink" title="什么是活动图"></a>什么是活动图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-activity-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-activity-diagram/</a></p>
 <p>活动图是<code>UML</code>图中另一个重要的行为图，用于描述系统的动态方面。活动图本质上是流程图的高级版本，它对从一个活动到另一个活动的流程进行建模。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0210112809.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0210112809.png" alt="img"></p>
 <h1 id="一、何时使用活动图"><a href="#一、何时使用活动图" class="headerlink" title="一、何时使用活动图"></a>一、何时使用活动图</h1><p>活动图描述了如何协调活动以提供可以处于不同抽象级别的服务。通常，一个事件需要通过一些操作来实现，特别是在操作旨在实现需要协调的许多不同事物的情况下，或者单个用例中的事件如何相互关联时，特别是活动的用例可能重叠并需要协调。它还适用于建模用例集合如何协调以表示业务工作流。</p>
 <ol>
 <li>通过检查业务工作流程确定候选用例。</li>
@@ -640,7 +640,7 @@
 <li>在高级活动图中详细建模复杂活动。</li>
 </ol>
 <h1 id="二、活动图概览"><a href="#二、活动图概览" class="headerlink" title="二、活动图概览"></a>二、活动图概览</h1><h2 id="2-1-通过示例学习"><a href="#2-1-通过示例学习" class="headerlink" title="2.1 通过示例学习"></a>2.1 通过示例学习</h2><p>一个基本的活动图，流程图：</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0210115000.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0210115000.png" alt="img"></p>
 <h2 id="2-2-为文字处理器建模"><a href="#2-2-为文字处理器建模" class="headerlink" title="2.2 为文字处理器建模"></a>2.2 为文字处理器建模</h2><p>下面的活动图示例描述了文字处理通过以下步骤创建文档的工作流程：</p>
 <ul>
 <li>打开文字处理包。</li>
@@ -653,7 +653,7 @@
 <li>打印文档的硬拷贝。</li>
 <li>退出文字处理包。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0210134933.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0210134933.png" alt="img"></p>
 <h1 id="三、活动图示例"><a href="#三、活动图示例" class="headerlink" title="三、活动图示例"></a>三、活动图示例</h1><h2 id="3-1-流程订单"><a href="#3-1-流程订单" class="headerlink" title="3.1 流程订单"></a>3.1 流程订单</h2><p>给定与处理订单的工作流相关的问题描述，让我们使用活动图对描述进行可视化建模：</p>
 <blockquote>
 <p>流程订单-问题描述</p>
@@ -662,7 +662,7 @@
 <p>最后，并行活动结合起来关闭订单。</p>
 </blockquote>
 <p>下面的活动图示例以图形形式可视化流程：</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0210140309.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0210140309.png" alt="img"></p>
 <h2 id="3-2-学生注册"><a href="#3-2-学生注册" class="headerlink" title="3.2 学生注册"></a>3.2 学生注册</h2><p>这个<code>UML</code>活动图示例描述了大学中学生注册的过程，如下图所示。</p>
 <ul>
 <li>申请人想入读大学。</li>
@@ -673,36 +673,36 @@
 <li>注册商帮助学生参加研讨会。</li>
 <li>注册商要求学生支付初始学费。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0210141707.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0210141707.png" alt="img"></p>
 <h2 id="3-3-swinlane活动图"><a href="#3-3-swinlane活动图" class="headerlink" title="3.3 swinlane活动图"></a>3.3 <code>swinlane</code>活动图</h2><p><code>swinlane</code>是一种将同一角色在活动图或活动图上执行的活动分组或将活动分组在单个线程中的方法。以下是用于对员工费用提交进行建模的<code>swinlane</code>活动图示例：</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0210142803.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0210142803.png" alt="img"></p>
 <h2 id="3-4-swinlane和非swinlane活动图"><a href="#3-4-swinlane和非swinlane活动图" class="headerlink" title="3.4 swinlane和非swinlane活动图"></a>3.4 <code>swinlane</code>和非<code>swinlane</code>活动图</h2><p>下面的活动图示例描述了使用没有<code>swinlane</code>的活动图会见新客户的业务流程。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0210143932.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0210143932.png" alt="img"></p>
 <p>下图描述了使用带有<code>swinlane</code>的活动图与新客户会面的业务流程。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0210145531.png" alt="img"></p>
-<h1 id="四、活动图符号总结"><a href="#四、活动图符号总结" class="headerlink" title="四、活动图符号总结"></a>四、活动图符号总结</h1><h2 id="4-1-活动符号"><a href="#4-1-活动符号" class="headerlink" title="4.1 活动符号"></a>4.1 活动符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211150525.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0210145531.png" alt="img"></p>
+<h1 id="四、活动图符号总结"><a href="#四、活动图符号总结" class="headerlink" title="四、活动图符号总结"></a>四、活动图符号总结</h1><h2 id="4-1-活动符号"><a href="#4-1-活动符号" class="headerlink" title="4.1 活动符号"></a>4.1 活动符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0211150525.png" alt="img"></p>
 <p>活动：用于表示一组动作</p>
-<h2 id="4-2-行动符号"><a href="#4-2-行动符号" class="headerlink" title="4.2 行动符号"></a>4.2 行动符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211150616.png" alt="img"></p>
+<h2 id="4-2-行动符号"><a href="#4-2-行动符号" class="headerlink" title="4.2 行动符号"></a>4.2 行动符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0211150616.png" alt="img"></p>
 <p>行动：表示要执行的任务</p>
-<h2 id="4-3-控制流程符号"><a href="#4-3-控制流程符号" class="headerlink" title="4.3 控制流程符号"></a>4.3 控制流程符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211150657.png" alt="img"></p>
+<h2 id="4-3-控制流程符号"><a href="#4-3-控制流程符号" class="headerlink" title="4.3 控制流程符号"></a>4.3 控制流程符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0211150657.png" alt="img"></p>
 <p>控制流程符号：表示执行的顺序</p>
-<h2 id="4-4-对象流程符号"><a href="#4-4-对象流程符号" class="headerlink" title="4.4 对象流程符号"></a>4.4 对象流程符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211150800.png" alt="img"></p>
+<h2 id="4-4-对象流程符号"><a href="#4-4-对象流程符号" class="headerlink" title="4.4 对象流程符号"></a>4.4 对象流程符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0211150800.png" alt="img"></p>
 <p>对象流程符号：显示对象从一个活动(或动作)到另一个活动(或动作)的流程。</p>
-<h2 id="4-5-初始节点符号"><a href="#4-5-初始节点符号" class="headerlink" title="4.5 初始节点符号"></a>4.5 初始节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211150856.png" alt="img"></p>
+<h2 id="4-5-初始节点符号"><a href="#4-5-初始节点符号" class="headerlink" title="4.5 初始节点符号"></a>4.5 初始节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0211150856.png" alt="img"></p>
 <p>初始节点符号：描述一组行动或活动的开始</p>
-<h2 id="4-6-终止节点符号"><a href="#4-6-终止节点符号" class="headerlink" title="4.6 终止节点符号"></a>4.6 终止节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211150957.png" alt="img"></p>
+<h2 id="4-6-终止节点符号"><a href="#4-6-终止节点符号" class="headerlink" title="4.6 终止节点符号"></a>4.6 终止节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0211150957.png" alt="img"></p>
 <p>终止节点符号：停止活动（或行动）中的所有控制流和对象流</p>
-<h2 id="4-7-对象节点符号"><a href="#4-7-对象节点符号" class="headerlink" title="4.7 对象节点符号"></a>4.7 对象节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211151040.png" alt="img"></p>
+<h2 id="4-7-对象节点符号"><a href="#4-7-对象节点符号" class="headerlink" title="4.7 对象节点符号"></a>4.7 对象节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0211151040.png" alt="img"></p>
 <p>对象节点符号：连接到一组对象流的对象</p>
-<h2 id="4-8-决策节点符号"><a href="#4-8-决策节点符号" class="headerlink" title="4.8 决策节点符号"></a>4.8 决策节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211151451.png" alt="img"></p>
+<h2 id="4-8-决策节点符号"><a href="#4-8-决策节点符号" class="headerlink" title="4.8 决策节点符号"></a>4.8 决策节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0211151451.png" alt="img"></p>
 <p>决策节点符号：表示一个测试条件，以确保控制流或对象流只沿着一条路径前进</p>
-<h2 id="4-9-合并节点符号"><a href="#4-9-合并节点符号" class="headerlink" title="4.9 合并节点符号"></a>4.9 合并节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211151510.png" alt="img"></p>
+<h2 id="4-9-合并节点符号"><a href="#4-9-合并节点符号" class="headerlink" title="4.9 合并节点符号"></a>4.9 合并节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0211151510.png" alt="img"></p>
 <p>合并节点符号：将使用决策节点创建的不同决策路径重新组合在一起</p>
-<h2 id="4-10-分叉节点符号"><a href="#4-10-分叉节点符号" class="headerlink" title="4.10 分叉节点符号"></a>4.10 分叉节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211151527.png" alt="img"></p>
+<h2 id="4-10-分叉节点符号"><a href="#4-10-分叉节点符号" class="headerlink" title="4.10 分叉节点符号"></a>4.10 分叉节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0211151527.png" alt="img"></p>
 <p>分叉节点符号：将行为拆分为一组并行或并发的活动（或行动）流</p>
-<h2 id="4-11-加入节点符号"><a href="#4-11-加入节点符号" class="headerlink" title="4.11 加入节点符号"></a>4.11 加入节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211151542.png" alt="img"></p>
+<h2 id="4-11-加入节点符号"><a href="#4-11-加入节点符号" class="headerlink" title="4.11 加入节点符号"></a>4.11 加入节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0211151542.png" alt="img"></p>
 <p>加入节点符号：将一组并行或并发的活动（或行动）流重新组合在一起</p>
-<h2 id="4-12-swinlane和分区"><a href="#4-12-swinlane和分区" class="headerlink" title="4.12 swinlane和分区"></a>4.12 <code>swinlane</code>和分区</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211151557.png" alt="img"></p>
+<h2 id="4-12-swinlane和分区"><a href="#4-12-swinlane和分区" class="headerlink" title="4.12 swinlane和分区"></a>4.12 <code>swinlane</code>和分区</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/0211151557.png" alt="img"></p>
 <p><code>swinlane</code>和分区：一种在活动图上对同一参与者执行的活动进行分组或在单个线程中对活动进行分组的方法</p>
 ]]></content>
       <categories>
@@ -720,7 +720,7 @@
 
 <h1 id="什么是状态图"><a href="#什么是状态图" class="headerlink" title="什么是状态图"></a>什么是状态图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-state-machine-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-state-machine-diagram/</a></p>
 <p>实体的行为不仅是其输入的直接结果，而且还取决于其先前的状态。实体的过去历史最好用有限状态图或传统上称为自动机的方式建模。<code>UML</code>状态图（或有时称为状态图、状态机）显示实体的不同状态。状态图还可以显示实体如何通过从一种状态更改为另一种状态来响应各种事件。状态图是用于对系统的动态性质进行建模的<code>UML</code>图。    </p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211152828.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/0211152828.png" alt="img"></p>
 <h1 id="一、为何要使用状态图？"><a href="#一、为何要使用状态图？" class="headerlink" title="一、为何要使用状态图？"></a>一、为何要使用状态图？</h1><p>状态图通常用于描述对象的状态相关行为。一个对象根据它所处的状态对同一事件做出不同的响应。状态图通常应用于对象，但可以应用于对其他实体具有行为的任何元素。例如：角色、用例、方法、子系统等等，它们通常与交互图(通常是时序图)结合使用。</p>
 <p>例如：</p>
 <p>假设您的银行账户中有100,000美元。取款函数的行为是：余额=余额-取款金额，前提是提款后的余额不少于0美元；无论您从银行取款多少次都是如此。在这种情况下，提取不会影响属性值的抽象，因此对象的总体行为保持不变。</p>
@@ -736,7 +736,7 @@
 <p><em>Rumbaugh</em>定义：状态是对象的属性值和连接的抽象。根据影响对象总体行为的属性，将一组值合成一个状态。</p>
 </blockquote>
 <p><strong>状态符号</strong></p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211160715.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/0211160715.png" alt="img"></p>
 <h1 id="三、状态图符号的特征"><a href="#三、状态图符号的特征" class="headerlink" title="三、状态图符号的特征"></a>三、状态图符号的特征</h1><p>一般来说，无论其类型如何，状态都有几个特征：</p>
 <ul>
 <li>一个状态占用一个时间间隔。</li>
@@ -750,7 +750,7 @@
 <li>连接状态的过渡线</li>
 </ul>
 <p>例子：</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211161303.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/0211161303.png" alt="img"></p>
 <h3 id="3-1-1-状态特征"><a href="#3-1-1-状态特征" class="headerlink" title="3.1.1 状态特征"></a>3.1.1 状态特征</h3><ul>
 <li>状态表示对象在特定时间点的状态。</li>
 <li>对象(或系统)可以被视为从一个状态移动到另一个状态。</li>
@@ -761,7 +761,7 @@
 <li>状态机图的最终状态显示为同心圆。开环状态图表示可能在系统终止之前终止的对象，而闭环状态图没有最终状态，如果是这种情况，则该对象将一直存在，直到整个系统终止。</li>
 </ul>
 <p>例子：</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211163926.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/0211163926.png" alt="img"></p>
 <h2 id="3-2-事件"><a href="#3-2-事件" class="headerlink" title="3.2 事件"></a>3.2 事件</h2><p>事件签名被描述为事件名称（逗号分隔参数列表）。事件出现在状态的内部转换隔间或状态之间的转换上。事件可能是以下四种类型之一：</p>
 <ol>
 <li>信号事件——对应异步消息或信号的到达</li>
@@ -799,7 +799,7 @@
 <li>五个动作触发器：<code>On Entry</code>、<code>Do</code>、<code>On Event</code>、<code>On Exit</code>、<code>Include</code></li>
 <li>活动捕获可能长时间运行的复杂行为——活动可能会被事件中断，在这种情况下，当对象到达某个状态时，他不会完成。</li>
 </ul>
-<h1 id="四、简单状态图的符号"><a href="#四、简单状态图的符号" class="headerlink" title="四、简单状态图的符号"></a>四、简单状态图的符号</h1><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211165812.png" alt="img"></p>
+<h1 id="四、简单状态图的符号"><a href="#四、简单状态图的符号" class="headerlink" title="四、简单状态图的符号"></a>四、简单状态图的符号</h1><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/0211165812.png" alt="img"></p>
 <h2 id="4-1-进入和退出操作"><a href="#4-1-进入和退出操作" class="headerlink" title="4.1 进入和退出操作"></a>4.1 进入和退出操作</h2><p>状态中指定的进入和退出动作。每次进入/退出事件都必须为真。如果不是，那么仅必须在各个过渡线上使用操作。</p>
 <ul>
 <li>Entry进入状态时执行的动作，符号为：<code>Entry/action</code></li>
@@ -807,7 +807,7 @@
 </ul>
 <p><strong>示例-进入/退出操作（检查账簿状态）</strong></p>
 <p>这个例子说明了一个从一个类——“BookCopy”派生的状态图。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211171011.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/0211171011.png" alt="img"></p>
 <p>注意：</p>
 <ol>
 <li>此状态图显示了BookCopy类中对象myBkCopy的状态</li>
@@ -816,7 +816,7 @@
 </ol>
 <h2 id="4-2-子状态"><a href="#4-2-子状态" class="headerlink" title="4.2 子状态"></a>4.2 子状态</h2><p>简单状态时没有子结构的状态。具有子状态(嵌套状态)的状态称为复合状态。子状态可以嵌套到任何级别。嵌套状态最多可以有一个初始状态和一个最终状态。子状态用于通过显示某些状态仅在特定上下文(封闭状态)内才可能来简化复杂的平面状态图。</p>
 <p><strong>子状态示例-加热器</strong></p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0214093051.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/0214093051.png" alt="img"></p>
 <p>状态图通常用于派生测试用例，这里列出了可能的测试思路：</p>
 <ul>
 <li>空闲状态接收太热事件</li>
@@ -830,11 +830,11 @@
 <li>加热状态接收失败事件</li>
 </ul>
 <h2 id="4-3-历史状态"><a href="#4-3-历史状态" class="headerlink" title="4.3 历史状态"></a>4.3 历史状态</h2><p>除非另有说明，否则当转换进入复合状态时，嵌套状态图的操作会从初始状态重新开始(触发转换直接针对子状态)。历史状态允许状态机重新进入在离开复合状态之前处于活动状态的最后一个子状态。下图展示了一个历史状态使用的例子。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0214094426.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/0214094426.png" alt="img"></p>
 <h2 id="4-4-并发状态"><a href="#4-4-并发状态" class="headerlink" title="4.4 并发状态"></a>4.4 并发状态</h2><p>如上所述，状态图中的状态可以嵌套。相关的状态可以组合成一个单一的复合状态。当一个活动涉及并发子活动时，在其他活动中嵌套状态属实必要的。以下状态图对具有两个并发子状态的拍卖进行建模：处理投标和授权支付限额。</p>
 <p><strong>并发状态图示例-拍卖过程</strong></p>
 <p>在此示例中，首先进入拍卖的状态图需要在开始时分叉成两个单独的开始线程。每个子状态都有一个退出状态来标记线程的结束。除非有异常退出(Canceled或Rejected)，否则当两个子状态都退出时才会退出复合状态。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0214101331.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/0214101331.png" alt="img"></p>
 ]]></content>
       <categories>
         <category>UML知识</category>
@@ -859,7 +859,7 @@
 </ul>
 <p>如前所述，用例图应该很简单，并且只包含几个形状。如果您的用例包含超过20个用例，则您可能误用了用例图。</p>
 <p>下图显示了<code>UML</code>图层结构和<code>UML</code>用例图的定位。如您所见，用例图属于行为图家族。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209174042.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/0209174042.png" alt="img"></p>
 <p>注意：</p>
 <ul>
 <li>有许多不同的<code>UML</code>图用于不同的目的(从上面的<code>UML</code>图树可以看出)。您可以在其他<code>UML</code>图类型和文档中描述这些细节，并将它们与用例链接起来。</li>
@@ -879,8 +879,8 @@
 <li>由分析师与领域专家共同开发</li>
 </ul>
 <h1 id="三、用例图概览"><a href="#三、用例图概览" class="headerlink" title="三、用例图概览"></a>三、用例图概览</h1><p>用统一建模语言定义了标准形式的用例图，如下面的用例图示例所示：</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180046.png" alt="img"></p>
-<h2 id="3-1-用例图使用的符号"><a href="#3-1-用例图使用的符号" class="headerlink" title="3.1 用例图使用的符号"></a>3.1 用例图使用的符号</h2><h3 id="3-1-1-角色"><a href="#3-1-1-角色" class="headerlink" title="3.1.1 角色"></a>3.1.1 角色</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180208.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/0209180046.png" alt="img"></p>
+<h2 id="3-1-用例图使用的符号"><a href="#3-1-用例图使用的符号" class="headerlink" title="3.1 用例图使用的符号"></a>3.1 用例图使用的符号</h2><h3 id="3-1-1-角色"><a href="#3-1-1-角色" class="headerlink" title="3.1.1 角色"></a>3.1.1 角色</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/0209180208.png" alt="img"></p>
 <ul>
 <li>角色与用例(系统功能)交互。</li>
 <li>以名词命名。</li>
@@ -892,19 +892,19 @@
 </li>
 <li>Actor对系统负责(输入)，Actor对系统有期望(输出)。</li>
 </ul>
-<h3 id="3-1-2-用例"><a href="#3-1-2-用例" class="headerlink" title="3.1.2 用例"></a>3.1.2 用例</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180304.png" alt="img"></p>
+<h3 id="3-1-2-用例"><a href="#3-1-2-用例" class="headerlink" title="3.1.2 用例"></a>3.1.2 用例</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/0209180304.png" alt="img"></p>
 <ul>
 <li>系统功能(过程-自动或手动)</li>
 <li>以动词+名词(或名词短语)命名。</li>
 <li>即做某事。</li>
 <li>每个Actor必须链接到一个用例，而某些用例可能没有链接到Actor。</li>
 </ul>
-<h3 id="8-1-3-连接线"><a href="#8-1-3-连接线" class="headerlink" title="8.1.3 连接线"></a>8.1.3 连接线</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180409.png" alt="img"></p>
+<h3 id="8-1-3-连接线"><a href="#8-1-3-连接线" class="headerlink" title="8.1.3 连接线"></a>8.1.3 连接线</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/0209180409.png" alt="img"></p>
 <ul>
 <li>角色在用例中的参与是通过将角色连接到用例中来显示的。</li>
 <li>角色可以通过关联连接到用例，这表明角色和用例使用消息相互通信。</li>
 </ul>
-<h3 id="8-1-4-系统"><a href="#8-1-4-系统" class="headerlink" title="8.1.4 系统"></a>8.1.4 系统</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180522.png" alt="img"></p>
+<h3 id="8-1-4-系统"><a href="#8-1-4-系统" class="headerlink" title="8.1.4 系统"></a>8.1.4 系统</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/0209180522.png" alt="img"></p>
 <ul>
 <li>系统可能是需求文档中定义的整个系统。</li>
 <li>对于大型复杂系统，每个模块都可能是系统边界。</li>
@@ -913,13 +913,13 @@
 <li>整个系统可以跨越所有这些描述整个系统的模块。</li>
 </ul>
 <h2 id="3-2-用关系构建用例图"><a href="#3-2-用关系构建用例图" class="headerlink" title="3.2 用关系构建用例图"></a>3.2 用关系构建用例图</h2><p>用例共享不同类型的关系。定义两个用例之间的关系是用例图的软件分析师的决定。两个用例之间的关系基本上是对两个用例之间的依赖关系进行建模。通过使用不同类型的关系重用现有用例可减少开发系统所需的整体工作量。用例关系如下所示：</p>
-<h3 id="3-2-1-扩展关系"><a href="#3-2-1-扩展关系" class="headerlink" title="3.2.1 扩展关系"></a>3.2.1 扩展关系</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210093248.png" alt="img"></p>
+<h3 id="3-2-1-扩展关系"><a href="#3-2-1-扩展关系" class="headerlink" title="3.2.1 扩展关系"></a>3.2.1 扩展关系</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/0210093248.png" alt="img"></p>
 <ul>
 <li>表示”无效密码”用例可能包括(根据扩展中的规定)由基本用例”登录账户”指定的行为。</li>
 <li>用带有虚线的定向箭头描绘。箭头的尖端指向基本用例，子用例连接在箭头的底部。</li>
 <li>构造型<code>&quot;&lt;&lt;extends&gt;&gt;&quot;</code>标识为扩展关系。</li>
 </ul>
-<h3 id="3-2-1-包含关系"><a href="#3-2-1-包含关系" class="headerlink" title="3.2.1 包含关系"></a>3.2.1 包含关系</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210093450.png" alt="img"></p>
+<h3 id="3-2-1-包含关系"><a href="#3-2-1-包含关系" class="headerlink" title="3.2.1 包含关系"></a>3.2.1 包含关系</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/0210093450.png" alt="img"></p>
 <ul>
 <li>当一个用例被描述为使用另一个用例的功能时，用例之间的关系被命名为包含或使用关系。</li>
 <li>一个用例包括另一个用例中描述的功能，作为其业务流程的一部分。</li>
@@ -927,7 +927,7 @@
 <li>包含关系具有虚线的定向箭头来描绘。箭头的尖端指向连接在箭头底部的子用例和父用例。</li>
 <li>构造型<code>&lt;&lt;include&gt;&gt;</code>将关系标识为包含关系。</li>
 </ul>
-<h3 id="3-2-3-泛化关系"><a href="#3-2-3-泛化关系" class="headerlink" title="3.2.3 泛化关系"></a>3.2.3 泛化关系</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210093647.png" alt="img"></p>
+<h3 id="3-2-3-泛化关系"><a href="#3-2-3-泛化关系" class="headerlink" title="3.2.3 泛化关系"></a>3.2.3 泛化关系</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/0210093647.png" alt="img"></p>
 <ul>
 <li>泛化关系是用例之间的父子关系。</li>
 <li>子用例是父用例的增强。</li>
@@ -935,16 +935,16 @@
 <li>子用例连接在箭头的底部。箭头的尖端连接到父用例。</li>
 </ul>
 <h2 id="3-3-用例示例"><a href="#3-3-用例示例" class="headerlink" title="3.3 用例示例"></a>3.3 用例示例</h2><h3 id="3-3-1-关联连接"><a href="#3-3-1-关联连接" class="headerlink" title="3.3.1 关联连接"></a>3.3.1 关联连接</h3><p>用例图说明了系统的一组用例，即角色以及角色与用例之间的关系。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210100635.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/0210100635.png" alt="img"></p>
 <h3 id="3-3-2-包含关系"><a href="#3-3-2-包含关系" class="headerlink" title="3.3.2 包含关系"></a>3.3.2 包含关系</h3><p>包含关系添加了基本用例中未指定的附加功能。<code>&lt;&lt;include&gt;&gt;</code>关系用于将包含用例中的常见行为包含到基本用例中，以支持常见行为的重用。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210100940.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/0210100940.png" alt="img"></p>
 <h3 id="3-3-3-扩展关系"><a href="#3-3-3-扩展关系" class="headerlink" title="3.3.3 扩展关系"></a>3.3.3 扩展关系</h3><p>扩展关系很重要，因为它们显示了可选的功能或系统行为。<code>&lt;&lt;Extend&gt;&gt;</code>关系用于在扩展用例中包含来自扩展用例的可选行为。看看下面的用例图示例，它显示了一个扩展连接器和一个扩展点”搜索”。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210101316.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/0210101316.png" alt="img"></p>
 <h3 id="3-3-4-泛化关系"><a href="#3-3-4-泛化关系" class="headerlink" title="3.3.4 泛化关系"></a>3.3.4 泛化关系</h3><p>泛化关系意味着子用例继承父用例的行为和含义。孩子可以添加或覆盖父母的行为。下图通过显示连接三个用例之间的两个泛化连接器提供了一个用例示例。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210101856.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/0210101856.png" alt="img"></p>
 <h1 id="四、用例图示例"><a href="#四、用例图示例" class="headerlink" title="四、用例图示例"></a>四、用例图示例</h1><h2 id="车辆销售系统"><a href="#车辆销售系统" class="headerlink" title="车辆销售系统"></a>车辆销售系统</h2><p>下图显示了车辆系统的用例图示例。如您所见，即使是像汽车销售系统一样大的系统也包含不超过10个用例！这就是用例建模的美妙之处。</p>
 <p>用例模型还展示了<code>&lt;&lt;Extend&gt;&gt;</code>和<code>&lt;&lt;include&gt;&gt;</code>的使用。此外，角色和用例之间存在关联。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210105646.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/0210105646.png" alt="img"></p>
 <h1 id="五、如何识别角色"><a href="#五、如何识别角色" class="headerlink" title="五、如何识别角色"></a>五、如何识别角色</h1><p>通常，人们发现通过识别参与者来启动需求获取过程是最容易的。以下问题可以帮助您识别系统的参与者。</p>
 <ul>
 <li>谁使用系统？</li>
@@ -972,7 +972,7 @@
 </ul>
 <h1 id="八、用例级别的详细信息"><a href="#八、用例级别的详细信息" class="headerlink" title="八、用例级别的详细信息"></a>八、用例级别的详细信息</h1><p>用例粒度是指在用例规范中组织信息的方式，在某种程度上，是指编写它们的详细程度。实现正确级别的用例粒度可以简化利益相关者和开发人员之间的沟通，并改进项目规划。</p>
 <p><em>Alastair Cockburn</em>在编写有效用例中为我们提供了一种简单的方法，通过从海洋的角度来思考不同级别的目标级别：</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210110639.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/0210110639.png" alt="img"></p>
 <p>注意：</p>
 <ul>
 <li>虽然用例本身可能会深入了解每种可能性的大量细节，但用例图通常用于作为蓝图的系统的更高级别视图。</li>
@@ -994,7 +994,7 @@
 
 <h1 id="什么是包图"><a href="#什么是包图" class="headerlink" title="什么是包图"></a>什么是包图</h1><p>源文连接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-package-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-package-diagram/</a></p>
 <p>包图是一种结构图，显示了中大型项目中模型元素的排列和组合。包图可以显示子系统或模块之间的结构和依赖关系，显示系统的不同视图。例如，多层应用程序模型。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208154046.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/0208154046.png" alt="img"></p>
 <h1 id="一、包图的用途"><a href="#一、包图的用途" class="headerlink" title="一、包图的用途"></a>一、包图的用途</h1><p>包图用于构建高级系统元素。包用于组织包含图表，文档和其他关键可交付成果的大型系统。</p>
 <ul>
 <li>包图可用于简化复杂的类图，它可以将类分组到包中。</li>
@@ -1009,7 +1009,7 @@
 <li>虚线箭头是依赖项。</li>
 <li>如果另一个包中的更改可能会强制更改一个包，则一个包依赖于另一个包。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208155111.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/0208155111.png" alt="img"></p>
 <h1 id="三、包图的基本概念"><a href="#三、包图的基本概念" class="headerlink" title="三、包图的基本概念"></a>三、包图的基本概念</h1><p>包图遵循嵌套包的层次结构。嵌套包的原子模块通常是类图。使用包图时几乎没有约束，如下图所示。</p>
 <ul>
 <li>对于系统，包名不应相同，但不同包中的类可以具有相同的名称。</li>
@@ -1019,17 +1019,17 @@
 <p><code>Name owing the package::Name of the package</code></p>
 <p><code>java::util::Date</code></p>
 <p>包可以用符号标识，下面展示了一些示例：</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208160308.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/0208160308.png" alt="img"></p>
 <h1 id="四、包图的依赖关系表示法"><a href="#四、包图的依赖关系表示法" class="headerlink" title="四、包图的依赖关系表示法"></a>四、包图的依赖关系表示法</h1><p>依赖关系中涉及两个子类型。它们是<code>&lt;&lt;import&gt;&gt;</code>和<code>&lt;&lt;access&gt;&gt;</code>。尽管有两种构造型，但用户可以使用自己的构造型来表示两个包之间的依赖关系类型。</p>
 <h2 id="4-1-包图示例-导入"><a href="#4-1-包图示例-导入" class="headerlink" title="4.1 包图示例-导入"></a>4.1 包图示例-导入</h2><p><code>&lt;&lt;import&gt;&gt;</code>一个包导入其他包的功能。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208160906.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/0208160906.png" alt="img"></p>
 <h2 id="4-2-包图示例-访问"><a href="#4-2-包图示例-访问" class="headerlink" title="4.2 包图示例-访问"></a>4.2 包图示例-访问</h2><p><code>&lt;&lt;access&gt;&gt;</code>一个包需要其他包的功能的帮助。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208160931.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/0208160931.png" alt="img"></p>
 <h1 id="五、建模复杂分组"><a href="#五、建模复杂分组" class="headerlink" title="五、建模复杂分组"></a>五、建模复杂分组</h1><p>包图通常用于描述包与其他包或对象之间的层次结构关系(分组)。包表示命名空间。</p>
 <p><strong>包图示例：分层结构</strong></p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208162905.png" alt="img"></p>
-<h1 id="六、包图示例"><a href="#六、包图示例" class="headerlink" title="六、包图示例"></a>六、包图示例</h1><h2 id="6-1-订单子系统"><a href="#6-1-订单子系统" class="headerlink" title="6.1 订单子系统"></a>6.1 订单子系统</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208164425.png" alt="img"></p>
-<h2 id="6-2-订单处理系统"><a href="#6-2-订单处理系统" class="headerlink" title="6.2 订单处理系统"></a>6.2 订单处理系统</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208164639.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/0208162905.png" alt="img"></p>
+<h1 id="六、包图示例"><a href="#六、包图示例" class="headerlink" title="六、包图示例"></a>六、包图示例</h1><h2 id="6-1-订单子系统"><a href="#6-1-订单子系统" class="headerlink" title="6.1 订单子系统"></a>6.1 订单子系统</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/0208164425.png" alt="img"></p>
+<h2 id="6-2-订单处理系统"><a href="#6-2-订单处理系统" class="headerlink" title="6.2 订单处理系统"></a>6.2 订单处理系统</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/0208164639.png" alt="img"></p>
 <blockquote>
 <p>订单处理系统-问题描述：</p>
 <p>我们将为在线购物商店的“跟踪订单”方案设计包图。跟踪订单模块复杂为客户订购的产品提供跟踪信息。客户在搜索中填入订单序列号，跟踪订单模块调用系统并向客户更新当前发货状态。</p>
@@ -1039,20 +1039,20 @@
 <li>有一个跟踪订单模块，他必须与其他模块交流才能了解订单详细信息，姑且称之为“订单详细信息”。</li>
 <li>接下来，在获取订单详细信息后，它必须了解运输详细信息，让我们将其称为“运输”。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208164639.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/0208164639.png" alt="img"></p>
 <p><strong>确定系统中的依赖关系</strong></p>
 <ul>
 <li>跟踪订单应从“订单详细信息”中获取订单详细信息，并且“订单详细信息”必须知道客户提供的跟踪信息。两个模块相互访问，这是<code>&lt;&lt;access&gt;&gt;</code>双重依赖关系。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208165650.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/0208165650.png" alt="img"></p>
 <ul>
 <li>要了解运输信息，“运输”可以导入“跟踪订单”以使导航更容易。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208165822.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/0208165822.png" alt="img"></p>
 <ul>
 <li>最后，还映射了跟踪订单与UI框架的依赖关系，这完成了订单处理子系统的包图。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208170035.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/0208170035.png" alt="img"></p>
 ]]></content>
       <categories>
         <category>UML知识</category>
@@ -1069,7 +1069,7 @@
 
 <h1 id="什么是类图"><a href="#什么是类图" class="headerlink" title="什么是类图"></a>什么是类图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-class-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-class-diagram/</a></p>
 <p>在软件工程中，统一建模语言(UML)中的类图是一种静态结构图，它通过显示系统的类、它们的属性、操作（或方法）以及对象之间的关系来描述系统的结构。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0110202740.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/0110202740.png" alt="img"></p>
 <h1 id="一、类图的目的"><a href="#一、类图的目的" class="headerlink" title="一、类图的目的"></a>一、类图的目的</h1><ol>
 <li>显示系统中分类器的静态结构。</li>
 <li>图为UML规定的其他结构图提供了基本的表示法。</li>
@@ -1096,7 +1096,7 @@
 <li>Class的属性：属性显示在第二个分区中，属性类型显示在冒号之后，</li>
 <li>Class的操作(方法)：操作显示在第三个分区中，它们是类提供的服务。方法的返回值类型显示在冒号之后，方法的参数类型显示在参数冒号之后。</li>
 </ol>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0110205210.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/0110205210.png" alt="img"></p>
 <p>Class的图形表示-MyClass如上图：</p>
 <ul>
 <li>MyClass有3个属性和2个操作</li>
@@ -1104,21 +1104,21 @@
 <li>操作(方法)op2: inout 表示输入输出型参数，冒号后int表示参数类型，最外层冒号表示方法返回值类型为float。</li>
 </ul>
 <h1 id="四、Class之间的关系"><a href="#四、Class之间的关系" class="headerlink" title="四、Class之间的关系"></a>四、Class之间的关系</h1><p>一个类(Class)可能与其他类(Class)的有一种或多种关系。关系可以是一下类型之一：</p>
-<h2 id="4-1-关系类型"><a href="#4-1-关系类型" class="headerlink" title="4.1 关系类型"></a>4.1 关系类型</h2><h3 id="4-1-1-继承-或泛化"><a href="#4-1-1-继承-或泛化" class="headerlink" title="4.1.1 继承(或泛化)"></a>4.1.1 继承(或泛化)</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0110211010.png" alt="img"></p>
+<h2 id="4-1-关系类型"><a href="#4-1-关系类型" class="headerlink" title="4.1 关系类型"></a>4.1 关系类型</h2><h3 id="4-1-1-继承-或泛化"><a href="#4-1-1-继承-或泛化" class="headerlink" title="4.1.1 继承(或泛化)"></a>4.1.1 继承(或泛化)</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/0110211010.png" alt="img"></p>
 <ul>
 <li>表示”is-a”关系，比如：”狗是不是动物”。</li>
 <li>抽象类名称以斜体显示。</li>
 <li>SubClass1 和 SubClass2 是 SuperClass 的子类。</li>
 <li>带有空心箭头的实线，从子类指向父类。</li>
 </ul>
-<h3 id="4-1-2-简单关联"><a href="#4-1-2-简单关联" class="headerlink" title="4.1.2 简单关联"></a>4.1.2 简单关联</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0110211156.png" alt="img"></p>
+<h3 id="4-1-2-简单关联"><a href="#4-1-2-简单关联" class="headerlink" title="4.1.2 简单关联"></a>4.1.2 简单关联</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/0110211156.png" alt="img"></p>
 <ul>
 <li>两个对等类之间的结构链接。</li>
 <li>Class1 和 Class2 之间存在关联。</li>
 <li>链接两个类的实线。</li>
 </ul>
 <h3 id="4-1-3-聚合"><a href="#4-1-3-聚合" class="headerlink" title="4.1.3 聚合"></a>4.1.3 聚合</h3><p>一种特殊类型的关联。它代表”一部分”关系。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0110211753.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/0110211753.png" alt="img"></p>
 <ul>
 <li>Class2 是 Class1 的一部分。</li>
 <li>Class2 的许多实例（用 * 表示）可以与 Class1 相关联。</li>
@@ -1126,19 +1126,19 @@
 <li>在关联端带有未填充菱形的实线连接到组合材料类。</li>
 </ul>
 <h3 id="4-1-4-合成"><a href="#4-1-4-合成" class="headerlink" title="4.1.4 合成"></a>4.1.4 合成</h3><p>一种特殊类型的聚合，其中部分被破坏，整体被破坏。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0110212135.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/0110212135.png" alt="img"></p>
 <ul>
 <li>Class2 的对象与 Class2 一起生存和死亡。</li>
 <li>Class2 不能独立存在。</li>
 <li>在关联端带有实心菱形的实线连接到组合材料类。</li>
 </ul>
-<h3 id="4-1-5-依赖"><a href="#4-1-5-依赖" class="headerlink" title="4.1.5 依赖"></a>4.1.5 依赖</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0110212529.png" alt="img"></p>
+<h3 id="4-1-5-依赖"><a href="#4-1-5-依赖" class="headerlink" title="4.1.5 依赖"></a>4.1.5 依赖</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/0110212529.png" alt="img"></p>
 <ul>
 <li>如果对一个类的定义的更改可能会导致另一个类的更改(但相反情况不适用)，则依赖关系存在于两个类之间。</li>
 <li>Class1 依赖于 Class2。</li>
 <li>带空心箭头的虚线相连接。</li>
 </ul>
-<h2 id="4-2-关系名称"><a href="#4-2-关系名称" class="headerlink" title="4.2 关系名称"></a>4.2 关系名称</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0110220238.png" alt="img"></p>
+<h2 id="4-2-关系名称"><a href="#4-2-关系名称" class="headerlink" title="4.2 关系名称"></a>4.2 关系名称</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/0110220238.png" alt="img"></p>
 <ul>
 <li><p>关系名称写在关联线的中间。</p>
 </li>
@@ -1170,7 +1170,7 @@
 <li><code>~</code>表示包属性或操作</li>
 </ul>
 <p>类的可见性示例：</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0111205150.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/0111205150.png" alt="img"></p>
 <p>在上图中：</p>
 <ul>
 <li>MyClass类中 attribute1 和 op1 是公开的，即public修饰的。</li>
@@ -1236,20 +1236,20 @@
 <li>要求：一个学生可以参加多门课程，一个课程又可以被许学生选择。</li>
 <li>在下面的示例中，类图(左侧)描述了上述静态模型要求的语句，而对象图(右侧)分别显示了软件工程和数据库管理课程的选择情况。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0111211448.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/0111211448.png" alt="img"></p>
 <h1 id="七、类图示例"><a href="#七、类图示例" class="headerlink" title="七、类图示例"></a>七、类图示例</h1><h2 id="7-1-聚合示例-计算机和部件"><a href="#7-1-聚合示例-计算机和部件" class="headerlink" title="7.1 聚合示例-计算机和部件"></a>7.1 聚合示例-计算机和部件</h2><ul>
 <li>聚合是表示”由”层次结构组成关联的特殊情况。</li>
 <li>聚合是父类，组件是子类。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0111212501.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/0111212501.png" alt="img"></p>
 <h2 id="7-2-继承示例-细胞分类"><a href="#7-2-继承示例-细胞分类" class="headerlink" title="7.2 继承示例-细胞分类"></a>7.2 继承示例-细胞分类</h2><ul>
 <li>继承是表示”某种”层次结构的关联的另一个特殊情况。</li>
 <li>继承通过引入分类法简化了分析模型。</li>
 <li>子类继承父类的属性和操作。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0111214831.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/0111214831.png" alt="img"></p>
 <h2 id="7-3-类图-关系图工具示例"><a href="#7-3-类图-关系图工具示例" class="headerlink" title="7.3 类图-关系图工具示例"></a>7.3 类图-关系图工具示例</h2><p>类图还可以添加类或关系的注释。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0111222048.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/0111222048.png" alt="img"></p>
 <p>在上面的示例中：我们可以通过阅读一下几点来解释上述类图的含义。</p>
 <ol>
 <li>Shape形状是一个抽象类。它以斜体显示。</li>
@@ -1289,9 +1289,9 @@
 
 <h1 id="什么是组件图"><a href="#什么是组件图" class="headerlink" title="什么是组件图"></a>什么是组件图</h1><p>源文连接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-component-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-component-diagram/</a></p>
 <p><code>UML</code>组件图用于对面向对象系统的物理方面进行建模，这些面向对象系统用于可视化、指定和记录基于组件的系统，还用于通过正向和逆向工程构建可执行系统。组件图本质上关注系统组件的类图，这些组件通常用于对系统的静态实现视图进行建模。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0112100152.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/0112100152.png" alt="img"></p>
 <h1 id="一、组件图概览"><a href="#一、组件图概览" class="headerlink" title="一、组件图概览"></a>一、组件图概览</h1><p>组件图将正在开发的实际系统分解成为各种高级功能。每个组件负责整个系统内的一个明确目标，并且仅在需要知道的基础上与其他基本元素进行交互。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0112103325.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/0112103325.png" alt="img"></p>
 <p>上面的示例显示了一个较大组件的内部组件：</p>
 <ul>
 <li>数据(账户和验证ID)通过右侧的端口流入组件，并转换为内部组件可以使用的格式。右侧的接口称为必需接口，它表示组件执行其职责所需的服务。</li>
@@ -1303,36 +1303,36 @@
 <li>带有组件图标的矩形</li>
 <li>带有原型文本和图标的矩形</li>
 </ol>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0112130332.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/0112130332.png" alt="img"></p>
 <h1 id="三、接口"><a href="#三、接口" class="headerlink" title="三、接口"></a>三、接口</h1><p>在下面的示例中显示了两种类型的组件接口：</p>
 <p>提供的接口符号末尾有一个完整的圆圈，表示组件提供的接口–这个”棒棒糖”符号是接口分类器实现关系的简写。</p>
 <p>末端只有半圆的必需接口符号（也称为套接字）表示组件需要的接口（在这两种情况下，接口的名称都放在接口符号本身附近）。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0112131142.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/0112131142.png" alt="img"></p>
 <p><strong>组件图示例-使用接口(订单系统)</strong></p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0112131709.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/0112131709.png" alt="img"></p>
 <h1 id="四、子系统"><a href="#四、子系统" class="headerlink" title="四、子系统"></a>四、子系统</h1><p>子系统分类器是组件分类器的专用版本。因此，子系统符号元素继承了与组件符号元素相同的所有规则。唯一的区别是子系统符号元素具有subsystem，而不是component的关键字。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0112133710.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/0112133710.png" alt="img"></p>
 <h1 id="五、端口"><a href="#五、端口" class="headerlink" title="五、端口"></a>五、端口</h1><p>端口使用沿系统或组件边缘的正方形表示。端口通常用于帮助公开组件所需和提供的接口。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0112164927.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/0112164927.png" alt="img"></p>
 <h1 id="六、组件关系"><a href="#六、组件关系" class="headerlink" title="六、组件关系"></a>六、组件关系</h1><p>从图形上看，组件图是顶点和弧的集合，通常包含组件、接口和依赖关系、聚合、约束、继承、关联和实现关系。它还可能包含注释和约束。</p>
 <h2 id="6-1-关联关系"><a href="#6-1-关联关系" class="headerlink" title="6.1 关联关系"></a>6.1 关联关系</h2><p>关联关系指定了类实例之间可能出现的语义关系。</p>
 <p>它至少有两个由属性表示的端点，每个端点都与类相关联。关联的多个端点可能具有相同的类型。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113092828.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/0113092828.png" alt="img"></p>
 <h2 id="6-2-组成关系"><a href="#6-2-组成关系" class="headerlink" title="6.2 组成关系"></a>6.2 组成关系</h2><p>组成关系是一种强聚合的形式，它要求在一个组成关系中，它所包含的部件只要要被实例化一次。</p>
 <p>如果组成关系的主体被删除，它的所有组成部分通常也会随之删除。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113093359.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/0113093359.png" alt="img"></p>
 <h2 id="6-3-聚合关系"><a href="#6-3-聚合关系" class="headerlink" title="6.3 聚合关系"></a>6.3 聚合关系</h2><p>它是一种一段被标记成空心菱形的关联关系，这种聚合关系是弱”拥有”关系，即A对象可以包含B对象，但B对象不是A对象的一部分。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113094207.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/0113094207.png" alt="img"></p>
 <h2 id="6-4-约束关系"><a href="#6-4-约束关系" class="headerlink" title="6.4 约束关系"></a>6.4 约束关系</h2><p>以自然语言文本或机器可读语言表达得条件或限制，用于声明元素的某些语义。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113094936.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/0113094936.png" alt="img"></p>
 <h2 id="6-5-依赖关系"><a href="#6-5-依赖关系" class="headerlink" title="6.5 依赖关系"></a>6.5 依赖关系</h2><p>依赖关系表示单个或一组模型元素需求其他模型元素来进行规范或实现。这意味着依赖元素的完整语义无论是在语义上还是结构上都依赖于提供方元素的定义。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113095540.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/0113095540.png" alt="img"></p>
 <h2 id="6-6-继承关系"><a href="#6-6-继承关系" class="headerlink" title="6.6 继承关系"></a>6.6 继承关系</h2><ul>
 <li>继承是更通用的类和更具体地类之间地分类关系。</li>
 <li>具体的类的每个实例也是通用类的间接实例。</li>
 <li>因此，具体的类继承了通用类的特征。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113095829.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/0113095829.png" alt="img"></p>
 <h1 id="七、建模"><a href="#七、建模" class="headerlink" title="七、建模"></a>七、建模</h1><h2 id="7-1-源代码建模"><a href="#7-1-源代码建模" class="headerlink" title="7.1 源代码建模"></a>7.1 源代码建模</h2><ul>
 <li>通过正向或逆向工程，识别感兴趣的源代码文件集，并将它们建模为组件，原型为文件。</li>
 <li>对于较大的系统，使用包来显示源代码文件组。</li>
@@ -1340,22 +1340,22 @@
 <li>使用依赖项对这些文件之间的编译依赖项进行建模。同样，使用工具来帮助生成和管理这些依赖项。</li>
 </ul>
 <p><strong>组件图示例——Java源代码</strong></p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113125500.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/0113125500.png" alt="img"></p>
 <p><strong>组件图示例-带有版本控制的C++代码</strong></p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113130004.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/0113130004.png" alt="img"></p>
 <h2 id="7-2-可执行版本建模"><a href="#7-2-可执行版本建模" class="headerlink" title="7.2 可执行版本建模"></a>7.2 可执行版本建模</h2><ul>
 <li>确定你要建模的组件集。通常，这将涉及位于一个节点上的部分或全部组件，或者这些组件集在系统中所有节点上的分布。</li>
 <li>考虑这个集合中每个组件的原型。对于大多数系统，您会发现少量不同种类的组件（例如可执行文件、库、表、文件和文档）。您可以使用<code>UML</code>的可扩展机制为这些原型提供视觉提示(线索)。</li>
 <li>对于该集合中的每个组件，请考虑其与其”邻居”的关系。大多数情况下，这将涉及由某些组件导出(实现)然后由其他组件导入(使用)的接口。如果要公开系统中的接口，请显示建模这些接口。如果您希望您的模型处于更高的抽象级别，请通过仅显示组件之间的依赖关系来消除这些关系。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113130357.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/0113130357.png" alt="img"></p>
 <h2 id="7-3-为物理数据库建模"><a href="#7-3-为物理数据库建模" class="headerlink" title="7.3 为物理数据库建模"></a>7.3 为物理数据库建模</h2><ul>
 <li>识别模型中代表逻辑数据库模式的类。</li>
 <li>选择将这些类映射到表的策略。您还需要考虑数据库的物理分布。您的映射策略将收到您希望数据在已部署系统上的位置的影响。</li>
 <li>要可视化、指定、构造和记录您的映射，请创建一个组件图，其中包含原型为表格的组件。</li>
 <li>在可能的情况下，使用工具帮助您将逻辑设计转变为物理设计。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113130837.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/0113130837.png" alt="img"></p>
 ]]></content>
       <categories>
         <category>UML知识</category>
@@ -1373,7 +1373,7 @@
 <h1 id="什么是轮廓图"><a href="#什么是轮廓图" class="headerlink" title="什么是轮廓图"></a>什么是轮廓图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-profile-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-profile-diagram/</a></p>
 <p>作为一种通用建模语言，<code>UML</code>为各种需求提供了稳定的基础。它没有为特定的应用领域或任何特定的技术定义。然而，在某些情况下，<code>UML</code>过于笼统，使用它需要付出相当大的努力。在这种情况下，使用针对给定领域优化的语言并因此提供特殊概念是有利的。</p>
 <p>轮廓图是统一建模语言(<code>UML</code>)中的一种结构图，它提供了一种通用扩展机制，用于为特定领域和平台定制<code>UML</code>模型。扩展机制允许以严格附加的方式细化标准语义，防止它们与标准语义相矛盾。配置文件是使用构造型、标签值定义和应用于特定模型元素(如类、属性、操作和活动)的约束来定义的。<code>Proflie</code>是这样的扩展集合，它们共同为特定领域(例如：航空航天、医疗保健、金融)或平台(J2EE、.NET)定制UML。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/assets/0209135706.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/0209135706.png" alt="img"></p>
 <h1 id="一、轮廓图的基本概念"><a href="#一、轮廓图的基本概念" class="headerlink" title="一、轮廓图的基本概念"></a>一、轮廓图的基本概念</h1><p>轮廓图基本上是一种可扩展性机制，它允许您通过添加新构建块、创建新属性和指定新语义来扩展和自定义<code>UML</code>，以使语言适合您的特定问题域。</p>
 <p>轮廓图具有三种类型的扩展机制：</p>
 <ul>
@@ -1384,7 +1384,7 @@
 <p><strong>构造型</strong></p>
 <p>构造型允许您增加<code>UML</code>的词汇量。您可以添加、创建新模型元素，这些元素源自现有元素，但具有适合您的问题域的特定属性。构造型用于引入新的构建块，这些构建块使用您的领域语言并且看起来很原始。它允许您引入新的图形符号。</p>
 <p>例如：在对网络进行建模时，您可能需要为<code>&lt;&lt;router&gt;&gt;</code>、<code>&lt;&lt;switches&gt;&gt;</code>、<code>&lt;&lt;hub&gt;&gt;</code>等提供符号。构造型允许您使这些东西看起来很原始。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/assets/0209140638.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/0209140638.png" alt="img"></p>
 <p><strong>标签值</strong></p>
 <p>标签值用于扩展<code>UML</code>的属性，以便您可以在模型元素的规范中添加附加信息。它允许您指定模型的关键字值对，关键字是属性。标签值以图形方式呈现为括在括号中的字符串。</p>
 <p>例如：考虑一个负责组装、测试和部署系统的发布团队。在这种情况下，有必要跟踪主子系统的版本和测试结果。标签值用于添加此类信息。</p>
@@ -1396,11 +1396,11 @@
 <li>作者身份</li>
 <li>等等</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/assets/0209144751.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/0209144751.png" alt="img"></p>
 <p><strong>约束</strong></p>
 <p>它们是用于指定必须始终保持为真的语义或条件的属性。它允许您通过添加新协议来扩展<code>UML</code>构建块的语义。在图形上，约束被呈现为字符串，包含在关联元素附件的括号中。</p>
 <p>例如：在实时系统的开发中，有必要用一些必要的信息来装饰模型，例如响应时间。约束定义了必须使用*{subset}<em>或</em>{xor}*的模型元素之间的关系。约束可以在属性、派生属性和关联上。它也可以附加到一个或多个显示为注释的模型元素上。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/assets/0209150930.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/0209150930.png" alt="img"></p>
 <h1 id="二、何时使用轮廓图-UML-Extension-Meacham"><a href="#二、何时使用轮廓图-UML-Extension-Meacham" class="headerlink" title="二、何时使用轮廓图-UML Extension Meacham"></a>二、何时使用轮廓图-UML Extension Meacham</h1><p>作为创建新元模型的替代方法，您还可以扩展<code>UML</code>元模型的扩展和修改，并根据您的要求修改<code>UML</code>元模型。在<code>UML</code>中，我们称其为基于原型和配置文件的轻量级扩展。<code>UML</code>轮廓图可以通过以下3中方式之一定义：</p>
 <ul>
 <li>创建新的元模型</li>
@@ -1414,21 +1414,21 @@
 <li>像MOF一样创建一个新的元模型</li>
 </ul>
 <p>轮廓图仅允许对现有元模型进行调整或定制。在<code>UML2.0</code>或更高版本中，还可以动态组合轮廓图，以便在同一模型上同时应用多个轮廓图。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/assets/0209152722.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/0209152722.png" alt="img"></p>
 <h1 id="四、轮廓图概览"><a href="#四、轮廓图概览" class="headerlink" title="四、轮廓图概览"></a>四、轮廓图概览</h1><p>在这个例子中，我们可以看到一个原型可以从一个或多个元类扩展。这种扩展关系被描述为一个带有实线和实心箭头的箭头。箭头从原型指向元类。</p>
 <p>在下图中，我们将EJB的轮廓图定义为一个包。bean本身从组件元模型扩展为抽象bean。抽象bean可以具体化为实体Bean或会话Bean。EJB由两种类型的远程接口和本地接口。EJB还包含一种称为JAR文件的特殊文件，用于存储Java代码的集合。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/assets/0209153636.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/0209153636.png" alt="img"></p>
 <h1 id="五、文本与图形图表构造型"><a href="#五、文本与图形图表构造型" class="headerlink" title="五、文本与图形图表构造型"></a>五、文本与图形图表构造型</h1><p>构造型可以是文本或图形标识。图表也可以代替普通的类框。例如：人们经常使用这3个原型类来标识建模软件MVC框架：</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/assets/0209155151.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/0209155151.png" alt="img"></p>
 <h1 id="六、UML轮廓图的其他流行用法"><a href="#六、UML轮廓图的其他流行用法" class="headerlink" title="六、UML轮廓图的其他流行用法"></a>六、UML轮廓图的其他流行用法</h1><p>每个技术目标，即编程语言、中间件、库或数据库都是定义UML轮廓图的自然候选者。举些例子：</p>
 <ul>
 <li><code>CORBA</code>、<code>EJB</code>、<code>C++ or JAVA</code>、<code>Oracle or Mysql</code> 等</li>
 </ul>
 <h1 id="七、轮廓图文件的构造型"><a href="#七、轮廓图文件的构造型" class="headerlink" title="七、轮廓图文件的构造型"></a>七、轮廓图文件的构造型</h1><p>要在特定应用程序中使用构造型，您必须首先集成包含构造型的配置文件。您可以使用虚线箭头而不是从应用程序包执行轮廓图文件的空心箭头来执行此操作。该箭头标有关键字<code>&lt;&lt;apply&gt;&gt;</code>。</p>
 <h1 id="八、轮廓图示例"><a href="#八、轮廓图示例" class="headerlink" title="八、轮廓图示例"></a>八、轮廓图示例</h1><h2 id="8-1-IT管理"><a href="#8-1-IT管理" class="headerlink" title="8.1 IT管理"></a>8.1 IT管理</h2><p>轮廓图文件应用于另一个包，以便是轮廓图文件中的构造型可用于该包。下图显示了应用于<code>ITManagement</code>包的网络、电信和软件轮廓图。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/assets/0209162342.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/0209162342.png" alt="img"></p>
 <h2 id="8-2-轮廓图示例2-EJB应用程序"><a href="#8-2-轮廓图示例2-EJB应用程序" class="headerlink" title="8.2 轮廓图示例2-EJB应用程序"></a>8.2 轮廓图示例2-EJB应用程序</h2><p>在下图中，我们将EJB的配置文件定义为一个包。bean本身从组件元模型扩展为抽象bean。抽象bean可以具体化为实体Bean或会话Bean。EJB有两种类型的远程接口和本地接口。EJB还包含一种称为JAR文件的特殊文件，用于存储Java代码的集合。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/assets/0209163344.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/0209163344.png" alt="img"></p>
 ]]></content>
       <categories>
         <category>UML知识</category>
@@ -1445,7 +1445,7 @@
 
 <h1 id="什么是通讯图"><a href="#什么是通讯图" class="headerlink" title="什么是通讯图"></a>什么是通讯图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-communication-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-communication-diagram/</a></p>
 <p><code>UML</code>通讯图，就像<code>序列图</code>（一种交互图）一样，显示了对象如何交互。通讯图是对象图的扩展，它显示了对象以及从一个到另一个传播的消息。除了对象之间的关联之外，通讯图还显示了对象相互发送的消息。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/assets/0216141258.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/0216141258.png" alt="img"></p>
 <h1 id="一、通讯图的目的"><a href="#一、通讯图的目的" class="headerlink" title="一、通讯图的目的"></a>一、通讯图的目的</h1><ul>
 <li>对传递用例和操作功能的对象或角色之间的消息传递进行建模</li>
 <li>系统架构设计中的模型机制</li>
@@ -1461,8 +1461,8 @@
 <li>Object1 首先向 Object2 发送消息 message1，Object2 依次向 ObjectN-1 发送消息 message2，以此类推。</li>
 <li>对象发送给自己的消息被表示为循环（例如，消息 message5）。</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/assets/0216145729.png" alt="img"></p>
-<h1 id="三、通讯图示例"><a href="#三、通讯图示例" class="headerlink" title="三、通讯图示例"></a>三、通讯图示例</h1><h2 id="3-1-酒店预订"><a href="#3-1-酒店预订" class="headerlink" title="3.1 酒店预订"></a>3.1 酒店预订</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/assets/0216145820.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/0216145729.png" alt="img"></p>
+<h1 id="三、通讯图示例"><a href="#三、通讯图示例" class="headerlink" title="三、通讯图示例"></a>三、通讯图示例</h1><h2 id="3-1-酒店预订"><a href="#3-1-酒店预订" class="headerlink" title="3.1 酒店预订"></a>3.1 酒店预订</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/0216145820.png" alt="img"></p>
 <ul>
 <li>通讯图中的每条消息都有一个序列号。</li>
 <li>顶级消息编号为 1。</li>
@@ -1471,9 +1471,9 @@
 <h2 id="3-2-通讯图与序列图"><a href="#3-2-通讯图与序列图" class="headerlink" title="3.2 通讯图与序列图"></a>3.2 通讯图与序列图</h2><p>通讯图和时序图类似。它们在语义上是等价的，即呈现相同的信息，您可以将通讯转换为序列图，反之亦然。它们之间的主要区别在于，通讯图是按空间排列元素，顺序图是按时间排列。</p>
 <p>在两种类型的交互图中，序列图的使用似乎远远超过通讯图。那么，为什么要使用通讯图呢？首先，它们对于可视化协作执行特定任务的对象之间的关系非常有用。这很难从序列图中确定。此外，通讯图还可以帮助您确定静态模型（即类图）的准确性。</p>
 <p><strong>示例 - 序列图与通讯（库项目过期）</strong></p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/assets/0216145939.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/0216145939.png" alt="img"></p>
 <p>如果你在 Visual Paradigm 中打开这个序列图，你可以自动生成如下图所示的通讯图：</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/assets/0216150000.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/0216150000.png" alt="img"></p>
 <p><strong>注意</strong>：如果您比较这两个图表，您会发现它们都包含对象和消息。很明显，通过查看序列图更容易确定消息的时间顺序，通过查看通讯图更容易看到对象之间的关系。</p>
 <h2 id="3-3-通讯图元素"><a href="#3-3-通讯图元素" class="headerlink" title="3.3 通讯图元素"></a>3.3 通讯图元素</h2><p><strong>参与协作的对象</strong>有两种形式：供应商和客户。</p>
 <ul>
@@ -1494,14 +1494,14 @@
 <li>此序列号指示消息的时间顺序。</li>
 </ul>
 <p>例如下图的通讯图中，可以按照序号来确定对象之间的消息顺序：</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/assets/0216150124.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/0216150124.png" alt="img"></p>
 <h2 id="3-4-了解通讯图中的消息编号"><a href="#3-4-了解通讯图中的消息编号" class="headerlink" title="3.4 了解通讯图中的消息编号"></a>3.4 了解通讯图中的消息编号</h2><ul>
 <li>通讯图中的第一条消息始终编号为 1，第二条消息编号为 2，依此类推。</li>
 <li>您可以通过将小数点和递增数字添加到父消息的序列号来指示消息嵌套在父消息之下。</li>
 </ul>
 <p>例如：</p>
 <p>基于上面的示例，“CalAmtCanBorrow”消息是“EnquireBorrower”下的第一个嵌套消息，并被赋予序列号 1.1。“EnquireBorrower”下的第二个嵌套消息是“DisplayInvalidMsg”，因此它的序列号为 1.2。</p>
-<h2 id="3-5-示例-从序列图到通讯图"><a href="#3-5-示例-从序列图到通讯图" class="headerlink" title="3.5 示例 - 从序列图到通讯图"></a>3.5 示例 - 从序列图到通讯图</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/assets/0216150206.png" alt="img"></p>
+<h2 id="3-5-示例-从序列图到通讯图"><a href="#3-5-示例-从序列图到通讯图" class="headerlink" title="3.5 示例 - 从序列图到通讯图"></a>3.5 示例 - 从序列图到通讯图</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/0216150206.png" alt="img"></p>
 <p><strong>请注意</strong>：</p>
 <ul>
 <li><strong>控制焦点</strong>：也称为<strong>执行发生/激活</strong>。它在生命线上显示为又高又细的矩形，表示元素<strong>执行操作</strong>的时间段。</li>
@@ -1524,7 +1524,7 @@
 
 <h1 id="什么是部署图"><a href="#什么是部署图" class="headerlink" title="什么是部署图"></a>什么是部署图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-deployment-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-deployment-diagram/</a></p>
 <p><code>UML</code>部署图是现实运行时处理节点的配置以及在它们上的组件的图。部署图是一种结构图，用于面向对象系统的物理方面进行建模。它们通常用于对系统的静态部署视图(硬件拓扑)进行建模。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/assets/0113134940.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/0113134940.png" alt="img"></p>
 <h1 id="一、何时使用部署图"><a href="#一、何时使用部署图" class="headerlink" title="一、何时使用部署图"></a>一、何时使用部署图</h1><ul>
 <li>新添加的系统需要与哪些现有系统进行交互或集成？</li>
 <li>系统需要有多健壮（例如：系统故障时的冗余硬件）？</li>
@@ -1554,14 +1554,14 @@
 <li>关联关系</li>
 <li>也可能包含注释和约束</li>
 </ul>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/assets/0113191401.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/0113191401.png" alt="img"></p>
 <h1 id="四、建模"><a href="#四、建模" class="headerlink" title="四、建模"></a>四、建模</h1><h2 id="4-1-为嵌入式系统建模的步骤"><a href="#4-1-为嵌入式系统建模的步骤" class="headerlink" title="4.1 为嵌入式系统建模的步骤"></a>4.1 为嵌入式系统建模的步骤</h2><ol>
 <li>识别系统特有的设备和节点。</li>
 <li>通过使用<code>UML</code>的可扩展性机制来定义具有适当图标的系统特定原型，提供视觉提示，特别是对于不寻常的设备。至少，您需要区分处理器（包含软件组件）和设备（在抽象级别，不直接包含软件）。</li>
 <li>在部署图中对这些处理器和设备之间的关系进行建模。同样，指定系统部署图中的组件与系统部署图中的节点之间的关系。</li>
 <li>如有必要，通过使用更详细的部署图对其结构进行建模来扩展任何只能设备。</li>
 </ol>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/assets/0113202805.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/0113202805.png" alt="img"></p>
 <h2 id="4-2-为客户端-服务器系统建模的步骤"><a href="#4-2-为客户端-服务器系统建模的步骤" class="headerlink" title="4.2 为客户端/服务器系统建模的步骤"></a>4.2 为客户端/服务器系统建模的步骤</h2><ol>
 <li>识别代表系统客户端和服务器处理器的节点。</li>
 <li>突出显示与系统行为密切相关的那些设备。例如，您需要对特殊设备（例如信用卡阅读器、标记阅读器和显示器以外的显示设备）进行建模。因为它们在系统硬件拓扑中的位置可能在体系结构上很重要。</li>
@@ -1569,9 +1569,9 @@
 <li>在部署图中对这些节点的拓扑进行建模。同样，指定系统部署图中的组件与系统部署图中的节点之间的关系。</li>
 </ol>
 <p>该示例显示了人力资源系统的拓扑结构，该系统遵循经典的客户端/服务器架构。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/assets/0113204850.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/0113204850.png" alt="img"></p>
 <p><strong>TCP/IP 客户端/服务器示例</strong></p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/assets/0114110957.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/0114110957.png" alt="img"></p>
 <h2 id="4-3-为分布式系统建模"><a href="#4-3-为分布式系统建模" class="headerlink" title="4.3 为分布式系统建模"></a>4.3 为分布式系统建模</h2><ol>
 <li>识别系统的设备和处理器，就像更简单的客户端/服务器系统一样。</li>
 <li>如果您需要推理系统网络的性能或网络更改的影响，请务必将这些通信设备建模到足以进行这些评估的详细程度。</li>
@@ -1581,8 +1581,8 @@
 <li>在对完全分布式系统进行建模时，通常会将网络本身具体化为节点。即Internet、LAN、WAN作为节点。</li>
 </ol>
 <p>该示例显示了一个完全分布式系统的拓扑。</p>
-<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/assets/0114112446.png" alt="img"></p>
-<h2 id="4-4-企业分布式系统"><a href="#4-4-企业分布式系统" class="headerlink" title="4.4 企业分布式系统"></a>4.4 企业分布式系统</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/assets/0114113301.png" alt="img"></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/0114112446.png" alt="img"></p>
+<h2 id="4-4-企业分布式系统"><a href="#4-4-企业分布式系统" class="headerlink" title="4.4 企业分布式系统"></a>4.4 企业分布式系统</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/0114113301.png" alt="img"></p>
 <h2 id="4-5-部署规划清单"><a href="#4-5-部署规划清单" class="headerlink" title="4.5 部署规划清单"></a>4.5 部署规划清单</h2><p>当您为您的公司起草部署计划时，您可能会发现您不知道从哪里开始或应该关注什么。以下清单可能会为您提供一些有关规划部署的想法：</p>
 <ul>
 <li>您的系统将如何安装？<ol>
