@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"warrent-b.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false,"dimmer":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="该篇文章是UML知识的扩充。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是序列图">
+<meta property="og:url" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/index.html">
+<meta property="og:site_name" content="Warrent&#39;s Blog">
+<meta property="og:description" content="该篇文章是UML知识的扩充。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0214104513.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216114013.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216114742.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115039.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115126.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115156.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115225.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115249.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115315.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115344.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115510.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115541.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115603.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115734.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216135531.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216140338.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216140425.png">
+<meta property="article:published_time" content="2022-02-16T10:17:40.000Z">
+<meta property="article:modified_time" content="2022-02-16T10:23:04.000Z">
+<meta property="article:author" content="warrent">
+<meta property="article:tag" content="UML知识">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0214104513.png">
+
+<link rel="canonical" href="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>什么是序列图 | Warrent's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Warrent's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">20</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="warrent">
+      <meta itemprop="description" content="Get busy living or Get busy dying">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Warrent's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          什么是序列图
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-02-16 18:17:40" itemprop="dateCreated datePublished" datetime="2022-02-16T18:17:40+08:00">2022-02-16</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>该篇文章是<span class="label [info]">UML知识</span>的扩充。</p>
+<span id="more"></span>
+
+<h1 id="什么是序列图"><a href="#什么是序列图" class="headerlink" title="什么是序列图"></a>什么是序列图</h1><p>源文链接：<a target="_blank" rel="noopener" href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-sequence-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-sequence-diagram/</a></p>
+<p><code>UML</code>序列图是详细说明如何执行操作的交互图。它们捕获协作上下文中对象之间的交互。序列图是时间焦点，它们通过使用图表的垂直轴来表示时间，什么消息被发送以及何时发送，从而直观地显示交互的顺序。</p>
+<p>序列图捕获：</p>
+<ul>
+<li>在实现用例或操作（实例图或通用图）的协作中发送的交互。</li>
+<li>系统用户与系统之间、系统与其他系统之间或子系统之间的高级交互（有时称为系统序列图）</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0214104513.png" alt="img"></p>
+<h1 id="一、序列图的目的"><a href="#一、序列图的目的" class="headerlink" title="一、序列图的目的"></a>一、序列图的目的</h1><ul>
+<li>对系统中活动对象之间的高级交互进行建模</li>
+<li>对实现用例的协作中的对象实例之间的交互进行建模</li>
+<li>对实现操作的协作中的对象之间的交互进行建模</li>
+<li>对通用交互(显示交互的所有可能路径)或交互的特定实例(仅显示交互的一个路径)建模</li>
+</ul>
+<h1 id="二、序列图概览"><a href="#二、序列图概览" class="headerlink" title="二、序列图概览"></a>二、序列图概览</h1><p>序列图显示元素随着时间的推移交互，它们根据对象(水平)和时间(垂直)组织：</p>
+<p><strong>对象尺寸</strong></p>
+<ul>
+<li>横轴显示交互中涉及的元素</li>
+<li>按照惯例，操作中涉及的对象式按照它们参与消息序列的时间从左到右列出的。但是，横轴上的元素可能以任意顺序出现</li>
+</ul>
+<p><strong>时间维度</strong></p>
+<ul>
+<li>垂直轴代表页面下方的时间进程(或进度)</li>
+</ul>
+<p>注意：序列图中的事件完全是关于排序，而不是持续时间。交互图中的垂直空间与交互的持续时间无关。</p>
+<h1 id="三、序列图示例"><a href="#三、序列图示例" class="headerlink" title="三、序列图示例"></a>三、序列图示例</h1><h2 id="3-1-酒店系统"><a href="#3-1-酒店系统" class="headerlink" title="3.1 酒店系统"></a>3.1 酒店系统</h2><p>序列图是一个交互图，详细说明了操作是如何执行的——发送什么消息以及何时发送。序列图是按时间组织的。随着您向下浏览页面，时间会逐渐增加。操作中涉及的对象按照它们参与消息序列的时间从左到右列出。</p>
+<p>下面是进行酒店预订的序列图。启动消息序列的对象是一个预约窗口。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216114013.png" alt="img"></p>
+<p>注意：类和对象图是静态模型视图。交互图是动态的。它们描述了对象如何协作。</p>
+<h1 id="四、序列图符号"><a href="#四、序列图符号" class="headerlink" title="四、序列图符号"></a>四、序列图符号</h1><h2 id="4-1-演员-角色-符号"><a href="#4-1-演员-角色-符号" class="headerlink" title="4.1 演员(角色)符号"></a>4.1 演员(角色)符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216114742.png" alt="img"></p>
+<ul>
+<li>与主体交互的实体所扮演的一种角色（例如：通过交换信息和数据）</li>
+<li>在主体之外（即，在某种意义上，参与者的实例不是其对应主体的实例的一部分）。</li>
+<li>代表人类用户、外部硬件或其他主体所扮演的角色。</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>参与者不一定代表特定的物理实体，而是某个实体的特定角色</li>
+<li>一个人可以扮演几个不同的演员（角色），相反，一个给定的角色可能由多个不同的人扮演。</li>
+</ul>
+<h2 id="4-2-生命线符号"><a href="#4-2-生命线符号" class="headerlink" title="4.2 生命线符号"></a>4.2 生命线符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115039.png" alt="img"></p>
+<ul>
+<li>生命线代表交互中的个人参与者。</li>
+</ul>
+<h2 id="4-3-生命周期符号"><a href="#4-3-生命周期符号" class="headerlink" title="4.3 生命周期符号"></a>4.3 生命周期符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115126.png" alt="img"></p>
+<ul>
+<li>生命线上的细矩形表示元素执行操作的时间段。</li>
+<li>矩形的顶部和底部分别与启动和完成时间对齐</li>
+</ul>
+<h2 id="4-4-请求信息符号"><a href="#4-4-请求信息符号" class="headerlink" title="4.4 请求信息符号"></a>4.4 请求信息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115156.png" alt="img"></p>
+<ul>
+<li>消息定义了交互生命线之间的特定通信。</li>
+<li>调用消息是一种表示目标生命线操作调用的消息。</li>
+</ul>
+<h2 id="4-5-返回信息符号"><a href="#4-5-返回信息符号" class="headerlink" title="4.5 返回信息符号"></a>4.5 返回信息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115225.png" alt="img"></p>
+<ul>
+<li>消息定义了交互生命线之间的特定通信。</li>
+<li>返回消息是一种消息，表示将信息传递回对应的先前消息的调用者。</li>
+</ul>
+<h2 id="4-6-自我信息符号"><a href="#4-6-自我信息符号" class="headerlink" title="4.6 自我信息符号"></a>4.6 自我信息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115249.png" alt="img"></p>
+<ul>
+<li>消息定义了交互生命线之间的特定通信。</li>
+<li>自我消息是一种消息，代表同一生命线消息的调用。</li>
+</ul>
+<h2 id="4-7-递归信息符号"><a href="#4-7-递归信息符号" class="headerlink" title="4.7 递归信息符号"></a>4.7 递归信息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115315.png" alt="img"></p>
+<ul>
+<li>消息定义了交互生命线之间的特定通信。</li>
+<li>递归消息是一种表示同一生命线消息的调用的消息。它的目标指向调用消息的激活之上的激活。</li>
+</ul>
+<h2 id="4-8-创建消息符号"><a href="#4-8-创建消息符号" class="headerlink" title="4.8 创建消息符号"></a>4.8 创建消息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115344.png" alt="img"></p>
+<ul>
+<li>消息定义了交互生命线之间的特定通信。</li>
+<li>创建消息是一种表示（目标）生命线实例化的消息。</li>
+</ul>
+<h2 id="4-9-销毁消息符号"><a href="#4-9-销毁消息符号" class="headerlink" title="4.9 销毁消息符号"></a>4.9 销毁消息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115510.png" alt="img"></p>
+<ul>
+<li>消息定义了交互生命线之间的特定通信。</li>
+<li>销毁消息是一种表示销毁目标生命线生命周期的请求的消息。</li>
+</ul>
+<h2 id="4-10-持续时间消息符号"><a href="#4-10-持续时间消息符号" class="headerlink" title="4.10 持续时间消息符号"></a>4.10 持续时间消息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115541.png" alt="img"></p>
+<ul>
+<li>消息定义了交互生命线之间的特定通信。</li>
+<li>持续时间消息显示消息调用的两个时间点之间的距离。</li>
+</ul>
+<h2 id="4-11-笔记符号"><a href="#4-11-笔记符号" class="headerlink" title="4.11 笔记符号"></a>4.11 笔记符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115603.png" alt="img"></p>
+<p>注释（注释）提供了将各种注释附加到元素的能力。注释不带有语义力量，但可能包含对建模者有用的信息。</p>
+<h2 id="4-12-信息和控制焦点"><a href="#4-12-信息和控制焦点" class="headerlink" title="4.12 信息和控制焦点"></a>4.12 信息和控制焦点</h2><ul>
+<li>事件是交互中发生某事的任何点。</li>
+<li>控制焦点：也称为执行发生，一次执行发生</li>
+<li>它在生命线上显示为又高又细的矩形</li>
+<li>它表示元素执行操作的时间段。矩形的顶部和底部分别与开始时间和完成时间对齐。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115734.png" alt="img"></p>
+<h1 id="五、序列片段"><a href="#五、序列片段" class="headerlink" title="五、序列片段"></a>五、序列片段</h1><ul>
+<li><code>UML2.0</code>引入了序列(或交互)片段。序列片段使创建和维护准确的序列图变得更加容易。</li>
+<li>序列片段表示为一个框，称为组合片段，它将部分交互包含在序列图中。</li>
+<li>片段运算符(在左上角)指示片段的类型。</li>
+<li>片段类型：ref、assert、loop、break、alt、opt、neg</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216135531.png" alt="img"></p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>片段类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>alt</td>
+<td>替代多个片段：只有条件为真的片段才会执行。</td>
+</tr>
+<tr>
+<td>opt</td>
+<td>可选：片段仅在提供的条件为真时执行。相当于只有一条方向的 alt。</td>
+</tr>
+<tr>
+<td>par</td>
+<td>并行：每个片段并行运行。</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>循环：片段可能执行多次，守卫指示迭代的基础。</td>
+</tr>
+<tr>
+<td>region</td>
+<td>临界区：片段一次只能有一个线程执行。</td>
+</tr>
+<tr>
+<td>neg</td>
+<td>否定：片段显示无效交互。</td>
+</tr>
+<tr>
+<td>ref</td>
+<td>参考：指在另一个图表上定义的交互。绘制框架以覆盖交互中涉及的生命线。您可以定义参数和返回值。</td>
+</tr>
+<tr>
+<td>sd</td>
+<td>序列图：用于包围整个序列图。</td>
+</tr>
+</tbody></table>
+<p>注意：</p>
+<ul>
+<li>可以组合帧以捕获例如循环或分支。</li>
+<li>组合片段关键字：alt、opt、break、par、seq、strict、neg、critical、ignore、conside、assert和loop。</li>
+<li>约束通常用于显示消息的时序约束。它们可以应用于一条消息的时间或消息之间的间隔。</li>
+</ul>
+<h2 id="5-1-组合片段示例"><a href="#5-1-组合片段示例" class="headerlink" title="5.1 组合片段示例"></a>5.1 组合片段示例</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216140338.png" alt="img"></p>
+<h2 id="5-2-用于建模用例场景的序列图"><a href="#5-2-用于建模用例场景的序列图" class="headerlink" title="5.2 用于建模用例场景的序列图"></a>5.2 用于建模用例场景的序列图</h2><p>用户需求被捕获为细化为场景的用例。用例是外部参与者和系统之间交互的集合。在<code>UML</code>中，一个用例是：</p>
+<p><em>“系统（或实体）可以执行的一系列动作的规范，包括变体，与系统的参与者交互。”</em></p>
+<p>场景是通过用例的一条路径或流程，它描述了在系统的一个特定执行期间发生的一系列事件，通常由序列图表示。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216140425.png" alt="img"></p>
+<h2 id="5-3-序列图-代码之前的模型"><a href="#5-3-序列图-代码之前的模型" class="headerlink" title="5.3 序列图 - 代码之前的模型"></a>5.3 序列图 - 代码之前的模型</h2><p>序列图可能有点接近代码级别，那么为什么不直接编写该算法而不是将其绘制为序列图呢？</p>
+<ul>
+<li>一个好的序列图还是有点高于真实代码的水平</li>
+<li>序列图是语言中立的</li>
+<li>非编码人员可以做序列图</li>
+<li>作为一个团队更容易做序列图</li>
+<li>可用于测试和/或<a target="_blank" rel="noopener" href="https://www.visual-paradigm.com/features/ux-design-and-wireframe-tools">UX 线框图</a></li>
+</ul>
+
+
+    
+    
+    
+
+	
+		<div>
+			<div>
+  
+    <div style="text-align:center;color:#bfbfbf;font-size:16px;">
+      <span>-------- The End </span>
+      <i class="fa fa-heart"></i>
+      <span> Thanks For Reading --------</span>
+    </div>
+  
+</div>
+		</div>
+	
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\UML知识\" rel="bookmark">UML类图知识</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\什么是交互概述图\" rel="bookmark">什么是交互概述图</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\什么是复合结构图\" rel="bookmark">什么是复合结构图</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\什么是对象图\" rel="bookmark">什么是对象图</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\什么是时序图\" rel="bookmark">什么是时序图</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/UML%E7%9F%A5%E8%AF%86/" rel="tag"># UML知识</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/" rel="prev" title="什么是状态图">
+      <i class="fa fa-chevron-left"></i> 什么是状态图
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/" rel="next" title="什么是通讯图">
+      什么是通讯图 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+	
+	
+	
+		<div class="post-nav">
+			
+				<div class="post-nav-prev post-nav-item">
+					<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/" rel="prev" title="什么是通讯图">
+						
+					</a>
+				</div>
+				
+			<span class="post-nav-divider"></span>
+			
+				<div class="post-nav-next post-nav-item">
+					<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/" rel="next" title="什么是状态图">
+						
+					</a>
+				</div>
+				
+		</div>
+	
+</article>
+  
+  
+  
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE"><span class="nav-text">什么是序列图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%BA%8F%E5%88%97%E5%9B%BE%E7%9A%84%E7%9B%AE%E7%9A%84"><span class="nav-text">一、序列图的目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%BA%8F%E5%88%97%E5%9B%BE%E6%A6%82%E8%A7%88"><span class="nav-text">二、序列图概览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%BA%8F%E5%88%97%E5%9B%BE%E7%A4%BA%E4%BE%8B"><span class="nav-text">三、序列图示例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E9%85%92%E5%BA%97%E7%B3%BB%E7%BB%9F"><span class="nav-text">3.1 酒店系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%BA%8F%E5%88%97%E5%9B%BE%E7%AC%A6%E5%8F%B7"><span class="nav-text">四、序列图符号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-%E6%BC%94%E5%91%98-%E8%A7%92%E8%89%B2-%E7%AC%A6%E5%8F%B7"><span class="nav-text">4.1 演员(角色)符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-%E7%94%9F%E5%91%BD%E7%BA%BF%E7%AC%A6%E5%8F%B7"><span class="nav-text">4.2 生命线符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AC%A6%E5%8F%B7"><span class="nav-text">4.3 生命周期符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-%E8%AF%B7%E6%B1%82%E4%BF%A1%E6%81%AF%E7%AC%A6%E5%8F%B7"><span class="nav-text">4.4 请求信息符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-5-%E8%BF%94%E5%9B%9E%E4%BF%A1%E6%81%AF%E7%AC%A6%E5%8F%B7"><span class="nav-text">4.5 返回信息符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-6-%E8%87%AA%E6%88%91%E4%BF%A1%E6%81%AF%E7%AC%A6%E5%8F%B7"><span class="nav-text">4.6 自我信息符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-7-%E9%80%92%E5%BD%92%E4%BF%A1%E6%81%AF%E7%AC%A6%E5%8F%B7"><span class="nav-text">4.7 递归信息符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-8-%E5%88%9B%E5%BB%BA%E6%B6%88%E6%81%AF%E7%AC%A6%E5%8F%B7"><span class="nav-text">4.8 创建消息符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-9-%E9%94%80%E6%AF%81%E6%B6%88%E6%81%AF%E7%AC%A6%E5%8F%B7"><span class="nav-text">4.9 销毁消息符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-10-%E6%8C%81%E7%BB%AD%E6%97%B6%E9%97%B4%E6%B6%88%E6%81%AF%E7%AC%A6%E5%8F%B7"><span class="nav-text">4.10 持续时间消息符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-11-%E7%AC%94%E8%AE%B0%E7%AC%A6%E5%8F%B7"><span class="nav-text">4.11 笔记符号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-12-%E4%BF%A1%E6%81%AF%E5%92%8C%E6%8E%A7%E5%88%B6%E7%84%A6%E7%82%B9"><span class="nav-text">4.12 信息和控制焦点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E5%BA%8F%E5%88%97%E7%89%87%E6%AE%B5"><span class="nav-text">五、序列片段</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-%E7%BB%84%E5%90%88%E7%89%87%E6%AE%B5%E7%A4%BA%E4%BE%8B"><span class="nav-text">5.1 组合片段示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-%E7%94%A8%E4%BA%8E%E5%BB%BA%E6%A8%A1%E7%94%A8%E4%BE%8B%E5%9C%BA%E6%99%AF%E7%9A%84%E5%BA%8F%E5%88%97%E5%9B%BE"><span class="nav-text">5.2 用于建模用例场景的序列图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-%E5%BA%8F%E5%88%97%E5%9B%BE-%E4%BB%A3%E7%A0%81%E4%B9%8B%E5%89%8D%E7%9A%84%E6%A8%A1%E5%9E%8B"><span class="nav-text">5.3 序列图 - 代码之前的模型</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="warrent"
+      src="/images/head.jpg">
+  <p class="site-author-name" itemprop="name">warrent</p>
+  <div class="site-description" itemprop="description">Get busy living or Get busy dying</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/warrent-B" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;warrent-B" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2200316678@qq.com" title="E-Mail → mailto:2200316678@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Link
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://warrent-b.github.io/" title="https:&#x2F;&#x2F;warrent-B.github.io">warrent</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+	  
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">warrent</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">50k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">46 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="user"></i>
+      </span>
+    <span class="site-uv">
+		我的第 <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 位朋友，
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-heart"></i>
+      </span>
+    <span class="site-pv">
+		历经 <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次回眸才与你相遇
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+ 
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+<script>
+  function timer() {
+    var ages = moment.preciseDiff(moment(),moment(20211105,"YYYYMMDD"));
+    ages = ages.replace(/years?/, "年");
+    ages = ages.replace(/months?/, "月");
+    ages = ages.replace(/days?/, "天");
+    ages = ages.replace(/hours?/, "小时");
+    ages = ages.replace(/minutes?/, "分");
+    ages = ages.replace(/seconds?/, "秒");
+    ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+    div.innerHTML = `本站已运行 ${ages}`;
+  }
+  var div = document.createElement("div");
+  //插入到copyright之后
+  var copyright = document.querySelector(".copyright");
+  document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+  timer();
+  setInterval("timer()",1000)
+</script>
+
+
+</body>
+</html>

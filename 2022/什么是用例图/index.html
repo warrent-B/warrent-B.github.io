@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"warrent-b.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false,"dimmer":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="该篇文章是UML知识的扩充。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是用例图">
+<meta property="og:url" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/index.html">
+<meta property="og:site_name" content="Warrent&#39;s Blog">
+<meta property="og:description" content="该篇文章是UML知识的扩充。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209174042.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180046.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180208.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180304.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180409.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180522.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210093248.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210093450.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210093647.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210100635.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210100940.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210101316.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210101856.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210105646.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210110639.png">
+<meta property="article:published_time" content="2022-02-16T10:11:22.000Z">
+<meta property="article:modified_time" content="2022-02-16T10:23:04.000Z">
+<meta property="article:author" content="warrent">
+<meta property="article:tag" content="UML知识">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209174042.png">
+
+<link rel="canonical" href="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>什么是用例图 | Warrent's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Warrent's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">20</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="warrent">
+      <meta itemprop="description" content="Get busy living or Get busy dying">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Warrent's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          什么是用例图
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-02-16 18:11:22" itemprop="dateCreated datePublished" datetime="2022-02-16T18:11:22+08:00">2022-02-16</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>该篇文章是<span class="label [info]">UML知识</span>的扩充。</p>
+<span id="more"></span>
+
+<h1 id="什么是用例图"><a href="#什么是用例图" class="headerlink" title="什么是用例图"></a>什么是用例图</h1><p>源文链接：<a target="_blank" rel="noopener" href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-use-case-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-use-case-diagram/</a></p>
+<p>以下是<code>UML</code>世界中经常被问到的一些问题：什么是用例图？为什么要用用例图？或者简单地说，为什么用例？有些人不知道用例是什么，而其他人则低估了用例在开发好的软件产品中的有用性。用例图被低估了吗？希望你看完这篇文章后能够找到答案。</p>
+<p>那么什么是用例图呢？<code>UML</code>用例图是未开发的新软件程序的系统/软件需求的主要形式。用例指定了预期的行为(什么)，而不是实线它的确切方法(如何)。用例一旦指定，就可以用文本和视觉表示(即用例图)表示。用例建模的一个关键概念是它帮助我们从最终用户的角度涉及系统。它是一种通过指定所有外部可见的系统行为来以用户的方式传达系统行为的有效技术。</p>
+<p>用例图通常很简单。它没有显示用例的详细信息：</p>
+<ul>
+<li>它只总结了用例、参与者和系统之间的一些关系。</li>
+<li>它没有显示为实线每个用例的目标而执行的步骤的顺序。</li>
+</ul>
+<p>如前所述，用例图应该很简单，并且只包含几个形状。如果您的用例包含超过20个用例，则您可能误用了用例图。</p>
+<p>下图显示了<code>UML</code>图层结构和<code>UML</code>用例图的定位。如您所见，用例图属于行为图家族。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209174042.png" alt="img"></p>
+<p>注意：</p>
+<ul>
+<li>有许多不同的<code>UML</code>图用于不同的目的(从上面的<code>UML</code>图树可以看出)。您可以在其他<code>UML</code>图类型和文档中描述这些细节，并将它们与用例链接起来。</li>
+<li>用例仅代表系统的功能需求。其他需求，如业务规则、服务质量需求和实线约束，必须再次用其他<code>UML</code>图单独表示。</li>
+</ul>
+<h1 id="一、用例的起源"><a href="#一、用例的起源" class="headerlink" title="一、用例的起源"></a>一、用例的起源</h1><p>如今，用例建模通过与<code>UML</code>相关联，尽管它是在<code>UML</code>存在之前引入的。其简史如下：</p>
+<ul>
+<li>1986年，<em>Ivar Jacobson</em>首次制定了用于指定用例的文本和视觉建模技术。</li>
+<li>1992年，他与人合著了《面向对象的软件工程———用例驱动方法》一书，帮助普及了捕获功能需求的技术，尤其是在软件开发中。</li>
+</ul>
+<h1 id="二、用例图的目的"><a href="#二、用例图的目的" class="headerlink" title="二、用例图的目的"></a>二、用例图的目的</h1><p>用例图通常在开发的早期阶段开发，人们经常将用例建模用于以下目的：</p>
+<ul>
+<li>指定系统的上下文</li>
+<li>捕获系统的需求</li>
+<li>验证系统架构</li>
+<li>推动实施并生成测试用例</li>
+<li>由分析师与领域专家共同开发</li>
+</ul>
+<h1 id="三、用例图概览"><a href="#三、用例图概览" class="headerlink" title="三、用例图概览"></a>三、用例图概览</h1><p>用统一建模语言定义了标准形式的用例图，如下面的用例图示例所示：</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180046.png" alt="img"></p>
+<h2 id="3-1-用例图使用的符号"><a href="#3-1-用例图使用的符号" class="headerlink" title="3.1 用例图使用的符号"></a>3.1 用例图使用的符号</h2><h3 id="3-1-1-角色"><a href="#3-1-1-角色" class="headerlink" title="3.1.1 角色"></a>3.1.1 角色</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180208.png" alt="img"></p>
+<ul>
+<li>角色与用例(系统功能)交互。</li>
+<li>以名词命名。</li>
+<li>类似于用户的概念，但一个用户可以扮演不同的角色。</li>
+<li>例如：<ul>
+<li>一个教授，可以是讲师，也可以是研究员</li>
+<li>在两个系统中扮演2个角色</li>
+</ul>
+</li>
+<li>Actor对系统负责(输入)，Actor对系统有期望(输出)。</li>
+</ul>
+<h3 id="3-1-2-用例"><a href="#3-1-2-用例" class="headerlink" title="3.1.2 用例"></a>3.1.2 用例</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180304.png" alt="img"></p>
+<ul>
+<li>系统功能(过程-自动或手动)</li>
+<li>以动词+名词(或名词短语)命名。</li>
+<li>即做某事。</li>
+<li>每个Actor必须链接到一个用例，而某些用例可能没有链接到Actor。</li>
+</ul>
+<h3 id="8-1-3-连接线"><a href="#8-1-3-连接线" class="headerlink" title="8.1.3 连接线"></a>8.1.3 连接线</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180409.png" alt="img"></p>
+<ul>
+<li>角色在用例中的参与是通过将角色连接到用例中来显示的。</li>
+<li>角色可以通过关联连接到用例，这表明角色和用例使用消息相互通信。</li>
+</ul>
+<h3 id="8-1-4-系统"><a href="#8-1-4-系统" class="headerlink" title="8.1.4 系统"></a>8.1.4 系统</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180522.png" alt="img"></p>
+<ul>
+<li>系统可能是需求文档中定义的整个系统。</li>
+<li>对于大型复杂系统，每个模块都可能是系统边界。</li>
+<li>例如，对于一个组织的ERP系统，每个模块，如人事、工资、会计等。</li>
+<li>可以为特定于这些业务功能中的每一个的用例形成系统。</li>
+<li>整个系统可以跨越所有这些描述整个系统的模块。</li>
+</ul>
+<h2 id="3-2-用关系构建用例图"><a href="#3-2-用关系构建用例图" class="headerlink" title="3.2 用关系构建用例图"></a>3.2 用关系构建用例图</h2><p>用例共享不同类型的关系。定义两个用例之间的关系是用例图的软件分析师的决定。两个用例之间的关系基本上是对两个用例之间的依赖关系进行建模。通过使用不同类型的关系重用现有用例可减少开发系统所需的整体工作量。用例关系如下所示：</p>
+<h3 id="3-2-1-扩展关系"><a href="#3-2-1-扩展关系" class="headerlink" title="3.2.1 扩展关系"></a>3.2.1 扩展关系</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210093248.png" alt="img"></p>
+<ul>
+<li>表示”无效密码”用例可能包括(根据扩展中的规定)由基本用例”登录账户”指定的行为。</li>
+<li>用带有虚线的定向箭头描绘。箭头的尖端指向基本用例，子用例连接在箭头的底部。</li>
+<li>构造型<code>&quot;&lt;&lt;extends&gt;&gt;&quot;</code>标识为扩展关系。</li>
+</ul>
+<h3 id="3-2-1-包含关系"><a href="#3-2-1-包含关系" class="headerlink" title="3.2.1 包含关系"></a>3.2.1 包含关系</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210093450.png" alt="img"></p>
+<ul>
+<li>当一个用例被描述为使用另一个用例的功能时，用例之间的关系被命名为包含或使用关系。</li>
+<li>一个用例包括另一个用例中描述的功能，作为其业务流程的一部分。</li>
+<li>从基本用例到子用例的使用关系表明基本用例的实例将包括在子用例中指定的行为。</li>
+<li>包含关系具有虚线的定向箭头来描绘。箭头的尖端指向连接在箭头底部的子用例和父用例。</li>
+<li>构造型<code>&lt;&lt;include&gt;&gt;</code>将关系标识为包含关系。</li>
+</ul>
+<h3 id="3-2-3-泛化关系"><a href="#3-2-3-泛化关系" class="headerlink" title="3.2.3 泛化关系"></a>3.2.3 泛化关系</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210093647.png" alt="img"></p>
+<ul>
+<li>泛化关系是用例之间的父子关系。</li>
+<li>子用例是父用例的增强。</li>
+<li>泛化显示为带有三角形箭头的定向箭头。</li>
+<li>子用例连接在箭头的底部。箭头的尖端连接到父用例。</li>
+</ul>
+<h2 id="3-3-用例示例"><a href="#3-3-用例示例" class="headerlink" title="3.3 用例示例"></a>3.3 用例示例</h2><h3 id="3-3-1-关联连接"><a href="#3-3-1-关联连接" class="headerlink" title="3.3.1 关联连接"></a>3.3.1 关联连接</h3><p>用例图说明了系统的一组用例，即角色以及角色与用例之间的关系。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210100635.png" alt="img"></p>
+<h3 id="3-3-2-包含关系"><a href="#3-3-2-包含关系" class="headerlink" title="3.3.2 包含关系"></a>3.3.2 包含关系</h3><p>包含关系添加了基本用例中未指定的附加功能。<code>&lt;&lt;include&gt;&gt;</code>关系用于将包含用例中的常见行为包含到基本用例中，以支持常见行为的重用。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210100940.png" alt="img"></p>
+<h3 id="3-3-3-扩展关系"><a href="#3-3-3-扩展关系" class="headerlink" title="3.3.3 扩展关系"></a>3.3.3 扩展关系</h3><p>扩展关系很重要，因为它们显示了可选的功能或系统行为。<code>&lt;&lt;Extend&gt;&gt;</code>关系用于在扩展用例中包含来自扩展用例的可选行为。看看下面的用例图示例，它显示了一个扩展连接器和一个扩展点”搜索”。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210101316.png" alt="img"></p>
+<h3 id="3-3-4-泛化关系"><a href="#3-3-4-泛化关系" class="headerlink" title="3.3.4 泛化关系"></a>3.3.4 泛化关系</h3><p>泛化关系意味着子用例继承父用例的行为和含义。孩子可以添加或覆盖父母的行为。下图通过显示连接三个用例之间的两个泛化连接器提供了一个用例示例。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210101856.png" alt="img"></p>
+<h1 id="四、用例图示例"><a href="#四、用例图示例" class="headerlink" title="四、用例图示例"></a>四、用例图示例</h1><h2 id="车辆销售系统"><a href="#车辆销售系统" class="headerlink" title="车辆销售系统"></a>车辆销售系统</h2><p>下图显示了车辆系统的用例图示例。如您所见，即使是像汽车销售系统一样大的系统也包含不超过10个用例！这就是用例建模的美妙之处。</p>
+<p>用例模型还展示了<code>&lt;&lt;Extend&gt;&gt;</code>和<code>&lt;&lt;include&gt;&gt;</code>的使用。此外，角色和用例之间存在关联。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210105646.png" alt="img"></p>
+<h1 id="五、如何识别角色"><a href="#五、如何识别角色" class="headerlink" title="五、如何识别角色"></a>五、如何识别角色</h1><p>通常，人们发现通过识别参与者来启动需求获取过程是最容易的。以下问题可以帮助您识别系统的参与者。</p>
+<ul>
+<li>谁使用系统？</li>
+<li>谁安装系统？</li>
+<li>谁启动系统？</li>
+<li>谁维护系统？</li>
+<li>谁关闭了系统？</li>
+<li>还有哪些其他系统使用该系统？</li>
+<li>谁从这个系统中获取信息？</li>
+<li>谁向系统提供信息？</li>
+<li>目前有什么事情会自动发生吗？</li>
+</ul>
+<h1 id="六、如何识别用例"><a href="#六、如何识别用例" class="headerlink" title="六、如何识别用例"></a>六、如何识别用例</h1><p>识别用例，然后通过询问每个角色想要什么外部可见、可观察的价值来进行基于场景的启发过程。一旦确定了角色，就可以提出以下问题来确定用例。</p>
+<ul>
+<li>参与者希望系统提供哪些功能？</li>
+<li>系统是否存储信息？哪些参与者会创建、读取、更新或删除这些信息？</li>
+<li>系统是否需要通知参与者内部状态的变化？</li>
+<li>系统是否必须知道任何外部事件？什么参与者通过系统这些事件？</li>
+</ul>
+<h1 id="七、用例图提示"><a href="#七、用例图提示" class="headerlink" title="七、用例图提示"></a>七、用例图提示</h1><p>现在，查看以下提示，了解如何在您的软件项目中有效地应用用例。</p>
+<ul>
+<li>始终从参与者地角度构建和组织用例图。</li>
+<li>用例应该从简单和尽可能高地角度开始。只有这样才能进一步细化。</li>
+<li>用例图基于功能，因此应该关注”什么”而不是”如何”。</li>
+</ul>
+<h1 id="八、用例级别的详细信息"><a href="#八、用例级别的详细信息" class="headerlink" title="八、用例级别的详细信息"></a>八、用例级别的详细信息</h1><p>用例粒度是指在用例规范中组织信息的方式，在某种程度上，是指编写它们的详细程度。实现正确级别的用例粒度可以简化利益相关者和开发人员之间的沟通，并改进项目规划。</p>
+<p><em>Alastair Cockburn</em>在编写有效用例中为我们提供了一种简单的方法，通过从海洋的角度来思考不同级别的目标级别：</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210110639.png" alt="img"></p>
+<p>注意：</p>
+<ul>
+<li>虽然用例本身可能会深入了解每种可能性的大量细节，但用例图通常用于作为蓝图的系统的更高级别视图。</li>
+<li>当不需要时，以较粗的粒度和较少的细节编写用例是有益的。</li>
+</ul>
+
+
+    
+    
+    
+
+	
+		<div>
+			<div>
+  
+    <div style="text-align:center;color:#bfbfbf;font-size:16px;">
+      <span>-------- The End </span>
+      <i class="fa fa-heart"></i>
+      <span> Thanks For Reading --------</span>
+    </div>
+  
+</div>
+		</div>
+	
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\UML知识\" rel="bookmark">UML类图知识</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\什么是交互概述图\" rel="bookmark">什么是交互概述图</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\什么是复合结构图\" rel="bookmark">什么是复合结构图</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\什么是对象图\" rel="bookmark">什么是对象图</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\什么是序列图\" rel="bookmark">什么是序列图</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/UML%E7%9F%A5%E8%AF%86/" rel="tag"># UML知识</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/" rel="prev" title="什么是轮廓图">
+      <i class="fa fa-chevron-left"></i> 什么是轮廓图
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/" rel="next" title="什么是活动图">
+      什么是活动图 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+	
+	
+	
+		<div class="post-nav">
+			
+				<div class="post-nav-prev post-nav-item">
+					<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/" rel="prev" title="什么是活动图">
+						
+					</a>
+				</div>
+				
+			<span class="post-nav-divider"></span>
+			
+				<div class="post-nav-next post-nav-item">
+					<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/" rel="next" title="什么是轮廓图">
+						
+					</a>
+				</div>
+				
+		</div>
+	
+</article>
+  
+  
+  
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE"><span class="nav-text">什么是用例图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E7%94%A8%E4%BE%8B%E7%9A%84%E8%B5%B7%E6%BA%90"><span class="nav-text">一、用例的起源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E7%94%A8%E4%BE%8B%E5%9B%BE%E7%9A%84%E7%9B%AE%E7%9A%84"><span class="nav-text">二、用例图的目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E7%94%A8%E4%BE%8B%E5%9B%BE%E6%A6%82%E8%A7%88"><span class="nav-text">三、用例图概览</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E7%94%A8%E4%BE%8B%E5%9B%BE%E4%BD%BF%E7%94%A8%E7%9A%84%E7%AC%A6%E5%8F%B7"><span class="nav-text">3.1 用例图使用的符号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-%E8%A7%92%E8%89%B2"><span class="nav-text">3.1.1 角色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-%E7%94%A8%E4%BE%8B"><span class="nav-text">3.1.2 用例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-3-%E8%BF%9E%E6%8E%A5%E7%BA%BF"><span class="nav-text">8.1.3 连接线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-4-%E7%B3%BB%E7%BB%9F"><span class="nav-text">8.1.4 系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E7%94%A8%E5%85%B3%E7%B3%BB%E6%9E%84%E5%BB%BA%E7%94%A8%E4%BE%8B%E5%9B%BE"><span class="nav-text">3.2 用关系构建用例图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-%E6%89%A9%E5%B1%95%E5%85%B3%E7%B3%BB"><span class="nav-text">3.2.1 扩展关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-%E5%8C%85%E5%90%AB%E5%85%B3%E7%B3%BB"><span class="nav-text">3.2.1 包含关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-3-%E6%B3%9B%E5%8C%96%E5%85%B3%E7%B3%BB"><span class="nav-text">3.2.3 泛化关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E7%94%A8%E4%BE%8B%E7%A4%BA%E4%BE%8B"><span class="nav-text">3.3 用例示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-1-%E5%85%B3%E8%81%94%E8%BF%9E%E6%8E%A5"><span class="nav-text">3.3.1 关联连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-2-%E5%8C%85%E5%90%AB%E5%85%B3%E7%B3%BB"><span class="nav-text">3.3.2 包含关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-3-%E6%89%A9%E5%B1%95%E5%85%B3%E7%B3%BB"><span class="nav-text">3.3.3 扩展关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-4-%E6%B3%9B%E5%8C%96%E5%85%B3%E7%B3%BB"><span class="nav-text">3.3.4 泛化关系</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E7%94%A8%E4%BE%8B%E5%9B%BE%E7%A4%BA%E4%BE%8B"><span class="nav-text">四、用例图示例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%A6%E8%BE%86%E9%94%80%E5%94%AE%E7%B3%BB%E7%BB%9F"><span class="nav-text">车辆销售系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E5%A6%82%E4%BD%95%E8%AF%86%E5%88%AB%E8%A7%92%E8%89%B2"><span class="nav-text">五、如何识别角色</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E5%A6%82%E4%BD%95%E8%AF%86%E5%88%AB%E7%94%A8%E4%BE%8B"><span class="nav-text">六、如何识别用例</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E7%94%A8%E4%BE%8B%E5%9B%BE%E6%8F%90%E7%A4%BA"><span class="nav-text">七、用例图提示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E7%94%A8%E4%BE%8B%E7%BA%A7%E5%88%AB%E7%9A%84%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF"><span class="nav-text">八、用例级别的详细信息</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="warrent"
+      src="/images/head.jpg">
+  <p class="site-author-name" itemprop="name">warrent</p>
+  <div class="site-description" itemprop="description">Get busy living or Get busy dying</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/warrent-B" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;warrent-B" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2200316678@qq.com" title="E-Mail → mailto:2200316678@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Link
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://warrent-b.github.io/" title="https:&#x2F;&#x2F;warrent-B.github.io">warrent</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+	  
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">warrent</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">50k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">46 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="user"></i>
+      </span>
+    <span class="site-uv">
+		我的第 <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 位朋友，
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-heart"></i>
+      </span>
+    <span class="site-pv">
+		历经 <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次回眸才与你相遇
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+ 
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+<script>
+  function timer() {
+    var ages = moment.preciseDiff(moment(),moment(20211105,"YYYYMMDD"));
+    ages = ages.replace(/years?/, "年");
+    ages = ages.replace(/months?/, "月");
+    ages = ages.replace(/days?/, "天");
+    ages = ages.replace(/hours?/, "小时");
+    ages = ages.replace(/minutes?/, "分");
+    ages = ages.replace(/seconds?/, "秒");
+    ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+    div.innerHTML = `本站已运行 ${ages}`;
+  }
+  var div = document.createElement("div");
+  //插入到copyright之后
+  var copyright = document.querySelector(".copyright");
+  document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+  timer();
+  setInterval("timer()",1000)
+</script>
+
+
+</body>
+</html>

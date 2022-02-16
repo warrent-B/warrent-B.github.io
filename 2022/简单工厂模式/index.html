@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"warrent-b.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false,"dimmer":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="该篇文章通过对《大话设计模式》之简单工厂模式的阅读，使用Java编写文中对应的案例，逐步理解文中所讲解的简单工厂模式。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="简单工厂模式">
+<meta property="og:url" content="http://warrent-b.github.io/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:site_name" content="Warrent&#39;s Blog">
+<meta property="og:description" content="该篇文章通过对《大话设计模式》之简单工厂模式的阅读，使用Java编写文中对应的案例，逐步理解文中所讲解的简单工厂模式。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/0105115503.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/0106135440.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/0106140017.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/0106140258.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/0106140657.png">
+<meta property="article:published_time" content="2022-01-06T09:28:26.000Z">
+<meta property="article:modified_time" content="2022-01-06T09:44:38.000Z">
+<meta property="article:author" content="warrent">
+<meta property="article:tag" content="设计模式">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://warrent-b.github.io/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/0105115503.png">
+
+<link rel="canonical" href="http://warrent-b.github.io/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>简单工厂模式 | Warrent's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Warrent's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">20</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://warrent-b.github.io/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="warrent">
+      <meta itemprop="description" content="Get busy living or Get busy dying">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Warrent's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          简单工厂模式
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-01-06 17:28:26" itemprop="dateCreated datePublished" datetime="2022-01-06T17:28:26+08:00">2022-01-06</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>9.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>9 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>该篇文章通过对《大话设计模式》之简单工厂模式的阅读，使用Java编写文中对应的案例，逐步理解文中所讲解的简单工厂模式。</p>
+<span id="more"></span>
+
+<h1 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h1><p>该文档基于《大话设计模式》中的内容，因为书中使用的是C#编写的，所以我根据书中的案例自己去写的Java版的，一步一步的去理解实践设计模式。</p>
+<blockquote>
+<p>如果您想阅读此书，请下载《大话设计模式》，有条件请购买正版图书进行学习。</p>
+<p>资源来源于网络，如有侵权，立刻删除。</p>
+<p>阿里云盘链接地址：<a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/FxoBjRd3rd3">https://www.aliyundrive.com/s/FxoBjRd3rd3</a></p>
+</blockquote>
+<hr>
+<h1 id="一、面试落榜"><a href="#一、面试落榜" class="headerlink" title="一、面试落榜"></a>一、面试落榜</h1><h2 id="1-1-计算器程序面试题"><a href="#1-1-计算器程序面试题" class="headerlink" title="1.1 计算器程序面试题"></a>1.1 计算器程序面试题</h2><p><strong>小菜</strong>面试的时候碰到这样的题目：”请用C++、Java、C#或VB.NET”任意一种面向对象语言实现一个计算器控制台程序，要求输入两个数和运算符号，得到结果。”</p>
+<p><strong>小菜</strong>用C#写了一段程序，我在学习过程中按照他的代码使用Java写了一段类似的程序，代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cn.hutool.core.convert.Convert;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalculatorProgram</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入数字A：&quot;</span>);</span><br><span class="line">        String A = scanner.nextLine();</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入运算符号B(+、-、*、/)：&quot;</span>);</span><br><span class="line">        String B = scanner.nextLine();</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入数字C：&quot;</span>);</span><br><span class="line">        String C = scanner.nextLine();</span><br><span class="line">        String D = <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (B.equals(<span class="string">&quot;+&quot;</span>))&#123;</span><br><span class="line">            D = Convert.toStr((Convert.toDouble(A) + Convert.toDouble(C)));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (B.equals(<span class="string">&quot;-&quot;</span>))&#123;</span><br><span class="line">            D = Convert.toStr((Convert.toDouble(A) - Convert.toDouble(C)));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (B.equals(<span class="string">&quot;*&quot;</span>))&#123;</span><br><span class="line">            D = Convert.toStr((Convert.toDouble(A) * Convert.toDouble(C)));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (B.equals(<span class="string">&quot;/&quot;</span>))&#123;</span><br><span class="line">            D = Convert.toStr((Convert.toDouble(A) / Convert.toDouble(C)));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;计算结果为：&quot;</span> + D);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是<strong>小菜</strong>，却因为这段代码而没有应聘上，内心郁闷的<strong>小菜</strong>，去询问<strong>大鸟</strong>。<strong>大鸟</strong>指出了它存在的问题，并详细引导他了解简单工厂模式，请细看下述内容。</p>
+<blockquote>
+<p>补充说明：上述程序中使用到了HuTool工具类，需在<code>pom.xml</code>中导入HuTool的依赖。</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>cn.hutool<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hutool-all<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.6.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-程序中出现的问题"><a href="#1-2-程序中出现的问题" class="headerlink" title="1.2 程序中出现的问题"></a>1.2 程序中出现的问题</h2><p><img src="/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/0105115503.png" alt="img"></p>
+<h3 id="1-2-1-命名规范问题"><a href="#1-2-1-命名规范问题" class="headerlink" title="1.2.1 命名规范问题"></a>1.2.1 命名规范问题</h3><p>查阅《阿里Java开发手册-泰山版》，对于命名做了如下规范：</p>
+<a href="/2022/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/" title="点击查看阿里命名规范">点击查看阿里命名规范</a>
+
+<blockquote>
+<p>如果您想查看更为完整的内容，请下载《阿里Java开发手册-泰山版》，有条件请购买正版图书进行学习。</p>
+<p>资源来源于网络，如有侵权，立刻删除。</p>
+<p>阿里云盘链接地址：<a target="_blank" rel="noopener" href="https://www.aliyundrive.com/s/PcdEnB8JJpT">https://www.aliyundrive.com/s/PcdEnB8JJpT</a></p>
+</blockquote>
+<h3 id="1-2-2-判断条件问题"><a href="#1-2-2-判断条件问题" class="headerlink" title="1.2.2 判断条件问题"></a>1.2.2 判断条件问题</h3><p>对于上述这种多次无用功的判断，可以考虑通过 switch case 来处理。</p>
+<h3 id="1-2-3-做除法问题"><a href="#1-2-3-做除法问题" class="headerlink" title="1.2.3 做除法问题"></a>1.2.3 做除法问题</h3><p>一旦要做除法运算，应该考虑以下几个问题：</p>
+<ol>
+<li>除数不能为0，或者其他非数字的字符；</li>
+<li>结果有小数，如何做处理；</li>
+</ol>
+<h2 id="1-3-计算器程序代码优化"><a href="#1-3-计算器程序代码优化" class="headerlink" title="1.3 计算器程序代码优化"></a>1.3 计算器程序代码优化</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cn.hutool.core.convert.Convert;</span><br><span class="line"><span class="keyword">import</span> java.util.InputMismatchException;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalculatorProgram</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        String result = <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入数字A：&quot;</span>);</span><br><span class="line">        <span class="keyword">int</span> numberA = scanner.nextInt();</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入运算符号B(+、-、*、/)：&quot;</span>);</span><br><span class="line">        <span class="keyword">char</span> strOperate = scanner.next().charAt(<span class="number">0</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入数字C：&quot;</span>);</span><br><span class="line">        <span class="keyword">int</span> numberC = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            numberC = scanner.nextInt();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InputMismatchException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;请输入正确的非零数字！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">switch</span> (strOperate) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;+&#x27;</span>:</span><br><span class="line">                result = Convert.toStr((Convert.toDouble(numberA) + Convert.toDouble(numberC)));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;-&#x27;</span>:</span><br><span class="line">                result = Convert.toStr((Convert.toDouble(numberA) - Convert.toDouble(numberC)));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;*&#x27;</span>:</span><br><span class="line">                result = Convert.toStr((Convert.toDouble(numberA) * Convert.toDouble(numberC)));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;/&#x27;</span>:</span><br><span class="line">                <span class="keyword">if</span> (<span class="number">0</span> != numberC) &#123;</span><br><span class="line">                    result = Convert.toStr((Convert.toDouble(numberA) / Convert.toDouble(numberC)));</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    System.out.println(<span class="string">&quot;除数不能为0&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;输入的运算符号有误！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;计算结果为：&quot;</span> + result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>switch case 补充说明：</p>
+<a href="/2022/switchcase%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/" title="点击查看switch case用法详解">点击查看switch case用法详解</a>
+</blockquote>
+<p><strong>小菜</strong>完成这个程序之后，<strong>大鸟</strong>评价道：”不错不错，改的挺快的，但从计算器程序上来说，已经够用了，但是这样的代码是否符合出题人的意思呢？”</p>
+<p><strong>小菜</strong>顿悟：”你的意思是面向对象？“</p>
+<h1 id="二、面向对象编程"><a href="#二、面向对象编程" class="headerlink" title="二、面向对象编程"></a>二、面向对象编程</h1><p><strong>小菜</strong>：”我明白了，出题人说要用任意一种面向对象语言实现，意思就是要使用面向对象的编程方法去实现。这个我学过，只不过当时没有想到而已。”</p>
+<p><strong>大鸟</strong>：”所有编程初学者都会有这样的问题，就是碰到问题就直觉地用计算机能够理解地逻辑来描述和表达待解决的问题及具体的求解过程。这其实是用计算机的方式去思考，比如这个计算器这个程序，先要求输入两个数和运算符号，然后根据运算符号判断如何选择运算，得到结果，这本身没有错，但这样的思维却使得我们的程序只为满足实现当前的需求，程序不容易维护，不容易扩展，更不容易复用。从而达不到高质量代码的要求。”</p>
+<p>小菜：”鸟哥，我有点懵逼了，如何才能容易维护，容易扩展，又容易复用呢，能不能具体说说？”</p>
+<p>不光是小菜懵逼，其实我也懵逼，我也是菜鸟，哈哈。</p>
+<h2 id="2-1-面向对象的故事"><a href="#2-1-面向对象的故事" class="headerlink" title="2.1 面向对象的故事"></a>2.1 面向对象的故事</h2><p>“话说三国时期，曹操带领百万大军攻打东吴，大军在常见赤壁驻扎，军船连成一片，眼看就要灭掉东吴，统一天下，曹操大悦，于是大宴众文武，在酒席间，曹操诗兴大发，不觉吟道：’喝酒唱歌，人生真爽。’众文武齐呼：’丞相好诗’，于是一臣子宿命印刷工匠刻版印刷，以便流传天下。”</p>
+<p><img src="/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/0106135440.png" alt="img"></p>
+<p>样张出来给曹操一看，曹操感觉不妥，说到：”喝与唱，此话过俗，应改为’对酒当歌’较好。”，于是此臣酒命工匠重新来过。工匠眼看连夜刻板之功，彻底白费，心中叫苦不迭，只得照办。</p>
+<p><img src="/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/0106140017.png" alt="img"></p>
+<p>样章再次出来请曹操过目，曹操细细一品，觉得还是不好，说：”人生真爽太过直接，应该为问语才够意境，因此应改为’对酒当歌，人生几何？’当臣转告工匠之时，工匠晕倒……”</p>
+<p><img src="/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/0106140258.png" alt="img"></p>
+<p>上述故事的问题在于，由于需求的改变，之前所有的工作都白费，需要重新来过。</p>
+<p>这里面就涉及到了，可维护、可扩展、可复用。</p>
+<p><img src="/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/0106140657.png" alt="img"></p>
+<p><strong>大鸟</strong>：”第一，要改只需更改要改之字，此为<strong>可维护</strong>；第二，这些字并非这次用完就无用，完全可以在后来的印刷中重复使用，此乃<strong>可复用</strong>；第三，此诗要加字，只需另外刻字加入即可，这是<strong>可扩展</strong>；第四，字的排列其实可能是竖向排列可能是横向排列，此时只需将活字移动就可做到满足排列需求，此是<strong>灵活性好</strong>。”</p>
+<p>“而在活字印刷术出现之前，上面的四种特性都无法满足，要修改，必须重刻，要加字，必须重刻，要重新排列，必须重刻，印完这本书之后，此版已无任何可再利用价值。”</p>
+<p>对应到上面的计算器程序当中，我们是不是也只顾当前的计算需求所进行的编程，而并未考虑到扩展的情况，比如要进行开根运算，上面的程序就没法用了。</p>
+<h2 id="2-2-面向对象的好处"><a href="#2-2-面向对象的好处" class="headerlink" title="2.2 面向对象的好处"></a>2.2 面向对象的好处</h2><p><strong>大鸟</strong>：”当我学习了面向对象的分析设计编程思想，开始考虑<strong>通过封装、继承、多态把程序的耦合度降低</strong>，传统印刷术的问题就在于所有的字斗刻在同一版面上造成耦合度太高所致，开始<strong>用设计模式使得程序更加的灵活，容易修改，并且易于复用</strong>。”</p>
+<p><strong>小菜</strong>：”那按照题目的意思，要我做出一个可维护，可扩展，可复用的计算器程序，我该怎么做呢？”</p>
+<p><strong>大鸟</strong>：”编程有一原则，尽量避免重复。想想看，你的代码，有哪些是何控制台有关的，哪些适合计算器有关的？”</p>
+<p><strong>小菜</strong>：”你的意思是让计算和显示分开？”</p>
+<h2 id="2-3-业务的封装"><a href="#2-3-业务的封装" class="headerlink" title="2.3 业务的封装"></a>2.3 业务的封装</h2><p><strong>大鸟</strong>：”准确的说，就是让业务逻辑和界面逻辑分开，让它们之间的耦合度下降。只有分离开，才可以达到容易维护或扩展。”</p>
+<p><strong>小菜</strong>：”哦哦哦，让我来试试！”</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.InputMismatchException;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">//计算器程序显示类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Calculator</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">            System.out.println(<span class="string">&quot;请输入数字A：&quot;</span>);</span><br><span class="line">            <span class="keyword">int</span> numberA = scanner.nextInt();</span><br><span class="line">            System.out.println(<span class="string">&quot;请输入运算符号B(+、-、*、/)：&quot;</span>);</span><br><span class="line">            <span class="keyword">char</span> strOperate = scanner.next().charAt(<span class="number">0</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;请输入数字C：&quot;</span>);</span><br><span class="line">            <span class="keyword">int</span> numberC = scanner.nextInt();</span><br><span class="line">            String result = Operator.operate(numberA, strOperate, numberC);</span><br><span class="line">            System.out.println(<span class="string">&quot;计算结果为：&quot;</span> + result);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InputMismatchException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;您的输入有误！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cn.hutool.core.convert.Convert;</span><br><span class="line"></span><br><span class="line"><span class="comment">//计算器程序运算类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Operator</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">operate</span><span class="params">(<span class="keyword">double</span> numberA, <span class="keyword">char</span> operator, <span class="keyword">double</span> numberC)</span> </span>&#123;</span><br><span class="line">        String result = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">switch</span> (operator)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;+&#x27;</span>:</span><br><span class="line">                result = Convert.toStr((Convert.toDouble(numberA) + Convert.toDouble(numberC)));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;-&#x27;</span>:</span><br><span class="line">                result = Convert.toStr((Convert.toDouble(numberA) - Convert.toDouble(numberC)));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;*&#x27;</span>:</span><br><span class="line">                result = Convert.toStr((Convert.toDouble(numberA) * Convert.toDouble(numberC)));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;/&#x27;</span>:</span><br><span class="line">                <span class="keyword">if</span> (<span class="number">0</span> != numberC) &#123;</span><br><span class="line">                    result = Convert.toStr((Convert.toDouble(numberA) / Convert.toDouble(numberC)));</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    System.out.println(<span class="string">&quot;除数不能为0&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;输入的运算符号有误！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>小菜</strong>：”鸟哥，你看，我把计算和界面完全分离了，面向对象也不过如此，下回写类似的代码不怕了。”</p>
+<p><strong>大鸟</strong>：”别急，仅此而已，实在谈不上完全面向对象，你只用了面向对象三大特征中的一个，还有两个没用呢？”</p>
+<p><strong>小菜</strong>：”<strong>面向对象三大特征不就是封装、继承和多态</strong>吗，这里我用到的应该是封装。这还不够吗？我实在看不出，这么小的程序如何用到继承。至于多态，其实我一直也不太了解它到底有什么好处，如何使用它。”</p>
+<p><strong>大鸟</strong>：”你好好想想该如何应用面向对象的继承和多态。慢慢来。”</p>
+<h2 id="2-4-紧耦合和松耦合"><a href="#2-4-紧耦合和松耦合" class="headerlink" title="2.4 紧耦合和松耦合"></a>2.4 紧耦合和松耦合</h2><p><strong>大鸟</strong>：”现在如果我希望增加一个开根(sqrt)运算，你如何改？”</p>
+<p><strong>小菜</strong>：”那只需要改Operator类就行了，在switch中加一个分支就行了。”</p>
+<p><strong>大鸟</strong>：”问题是你要加一个平方根运算，却需要让加减乘除的运算都得来参与编译，如果你一不小心，把加法运算改成了减法，这岂不是很糟糕。”</p>
+<p><strong>小菜</strong>：”那我再改改。”</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//父类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Operator</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> numberA;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> numberC;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getNumberA</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> numberA;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setNumberA</span><span class="params">(<span class="keyword">double</span> numberA)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.numberA = numberA;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getNumberC</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> numberC;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setNumberC</span><span class="params">(<span class="keyword">double</span> numberC)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.numberC = numberC;</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">    <span class="comment">//抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">double</span> <span class="title">getResult</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//加法运算类 继承 父类 重写父类的抽象方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OperatorAdd</span> <span class="keyword">extends</span> <span class="title">Operator</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getResult</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> result = <span class="number">0</span>;</span><br><span class="line">        result = <span class="keyword">super</span>.getNumberA() + <span class="keyword">super</span>.getNumberC();</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//减法运算类 继承 父类 重写父类的抽象方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OperatorSub</span> <span class="keyword">extends</span> <span class="title">Operator</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getResult</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> result = <span class="number">0</span>;</span><br><span class="line">        result = <span class="keyword">super</span>.getNumberA() - <span class="keyword">super</span>.getNumberC();</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//乘法运算类 继承 父类 重写父类的抽象方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OperatorMul</span> <span class="keyword">extends</span> <span class="title">Operator</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getResult</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> result = <span class="number">0</span>;</span><br><span class="line">        result = <span class="keyword">super</span>.getNumberA() * <span class="keyword">super</span>.getNumberC();</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//除法运算类 继承 父类 重写父类的抽象方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OperatorDiv</span> <span class="keyword">extends</span> <span class="title">Operator</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getResult</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> result = <span class="number">0</span>;</span><br><span class="line">        result = <span class="keyword">super</span>.getNumberA() / <span class="keyword">super</span>.getNumberC();</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>小菜</strong>：”大鸟哥，我按照你说的方法写出来了一部分，首先是一个运算类(父类)，它有两个number字段，主要用于计算器的前后数，然后有一个抽象方法getResult()，用于得到结果，然后我把加减乘除都写成运算类的子类，继承它后，重写了getResult()方法，这样如果要修改任何一个算法，就不需要提供其他算法的代码了。但问题来了，我如何让计算器知道我是希望用哪一个算法呢？”</p>
+<h1 id="三、简单工厂模式"><a href="#三、简单工厂模式" class="headerlink" title="三、简单工厂模式"></a>三、简单工厂模式</h1><p><strong>大鸟</strong>：”写的不错嘛。你现在的问题其实就是如何去实例化对象的问题，也就是说，到底要实例化谁，将来会不会增加实例化的对象，比如增加开根运算，这是很容易变化的地方，应该考虑用一个单独的类来做这个创造实例的过程，这就是工厂，来，我们看看这个类如何写。”</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//运算工厂类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OperatorFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Operator <span class="title">getOperator</span><span class="params">(<span class="keyword">char</span> operator)</span> </span>&#123;</span><br><span class="line">        Operator opera = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">switch</span> (operator)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;+&#x27;</span>:</span><br><span class="line">                opera = <span class="keyword">new</span> OperatorAdd();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;-&#x27;</span>:</span><br><span class="line">                opera = <span class="keyword">new</span> OperatorSub();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;*&#x27;</span>:</span><br><span class="line">                opera = <span class="keyword">new</span> OperatorMul();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;/&#x27;</span>:</span><br><span class="line">                opera = <span class="keyword">new</span> OperatorDiv();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;输入的运算符号有误！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> opera;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>大鸟</strong>：”哈，看到了吧，这样子，你只需要输入运算符号，工厂就实例化出合适的对象，通过多态，返回父类的方式实现了计算器的结果。”</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cn.hutool.core.convert.Convert;</span><br><span class="line"><span class="keyword">import</span> java.util.InputMismatchException;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">//计算器程序显示类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Calculator</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> result = <span class="number">0.0</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">            System.out.println(<span class="string">&quot;请输入数字A：&quot;</span>);</span><br><span class="line">            <span class="keyword">int</span> numberA = scanner.nextInt();</span><br><span class="line">            System.out.println(<span class="string">&quot;请输入运算符号B(+、-、*、/)：&quot;</span>);</span><br><span class="line">            <span class="keyword">char</span> strOperate = scanner.next().charAt(<span class="number">0</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;请输入数字C：&quot;</span>);</span><br><span class="line">            <span class="keyword">int</span> numberC = scanner.nextInt();</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (numberC != <span class="number">0</span>) &#123;</span><br><span class="line">                Operator operator = OperatorFactory.getOperator(strOperate);</span><br><span class="line">                operator.setNumberA(Convert.toDouble(numberA));</span><br><span class="line">                operator.setNumberC(Convert.toDouble(numberC));</span><br><span class="line">                result = operator.getResult();</span><br><span class="line">                System.out.println(<span class="string">&quot;计算结果为：&quot;</span> + result);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;除数不能为0&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125; <span class="keyword">catch</span> (InputMismatchException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;您的输入有误！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h1><p>对于上述的案例来讲，整个的逻辑顺序是：</p>
+<ol>
+<li>先写代码满足于目前的需求；</li>
+<li>然后思考如何将整个业务逻辑进行分离和封装；</li>
+<li>然后思考如何应用继承和多态进行解耦合；</li>
+<li>最后对简单工厂模式进行应用实例化对象。</li>
+</ol>
+<p>对于简单工厂的设计模式的学习，不能止步于此，因为要养成简单工厂设计模式的思维习惯绝不是一蹴而就的，而是不断实践修改的过程中，逐渐融入自己的思维体系当中。</p>
+<p>2022年1月6日</p>
+
+
+    
+    
+    
+
+	
+		<div>
+			<div>
+  
+    <div style="text-align:center;color:#bfbfbf;font-size:16px;">
+      <span>-------- The End </span>
+      <i class="fa fa-heart"></i>
+      <span> Thanks For Reading --------</span>
+    </div>
+  
+</div>
+		</div>
+	
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\UML知识\" rel="bookmark">UML类图知识</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\设计模式简述\" rel="bookmark">设计模式简述</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag"># 设计模式</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E8%BF%B0/" rel="prev" title="设计模式简述">
+      <i class="fa fa-chevron-left"></i> 设计模式简述
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/" rel="next" title="阿里巴巴命名规范">
+      阿里巴巴命名规范 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+	
+	
+	
+		<div class="post-nav">
+			
+				<div class="post-nav-prev post-nav-item">
+					<a href="/2022/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/" rel="prev" title="阿里巴巴命名规范">
+						
+					</a>
+				</div>
+				
+			<span class="post-nav-divider"></span>
+			
+				<div class="post-nav-next post-nav-item">
+					<a href="/2022/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E8%BF%B0/" rel="next" title="设计模式简述">
+						
+					</a>
+				</div>
+				
+		</div>
+	
+</article>
+  
+  
+  
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="nav-text">简单工厂模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E9%9D%A2%E8%AF%95%E8%90%BD%E6%A6%9C"><span class="nav-text">一、面试落榜</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-%E8%AE%A1%E7%AE%97%E5%99%A8%E7%A8%8B%E5%BA%8F%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="nav-text">1.1 计算器程序面试题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-%E7%A8%8B%E5%BA%8F%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-text">1.2 程序中出现的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-1-%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83%E9%97%AE%E9%A2%98"><span class="nav-text">1.2.1 命名规范问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-2-%E5%88%A4%E6%96%AD%E6%9D%A1%E4%BB%B6%E9%97%AE%E9%A2%98"><span class="nav-text">1.2.2 判断条件问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-3-%E5%81%9A%E9%99%A4%E6%B3%95%E9%97%AE%E9%A2%98"><span class="nav-text">1.2.3 做除法问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E8%AE%A1%E7%AE%97%E5%99%A8%E7%A8%8B%E5%BA%8F%E4%BB%A3%E7%A0%81%E4%BC%98%E5%8C%96"><span class="nav-text">1.3 计算器程序代码优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B"><span class="nav-text">二、面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%95%85%E4%BA%8B"><span class="nav-text">2.1 面向对象的故事</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="nav-text">2.2 面向对象的好处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E4%B8%9A%E5%8A%A1%E7%9A%84%E5%B0%81%E8%A3%85"><span class="nav-text">2.3 业务的封装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E7%B4%A7%E8%80%A6%E5%90%88%E5%92%8C%E6%9D%BE%E8%80%A6%E5%90%88"><span class="nav-text">2.4 紧耦合和松耦合</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F"><span class="nav-text">三、简单工厂模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%80%BB%E7%BB%93"><span class="nav-text">四、总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="warrent"
+      src="/images/head.jpg">
+  <p class="site-author-name" itemprop="name">warrent</p>
+  <div class="site-description" itemprop="description">Get busy living or Get busy dying</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/warrent-B" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;warrent-B" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2200316678@qq.com" title="E-Mail → mailto:2200316678@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Link
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://warrent-b.github.io/" title="https:&#x2F;&#x2F;warrent-B.github.io">warrent</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+	  
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">warrent</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">50k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">46 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="user"></i>
+      </span>
+    <span class="site-uv">
+		我的第 <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 位朋友，
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-heart"></i>
+      </span>
+    <span class="site-pv">
+		历经 <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次回眸才与你相遇
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+ 
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+<script>
+  function timer() {
+    var ages = moment.preciseDiff(moment(),moment(20211105,"YYYYMMDD"));
+    ages = ages.replace(/years?/, "年");
+    ages = ages.replace(/months?/, "月");
+    ages = ages.replace(/days?/, "天");
+    ages = ages.replace(/hours?/, "小时");
+    ages = ages.replace(/minutes?/, "分");
+    ages = ages.replace(/seconds?/, "秒");
+    ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+    div.innerHTML = `本站已运行 ${ages}`;
+  }
+  var div = document.createElement("div");
+  //插入到copyright之后
+  var copyright = document.querySelector(".copyright");
+  document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+  timer();
+  setInterval("timer()",1000)
+</script>
+
+
+</body>
+</html>

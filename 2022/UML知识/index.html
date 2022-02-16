@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"warrent-b.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false,"dimmer":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="该篇文章是在《设计模式》第一章《简单工厂模式》中提到了UML类图的知识，因为这不是零碎的知识点，所以独自开辟一个系列来学习。该知识可通过设计模式以及UML知识标签查看。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UML类图知识">
+<meta property="og:url" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="Warrent&#39;s Blog">
+<meta property="og:description" content="该篇文章是在《设计模式》第一章《简单工厂模式》中提到了UML类图的知识，因为这不是零碎的知识点，所以独自开辟一个系列来学习。该知识可通过设计模式以及UML知识标签查看。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/assets/0110104555.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/assets/0110105059.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/assets/0110114105.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/assets/0110182904.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/assets/0112093753.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/assets/0113132023.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/assets/0114121453.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/assets/0114122505.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/assets/0208093539.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/assets/0208173410.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/assets/0209165125.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/assets/0209172431.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/assets/0210112501.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/assets/0211152657.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/assets/0214104310.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/assets/0216143640.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/assets/0216154041.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/assets/0216162401.png">
+<meta property="article:published_time" content="2022-02-16T08:51:02.000Z">
+<meta property="article:modified_time" content="2022-02-16T10:32:00.000Z">
+<meta property="article:author" content="warrent">
+<meta property="article:tag" content="设计模式">
+<meta property="article:tag" content="UML知识">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/assets/0110104555.png">
+
+<link rel="canonical" href="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>UML类图知识 | Warrent's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Warrent's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">20</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://warrent-b.github.io/2022/UML%E7%9F%A5%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="warrent">
+      <meta itemprop="description" content="Get busy living or Get busy dying">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Warrent's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          UML类图知识
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-02-16 16:51:02" itemprop="dateCreated datePublished" datetime="2022-02-16T16:51:02+08:00">2022-02-16</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>该篇文章是在《设计模式》第一章《简单工厂模式》中提到了UML类图的知识，因为这不是零碎的知识点，所以独自开辟一个系列来学习。该知识可通过<code>设计模式</code>以及<code>UML知识</code>标签查看。</p>
+<span id="more"></span>
+
+<h1 id="UML知识"><a href="#UML知识" class="headerlink" title="UML知识"></a>UML知识</h1><h1 id="一、UML简介"><a href="#一、UML简介" class="headerlink" title="一、UML简介"></a>一、UML简介</h1><p><code>UML</code>是统一建模语言的简称，它是一种由一整套图标组成的标准化建模语言。<code>UML</code>用于帮助系统开发人员阐明，展示，构建和记录软件系统的产出。<code>UML</code>代表了一系列在大型而复杂系统建模中被证明是成功的做法，是开发面向对象软件和软件开发过程中非常重要的一部分。<code>UML</code>主要使用图形符号来表示软件项目的设计，使用<code>UML</code>可以帮助项目团队沟通、探索潜在的设计和验证软件的架构设计。</p>
+<p>源文链接：<a target="_blank" rel="noopener" href="https://www.visual-paradigm.com/cn/guide/uml-unified-modeling-language/what-is-uml/">https://www.visual-paradigm.com/cn/guide/uml-unified-modeling-language/what-is-uml/</a></p>
+<p>官方网站：<a target="_blank" rel="noopener" href="https://www.uml.org/">https://www.uml.org/</a></p>
+<h2 id="1-1-UML起源"><a href="#1-1-UML起源" class="headerlink" title="1.1 UML起源"></a>1.1 UML起源</h2><p><code>UML</code>的目标是提供一个标准的符号，可以被所有面向对象的方法使用，并选择和整合前兆符号的最佳元素。<code>UML</code>可用于广泛的应用程序，它为不同的系统和活动(如分布式系统，分析，系统设计和部署)提供了构造。</p>
+<p><code>UML</code>是由OMT统一而来的符号，时序如下：</p>
+<ol>
+<li>对象建模技术OMT(1991)-最适合分析和数据密集型信息系统。</li>
+<li>Booch(1994)-强项为设计和实作。<em>Grady Booch</em>曾经为Ada语言方面做过广泛的工作，并且一直是该语言面向对象技术发展的主要参与者。尽管Booch方法很强大，但是并未广为接受(因为他的模型包含着很多云状，给人不整齐的感觉)。</li>
+<li>OOSE(面向对象的软件工厂1992)-有一个称为用例的模型。用例是理解整个系统行为的强大技术。</li>
+</ol>
+<p>1994年，OMT的创始人<em>Jim Rumbaugh</em>离开了通用电气公司(General Electric)，转投Rational，与<em>Grady Booch</em>并肩作战。这使得软件世界惊呆的合作，为的是要把二人的想法结合成一个统一的方法（项目名称也就是”统一方法”）。</p>
+<p>到了1995年，OOSE的创建者<em>lvar Jacobson</em>也加入了Rational，他的想法（特别是有关”用例(Use Case)”）的概念被整合于统一方法中，成为”统一建模语言”。</p>
+<h2 id="1-2-UML历史"><a href="#1-2-UML历史" class="headerlink" title="1.2 UML历史"></a>1.2 UML历史</h2><ol>
+<li>在1996年间，由Object Management Group(OMG)发布的第一个征求建议书(RFP)，成为了让这些组织联合起来的催化剂。</li>
+<li>Rational与几个愿意为加强UML1.0投入资源的组织建立了UML伙伴联盟。</li>
+<li>这次合作产生了UML1.0，一个由明确定义，表达力强大且通用的建模语言。UML1.0在1997年1月提交给OMG，作为最初的RFP回应。</li>
+<li>1997年1月，IBM，ObjectTime，Ptech等也相继向OMG提交了RFP回应。这些公司加入了伙伴联盟，贡献了他们的想法，并一起制定了经修订的UML1.1。UML1.1的重点是提高UML1.0语义的清晰度，并纳入来自新合作伙伴的意见。UML1.1被提交给OMG供考虑，并在1997年秋季被采用，及后被改良，版本从1.1渐渐提高到1.5，并于2001到2006年内提高到2.1（现在的UML版本为2.5）</li>
+</ol>
+<h2 id="1-3-为何用UML"><a href="#1-3-为何用UML" class="headerlink" title="1.3 为何用UML"></a>1.3 为何用UML</h2><p>首先要注意的是<code>UML</code>设计很多不同的图表(模型)，其原因是提供从许多不同的角度来审视系统。软件开发流程往往有许多持分者参与其中，例如：分析师、设计师、程序员、测试员、质量保证员、客户、技术文件撰稿员。</p>
+<p>这些人都对系统的不同方面各持不同兴趣，故此在建模时需要考虑不同的细节层次。例如，程序员需要了解系统的设计，并将设计转换为代码，而技术文件撰稿员则对整个系统的行为感兴趣，借以了解产品的功能。<code>UML</code>提供了极富表达能力的建模语言，好让各持分者至少可以从一个<code>UML</code>图标得到感兴趣的资讯。</p>
+<h1 id="二、UML概述"><a href="#二、UML概述" class="headerlink" title="二、UML概述"></a>二、UML概述</h1><p><code>UML</code>图表可大致分为<strong>结构性图表</strong>和<strong>行为性图表</strong>两种。</p>
+<p><strong>结构性图表</strong>显示了系统在不同抽象层次和实现层次上的静态结构以及它们之间的相互关系。结构性图表中的元素表示系统中具有意义的概念，可能包括抽象的、现实的和实作的概念。结构性图表有七种类型：</p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0110104555.png" alt="img"></p>
+<p><strong>行为性图表</strong>显示了系统中对象的动态行为，可用以表达系统随时间的变化。行为性图表有其中类型：</p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0110105059.png" alt="img"></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0110114105.png" alt="img"></p>
+<h1 id="三、UML图表简述"><a href="#三、UML图表简述" class="headerlink" title="三、UML图表简述"></a>三、UML图表简述</h1><h2 id="3-1-类图"><a href="#3-1-类图" class="headerlink" title="3.1 类图"></a>3.1 类图</h2><p><strong>类图</strong>是一切面向对象方法的核心建模工具。该图描述了系统中对象的类型以及它们之间存在的各种静态关系。</p>
+<p>有三种主要的关系：</p>
+<ol>
+<li>关联关系：代表类型之间的关系（一个人为公司工作，一个公司有多个办事处）。</li>
+<li>继承关系：专为将实例关系(ERD)应用于面向对象设计而设的一种关系。它在面向对象设计中的继承概念互相呼应。</li>
+<li>聚合关系：面向对象设计中的一种对象组合的形式。</li>
+</ol>
+<p><strong>类图示例：</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0110182904.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关类图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/" title="什么是类图">什么是类图</a></p>
+          </div>
+
+<h2 id="3-2-组件图"><a href="#3-2-组件图" class="headerlink" title="3.2 组件图"></a>3.2 组件图</h2><p>在统一建模语言中，组件图描绘了组件如何连接在一起以形成更大的组件或软件系统。它展示了软件组件的体系结构以及它们之间的依赖关系。那些软件组件包括运行时组件，可执行组件和源代码组件。</p>
+<p><strong>组件图示例：</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0112093753.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关组件图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/" title="什么是组件图">什么是组件图</a></p>
+          </div>
+
+<h2 id="3-3-部署图"><a href="#3-3-部署图" class="headerlink" title="3.3 部署图"></a>3.3 部署图</h2><p>部署图有助于模拟面向对象软件系统的物理方面。它是一个结构性图标，显示了软件产出于系统架构内如何被分发至指定目标。产出即显示生活中各种通用开发过程产生的产品。部署图对运行时配置进行建模，并可视化应用程序中产出的分布。在大多数情况下，它表达了硬件配置以及和软件组件之间的关系。</p>
+<p><strong>部署图示例：</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0113132023.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关部署图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/" title="什么是部署图">什么是部署图</a></p>
+          </div>
+
+<h2 id="3-4-对象图"><a href="#3-4-对象图" class="headerlink" title="3.4 对象图"></a>3.4 对象图</h2><p>对象图是实例(Instance)的表达，包括对象和数据值。静态的对象图是类图的一个实例，它是系统在某个时间点详细状态的快照，不同之处在于类图表示了一个由类及其关系组成的抽象模型，而对象图则表达了特定时刻的实例。对象图的使用是相当有限的，它常被用做展示数据结构例子。</p>
+<h3 id="3-4-1-类图与对象图的例子"><a href="#3-4-1-类图与对象图的例子" class="headerlink" title="3.4.1 类图与对象图的例子"></a>3.4.1 类图与对象图的例子</h3><p>有些人难以区分<code>UML</code>类图和<code>UML</code>对象图，因为它们都包含一些”矩形块”和一些连接线，看起来很相似。有些人甚至认为它们是相同的，因为某些<code>UML</code>软件会将类图和对象图的符号放在同一个图标编辑器-类图中。</p>
+<p>事实上，类图和对象图表达着两个不同的层次。在本文中，我们将向您提供关于这两个<code>UML</code>图表的一些想法，让您了解它们是什么，它们的区别以及何时使用它们。</p>
+<h3 id="3-4-2-类图与对象图的关系"><a href="#3-4-2-类图与对象图的关系" class="headerlink" title="3.4.2 类图与对象图的关系"></a>3.4.2 类图与对象图的关系</h3><p>您会在编程时创建”类”。例如，在网上银行系统中，您可以创建”用户”，”账户”，”交易”等类。又例如，在课堂管理系统中，您会创建”教师”，”学生”，”任务”等。在每个类中都有属性和操作来表示类的特征和行为，而类图则是一种让你看到这些类和它们的属性，操作和相互关系的图表。</p>
+<p><code>UML</code>对象图显示了系统中的对象实例如何在特定状态下彼此交互。它也表示那个状态下那些对象的数据值。换句话说，<code>UML</code>对象图可以被看作是如何在特定状态下使用类(在<code>UML</code>类图中绘制)的表达。</p>
+<p>且看看下面的<code>UML</code>图例子。我相信您会在几秒内了解它们的差异。</p>
+<h3 id="3-4-3-类图示例"><a href="#3-4-3-类图示例" class="headerlink" title="3.4.3 类图示例"></a>3.4.3 类图示例</h3><p>以下类图示例代表两个类-用户和附件。用户可以上传多个附件，因此这两个类以一个关联连接，在附件方则以<code>0..*</code>作为多重性。</p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0114121453.png" alt="img"></p>
+<h3 id="3-4-4-对象图示例"><a href="#3-4-4-对象图示例" class="headerlink" title="3.4.4 对象图示例"></a>3.4.4 对象图示例</h3><p>下面的对象图示例显示了当Peter(即用户)上传两个附件时User 和 Attachment 类的对象实例如何。因上传两个附件，所以有两个附件对象。</p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0114122505.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关对象图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/" title="什么是对象图">什么是对象图</a></p>
+          </div>
+
+<h2 id="3-5-包图"><a href="#3-5-包图" class="headerlink" title="3.5 包图"></a>3.5 包图</h2><p>包图是<code>UML</code>一种用以显示包和包之间的依赖关系的结构性图表。该模型图能够显示系统的不同视图，例如，多层应用程序。</p>
+<p><strong>包图示例</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0208093539.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关包图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/" title="什么是包图">什么是包图</a></p>
+          </div>
+
+<h2 id="3-6-复合结构图"><a href="#3-6-复合结构图" class="headerlink" title="3.6 复合结构图"></a>3.6 复合结构图</h2><p>复合结构图是添加到<code>UML2.0</code>中的新的图表之一。复合结构图与类图相似，是一种用于微观视角的系统建模组件图，而不是整个类的组成部分。它是一种静态结构图，显示了一个类的内部结构和这个结构所实现的协作。</p>
+<p>复合结构图可以包括内部零件，零件通过其互相交互或通过端口与外界交互。复合结构是一组相关联的元素，它们在运行时进行协作以达到某种目的。每个元素在协作中都有一些定义的角色。</p>
+<p><strong>复合结构图示例</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0208173410.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关复合结构图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/" title="什么是复合结构图">什么是复合结构图</a></p>
+          </div>
+
+<h2 id="3-7-轮廓图"><a href="#3-7-轮廓图" class="headerlink" title="3.7 轮廓图"></a>3.7 轮廓图</h2><p>轮廓图使您能够创建特定于域和平台的原型，并定义它们之间的关系。</p>
+<p><strong>轮廓图示例</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0209165125.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关轮廓图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/" title="什么是轮廓图">什么是轮廓图</a></p>
+          </div>
+
+<h2 id="3-8-用例图"><a href="#3-8-用例图" class="headerlink" title="3.8 用例图"></a>3.8 用例图</h2><p>用例模型从用例的角度描述系统的功能需求，它是系统预期功能（用例）及其环境（参与者）的模型。用例使您能够将系统需要与系统如何满足这些需求相关联。</p>
+<p>将用例模型想象成一个菜单，就像在餐馆中找到的菜单一样，通过查看菜单，你知道什么菜肴以及它们的价格，你也知道餐厅供应什么样的菜肴：意大利、墨西哥、中国等等。通过查看菜单，您可以对该餐厅的用餐体验有一个全面的了解，因为它是一个非常强大的计划工具，所以团队成员通常在开发周期的所有阶段都使用用例模型。</p>
+<p><strong>用例图示例</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0209172431.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关用例图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/" title="什么是用例图">什么是用例图</a></p>
+          </div>
+
+<h2 id="3-9-活动图"><a href="#3-9-活动图" class="headerlink" title="3.9 活动图"></a>3.9 活动图</h2><p>活动图用于展示工作流程，它支持选择(Choice)、迭代(Iteration)和并发(Concurrency)。活动图描述了目标系统的控制流程，比如探索复杂的业务规则和操作，描述用例和业务流程。在统一建模语言中，活动图旨在模拟计算和组织过程(即工作流程)。</p>
+<p><strong>活动图示例</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0210112501.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关活动图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/" title="什么是活动图">什么是活动图</a></p>
+          </div>
+
+<h2 id="3-10-状态图"><a href="#3-10-状态图" class="headerlink" title="3.10 状态图"></a>3.10 状态图</h2><p>状态图是<code>UML</code>中用来描述基于<em>David Harel</em>的状态图概念的系统行为的一种图表。状态图描绘允许的状态和转换以及影响这些转换的事件，它有助于可视化对象的整个生命周期，从而更好地理解以状态主导地系统。</p>
+<p>状态图示例：</p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0211152657.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关状态图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/" title="什么是状态图">什么是状态图</a></p>
+          </div>
+
+<h2 id="3-11-序列图"><a href="#3-11-序列图" class="headerlink" title="3.11 序列图"></a>3.11 序列图</h2><p>序列图根据事件序列展示对象如何进行协作。它展示了在用例的特定场景中，对象如何与其他对象交互。凭借现金的可视化建模功能，您只需点击几下即可创建复杂的序列图。另外<code>Viaual Paradigm</code>可以根据用例描述中定义的事件流生成序列图。</p>
+<p><strong>序列图示例</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0214104310.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关序列图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/" title="什么是序列图">什么是序列图</a></p>
+          </div>
+
+<h2 id="3-12-通讯图"><a href="#3-12-通讯图" class="headerlink" title="3.12 通讯图"></a>3.12 通讯图</h2><p>与序列图类似，通讯图也用于模拟用例的动态行为。与序列图相比，通讯图更侧重于显示对象的协作而不是时间顺序。它们实际上在语义上是等价的，因此一些建模(如Visual Paradigm)允许您从一个模型生成一个到另一个。</p>
+<p><strong>通信图示例</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0216143640.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关通信图的更多详细信息，请阅读文章<a href="#">Post not found: 什么是通信图 什么是通信图</a></p>
+          </div>
+
+<h2 id="3-13-交互概述图"><a href="#3-13-交互概述图" class="headerlink" title="3.13 交互概述图"></a>3.13 交互概述图</h2><p>交互概述图侧重于交互控制流程的概述，它是活动图的变体，其中节点是交互(Interactions)或交互发生(Interaction Occurrences)。交互概述图描述了隐藏于消息(Message)和生命线(Lifeline)间的交互。</p>
+<p><strong>交互概述图示例</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0216154041.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关交互概述图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/" title="什么是交互概述图">什么是交互概述图</a></p>
+          </div>
+
+<h2 id="3-14-时序图"><a href="#3-14-时序图" class="headerlink" title="3.14 时序图"></a>3.14 时序图</h2><p>时序图显示了既定时间内对象的行为。时序图是序列图的一种特殊形式，它俩之间的差异是轴反转，时间从左到右增加，生命线显示在垂直排列的独立隔间中。</p>
+<p><strong>时序图示例</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0216162401.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关时序图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/" title="什么是时序图">什么是时序图</a></p>
+          </div>
+
+
+
+
+
+    
+    
+    
+
+	
+		<div>
+			<div>
+  
+    <div style="text-align:center;color:#bfbfbf;font-size:16px;">
+      <span>-------- The End </span>
+      <i class="fa fa-heart"></i>
+      <span> Thanks For Reading --------</span>
+    </div>
+  
+</div>
+		</div>
+	
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\设计模式简述\" rel="bookmark">设计模式简述</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\简单工厂模式\" rel="bookmark">简单工厂模式</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\什么是交互概述图\" rel="bookmark">什么是交互概述图</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\什么是复合结构图\" rel="bookmark">什么是复合结构图</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\什么是对象图\" rel="bookmark">什么是对象图</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag"># 设计模式</a>
+              <a href="/tags/UML%E7%9F%A5%E8%AF%86/" rel="tag"># UML知识</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/switchcase%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/" rel="prev" title="switchcase用法详解">
+      <i class="fa fa-chevron-left"></i> switchcase用法详解
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/" rel="next" title="什么是类图">
+      什么是类图 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+	
+	
+	
+		<div class="post-nav">
+			
+				<div class="post-nav-prev post-nav-item">
+					<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/" rel="prev" title="什么是类图">
+						
+					</a>
+				</div>
+				
+			<span class="post-nav-divider"></span>
+			
+				<div class="post-nav-next post-nav-item">
+					<a href="/2022/switchcase%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/" rel="next" title="switchcase用法详解">
+						
+					</a>
+				</div>
+				
+		</div>
+	
+</article>
+  
+  
+  
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UML%E7%9F%A5%E8%AF%86"><span class="nav-text">UML知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81UML%E7%AE%80%E4%BB%8B"><span class="nav-text">一、UML简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-UML%E8%B5%B7%E6%BA%90"><span class="nav-text">1.1 UML起源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-UML%E5%8E%86%E5%8F%B2"><span class="nav-text">1.2 UML历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-%E4%B8%BA%E4%BD%95%E7%94%A8UML"><span class="nav-text">1.3 为何用UML</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81UML%E6%A6%82%E8%BF%B0"><span class="nav-text">二、UML概述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81UML%E5%9B%BE%E8%A1%A8%E7%AE%80%E8%BF%B0"><span class="nav-text">三、UML图表简述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E7%B1%BB%E5%9B%BE"><span class="nav-text">3.1 类图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E7%BB%84%E4%BB%B6%E5%9B%BE"><span class="nav-text">3.2 组件图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E9%83%A8%E7%BD%B2%E5%9B%BE"><span class="nav-text">3.3 部署图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-%E5%AF%B9%E8%B1%A1%E5%9B%BE"><span class="nav-text">3.4 对象图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-1-%E7%B1%BB%E5%9B%BE%E4%B8%8E%E5%AF%B9%E8%B1%A1%E5%9B%BE%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="nav-text">3.4.1 类图与对象图的例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-2-%E7%B1%BB%E5%9B%BE%E4%B8%8E%E5%AF%B9%E8%B1%A1%E5%9B%BE%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-text">3.4.2 类图与对象图的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-3-%E7%B1%BB%E5%9B%BE%E7%A4%BA%E4%BE%8B"><span class="nav-text">3.4.3 类图示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-4-%E5%AF%B9%E8%B1%A1%E5%9B%BE%E7%A4%BA%E4%BE%8B"><span class="nav-text">3.4.4 对象图示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-%E5%8C%85%E5%9B%BE"><span class="nav-text">3.5 包图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE"><span class="nav-text">3.6 复合结构图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-%E8%BD%AE%E5%BB%93%E5%9B%BE"><span class="nav-text">3.7 轮廓图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-8-%E7%94%A8%E4%BE%8B%E5%9B%BE"><span class="nav-text">3.8 用例图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-9-%E6%B4%BB%E5%8A%A8%E5%9B%BE"><span class="nav-text">3.9 活动图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-10-%E7%8A%B6%E6%80%81%E5%9B%BE"><span class="nav-text">3.10 状态图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-11-%E5%BA%8F%E5%88%97%E5%9B%BE"><span class="nav-text">3.11 序列图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-12-%E9%80%9A%E8%AE%AF%E5%9B%BE"><span class="nav-text">3.12 通讯图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-13-%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE"><span class="nav-text">3.13 交互概述图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-14-%E6%97%B6%E5%BA%8F%E5%9B%BE"><span class="nav-text">3.14 时序图</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="warrent"
+      src="/images/head.jpg">
+  <p class="site-author-name" itemprop="name">warrent</p>
+  <div class="site-description" itemprop="description">Get busy living or Get busy dying</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/warrent-B" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;warrent-B" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2200316678@qq.com" title="E-Mail → mailto:2200316678@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Link
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://warrent-b.github.io/" title="https:&#x2F;&#x2F;warrent-B.github.io">warrent</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+	  
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">warrent</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">50k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">46 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="user"></i>
+      </span>
+    <span class="site-uv">
+		我的第 <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 位朋友，
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-heart"></i>
+      </span>
+    <span class="site-pv">
+		历经 <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次回眸才与你相遇
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+ 
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+<script>
+  function timer() {
+    var ages = moment.preciseDiff(moment(),moment(20211105,"YYYYMMDD"));
+    ages = ages.replace(/years?/, "年");
+    ages = ages.replace(/months?/, "月");
+    ages = ages.replace(/days?/, "天");
+    ages = ages.replace(/hours?/, "小时");
+    ages = ages.replace(/minutes?/, "分");
+    ages = ages.replace(/seconds?/, "秒");
+    ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+    div.innerHTML = `本站已运行 ${ages}`;
+  }
+  var div = document.createElement("div");
+  //插入到copyright之后
+  var copyright = document.querySelector(".copyright");
+  document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+  timer();
+  setInterval("timer()",1000)
+</script>
+
+
+</body>
+</html>

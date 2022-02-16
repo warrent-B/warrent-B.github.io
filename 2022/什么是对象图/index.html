@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"warrent-b.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false,"dimmer":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="该篇文章是UML知识的扩充。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是对象图">
+<meta property="og:url" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/index.html">
+<meta property="og:site_name" content="Warrent&#39;s Blog">
+<meta property="og:description" content="该篇文章是UML知识的扩充。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114134401.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114140859.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114142732.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114143610.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114144152.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114144414.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117202342.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117203950.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117205240.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117212134.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117213546.png">
+<meta property="article:published_time" content="2022-02-16T10:05:54.000Z">
+<meta property="article:modified_time" content="2022-02-16T10:23:04.000Z">
+<meta property="article:author" content="warrent">
+<meta property="article:tag" content="UML知识">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114134401.png">
+
+<link rel="canonical" href="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>什么是对象图 | Warrent's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Warrent's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">20</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="warrent">
+      <meta itemprop="description" content="Get busy living or Get busy dying">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Warrent's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          什么是对象图
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-02-16 18:05:54" itemprop="dateCreated datePublished" datetime="2022-02-16T18:05:54+08:00">2022-02-16</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>该篇文章是<span class="label [info]">UML知识</span>的扩充。</p>
+<span id="more"></span>
+
+<h1 id="什么是对象图"><a href="#什么是对象图" class="headerlink" title="什么是对象图"></a>什么是对象图</h1><p>源文链接：<a target="_blank" rel="noopener" href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-object-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-object-diagram/</a></p>
+<p>对象是运行时特定时刻的类实例，它可以有自己的状态和数据值。同样，静态<code>UML</code>对象图是类图的一个实例。它显示了系统在某个时间点的详细状态的快照。因此对象图包含对象及其关系，可以将其视为类图或通讯图的特殊情况。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114134401.png" alt="img"></p>
+<h1 id="一、对象图的目的"><a href="#一、对象图的目的" class="headerlink" title="一、对象图的目的"></a>一、对象图的目的</h1><p>对象图的使用相当有限，主要是为了展示数据结构的例子。</p>
+<ul>
+<li>在项目的分析阶段，您可能回创建一个类图来表述系统的结构，然后创建一组对象图作为测试用例来验证类图的准确性和完整性。</li>
+<li>在创建类图之前，您可能会创建一个对象图来发现有关特定模型元素及其链接的具体i情况，或者说明所需类的特定示例。</li>
+</ul>
+<h1 id="二、对象图概览"><a href="#二、对象图概览" class="headerlink" title="二、对象图概览"></a>二、对象图概览</h1><p>对象图显示了实例化类与定义类之间的这种关系，以及系统中这些对象之间的关系。当您的系统类图非常复杂时，它们对于解释系统的较小部分很有用，有时还可以在途中建模递归关系。</p>
+<p>说明对象图的最佳方式是显示从相应类图派生的对象图。</p>
+<p>以下订单管理系统显示了它们的关系。这个小类图显示了一个大学部门可以包含许多其他部门，下面的对象图实例化了类图，并用一个具体的例子替代了它。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114140859.png" alt="img"></p>
+<p><strong>类到对象图示例-订单系统</strong></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114142732.png" alt="img"></p>
+<h1 id="三、对象图的符号"><a href="#三、对象图的符号" class="headerlink" title="三、对象图的符号"></a>三、对象图的符号</h1><h2 id="3-1-对象名称"><a href="#3-1-对象名称" class="headerlink" title="3.1 对象名称"></a>3.1 对象名称</h2><ul>
+<li>每个对象实际上都像一个矩形一样被符号化，它提供了对象的名称及其来自的类，用冒号分隔，底部加上下划线，对象名称在左，来自的类在右。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114143610.png" alt="img"></p>
+<h2 id="3-2-对象属性"><a href="#3-2-对象属性" class="headerlink" title="3.2 对象属性"></a>3.2 对象属性</h2><ul>
+<li>与类类似，您可以在单独的方框中列出对象属性。但是与类不同的是，对象的属性应该明确它们的数值。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114144152.png" alt="img"></p>
+<h2 id="3-3-关联关系"><a href="#3-3-关联关系" class="headerlink" title="3.3 关联关系"></a>3.3 关联关系</h2><ul>
+<li>您可以使用类图中使用的线条来绘制对象图的关联关系。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114144414.png" alt="img"></p>
+<h1 id="四、类图与对象图"><a href="#四、类图与对象图" class="headerlink" title="四、类图与对象图"></a>四、类图与对象图</h1><p>在<code>UML</code>中，对象图提供系统中类实例的快照以及类实例之间的关系。通过在类图中实例化模型元素，您可以探索系统在某个时间点的行为。</p>
+<ul>
+<li>对象图是现实模型中类实例的<code>UML</code>结构图。</li>
+<li>对象图使用类似于类图中使用的符号。</li>
+<li>类图显示系统中的类及其关系。</li>
+<li>对象图显示了这些类的特定实例以及在某个时间点这些实例之间的链接。</li>
+<li>您可以通过在类、部署、组件和用例图中实例化类来创建对象图。</li>
+</ul>
+<h1 id="五、对象图示例"><a href="#五、对象图示例" class="headerlink" title="五、对象图示例"></a>五、对象图示例</h1><h2 id="5-1-对象图示例1-公司结构"><a href="#5-1-对象图示例1-公司结构" class="headerlink" title="5.1 对象图示例1-公司结构"></a>5.1 对象图示例1-公司结构</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117202342.png" alt="img"></p>
+<h2 id="5-2-对象图示例2-POS"><a href="#5-2-对象图示例2-POS" class="headerlink" title="5.2 对象图示例2-POS"></a>5.2 对象图示例2-POS</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117203950.png" alt="img"></p>
+<h2 id="5-3-对象图示例3-编写器"><a href="#5-3-对象图示例3-编写器" class="headerlink" title="5.3 对象图示例3-编写器"></a>5.3 对象图示例3-编写器</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117205240.png" alt="img"></p>
+<h2 id="5-4-对象结构建模的步骤"><a href="#5-4-对象结构建模的步骤" class="headerlink" title="5.4 对象结构建模的步骤"></a>5.4 对象结构建模的步骤</h2><p>没有消息的通讯图（在以前版本的UML中称为协作）也称为对象图，对象之间的关系称为链接。对象关系图必须是静态类图的有效实例化。对象必须具有类，对象之间的链接必须是类之间关联的实例。这可以用作快速一致性检查。为此，我们可以使用以下步骤开发对象图：</p>
+<ul>
+<li>确定要建模的机制。机制表示您正在建模的系统部分的某些功能或行为，这些功能或行为来自于类，接口和其他事物之间的交互。</li>
+<li>对于每个机制，确定参与此协作的类、接口和其他元素，以及识别它们之间的关系。</li>
+<li>请考虑一个演练此机制的方案，在某个时刻冻结该场景，并渲染参与该机制的每个对象。</li>
+<li>根据需要公开每个此类对象的状态和属性值，以了解方案。</li>
+</ul>
+<h2 id="5-5-对象图实例4-机器人移动行为"><a href="#5-5-对象图实例4-机器人移动行为" class="headerlink" title="5.5 对象图实例4-机器人移动行为"></a>5.5 对象图实例4-机器人移动行为</h2><p>同样，公开这些对象之间的链接，表示它们之间的关联实例。</p>
+<p>如图果实，一个对象表示机器人本身(r:Robot的一个实例)，r当前处于标记为移动的状态。这个对象有一个连接到(W:World)的实例，它表示机器人世界模型的抽象。此对象具有指向多个对象的链接，该对象由Element实例组成，这些实例表示机器人已标识但尚未在其他世界视图中分配的实体。这些元素被标记为机器人全局状态的一部分。</p>
+<p>此时此刻，W连接到Area的两个实例。其中一个(a2)显示有指向三个墙和一个门对象的连接。这些墙中的每一个都有标上其当前宽度，并且每个墙都显示与其相邻的墙的相关联。正如这个对象图所指示的那样，机器人已经识别出这个封闭的区域，该区域的三面都有墙壁，第四面有一扇门。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117212134.png" alt="img"></p>
+<h2 id="5-6-对象图示例5-派生类似于通讯图的对象结构"><a href="#5-6-对象图示例5-派生类似于通讯图的对象结构" class="headerlink" title="5.6 对象图示例5-派生类似于通讯图的对象结构"></a>5.6 对象图示例5-派生类似于通讯图的对象结构</h2><p>处理显示对象在特定时间点的状态外，对象图还可用于标识运行时类之间交互的发生次数。结果看起来有点像通讯图。下图提供了此类类图及其相应对象图的示例。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117213546.png" alt="img"></p>
+
+
+    
+    
+    
+
+	
+		<div>
+			<div>
+  
+    <div style="text-align:center;color:#bfbfbf;font-size:16px;">
+      <span>-------- The End </span>
+      <i class="fa fa-heart"></i>
+      <span> Thanks For Reading --------</span>
+    </div>
+  
+</div>
+		</div>
+	
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\UML知识\" rel="bookmark">UML类图知识</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\什么是交互概述图\" rel="bookmark">什么是交互概述图</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\什么是复合结构图\" rel="bookmark">什么是复合结构图</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\什么是序列图\" rel="bookmark">什么是序列图</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\什么是时序图\" rel="bookmark">什么是时序图</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/UML%E7%9F%A5%E8%AF%86/" rel="tag"># UML知识</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/" rel="prev" title="什么是部署图">
+      <i class="fa fa-chevron-left"></i> 什么是部署图
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/" rel="next" title="什么是包图">
+      什么是包图 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+	
+	
+	
+		<div class="post-nav">
+			
+				<div class="post-nav-prev post-nav-item">
+					<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/" rel="prev" title="什么是包图">
+						
+					</a>
+				</div>
+				
+			<span class="post-nav-divider"></span>
+			
+				<div class="post-nav-next post-nav-item">
+					<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/" rel="next" title="什么是部署图">
+						
+					</a>
+				</div>
+				
+		</div>
+	
+</article>
+  
+  
+  
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE"><span class="nav-text">什么是对象图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%AF%B9%E8%B1%A1%E5%9B%BE%E7%9A%84%E7%9B%AE%E7%9A%84"><span class="nav-text">一、对象图的目的</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AF%B9%E8%B1%A1%E5%9B%BE%E6%A6%82%E8%A7%88"><span class="nav-text">二、对象图概览</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%AF%B9%E8%B1%A1%E5%9B%BE%E7%9A%84%E7%AC%A6%E5%8F%B7"><span class="nav-text">三、对象图的符号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E5%AF%B9%E8%B1%A1%E5%90%8D%E7%A7%B0"><span class="nav-text">3.1 对象名称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"><span class="nav-text">3.2 对象属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E5%85%B3%E8%81%94%E5%85%B3%E7%B3%BB"><span class="nav-text">3.3 关联关系</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E7%B1%BB%E5%9B%BE%E4%B8%8E%E5%AF%B9%E8%B1%A1%E5%9B%BE"><span class="nav-text">四、类图与对象图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E5%AF%B9%E8%B1%A1%E5%9B%BE%E7%A4%BA%E4%BE%8B"><span class="nav-text">五、对象图示例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-%E5%AF%B9%E8%B1%A1%E5%9B%BE%E7%A4%BA%E4%BE%8B1-%E5%85%AC%E5%8F%B8%E7%BB%93%E6%9E%84"><span class="nav-text">5.1 对象图示例1-公司结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-%E5%AF%B9%E8%B1%A1%E5%9B%BE%E7%A4%BA%E4%BE%8B2-POS"><span class="nav-text">5.2 对象图示例2-POS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-%E5%AF%B9%E8%B1%A1%E5%9B%BE%E7%A4%BA%E4%BE%8B3-%E7%BC%96%E5%86%99%E5%99%A8"><span class="nav-text">5.3 对象图示例3-编写器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-%E5%AF%B9%E8%B1%A1%E7%BB%93%E6%9E%84%E5%BB%BA%E6%A8%A1%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="nav-text">5.4 对象结构建模的步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-5-%E5%AF%B9%E8%B1%A1%E5%9B%BE%E5%AE%9E%E4%BE%8B4-%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%A7%BB%E5%8A%A8%E8%A1%8C%E4%B8%BA"><span class="nav-text">5.5 对象图实例4-机器人移动行为</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-6-%E5%AF%B9%E8%B1%A1%E5%9B%BE%E7%A4%BA%E4%BE%8B5-%E6%B4%BE%E7%94%9F%E7%B1%BB%E4%BC%BC%E4%BA%8E%E9%80%9A%E8%AE%AF%E5%9B%BE%E7%9A%84%E5%AF%B9%E8%B1%A1%E7%BB%93%E6%9E%84"><span class="nav-text">5.6 对象图示例5-派生类似于通讯图的对象结构</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="warrent"
+      src="/images/head.jpg">
+  <p class="site-author-name" itemprop="name">warrent</p>
+  <div class="site-description" itemprop="description">Get busy living or Get busy dying</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/warrent-B" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;warrent-B" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2200316678@qq.com" title="E-Mail → mailto:2200316678@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Link
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://warrent-b.github.io/" title="https:&#x2F;&#x2F;warrent-B.github.io">warrent</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+	  
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">warrent</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">50k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">46 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="user"></i>
+      </span>
+    <span class="site-uv">
+		我的第 <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 位朋友，
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-heart"></i>
+      </span>
+    <span class="site-pv">
+		历经 <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次回眸才与你相遇
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+ 
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+<script>
+  function timer() {
+    var ages = moment.preciseDiff(moment(),moment(20211105,"YYYYMMDD"));
+    ages = ages.replace(/years?/, "年");
+    ages = ages.replace(/months?/, "月");
+    ages = ages.replace(/days?/, "天");
+    ages = ages.replace(/hours?/, "小时");
+    ages = ages.replace(/minutes?/, "分");
+    ages = ages.replace(/seconds?/, "秒");
+    ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+    div.innerHTML = `本站已运行 ${ages}`;
+  }
+  var div = document.createElement("div");
+  //插入到copyright之后
+  var copyright = document.querySelector(".copyright");
+  document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+  timer();
+  setInterval("timer()",1000)
+</script>
+
+
+</body>
+</html>

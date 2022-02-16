@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"warrent-b.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false,"dimmer":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":3,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="该篇文章是UML知识的扩充。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="什么是状态图">
+<meta property="og:url" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/index.html">
+<meta property="og:site_name" content="Warrent&#39;s Blog">
+<meta property="og:description" content="该篇文章是UML知识的扩充。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211152828.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211160715.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211161303.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211163926.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211165812.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211171011.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0214093051.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0214094426.png">
+<meta property="og:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0214101331.png">
+<meta property="article:published_time" content="2022-02-16T10:16:20.000Z">
+<meta property="article:modified_time" content="2022-02-16T10:23:04.000Z">
+<meta property="article:author" content="warrent">
+<meta property="article:tag" content="UML知识">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211152828.png">
+
+<link rel="canonical" href="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>什么是状态图 | Warrent's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Warrent's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">20</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://warrent-b.github.io/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.jpg">
+      <meta itemprop="name" content="warrent">
+      <meta itemprop="description" content="Get busy living or Get busy dying">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Warrent's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          什么是状态图
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-02-16 18:16:20" itemprop="dateCreated datePublished" datetime="2022-02-16T18:16:20+08:00">2022-02-16</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>该篇文章是<span class="label [info]">UML知识</span>的扩充。</p>
+<span id="more"></span>
+
+<h1 id="什么是状态图"><a href="#什么是状态图" class="headerlink" title="什么是状态图"></a>什么是状态图</h1><p>源文链接：<a target="_blank" rel="noopener" href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-state-machine-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-state-machine-diagram/</a></p>
+<p>实体的行为不仅是其输入的直接结果，而且还取决于其先前的状态。实体的过去历史最好用有限状态图或传统上称为自动机的方式建模。<code>UML</code>状态图（或有时称为状态图、状态机）显示实体的不同状态。状态图还可以显示实体如何通过从一种状态更改为另一种状态来响应各种事件。状态图是用于对系统的动态性质进行建模的<code>UML</code>图。    </p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211152828.png" alt="img"></p>
+<h1 id="一、为何要使用状态图？"><a href="#一、为何要使用状态图？" class="headerlink" title="一、为何要使用状态图？"></a>一、为何要使用状态图？</h1><p>状态图通常用于描述对象的状态相关行为。一个对象根据它所处的状态对同一事件做出不同的响应。状态图通常应用于对象，但可以应用于对其他实体具有行为的任何元素。例如：角色、用例、方法、子系统等等，它们通常与交互图(通常是时序图)结合使用。</p>
+<p>例如：</p>
+<p>假设您的银行账户中有100,000美元。取款函数的行为是：余额=余额-取款金额，前提是提款后的余额不少于0美元；无论您从银行取款多少次都是如此。在这种情况下，提取不会影响属性值的抽象，因此对象的总体行为保持不变。</p>
+<p>但是，如果提款后账户余额变为负数，那么提款功能的行为将完全不同。这是因为银行账户的状态由正变为负；在技术语中，从积极状态到消极状态的转换被触发。</p>
+<p>属性值的抽象是系统的属性，而不是全局适用的规则。例如：如果银行更改业务规则，允许银行余额透支2000美元，则将重新定义银行账户的状态，条件是提款后的余额不得少于2000美元的赤字。</p>
+<p>注意：</p>
+<ul>
+<li>状态图描述是所有事件(以及单个对象的状态和转换)</li>
+<li>序列图描述了涉及所有对象的单个交互的事件</li>
+</ul>
+<h1 id="二、状态图的基本概念"><a href="#二、状态图的基本概念" class="headerlink" title="二、状态图的基本概念"></a>二、状态图的基本概念</h1><p><strong>什么是状态</strong>：</p>
+<blockquote>
+<p><em>Rumbaugh</em>定义：状态是对象的属性值和连接的抽象。根据影响对象总体行为的属性，将一组值合成一个状态。</p>
+</blockquote>
+<p><strong>状态符号</strong></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211160715.png" alt="img"></p>
+<h1 id="三、状态图符号的特征"><a href="#三、状态图符号的特征" class="headerlink" title="三、状态图符号的特征"></a>三、状态图符号的特征</h1><p>一般来说，无论其类型如何，状态都有几个特征：</p>
+<ul>
+<li>一个状态占用一个时间间隔。</li>
+<li>状态通常与满足某些条件的实体的属性值的抽象相关联。</li>
+<li>实体更改其状态不仅是当前输入的直接结果，而且还取决于其输入的某些过去历史。</li>
+</ul>
+<h2 id="3-1-状态"><a href="#3-1-状态" class="headerlink" title="3.1 状态"></a>3.1 状态</h2><p>状态是对象生命周期中的一个约束或一种情况，其中一个约束成立，对象执行一个活动或等待一个事件。</p>
+<p>状态图是由以下部分组成的图：</p>
+<ul>
+<li>状态（简单状态或复合状态）</li>
+<li>连接状态的过渡线</li>
+</ul>
+<p>例子：</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211161303.png" alt="img"></p>
+<h3 id="3-1-1-状态特征"><a href="#3-1-1-状态特征" class="headerlink" title="3.1.1 状态特征"></a>3.1.1 状态特征</h3><ul>
+<li>状态表示对象在特定时间点的状态。</li>
+<li>对象(或系统)可以被视为从一个状态移动到另一个状态。</li>
+<li>模型元素生命周期中满足某些条件的点，其中执行某些特定操作或等待某些事件。</li>
+</ul>
+<h3 id="3-1-2-初始状态和最终状态"><a href="#3-1-2-初始状态和最终状态" class="headerlink" title="3.1.2 初始状态和最终状态"></a>3.1.2 初始状态和最终状态</h3><ul>
+<li>状态图的初始状态，称为初始伪状态，用实心圆表示。从此状态的转换将显示第一个真实状态。</li>
+<li>状态机图的最终状态显示为同心圆。开环状态图表示可能在系统终止之前终止的对象，而闭环状态图没有最终状态，如果是这种情况，则该对象将一直存在，直到整个系统终止。</li>
+</ul>
+<p>例子：</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211163926.png" alt="img"></p>
+<h2 id="3-2-事件"><a href="#3-2-事件" class="headerlink" title="3.2 事件"></a>3.2 事件</h2><p>事件签名被描述为事件名称（逗号分隔参数列表）。事件出现在状态的内部转换隔间或状态之间的转换上。事件可能是以下四种类型之一：</p>
+<ol>
+<li>信号事件——对应异步消息或信号的到达</li>
+<li>调用事件——对应于对操作的程序调用的到来</li>
+<li>时间事件——在指定时间过去后发生时间事件</li>
+<li>更改事件——只要满足指定条件，就会发生更改事件。</li>
+</ol>
+<h3 id="3-2-1-事件的特征"><a href="#3-2-1-事件的特征" class="headerlink" title="3.2.1 事件的特征"></a>3.2.1 事件的特征</h3><ul>
+<li>表示导致对象从一种状态转换到另一种状态的事件。</li>
+<li>内部或外部事件触发一些活动，这些活动会改变系统及其某些部分的状态。</li>
+<li>事件传递信息，这些信息由对象操作详细说明。对象实现事件。</li>
+<li>设计涉及检查状态图中的事件并考虑系统对象将如何支持这些事件。</li>
+</ul>
+<h2 id="3-3-过渡线"><a href="#3-3-过渡线" class="headerlink" title="3.3 过渡线"></a>3.3 过渡线</h2><p>过渡线描绘了从一种状态到另一种状态的移动。每条转换线都标有导致转换的事件。</p>
+<ul>
+<li>将系统视为一组状态和状态之间的转换对于描述复杂行为非常有用。</li>
+<li>理解状态转换是系统分析和涉及的一部分。</li>
+<li>转换时从一种状态到另一种状态的运动。</li>
+<li>状态之间的转换发生如下：<ul>
+<li>元素处于源状态</li>
+<li>发生事件</li>
+<li>执行了一个动作</li>
+<li>元素进入目标状态</li>
+</ul>
+</li>
+<li>多个转换发生在不同事件导致状态终止或转换存在保护条件时。</li>
+<li>没有事件和动作的转换称为自动转换。</li>
+</ul>
+<h2 id="3-4-动作和活动"><a href="#3-4-动作和活动" class="headerlink" title="3.4 动作和活动"></a>3.4 动作和活动</h2><p>动作是一种可执行的原子计算，包括操作调用、创建或销毁另一个对象或向对象发送信号。一个动作与转换相关联，在此期间一个动作是不可中断的——例如，进入和退出。</p>
+<p>活动与状态相关联，状态是非原子的或正在进行的计算。活动可能会运行到完成或无限期地继续。一个Activity将被一个事件终止，该事件导致从定义该Activity的状态转换。</p>
+<h3 id="3-4-1-动作和活动的特征"><a href="#3-4-1-动作和活动的特征" class="headerlink" title="3.4.1 动作和活动的特征"></a>3.4.1 动作和活动的特征</h3><ul>
+<li>状态可以触发动作</li>
+<li>状态可以有第二个隔间，其中包含在实体处于给定状态时执行的操作或活动。</li>
+<li>动作是原子执行，因此可以不间断的完成。</li>
+<li>五个动作触发器：<code>On Entry</code>、<code>Do</code>、<code>On Event</code>、<code>On Exit</code>、<code>Include</code></li>
+<li>活动捕获可能长时间运行的复杂行为——活动可能会被事件中断，在这种情况下，当对象到达某个状态时，他不会完成。</li>
+</ul>
+<h1 id="四、简单状态图的符号"><a href="#四、简单状态图的符号" class="headerlink" title="四、简单状态图的符号"></a>四、简单状态图的符号</h1><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211165812.png" alt="img"></p>
+<h2 id="4-1-进入和退出操作"><a href="#4-1-进入和退出操作" class="headerlink" title="4.1 进入和退出操作"></a>4.1 进入和退出操作</h2><p>状态中指定的进入和退出动作。每次进入/退出事件都必须为真。如果不是，那么仅必须在各个过渡线上使用操作。</p>
+<ul>
+<li>Entry进入状态时执行的动作，符号为：<code>Entry/action</code></li>
+<li>Exit退出状态时执行的操作，符号为：<code>Exit/action</code></li>
+</ul>
+<p><strong>示例-进入/退出操作（检查账簿状态）</strong></p>
+<p>这个例子说明了一个从一个类——“BookCopy”派生的状态图。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211171011.png" alt="img"></p>
+<p>注意：</p>
+<ol>
+<li>此状态图显示了BookCopy类中对象myBkCopy的状态</li>
+<li>进入动作：任何被标记为链接到进入动作的动作都会在通过转换进入给定状态时执行</li>
+<li>退出动作：任何被标记为链接到退出动作的动作都会在状态通过转换离开时执行</li>
+</ol>
+<h2 id="4-2-子状态"><a href="#4-2-子状态" class="headerlink" title="4.2 子状态"></a>4.2 子状态</h2><p>简单状态时没有子结构的状态。具有子状态(嵌套状态)的状态称为复合状态。子状态可以嵌套到任何级别。嵌套状态最多可以有一个初始状态和一个最终状态。子状态用于通过显示某些状态仅在特定上下文(封闭状态)内才可能来简化复杂的平面状态图。</p>
+<p><strong>子状态示例-加热器</strong></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0214093051.png" alt="img"></p>
+<p>状态图通常用于派生测试用例，这里列出了可能的测试思路：</p>
+<ul>
+<li>空闲状态接收太热事件</li>
+<li>空闲状态接收太冷事件</li>
+<li>Cooling/Startup状态接收Compressor Running事件</li>
+<li>Cooling/Ready状态接收Fan Running事件</li>
+<li>Cooling/Running状态接收OK事件</li>
+<li>冷却/运行状态接收故障事件</li>
+<li>失败状态接收失败清除事件</li>
+<li>加热状态接收OK事件</li>
+<li>加热状态接收失败事件</li>
+</ul>
+<h2 id="4-3-历史状态"><a href="#4-3-历史状态" class="headerlink" title="4.3 历史状态"></a>4.3 历史状态</h2><p>除非另有说明，否则当转换进入复合状态时，嵌套状态图的操作会从初始状态重新开始(触发转换直接针对子状态)。历史状态允许状态机重新进入在离开复合状态之前处于活动状态的最后一个子状态。下图展示了一个历史状态使用的例子。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0214094426.png" alt="img"></p>
+<h2 id="4-4-并发状态"><a href="#4-4-并发状态" class="headerlink" title="4.4 并发状态"></a>4.4 并发状态</h2><p>如上所述，状态图中的状态可以嵌套。相关的状态可以组合成一个单一的复合状态。当一个活动涉及并发子活动时，在其他活动中嵌套状态属实必要的。以下状态图对具有两个并发子状态的拍卖进行建模：处理投标和授权支付限额。</p>
+<p><strong>并发状态图示例-拍卖过程</strong></p>
+<p>在此示例中，首先进入拍卖的状态图需要在开始时分叉成两个单独的开始线程。每个子状态都有一个退出状态来标记线程的结束。除非有异常退出(Canceled或Rejected)，否则当两个子状态都退出时才会退出复合状态。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0214101331.png" alt="img"></p>
+
+
+    
+    
+    
+
+	
+		<div>
+			<div>
+  
+    <div style="text-align:center;color:#bfbfbf;font-size:16px;">
+      <span>-------- The End </span>
+      <i class="fa fa-heart"></i>
+      <span> Thanks For Reading --------</span>
+    </div>
+  
+</div>
+		</div>
+	
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\UML知识\" rel="bookmark">UML类图知识</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\什么是交互概述图\" rel="bookmark">什么是交互概述图</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\什么是复合结构图\" rel="bookmark">什么是复合结构图</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\什么是对象图\" rel="bookmark">什么是对象图</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\什么是序列图\" rel="bookmark">什么是序列图</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/UML%E7%9F%A5%E8%AF%86/" rel="tag"># UML知识</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/" rel="prev" title="什么是活动图">
+      <i class="fa fa-chevron-left"></i> 什么是活动图
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/" rel="next" title="什么是序列图">
+      什么是序列图 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+	
+	
+	
+		<div class="post-nav">
+			
+				<div class="post-nav-prev post-nav-item">
+					<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/" rel="prev" title="什么是序列图">
+						
+					</a>
+				</div>
+				
+			<span class="post-nav-divider"></span>
+			
+				<div class="post-nav-next post-nav-item">
+					<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/" rel="next" title="什么是活动图">
+						
+					</a>
+				</div>
+				
+		</div>
+	
+</article>
+  
+  
+  
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE"><span class="nav-text">什么是状态图</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%B8%BA%E4%BD%95%E8%A6%81%E4%BD%BF%E7%94%A8%E7%8A%B6%E6%80%81%E5%9B%BE%EF%BC%9F"><span class="nav-text">一、为何要使用状态图？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E7%8A%B6%E6%80%81%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">二、状态图的基本概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E7%8A%B6%E6%80%81%E5%9B%BE%E7%AC%A6%E5%8F%B7%E7%9A%84%E7%89%B9%E5%BE%81"><span class="nav-text">三、状态图符号的特征</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-%E7%8A%B6%E6%80%81"><span class="nav-text">3.1 状态</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-%E7%8A%B6%E6%80%81%E7%89%B9%E5%BE%81"><span class="nav-text">3.1.1 状态特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-2-%E5%88%9D%E5%A7%8B%E7%8A%B6%E6%80%81%E5%92%8C%E6%9C%80%E7%BB%88%E7%8A%B6%E6%80%81"><span class="nav-text">3.1.2 初始状态和最终状态</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E4%BA%8B%E4%BB%B6"><span class="nav-text">3.2 事件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-%E4%BA%8B%E4%BB%B6%E7%9A%84%E7%89%B9%E5%BE%81"><span class="nav-text">3.2.1 事件的特征</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-%E8%BF%87%E6%B8%A1%E7%BA%BF"><span class="nav-text">3.3 过渡线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-%E5%8A%A8%E4%BD%9C%E5%92%8C%E6%B4%BB%E5%8A%A8"><span class="nav-text">3.4 动作和活动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-1-%E5%8A%A8%E4%BD%9C%E5%92%8C%E6%B4%BB%E5%8A%A8%E7%9A%84%E7%89%B9%E5%BE%81"><span class="nav-text">3.4.1 动作和活动的特征</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E7%AE%80%E5%8D%95%E7%8A%B6%E6%80%81%E5%9B%BE%E7%9A%84%E7%AC%A6%E5%8F%B7"><span class="nav-text">四、简单状态图的符号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-%E8%BF%9B%E5%85%A5%E5%92%8C%E9%80%80%E5%87%BA%E6%93%8D%E4%BD%9C"><span class="nav-text">4.1 进入和退出操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-%E5%AD%90%E7%8A%B6%E6%80%81"><span class="nav-text">4.2 子状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-%E5%8E%86%E5%8F%B2%E7%8A%B6%E6%80%81"><span class="nav-text">4.3 历史状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-%E5%B9%B6%E5%8F%91%E7%8A%B6%E6%80%81"><span class="nav-text">4.4 并发状态</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="warrent"
+      src="/images/head.jpg">
+  <p class="site-author-name" itemprop="name">warrent</p>
+  <div class="site-description" itemprop="description">Get busy living or Get busy dying</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/warrent-B" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;warrent-B" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:2200316678@qq.com" title="E-Mail → mailto:2200316678@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Link
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://warrent-b.github.io/" title="https:&#x2F;&#x2F;warrent-B.github.io">warrent</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+	  
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">warrent</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">50k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">46 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="user"></i>
+      </span>
+    <span class="site-uv">
+		我的第 <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 位朋友，
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-heart"></i>
+      </span>
+    <span class="site-pv">
+		历经 <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次回眸才与你相遇
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+
+ 
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment-precise-range-plugin@1.3.0/moment-precise-range.min.js"></script>
+<script>
+  function timer() {
+    var ages = moment.preciseDiff(moment(),moment(20211105,"YYYYMMDD"));
+    ages = ages.replace(/years?/, "年");
+    ages = ages.replace(/months?/, "月");
+    ages = ages.replace(/days?/, "天");
+    ages = ages.replace(/hours?/, "小时");
+    ages = ages.replace(/minutes?/, "分");
+    ages = ages.replace(/seconds?/, "秒");
+    ages = ages.replace(/\d+/g, '<span style="color:#1890ff">$&</span>');
+    div.innerHTML = `本站已运行 ${ages}`;
+  }
+  var div = document.createElement("div");
+  //插入到copyright之后
+  var copyright = document.querySelector(".copyright");
+  document.querySelector(".footer-inner").insertBefore(div, copyright.nextSibling);
+  timer();
+  setInterval("timer()",1000)
+</script>
+
+
+</body>
+</html>

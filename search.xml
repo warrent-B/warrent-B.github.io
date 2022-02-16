@@ -1,0 +1,2001 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo+NexT搭建个人博客</title>
+    <url>/2021/Hexo+NexT%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>非常感谢，网上的博主让我能够在你们的优质文章下完成个人博客的搭建，并再次感谢<code>yearito</code>所写的Hexo系列文章，对我的帮助很大。</p>
+<span id="more"></span>
+
+<p>原来的笔记主要使用<code>docsify</code>存于本地环境中，受<a href="https://canloveme.gitee.io/">canloveme</a>一次分享，于是就想着自己能够在Github上搭建一个个人博客，不需要很华丽，基本功能能够做成就行，因为本地的不方便分享，之后花了一些时间，参考多篇文章，最终制作完成。如果你也想搭建自己的个人博客，可以看看下面的推荐链接。</p>
+<p>墙裂推荐： <a href="http://yearito.cn/">http://yearito.cn/</a></p>
+<p>Hexo中文文档：<a href="https://hexo.io/zh-cn/index.html">https://hexo.io/zh-cn/index.html</a></p>
+<p>NexT主题文档：<a href="http://theme-next.iissnan.com/">http://theme-next.iissnan.com/</a></p>
+<blockquote class="blockquote-center">世界上最长的路，便是捷径！</blockquote>
+
+]]></content>
+      <categories>
+        <category>Start</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>UML类图知识</title>
+    <url>/2022/UML%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<p>该篇文章是在《设计模式》第一章《简单工厂模式》中提到了UML类图的知识，因为这不是零碎的知识点，所以独自开辟一个系列来学习。该知识可通过<code>设计模式</code>以及<code>UML知识</code>标签查看。</p>
+<span id="more"></span>
+
+<h1 id="UML知识"><a href="#UML知识" class="headerlink" title="UML知识"></a>UML知识</h1><h1 id="一、UML简介"><a href="#一、UML简介" class="headerlink" title="一、UML简介"></a>一、UML简介</h1><p><code>UML</code>是统一建模语言的简称，它是一种由一整套图标组成的标准化建模语言。<code>UML</code>用于帮助系统开发人员阐明，展示，构建和记录软件系统的产出。<code>UML</code>代表了一系列在大型而复杂系统建模中被证明是成功的做法，是开发面向对象软件和软件开发过程中非常重要的一部分。<code>UML</code>主要使用图形符号来表示软件项目的设计，使用<code>UML</code>可以帮助项目团队沟通、探索潜在的设计和验证软件的架构设计。</p>
+<p>源文链接：<a href="https://www.visual-paradigm.com/cn/guide/uml-unified-modeling-language/what-is-uml/">https://www.visual-paradigm.com/cn/guide/uml-unified-modeling-language/what-is-uml/</a></p>
+<p>官方网站：<a href="https://www.uml.org/">https://www.uml.org/</a></p>
+<h2 id="1-1-UML起源"><a href="#1-1-UML起源" class="headerlink" title="1.1 UML起源"></a>1.1 UML起源</h2><p><code>UML</code>的目标是提供一个标准的符号，可以被所有面向对象的方法使用，并选择和整合前兆符号的最佳元素。<code>UML</code>可用于广泛的应用程序，它为不同的系统和活动(如分布式系统，分析，系统设计和部署)提供了构造。</p>
+<p><code>UML</code>是由OMT统一而来的符号，时序如下：</p>
+<ol>
+<li>对象建模技术OMT(1991)-最适合分析和数据密集型信息系统。</li>
+<li>Booch(1994)-强项为设计和实作。<em>Grady Booch</em>曾经为Ada语言方面做过广泛的工作，并且一直是该语言面向对象技术发展的主要参与者。尽管Booch方法很强大，但是并未广为接受(因为他的模型包含着很多云状，给人不整齐的感觉)。</li>
+<li>OOSE(面向对象的软件工厂1992)-有一个称为用例的模型。用例是理解整个系统行为的强大技术。</li>
+</ol>
+<p>1994年，OMT的创始人<em>Jim Rumbaugh</em>离开了通用电气公司(General Electric)，转投Rational，与<em>Grady Booch</em>并肩作战。这使得软件世界惊呆的合作，为的是要把二人的想法结合成一个统一的方法（项目名称也就是”统一方法”）。</p>
+<p>到了1995年，OOSE的创建者<em>lvar Jacobson</em>也加入了Rational，他的想法（特别是有关”用例(Use Case)”）的概念被整合于统一方法中，成为”统一建模语言”。</p>
+<h2 id="1-2-UML历史"><a href="#1-2-UML历史" class="headerlink" title="1.2 UML历史"></a>1.2 UML历史</h2><ol>
+<li>在1996年间，由Object Management Group(OMG)发布的第一个征求建议书(RFP)，成为了让这些组织联合起来的催化剂。</li>
+<li>Rational与几个愿意为加强UML1.0投入资源的组织建立了UML伙伴联盟。</li>
+<li>这次合作产生了UML1.0，一个由明确定义，表达力强大且通用的建模语言。UML1.0在1997年1月提交给OMG，作为最初的RFP回应。</li>
+<li>1997年1月，IBM，ObjectTime，Ptech等也相继向OMG提交了RFP回应。这些公司加入了伙伴联盟，贡献了他们的想法，并一起制定了经修订的UML1.1。UML1.1的重点是提高UML1.0语义的清晰度，并纳入来自新合作伙伴的意见。UML1.1被提交给OMG供考虑，并在1997年秋季被采用，及后被改良，版本从1.1渐渐提高到1.5，并于2001到2006年内提高到2.1（现在的UML版本为2.5）</li>
+</ol>
+<h2 id="1-3-为何用UML"><a href="#1-3-为何用UML" class="headerlink" title="1.3 为何用UML"></a>1.3 为何用UML</h2><p>首先要注意的是<code>UML</code>设计很多不同的图表(模型)，其原因是提供从许多不同的角度来审视系统。软件开发流程往往有许多持分者参与其中，例如：分析师、设计师、程序员、测试员、质量保证员、客户、技术文件撰稿员。</p>
+<p>这些人都对系统的不同方面各持不同兴趣，故此在建模时需要考虑不同的细节层次。例如，程序员需要了解系统的设计，并将设计转换为代码，而技术文件撰稿员则对整个系统的行为感兴趣，借以了解产品的功能。<code>UML</code>提供了极富表达能力的建模语言，好让各持分者至少可以从一个<code>UML</code>图标得到感兴趣的资讯。</p>
+<h1 id="二、UML概述"><a href="#二、UML概述" class="headerlink" title="二、UML概述"></a>二、UML概述</h1><p><code>UML</code>图表可大致分为<strong>结构性图表</strong>和<strong>行为性图表</strong>两种。</p>
+<p><strong>结构性图表</strong>显示了系统在不同抽象层次和实现层次上的静态结构以及它们之间的相互关系。结构性图表中的元素表示系统中具有意义的概念，可能包括抽象的、现实的和实作的概念。结构性图表有七种类型：</p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0110104555.png" alt="img"></p>
+<p><strong>行为性图表</strong>显示了系统中对象的动态行为，可用以表达系统随时间的变化。行为性图表有其中类型：</p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0110105059.png" alt="img"></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0110114105.png" alt="img"></p>
+<h1 id="三、UML图表简述"><a href="#三、UML图表简述" class="headerlink" title="三、UML图表简述"></a>三、UML图表简述</h1><h2 id="3-1-类图"><a href="#3-1-类图" class="headerlink" title="3.1 类图"></a>3.1 类图</h2><p><strong>类图</strong>是一切面向对象方法的核心建模工具。该图描述了系统中对象的类型以及它们之间存在的各种静态关系。</p>
+<p>有三种主要的关系：</p>
+<ol>
+<li>关联关系：代表类型之间的关系（一个人为公司工作，一个公司有多个办事处）。</li>
+<li>继承关系：专为将实例关系(ERD)应用于面向对象设计而设的一种关系。它在面向对象设计中的继承概念互相呼应。</li>
+<li>聚合关系：面向对象设计中的一种对象组合的形式。</li>
+</ol>
+<p><strong>类图示例：</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0110182904.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关类图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/" title="什么是类图">什么是类图</a></p>
+          </div>
+
+<h2 id="3-2-组件图"><a href="#3-2-组件图" class="headerlink" title="3.2 组件图"></a>3.2 组件图</h2><p>在统一建模语言中，组件图描绘了组件如何连接在一起以形成更大的组件或软件系统。它展示了软件组件的体系结构以及它们之间的依赖关系。那些软件组件包括运行时组件，可执行组件和源代码组件。</p>
+<p><strong>组件图示例：</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0112093753.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关组件图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/" title="什么是组件图">什么是组件图</a></p>
+          </div>
+
+<h2 id="3-3-部署图"><a href="#3-3-部署图" class="headerlink" title="3.3 部署图"></a>3.3 部署图</h2><p>部署图有助于模拟面向对象软件系统的物理方面。它是一个结构性图标，显示了软件产出于系统架构内如何被分发至指定目标。产出即显示生活中各种通用开发过程产生的产品。部署图对运行时配置进行建模，并可视化应用程序中产出的分布。在大多数情况下，它表达了硬件配置以及和软件组件之间的关系。</p>
+<p><strong>部署图示例：</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0113132023.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关部署图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/" title="什么是部署图">什么是部署图</a></p>
+          </div>
+
+<h2 id="3-4-对象图"><a href="#3-4-对象图" class="headerlink" title="3.4 对象图"></a>3.4 对象图</h2><p>对象图是实例(Instance)的表达，包括对象和数据值。静态的对象图是类图的一个实例，它是系统在某个时间点详细状态的快照，不同之处在于类图表示了一个由类及其关系组成的抽象模型，而对象图则表达了特定时刻的实例。对象图的使用是相当有限的，它常被用做展示数据结构例子。</p>
+<h3 id="3-4-1-类图与对象图的例子"><a href="#3-4-1-类图与对象图的例子" class="headerlink" title="3.4.1 类图与对象图的例子"></a>3.4.1 类图与对象图的例子</h3><p>有些人难以区分<code>UML</code>类图和<code>UML</code>对象图，因为它们都包含一些”矩形块”和一些连接线，看起来很相似。有些人甚至认为它们是相同的，因为某些<code>UML</code>软件会将类图和对象图的符号放在同一个图标编辑器-类图中。</p>
+<p>事实上，类图和对象图表达着两个不同的层次。在本文中，我们将向您提供关于这两个<code>UML</code>图表的一些想法，让您了解它们是什么，它们的区别以及何时使用它们。</p>
+<h3 id="3-4-2-类图与对象图的关系"><a href="#3-4-2-类图与对象图的关系" class="headerlink" title="3.4.2 类图与对象图的关系"></a>3.4.2 类图与对象图的关系</h3><p>您会在编程时创建”类”。例如，在网上银行系统中，您可以创建”用户”，”账户”，”交易”等类。又例如，在课堂管理系统中，您会创建”教师”，”学生”，”任务”等。在每个类中都有属性和操作来表示类的特征和行为，而类图则是一种让你看到这些类和它们的属性，操作和相互关系的图表。</p>
+<p><code>UML</code>对象图显示了系统中的对象实例如何在特定状态下彼此交互。它也表示那个状态下那些对象的数据值。换句话说，<code>UML</code>对象图可以被看作是如何在特定状态下使用类(在<code>UML</code>类图中绘制)的表达。</p>
+<p>且看看下面的<code>UML</code>图例子。我相信您会在几秒内了解它们的差异。</p>
+<h3 id="3-4-3-类图示例"><a href="#3-4-3-类图示例" class="headerlink" title="3.4.3 类图示例"></a>3.4.3 类图示例</h3><p>以下类图示例代表两个类-用户和附件。用户可以上传多个附件，因此这两个类以一个关联连接，在附件方则以<code>0..*</code>作为多重性。</p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0114121453.png" alt="img"></p>
+<h3 id="3-4-4-对象图示例"><a href="#3-4-4-对象图示例" class="headerlink" title="3.4.4 对象图示例"></a>3.4.4 对象图示例</h3><p>下面的对象图示例显示了当Peter(即用户)上传两个附件时User 和 Attachment 类的对象实例如何。因上传两个附件，所以有两个附件对象。</p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0114122505.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关对象图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/" title="什么是对象图">什么是对象图</a></p>
+          </div>
+
+<h2 id="3-5-包图"><a href="#3-5-包图" class="headerlink" title="3.5 包图"></a>3.5 包图</h2><p>包图是<code>UML</code>一种用以显示包和包之间的依赖关系的结构性图表。该模型图能够显示系统的不同视图，例如，多层应用程序。</p>
+<p><strong>包图示例</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0208093539.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关包图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/" title="什么是包图">什么是包图</a></p>
+          </div>
+
+<h2 id="3-6-复合结构图"><a href="#3-6-复合结构图" class="headerlink" title="3.6 复合结构图"></a>3.6 复合结构图</h2><p>复合结构图是添加到<code>UML2.0</code>中的新的图表之一。复合结构图与类图相似，是一种用于微观视角的系统建模组件图，而不是整个类的组成部分。它是一种静态结构图，显示了一个类的内部结构和这个结构所实现的协作。</p>
+<p>复合结构图可以包括内部零件，零件通过其互相交互或通过端口与外界交互。复合结构是一组相关联的元素，它们在运行时进行协作以达到某种目的。每个元素在协作中都有一些定义的角色。</p>
+<p><strong>复合结构图示例</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0208173410.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关复合结构图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/" title="什么是复合结构图">什么是复合结构图</a></p>
+          </div>
+
+<h2 id="3-7-轮廓图"><a href="#3-7-轮廓图" class="headerlink" title="3.7 轮廓图"></a>3.7 轮廓图</h2><p>轮廓图使您能够创建特定于域和平台的原型，并定义它们之间的关系。</p>
+<p><strong>轮廓图示例</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0209165125.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关轮廓图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/" title="什么是轮廓图">什么是轮廓图</a></p>
+          </div>
+
+<h2 id="3-8-用例图"><a href="#3-8-用例图" class="headerlink" title="3.8 用例图"></a>3.8 用例图</h2><p>用例模型从用例的角度描述系统的功能需求，它是系统预期功能（用例）及其环境（参与者）的模型。用例使您能够将系统需要与系统如何满足这些需求相关联。</p>
+<p>将用例模型想象成一个菜单，就像在餐馆中找到的菜单一样，通过查看菜单，你知道什么菜肴以及它们的价格，你也知道餐厅供应什么样的菜肴：意大利、墨西哥、中国等等。通过查看菜单，您可以对该餐厅的用餐体验有一个全面的了解，因为它是一个非常强大的计划工具，所以团队成员通常在开发周期的所有阶段都使用用例模型。</p>
+<p><strong>用例图示例</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0209172431.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关用例图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/" title="什么是用例图">什么是用例图</a></p>
+          </div>
+
+<h2 id="3-9-活动图"><a href="#3-9-活动图" class="headerlink" title="3.9 活动图"></a>3.9 活动图</h2><p>活动图用于展示工作流程，它支持选择(Choice)、迭代(Iteration)和并发(Concurrency)。活动图描述了目标系统的控制流程，比如探索复杂的业务规则和操作，描述用例和业务流程。在统一建模语言中，活动图旨在模拟计算和组织过程(即工作流程)。</p>
+<p><strong>活动图示例</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0210112501.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关活动图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/" title="什么是活动图">什么是活动图</a></p>
+          </div>
+
+<h2 id="3-10-状态图"><a href="#3-10-状态图" class="headerlink" title="3.10 状态图"></a>3.10 状态图</h2><p>状态图是<code>UML</code>中用来描述基于<em>David Harel</em>的状态图概念的系统行为的一种图表。状态图描绘允许的状态和转换以及影响这些转换的事件，它有助于可视化对象的整个生命周期，从而更好地理解以状态主导地系统。</p>
+<p>状态图示例：</p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0211152657.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关状态图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/" title="什么是状态图">什么是状态图</a></p>
+          </div>
+
+<h2 id="3-11-序列图"><a href="#3-11-序列图" class="headerlink" title="3.11 序列图"></a>3.11 序列图</h2><p>序列图根据事件序列展示对象如何进行协作。它展示了在用例的特定场景中，对象如何与其他对象交互。凭借现金的可视化建模功能，您只需点击几下即可创建复杂的序列图。另外<code>Viaual Paradigm</code>可以根据用例描述中定义的事件流生成序列图。</p>
+<p><strong>序列图示例</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0214104310.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关序列图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/" title="什么是序列图">什么是序列图</a></p>
+          </div>
+
+<h2 id="3-12-通讯图"><a href="#3-12-通讯图" class="headerlink" title="3.12 通讯图"></a>3.12 通讯图</h2><p>与序列图类似，通讯图也用于模拟用例的动态行为。与序列图相比，通讯图更侧重于显示对象的协作而不是时间顺序。它们实际上在语义上是等价的，因此一些建模(如Visual Paradigm)允许您从一个模型生成一个到另一个。</p>
+<p><strong>通信图示例</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0216143640.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关通信图的更多详细信息，请阅读文章<a href="#">Post not found: 什么是通信图 什么是通信图</a></p>
+          </div>
+
+<h2 id="3-13-交互概述图"><a href="#3-13-交互概述图" class="headerlink" title="3.13 交互概述图"></a>3.13 交互概述图</h2><p>交互概述图侧重于交互控制流程的概述，它是活动图的变体，其中节点是交互(Interactions)或交互发生(Interaction Occurrences)。交互概述图描述了隐藏于消息(Message)和生命线(Lifeline)间的交互。</p>
+<p><strong>交互概述图示例</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0216154041.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关交互概述图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/" title="什么是交互概述图">什么是交互概述图</a></p>
+          </div>
+
+<h2 id="3-14-时序图"><a href="#3-14-时序图" class="headerlink" title="3.14 时序图"></a>3.14 时序图</h2><p>时序图显示了既定时间内对象的行为。时序图是序列图的一种特殊形式，它俩之间的差异是轴反转，时间从左到右增加，生命线显示在垂直排列的独立隔间中。</p>
+<p><strong>时序图示例</strong></p>
+<p><img src="/2022/UML%E7%9F%A5%E8%AF%86/assets/0216162401.png" alt="img"></p>
+<div class="note [success]">
+            <p>有关时序图的更多详细信息，请阅读文章<a href="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/" title="什么是时序图">什么是时序图</a></p>
+          </div>
+
+
+
+]]></content>
+      <categories>
+        <category>设计模式</category>
+        <category>UML知识</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+        <tag>UML知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>switchcase用法详解</title>
+    <url>/2022/switchcase%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/</url>
+    <content><![CDATA[<p>该篇文档为《简单工厂模式》的文章所引用的补充说明。</p>
+<span id="more"></span>
+
+<h1 id="switch-case用法详解"><a href="#switch-case用法详解" class="headerlink" title="switch case用法详解"></a>switch case用法详解</h1><p>源文链接：<a href="http://c.biancheng.net/view/171.html">http://c.biancheng.net/view/171.html</a></p>
+<p>从功能上来说，switch 语句和 if 语句完全可以相互取代。但是从编程的角度，它们又各有千秋，所以至今为止也不能说谁可以完全取代谁，需要根据业务场景，选择最为契合的方式。</p>
+<p>当嵌套的 if 比较少时（三个以内），用 if 编写程序会比较简洁。但是当选择的分支比较多时，嵌套的 if 语句层数就会很多，导致程序冗长，可读性下降。这时可以使用 switch 语句来处理多分支选择。所以 if 和 switch 可以说是分工明确的。在很多大型的项目中，多分支选择的情况经常会遇到，所以 switch 语句用得还是比较多的。</p>
+<p>switch 语句的一般形式如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">switch</span> (表达式) </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">case</span> 常量表达式<span class="number">1</span>: 语句<span class="number">1</span></span><br><span class="line">    <span class="keyword">case</span> 常量表达式<span class="number">2</span>: 语句<span class="number">2</span></span><br><span class="line">        .</span><br><span class="line">        .</span><br><span class="line">        .</span><br><span class="line">    <span class="keyword">case</span> 常量表达式n: 语句n</span><br><span class="line">    <span class="keyword">default</span>: 语句n+<span class="number">1</span>    </span><br><span class="line">&#125;    </span><br></pre></td></tr></table></figure>
+
+<p>补充说明：</p>
+<ol>
+<li><p>switch 后面括号内的”表达式”必须是整数类型。也就是说可以是 int 型变量、char 型变量，也可以直接是整数或字符常量，哪怕是负数都可以。但是绝对不可以是实数、float型变量、double型变量、小数常量通通不行，全部都是语法错误。</p>
+</li>
+<li><p>switch 下的 case 和 default 必须用一对大括号<code>&#123;&#125;</code>括起来。</p>
+</li>
+<li><p>当 switch 后面括号内”表达式”的值与某个 case 后面的”常量表达式”的值相等时，就执行此 case 后面的语句。执行完一个 case 后面的语句后，流程控制转移到下一个 case 继续执行。如果你只想执行这一个 case 语句，不想执行其他 case，那么就需要在这个 case 语句后面加上 break，跳出 switch 语句。</p>
+<p>注意：switch 是”选择”语句，不是”循环”语句。有人可能看到 break 就以为是循环语句，因为 break 一般给我们的印象都是跳出”循环”，但 break 还有一个用法，就是跳出 switch。</p>
+</li>
+<li><p>若所有的 case 中的常量表达式的值都没有与 switch 后面括号内”表达式”的值匹配上，就执行 default 后面的语句，default 就是”默认”的意思。如果 default 是最后一条语句的话，那么其后就可以不加 break，因为既然已经是最后一句了，则执行完后自然就推出 switch 了。</p>
+</li>
+<li><p>每个 case 后面”常量表达式”的值必须互不相同，否则就会出现互相矛盾的现象，而且这样写是语法错误的。</p>
+</li>
+<li><p>“case 常量表达式”知识起语句标号的作用，并不是在该处进行判断。在执行 switch 语句时，根据 switch 后面表达式的值找到匹配的入口标号，就从此标号开始执行下去，不再进行判断。</p>
+</li>
+<li><p>各个 case 和 default 的出现次序不影响执行结果。但从阅读的角度最好是按字母或数字的顺序写。</p>
+</li>
+<li><p>当然你也可以不要 default 语句，就跟 if…else 最后不要 else 语句一样。但最好是加上，后面可以什么都不写。这样可以避免别人误以为你忘了进行 default 处理，而且可以提醒别人 switch 到此结束了。</p>
+<p>但是需要注意的是，default 后面可以什么都不写，但是后面的冒号千万不能省略，省略了就是语法错误。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>补充说明</category>
+      </categories>
+      <tags>
+        <tag>补充说明</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是交互概述图</title>
+    <url>/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/</url>
+    <content><![CDATA[<p>该篇文章是<span class="label [info]">UML知识</span>的扩充。</p>
+<span id="more"></span>
+
+<h1 id="什么是交互概述图"><a href="#什么是交互概述图" class="headerlink" title="什么是交互概述图"></a>什么是交互概述图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-interaction-overview-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-interaction-overview-diagram/</a></p>
+<p><code>UML</code>交互概述图提供了交互模型的高级抽象。它是活动图的变体，其中节点是交互或交互发生。交互概述图侧重于交互控制流的概述，它还可以显示图表之间的活动流。换句话说，您可以链接“真实”图表，并在交互概览图中的图表之间实现高度可导航性。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/assets/0216150659.png" alt="img"></p>
+<h1 id="一、交互概览图概览"><a href="#一、交互概览图概览" class="headerlink" title="一、交互概览图概览"></a>一、交互概览图概览</h1><p>交互概览图是统一建模语言 (UML) 的 14 种图表类型之一，它可以描绘带有节点的控制流，这些节点可以包含交互图，显示在各种场景中如何启动一组片段。交互概述图侧重于节点是<strong>交互</strong>(sd) 或<strong>交互使用</strong>(ref) 的控制流的概述。</p>
+<p>交互概览图的其他符号元素与活动图和序列图相同。这些包括初始、最终、决策、合并、分叉和连接节点。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/assets/0216161233.png" alt="img"></p>
+<p>上面的例子显示了一个被大学录取的学生。首先，学生必须接受或拒绝录取。接受后，学生必须同时注册课程和申请住房。两者都完成后，学生必须向注册商付款。如果未及时收到付款，则注册服务商将学生排除在外。</p>
+<h1 id="二、交互概述图符号"><a href="#二、交互概述图符号" class="headerlink" title="二、交互概述图符号"></a>二、交互概述图符号</h1><h2 id="2-1-相互作用符号"><a href="#2-1-相互作用符号" class="headerlink" title="2.1 相互作用符号"></a>2.1 相互作用符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/assets/0216161650.png" alt="img"></p>
+<p>任何类型的交互图都可以内联显示为活动调用。</p>
+<h2 id="2-2-交互使用符号"><a href="#2-2-交互使用符号" class="headerlink" title="2.2 交互使用符号"></a>2.2 交互使用符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/assets/0216161851.png" alt="img"></p>
+<p>大型和复杂的序列图可以通过交互使用来简化。在其他几个交互之间重用一些交互也很常见。</p>
+<h1 id="三、交互图示例"><a href="#三、交互图示例" class="headerlink" title="三、交互图示例"></a>三、交互图示例</h1><h2 id="3-1-访问控制系统"><a href="#3-1-访问控制系统" class="headerlink" title="3.1 访问控制系统"></a>3.1 访问控制系统</h2><ul>
+<li>交互建立访问首先出现参数“非法 PIN”，然后是与消息 CardOut 的交互，该消息显示在一个内联交互中。</li>
+<li>然后还有一个替代方案，因为我们在其中一个分支上找到了一个带有 InteractionConstraint 的决策节点。</li>
+<li>沿着该控制流，我们在序列中找到另一个内联交互和一个 InteractionUse。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/assets/0216162001.png" alt="img"></p>
+<h2 id="3-2-调度系统"><a href="#3-2-调度系统" class="headerlink" title="3.2 调度系统"></a>3.2 调度系统</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/assets/0216162046.png" alt="img"></p>
+<h2 id="3-3-订单报告"><a href="#3-3-订单报告" class="headerlink" title="3.3 订单报告"></a>3.3 订单报告</h2><p>在此图中，我们要生成和格式化订单汇总报告。如果客户是外部的，我们从 XML 中获取信息；如果是内部的，我们从数据库中获取它。小序列图显示了这两种选择。一旦我们得到数据，我们就格式化报告；在这种情况下，我们不显示序列图，而只是用一个参考交互框架来引用它。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/assets/0216162124.png" alt="img"></p>
+<h2 id="3-4-房间预订"><a href="#3-4-房间预订" class="headerlink" title="3.4 房间预订"></a>3.4 房间预订</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%A4%E4%BA%92%E6%A6%82%E8%BF%B0%E5%9B%BE/assets/0216162150.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>UML知识</category>
+      </categories>
+      <tags>
+        <tag>UML知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是复合结构图</title>
+    <url>/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/</url>
+    <content><![CDATA[<p>该篇文章是<span class="label [info]">UML知识</span>的扩充。</p>
+<span id="more"></span>
+
+<h1 id="什么是复合结构图"><a href="#什么是复合结构图" class="headerlink" title="什么是复合结构图"></a>什么是复合结构图</h1><p>源文连接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-composite-structure-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-composite-structure-diagram/</a></p>
+<p>复合结构图是添加到<code>UML2.0</code>中的新项目之一。复合结构图是一种<code>UML</code>结构图，它包含类、接口、包及其关系，并提供全部或部分软件系统的逻辑视图。它显示结构化类图或协作的内部结构（包括组件和连接器）。</p>
+<p>复合结构图的作用与类图类似，但允许您进一步详细说明描述多个类的内部结构并显示它们之间的交互。您可以以图形方式表示内部类和组件，并显示类之间和类内的关联。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/assets/0208173505.png" alt="img"></p>
+<h1 id="一、复合结构图的用途"><a href="#一、复合结构图的用途" class="headerlink" title="一、复合结构图的用途"></a>一、复合结构图的用途</h1><ul>
+<li>复合结构图允许用户”窥视”对象内部，以准确查看它由什么组成。</li>
+<li>可以详细描述类的内部操作，包括嵌套类的关系。</li>
+<li>对象定义为其他类对象的组合。</li>
+</ul>
+<h1 id="二、复合结构图概览"><a href="#二、复合结构图概览" class="headerlink" title="二、复合结构图概览"></a>二、复合结构图概览</h1><ul>
+<li>复合结构图显示类的内部部分。</li>
+<li>组件的名称定义为：组件名称：组件类型[多重性]</li>
+<li>聚合类是类的一部分，但组件不一定是类，组件是用于组成包含类的任何元素。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/assets/0209093220.png" alt="img"></p>
+<h1 id="三、从类图派生复合结构图"><a href="#三、从类图派生复合结构图" class="headerlink" title="三、从类图派生复合结构图"></a>三、从类图派生复合结构图</h1><blockquote>
+<p>网上商店</p>
+<p>假设我们正在为在线商店建模系统。客户告诉我们，客户可以加入会员计划，该计划将为他们提供特别优惠和折扣运费，因此我们扩展了客户对象以提供会员和标准选项。</p>
+</blockquote>
+<p>让我们使用类图对在线商店进行建模</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/assets/0209094325.png" alt="img"></p>
+<p>我们有一个Item类，它可能由Order类聚合，该类由Customer类组成，而Customer类本身由StoreManager类组成。我们有很多对象最终位于其他对象中，所有内容看起来都像是最终在StoreManager中结束的。因此我们可以创建一个复合结构图来真正了解它是有什么构成的。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/assets/0209095412.png" alt="img"></p>
+<p>在上面的例子中，我们可以看到：</p>
+<ul>
+<li>StoreManager从它自己的角度来看，而不是整个系统。</li>
+<li>StoreManager直接包含两种类型的对象（客户和项目），如类图上的两个组合箭头所示。</li>
+<li>此处的复合结构图更明确地显示地是包含”客户”的子类型。</li>
+<li>请注意，这两个部分的类型都是”客户”，因为商店将两者都视为”客户”对象。</li>
+<li>我们还看到一个显示”项目”和”订单”之间关系的连接器。</li>
+<li>Order不直接包含在StoreManager类中，但我们可以显示嵌套在它所聚合的对象中的部件之间的关系。</li>
+</ul>
+<h1 id="四、类图与复合结构图"><a href="#四、类图与复合结构图" class="headerlink" title="四、类图与复合结构图"></a>四、类图与复合结构图</h1><p>问：下面的两张图表达了相同的含义吗？</p>
+<p>答：在类图中，”描述”和”定价”之间的引用是模棱两可的，严格来说，它们并不完全相同。</p>
+<p>​    1.类图明确显示，”描述”对象将引用”价格”对象。</p>
+<p>​    2.但它没有指定两个对象之间的引用是否显示包含在项中。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/assets/0209101237.png" alt="img"></p>
+<p>如果我们使用复合结构图，则包含关联关系的含义是明确的。</p>
+<ul>
+<li>“描述”和”价格”对象之间的引用包含在由Item组合的对象中。</li>
+<li>可以清楚地对对象活动地特定实现进行建模。</li>
+</ul>
+<h1 id="五、对外部组件的引用"><a href="#五、对外部组件的引用" class="headerlink" title="五、对外部组件的引用"></a>五、对外部组件的引用</h1><p>我们已经看到了复合结构图如何擅长描述聚合的示例，但您的模型还需要包含对正在建模的类之外的对象的引用。但是，使用复合结构图引用外部对象(如下面的示例)怎么样？</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/assets/0209104751.png" alt="img"></p>
+<ul>
+<li>对外部对象的引用，使用带有虚线矩形的部件进行表示。</li>
+<li>即使它们引用对象在类之外，引用本身也在建模类中，并且是显示其实现的重要步骤。</li>
+</ul>
+<h1 id="六、复合结构图的概念"><a href="#六、复合结构图的概念" class="headerlink" title="六、复合结构图的概念"></a>六、复合结构图的概念</h1><p><code>UML2.0</code>规范中标识的复合结构图的关键是结构化类、组件、端口、连接器和协作。</p>
+<p><strong>协作</strong></p>
+<p>协作藐视了协作组件(角色)的结构。协作通过协作使用附加到操作或类。当您只想定义完成协作的特定目标所需的角色和连接时，可以使用协作。</p>
+<p>例如，协作的目标可以是定义类的角色或组件。通过隔离主要角色，协助做简化了结构并阐明了模型中的行为。</p>
+<p>在此示例中，车轮和发动机是协作部件，前桥和后轴是连接器。汽车时显示零件和零件之间连接的复合结构。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/assets/0209105643.png" alt="img"></p>
+<p><strong>组件</strong></p>
+<p>组件是一个关系图元素，它表示包含结构化类的一个或多个实例的集合。组件描述实例在类中的角色。您可以在类的结构间隔中以及在多个<code>UML</code>关系图（如复合结构图、类图、对象图、组件图、部署图和包图）中创建组件。</p>
+<p><strong>端口</strong></p>
+<p>端口定义类实例与其环境之间或类的行为与其内部部分之间的交互点。</p>
+<p><strong>接口</strong></p>
+<p>复合结构图支持提供和所需接口的球套字表示法。可以根据需要在关系图中显示或隐藏接口。</p>
+<p><strong>连接器</strong></p>
+<p>表示模型中关系的线。对类的内部结构进行建模时，可以使用连接器来只是组件或端口的两个或多个实例之间的链接。连接器定义绑定到同一结构化类中的角色的对象或实例之间的关系，并标识这些角色之间的通信。产品会自动指定要创建的连接器类型。</p>
+<h1 id="七、复合结构图示例"><a href="#七、复合结构图示例" class="headerlink" title="七、复合结构图示例"></a>七、复合结构图示例</h1><h2 id="计算机系统"><a href="#计算机系统" class="headerlink" title="计算机系统"></a>计算机系统</h2><p>让我们为计算机系统开发复合结构图，其中包括一下组件列表：</p>
+<ul>
+<li>电源单元</li>
+<li>硬盘驱动器(硬盘)</li>
+<li>主板(MB)</li>
+<li>光驱(DVD-RW)</li>
+<li>内存模块(MM)</li>
+</ul>
+<p>我们暂时假设主板是内置声卡和显示适配器的类型：</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%8D%E5%90%88%E7%BB%93%E6%9E%84%E5%9B%BE/assets/0209111801.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>UML知识</category>
+      </categories>
+      <tags>
+        <tag>UML知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是对象图</title>
+    <url>/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/</url>
+    <content><![CDATA[<p>该篇文章是<span class="label [info]">UML知识</span>的扩充。</p>
+<span id="more"></span>
+
+<h1 id="什么是对象图"><a href="#什么是对象图" class="headerlink" title="什么是对象图"></a>什么是对象图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-object-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-object-diagram/</a></p>
+<p>对象是运行时特定时刻的类实例，它可以有自己的状态和数据值。同样，静态<code>UML</code>对象图是类图的一个实例。它显示了系统在某个时间点的详细状态的快照。因此对象图包含对象及其关系，可以将其视为类图或通讯图的特殊情况。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114134401.png" alt="img"></p>
+<h1 id="一、对象图的目的"><a href="#一、对象图的目的" class="headerlink" title="一、对象图的目的"></a>一、对象图的目的</h1><p>对象图的使用相当有限，主要是为了展示数据结构的例子。</p>
+<ul>
+<li>在项目的分析阶段，您可能回创建一个类图来表述系统的结构，然后创建一组对象图作为测试用例来验证类图的准确性和完整性。</li>
+<li>在创建类图之前，您可能会创建一个对象图来发现有关特定模型元素及其链接的具体i情况，或者说明所需类的特定示例。</li>
+</ul>
+<h1 id="二、对象图概览"><a href="#二、对象图概览" class="headerlink" title="二、对象图概览"></a>二、对象图概览</h1><p>对象图显示了实例化类与定义类之间的这种关系，以及系统中这些对象之间的关系。当您的系统类图非常复杂时，它们对于解释系统的较小部分很有用，有时还可以在途中建模递归关系。</p>
+<p>说明对象图的最佳方式是显示从相应类图派生的对象图。</p>
+<p>以下订单管理系统显示了它们的关系。这个小类图显示了一个大学部门可以包含许多其他部门，下面的对象图实例化了类图，并用一个具体的例子替代了它。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114140859.png" alt="img"></p>
+<p><strong>类到对象图示例-订单系统</strong></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114142732.png" alt="img"></p>
+<h1 id="三、对象图的符号"><a href="#三、对象图的符号" class="headerlink" title="三、对象图的符号"></a>三、对象图的符号</h1><h2 id="3-1-对象名称"><a href="#3-1-对象名称" class="headerlink" title="3.1 对象名称"></a>3.1 对象名称</h2><ul>
+<li>每个对象实际上都像一个矩形一样被符号化，它提供了对象的名称及其来自的类，用冒号分隔，底部加上下划线，对象名称在左，来自的类在右。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114143610.png" alt="img"></p>
+<h2 id="3-2-对象属性"><a href="#3-2-对象属性" class="headerlink" title="3.2 对象属性"></a>3.2 对象属性</h2><ul>
+<li>与类类似，您可以在单独的方框中列出对象属性。但是与类不同的是，对象的属性应该明确它们的数值。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114144152.png" alt="img"></p>
+<h2 id="3-3-关联关系"><a href="#3-3-关联关系" class="headerlink" title="3.3 关联关系"></a>3.3 关联关系</h2><ul>
+<li>您可以使用类图中使用的线条来绘制对象图的关联关系。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0114144414.png" alt="img"></p>
+<h1 id="四、类图与对象图"><a href="#四、类图与对象图" class="headerlink" title="四、类图与对象图"></a>四、类图与对象图</h1><p>在<code>UML</code>中，对象图提供系统中类实例的快照以及类实例之间的关系。通过在类图中实例化模型元素，您可以探索系统在某个时间点的行为。</p>
+<ul>
+<li>对象图是现实模型中类实例的<code>UML</code>结构图。</li>
+<li>对象图使用类似于类图中使用的符号。</li>
+<li>类图显示系统中的类及其关系。</li>
+<li>对象图显示了这些类的特定实例以及在某个时间点这些实例之间的链接。</li>
+<li>您可以通过在类、部署、组件和用例图中实例化类来创建对象图。</li>
+</ul>
+<h1 id="五、对象图示例"><a href="#五、对象图示例" class="headerlink" title="五、对象图示例"></a>五、对象图示例</h1><h2 id="5-1-对象图示例1-公司结构"><a href="#5-1-对象图示例1-公司结构" class="headerlink" title="5.1 对象图示例1-公司结构"></a>5.1 对象图示例1-公司结构</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117202342.png" alt="img"></p>
+<h2 id="5-2-对象图示例2-POS"><a href="#5-2-对象图示例2-POS" class="headerlink" title="5.2 对象图示例2-POS"></a>5.2 对象图示例2-POS</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117203950.png" alt="img"></p>
+<h2 id="5-3-对象图示例3-编写器"><a href="#5-3-对象图示例3-编写器" class="headerlink" title="5.3 对象图示例3-编写器"></a>5.3 对象图示例3-编写器</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117205240.png" alt="img"></p>
+<h2 id="5-4-对象结构建模的步骤"><a href="#5-4-对象结构建模的步骤" class="headerlink" title="5.4 对象结构建模的步骤"></a>5.4 对象结构建模的步骤</h2><p>没有消息的通讯图（在以前版本的UML中称为协作）也称为对象图，对象之间的关系称为链接。对象关系图必须是静态类图的有效实例化。对象必须具有类，对象之间的链接必须是类之间关联的实例。这可以用作快速一致性检查。为此，我们可以使用以下步骤开发对象图：</p>
+<ul>
+<li>确定要建模的机制。机制表示您正在建模的系统部分的某些功能或行为，这些功能或行为来自于类，接口和其他事物之间的交互。</li>
+<li>对于每个机制，确定参与此协作的类、接口和其他元素，以及识别它们之间的关系。</li>
+<li>请考虑一个演练此机制的方案，在某个时刻冻结该场景，并渲染参与该机制的每个对象。</li>
+<li>根据需要公开每个此类对象的状态和属性值，以了解方案。</li>
+</ul>
+<h2 id="5-5-对象图实例4-机器人移动行为"><a href="#5-5-对象图实例4-机器人移动行为" class="headerlink" title="5.5 对象图实例4-机器人移动行为"></a>5.5 对象图实例4-机器人移动行为</h2><p>同样，公开这些对象之间的链接，表示它们之间的关联实例。</p>
+<p>如图果实，一个对象表示机器人本身(r:Robot的一个实例)，r当前处于标记为移动的状态。这个对象有一个连接到(W:World)的实例，它表示机器人世界模型的抽象。此对象具有指向多个对象的链接，该对象由Element实例组成，这些实例表示机器人已标识但尚未在其他世界视图中分配的实体。这些元素被标记为机器人全局状态的一部分。</p>
+<p>此时此刻，W连接到Area的两个实例。其中一个(a2)显示有指向三个墙和一个门对象的连接。这些墙中的每一个都有标上其当前宽度，并且每个墙都显示与其相邻的墙的相关联。正如这个对象图所指示的那样，机器人已经识别出这个封闭的区域，该区域的三面都有墙壁，第四面有一扇门。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117212134.png" alt="img"></p>
+<h2 id="5-6-对象图示例5-派生类似于通讯图的对象结构"><a href="#5-6-对象图示例5-派生类似于通讯图的对象结构" class="headerlink" title="5.6 对象图示例5-派生类似于通讯图的对象结构"></a>5.6 对象图示例5-派生类似于通讯图的对象结构</h2><p>处理显示对象在特定时间点的状态外，对象图还可用于标识运行时类之间交互的发生次数。结果看起来有点像通讯图。下图提供了此类类图及其相应对象图的示例。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E8%B1%A1%E5%9B%BE/assets/0117213546.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>UML知识</category>
+      </categories>
+      <tags>
+        <tag>UML知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是序列图</title>
+    <url>/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/</url>
+    <content><![CDATA[<p>该篇文章是<span class="label [info]">UML知识</span>的扩充。</p>
+<span id="more"></span>
+
+<h1 id="什么是序列图"><a href="#什么是序列图" class="headerlink" title="什么是序列图"></a>什么是序列图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-sequence-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-sequence-diagram/</a></p>
+<p><code>UML</code>序列图是详细说明如何执行操作的交互图。它们捕获协作上下文中对象之间的交互。序列图是时间焦点，它们通过使用图表的垂直轴来表示时间，什么消息被发送以及何时发送，从而直观地显示交互的顺序。</p>
+<p>序列图捕获：</p>
+<ul>
+<li>在实现用例或操作（实例图或通用图）的协作中发送的交互。</li>
+<li>系统用户与系统之间、系统与其他系统之间或子系统之间的高级交互（有时称为系统序列图）</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0214104513.png" alt="img"></p>
+<h1 id="一、序列图的目的"><a href="#一、序列图的目的" class="headerlink" title="一、序列图的目的"></a>一、序列图的目的</h1><ul>
+<li>对系统中活动对象之间的高级交互进行建模</li>
+<li>对实现用例的协作中的对象实例之间的交互进行建模</li>
+<li>对实现操作的协作中的对象之间的交互进行建模</li>
+<li>对通用交互(显示交互的所有可能路径)或交互的特定实例(仅显示交互的一个路径)建模</li>
+</ul>
+<h1 id="二、序列图概览"><a href="#二、序列图概览" class="headerlink" title="二、序列图概览"></a>二、序列图概览</h1><p>序列图显示元素随着时间的推移交互，它们根据对象(水平)和时间(垂直)组织：</p>
+<p><strong>对象尺寸</strong></p>
+<ul>
+<li>横轴显示交互中涉及的元素</li>
+<li>按照惯例，操作中涉及的对象式按照它们参与消息序列的时间从左到右列出的。但是，横轴上的元素可能以任意顺序出现</li>
+</ul>
+<p><strong>时间维度</strong></p>
+<ul>
+<li>垂直轴代表页面下方的时间进程(或进度)</li>
+</ul>
+<p>注意：序列图中的事件完全是关于排序，而不是持续时间。交互图中的垂直空间与交互的持续时间无关。</p>
+<h1 id="三、序列图示例"><a href="#三、序列图示例" class="headerlink" title="三、序列图示例"></a>三、序列图示例</h1><h2 id="3-1-酒店系统"><a href="#3-1-酒店系统" class="headerlink" title="3.1 酒店系统"></a>3.1 酒店系统</h2><p>序列图是一个交互图，详细说明了操作是如何执行的——发送什么消息以及何时发送。序列图是按时间组织的。随着您向下浏览页面，时间会逐渐增加。操作中涉及的对象按照它们参与消息序列的时间从左到右列出。</p>
+<p>下面是进行酒店预订的序列图。启动消息序列的对象是一个预约窗口。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216114013.png" alt="img"></p>
+<p>注意：类和对象图是静态模型视图。交互图是动态的。它们描述了对象如何协作。</p>
+<h1 id="四、序列图符号"><a href="#四、序列图符号" class="headerlink" title="四、序列图符号"></a>四、序列图符号</h1><h2 id="4-1-演员-角色-符号"><a href="#4-1-演员-角色-符号" class="headerlink" title="4.1 演员(角色)符号"></a>4.1 演员(角色)符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216114742.png" alt="img"></p>
+<ul>
+<li>与主体交互的实体所扮演的一种角色（例如：通过交换信息和数据）</li>
+<li>在主体之外（即，在某种意义上，参与者的实例不是其对应主体的实例的一部分）。</li>
+<li>代表人类用户、外部硬件或其他主体所扮演的角色。</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li>参与者不一定代表特定的物理实体，而是某个实体的特定角色</li>
+<li>一个人可以扮演几个不同的演员（角色），相反，一个给定的角色可能由多个不同的人扮演。</li>
+</ul>
+<h2 id="4-2-生命线符号"><a href="#4-2-生命线符号" class="headerlink" title="4.2 生命线符号"></a>4.2 生命线符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115039.png" alt="img"></p>
+<ul>
+<li>生命线代表交互中的个人参与者。</li>
+</ul>
+<h2 id="4-3-生命周期符号"><a href="#4-3-生命周期符号" class="headerlink" title="4.3 生命周期符号"></a>4.3 生命周期符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115126.png" alt="img"></p>
+<ul>
+<li>生命线上的细矩形表示元素执行操作的时间段。</li>
+<li>矩形的顶部和底部分别与启动和完成时间对齐</li>
+</ul>
+<h2 id="4-4-请求信息符号"><a href="#4-4-请求信息符号" class="headerlink" title="4.4 请求信息符号"></a>4.4 请求信息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115156.png" alt="img"></p>
+<ul>
+<li>消息定义了交互生命线之间的特定通信。</li>
+<li>调用消息是一种表示目标生命线操作调用的消息。</li>
+</ul>
+<h2 id="4-5-返回信息符号"><a href="#4-5-返回信息符号" class="headerlink" title="4.5 返回信息符号"></a>4.5 返回信息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115225.png" alt="img"></p>
+<ul>
+<li>消息定义了交互生命线之间的特定通信。</li>
+<li>返回消息是一种消息，表示将信息传递回对应的先前消息的调用者。</li>
+</ul>
+<h2 id="4-6-自我信息符号"><a href="#4-6-自我信息符号" class="headerlink" title="4.6 自我信息符号"></a>4.6 自我信息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115249.png" alt="img"></p>
+<ul>
+<li>消息定义了交互生命线之间的特定通信。</li>
+<li>自我消息是一种消息，代表同一生命线消息的调用。</li>
+</ul>
+<h2 id="4-7-递归信息符号"><a href="#4-7-递归信息符号" class="headerlink" title="4.7 递归信息符号"></a>4.7 递归信息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115315.png" alt="img"></p>
+<ul>
+<li>消息定义了交互生命线之间的特定通信。</li>
+<li>递归消息是一种表示同一生命线消息的调用的消息。它的目标指向调用消息的激活之上的激活。</li>
+</ul>
+<h2 id="4-8-创建消息符号"><a href="#4-8-创建消息符号" class="headerlink" title="4.8 创建消息符号"></a>4.8 创建消息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115344.png" alt="img"></p>
+<ul>
+<li>消息定义了交互生命线之间的特定通信。</li>
+<li>创建消息是一种表示（目标）生命线实例化的消息。</li>
+</ul>
+<h2 id="4-9-销毁消息符号"><a href="#4-9-销毁消息符号" class="headerlink" title="4.9 销毁消息符号"></a>4.9 销毁消息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115510.png" alt="img"></p>
+<ul>
+<li>消息定义了交互生命线之间的特定通信。</li>
+<li>销毁消息是一种表示销毁目标生命线生命周期的请求的消息。</li>
+</ul>
+<h2 id="4-10-持续时间消息符号"><a href="#4-10-持续时间消息符号" class="headerlink" title="4.10 持续时间消息符号"></a>4.10 持续时间消息符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115541.png" alt="img"></p>
+<ul>
+<li>消息定义了交互生命线之间的特定通信。</li>
+<li>持续时间消息显示消息调用的两个时间点之间的距离。</li>
+</ul>
+<h2 id="4-11-笔记符号"><a href="#4-11-笔记符号" class="headerlink" title="4.11 笔记符号"></a>4.11 笔记符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115603.png" alt="img"></p>
+<p>注释（注释）提供了将各种注释附加到元素的能力。注释不带有语义力量，但可能包含对建模者有用的信息。</p>
+<h2 id="4-12-信息和控制焦点"><a href="#4-12-信息和控制焦点" class="headerlink" title="4.12 信息和控制焦点"></a>4.12 信息和控制焦点</h2><ul>
+<li>事件是交互中发生某事的任何点。</li>
+<li>控制焦点：也称为执行发生，一次执行发生</li>
+<li>它在生命线上显示为又高又细的矩形</li>
+<li>它表示元素执行操作的时间段。矩形的顶部和底部分别与开始时间和完成时间对齐。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216115734.png" alt="img"></p>
+<h1 id="五、序列片段"><a href="#五、序列片段" class="headerlink" title="五、序列片段"></a>五、序列片段</h1><ul>
+<li><code>UML2.0</code>引入了序列(或交互)片段。序列片段使创建和维护准确的序列图变得更加容易。</li>
+<li>序列片段表示为一个框，称为组合片段，它将部分交互包含在序列图中。</li>
+<li>片段运算符(在左上角)指示片段的类型。</li>
+<li>片段类型：ref、assert、loop、break、alt、opt、neg</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216135531.png" alt="img"></p>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>片段类型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>alt</td>
+<td>替代多个片段：只有条件为真的片段才会执行。</td>
+</tr>
+<tr>
+<td>opt</td>
+<td>可选：片段仅在提供的条件为真时执行。相当于只有一条方向的 alt。</td>
+</tr>
+<tr>
+<td>par</td>
+<td>并行：每个片段并行运行。</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>循环：片段可能执行多次，守卫指示迭代的基础。</td>
+</tr>
+<tr>
+<td>region</td>
+<td>临界区：片段一次只能有一个线程执行。</td>
+</tr>
+<tr>
+<td>neg</td>
+<td>否定：片段显示无效交互。</td>
+</tr>
+<tr>
+<td>ref</td>
+<td>参考：指在另一个图表上定义的交互。绘制框架以覆盖交互中涉及的生命线。您可以定义参数和返回值。</td>
+</tr>
+<tr>
+<td>sd</td>
+<td>序列图：用于包围整个序列图。</td>
+</tr>
+</tbody></table>
+<p>注意：</p>
+<ul>
+<li>可以组合帧以捕获例如循环或分支。</li>
+<li>组合片段关键字：alt、opt、break、par、seq、strict、neg、critical、ignore、conside、assert和loop。</li>
+<li>约束通常用于显示消息的时序约束。它们可以应用于一条消息的时间或消息之间的间隔。</li>
+</ul>
+<h2 id="5-1-组合片段示例"><a href="#5-1-组合片段示例" class="headerlink" title="5.1 组合片段示例"></a>5.1 组合片段示例</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216140338.png" alt="img"></p>
+<h2 id="5-2-用于建模用例场景的序列图"><a href="#5-2-用于建模用例场景的序列图" class="headerlink" title="5.2 用于建模用例场景的序列图"></a>5.2 用于建模用例场景的序列图</h2><p>用户需求被捕获为细化为场景的用例。用例是外部参与者和系统之间交互的集合。在<code>UML</code>中，一个用例是：</p>
+<p><em>“系统（或实体）可以执行的一系列动作的规范，包括变体，与系统的参与者交互。”</em></p>
+<p>场景是通过用例的一条路径或流程，它描述了在系统的一个特定执行期间发生的一系列事件，通常由序列图表示。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%BA%8F%E5%88%97%E5%9B%BE/assets/0216140425.png" alt="img"></p>
+<h2 id="5-3-序列图-代码之前的模型"><a href="#5-3-序列图-代码之前的模型" class="headerlink" title="5.3 序列图 - 代码之前的模型"></a>5.3 序列图 - 代码之前的模型</h2><p>序列图可能有点接近代码级别，那么为什么不直接编写该算法而不是将其绘制为序列图呢？</p>
+<ul>
+<li>一个好的序列图还是有点高于真实代码的水平</li>
+<li>序列图是语言中立的</li>
+<li>非编码人员可以做序列图</li>
+<li>作为一个团队更容易做序列图</li>
+<li>可用于测试和/或<a href="https://www.visual-paradigm.com/features/ux-design-and-wireframe-tools">UX 线框图</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>UML知识</category>
+      </categories>
+      <tags>
+        <tag>UML知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是时序图</title>
+    <url>/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/</url>
+    <content><![CDATA[<p>该篇文章是<span class="label [info]">UML知识</span>的扩充。</p>
+<span id="more"></span>
+
+<h1 id="什么是时序图"><a href="#什么是时序图" class="headerlink" title="什么是时序图"></a>什么是时序图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-timing-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-timing-diagram/</a></p>
+<p>时序图是<code>UML</code>交互图，用于显示当图的主要目的是推理时间时的交互。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216163318.png" alt="img"></p>
+<p>时序图侧重于沿线性时间轴在生命线内和生命线之间变化的条件。时序图描述了单个分类器的行为和分类器的交互，重点关注导致生命线建模条件变化的事件发生时间。</p>
+<h1 id="一、时间图概览"><a href="#一、时间图概览" class="headerlink" title="一、时间图概览"></a>一、时间图概览</h1><h2 id="1-1-状态时间线表示"><a href="#1-1-状态时间线表示" class="headerlink" title="1.1 状态时间线表示"></a>1.1 状态时间线表示</h2><p>从一种<strong>状态</strong>到另一种状态<strong>的变化由生命线级别的变化</strong>表示。对于对象处于给定状态的时间段，时间线与该状态平行运行。状态变化表现为从一个水平到另一个水平的垂直变化。与状态图或序列图中的情况一样，更改的原因是收到消息、导致更改的事件、系统内的条件，甚至只是时间的流逝。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216163538.png" alt="img"></p>
+<h2 id="1-2-价值生命线代表"><a href="#1-2-价值生命线代表" class="headerlink" title="1.2 价值生命线代表"></a>1.2 价值生命线代表</h2><p>下图显示了 UML 时序图的另一种表示法。每次状态变化时，它都会在相互交叉的两条水平线之间显示对象的状态。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216163602.png" alt="img"></p>
+<h1 id="二、时序图的基本概念"><a href="#二、时序图的基本概念" class="headerlink" title="二、时序图的基本概念"></a>二、时序图的基本概念</h1><p>时序 UML 图的主要元素 - 生命线、时间线、状态或条件、消息、持续时间约束、时序标尺。</p>
+<h2 id="2-1-生命线"><a href="#2-1-生命线" class="headerlink" title="2.1 生命线"></a>2.1 生命线</h2><p>时序图中的生命线在帧的内容区域内形成一个矩形空间。生命线是一个命名元素，它代表交互中的个人参与者。它通常水平对齐以从左到右阅读。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216163642.png" alt="img"></p>
+<p>多条生命线可以堆叠在同一框架内，以模拟它们之间的交互。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216163753.png" alt="img"></p>
+<h2 id="2-2-时序图中的状态时间线"><a href="#2-2-时序图中的状态时间线" class="headerlink" title="2.2 时序图中的状态时间线"></a>2.2 时序图中的状态时间线</h2><p>状态或条件时间线表示一组有效状态和时间。状态从上到下堆叠在生命线的左边距。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216163818.png" alt="img"></p>
+<p>与状态或序列图中的情况一样，更改的原因是收到消息、导致更改的事件、系统内的条件，甚至只是时间的流逝。</p>
+<h2 id="2-3-多个分隔"><a href="#2-3-多个分隔" class="headerlink" title="2.3 多个分隔"></a>2.3 多个分隔</h2><p>可以在同一个时序图中堆叠几条不同对象的生命线。一条生命线高于另一条生命线。从一个对象发送到另一个对象的消息可以使用简单的箭头来描述。每个箭头的起点和终点指示每条消息的发送时间和接收时间。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216163926.png" alt="img"></p>
+<h2 id="2-4-状态生命线"><a href="#2-4-状态生命线" class="headerlink" title="2.4 状态生命线"></a>2.4 状态生命线</h2><p>状态生命线显示项目状态随时间的变化。X 轴以选择的任何单位显示经过的时间，而 Y 轴标有给定的状态列表。状态生命线如下所示：</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216164003.png" alt="img"></p>
+<h2 id="2-5-价值生命线"><a href="#2-5-价值生命线" class="headerlink" title="2.5 价值生命线"></a>2.5 价值生命线</h2><p>价值生命线显示项目价值随时间的变化。X 轴以所选单位显示经过的时间，与状态生命线相同。该值显示在水平线对之间，水平线在每次值变化时交叉。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216164028.png" alt="img"></p>
+<h2 id="2-6-时间线和约束"><a href="#2-6-时间线和约束" class="headerlink" title="2.6 时间线和约束"></a>2.6 时间线和约束</h2><p>我们可以使用时间线的长度来指示对象通过从左到右读取它保持在特定状态的时间。要关联时间测量，您可以在框架的底部在线显示刻度线。</p>
+<p>下面的示例显示在序列开始后三个时间单位接收到 Login 事件。要显示相对时间，您可以使用变量名称及时标记特定实例。该图将接收到 sendMail 事件的时间标记为时间</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216164142.png" alt="img"></p>
+<p>您可以在约束中使用相对时间标记来指示必须在指定的时间内接收到消息。</p>
+<h2 id="2-7-状态和价值生命线并排"><a href="#2-7-状态和价值生命线并排" class="headerlink" title="2.7 状态和价值生命线并排"></a>2.7 状态和价值生命线并排</h2><p>状态和价值生命线可以以任意组合依次排列。消息可以从一条生命线传递到另一条生命线。每个状态或值转换都可以具有定义的事件、指示事件何时必须发生的时间约束以及指示状态或值必须有效多长时间的持续时间约束。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216164255.png" alt="img"></p>
+<h1 id="三、交互图之间的模型一致性"><a href="#三、交互图之间的模型一致性" class="headerlink" title="三、交互图之间的模型一致性"></a>三、交互图之间的模型一致性</h1><p>时序图应始终与相关的时序图和状态机保持一致。为此，我们可以在生命线中为序列图中的每个对象附加状态。然后，通过检查对象之间传递的消息与生命线中附加的状态，我们可以更容易地得出相应的时序图。下面的 Carpark 示例显示了两个交互图之间的模型一致性。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216164354.png" alt="img"></p>
+<p>上图是停车场示例的时序图，下图是停车场示例对应的时序图。时序图的各个部分参考时序图的内容。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%97%B6%E5%BA%8F%E5%9B%BE/assets/0216164418.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>UML知识</category>
+      </categories>
+      <tags>
+        <tag>UML知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是活动图</title>
+    <url>/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/</url>
+    <content><![CDATA[<p>该篇文章是<span class="label [info]">UML知识</span>的扩充。</p>
+<span id="more"></span>
+
+<h1 id="什么是活动图"><a href="#什么是活动图" class="headerlink" title="什么是活动图"></a>什么是活动图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-activity-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-activity-diagram/</a></p>
+<p>活动图是<code>UML</code>图中另一个重要的行为图，用于描述系统的动态方面。活动图本质上是流程图的高级版本，它对从一个活动到另一个活动的流程进行建模。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0210112809.png" alt="img"></p>
+<h1 id="一、何时使用活动图"><a href="#一、何时使用活动图" class="headerlink" title="一、何时使用活动图"></a>一、何时使用活动图</h1><p>活动图描述了如何协调活动以提供可以处于不同抽象级别的服务。通常，一个事件需要通过一些操作来实现，特别是在操作旨在实现需要协调的许多不同事物的情况下，或者单个用例中的事件如何相互关联时，特别是活动的用例可能重叠并需要协调。它还适用于建模用例集合如何协调以表示业务工作流。</p>
+<ol>
+<li>通过检查业务工作流程确定候选用例。</li>
+<li>识别用例的前置条件和后置条件(上下文)。</li>
+<li>用例之间/内部的工作流建模。</li>
+<li>对对象操作中的复杂工作流进行建模。</li>
+<li>在高级活动图中详细建模复杂活动。</li>
+</ol>
+<h1 id="二、活动图概览"><a href="#二、活动图概览" class="headerlink" title="二、活动图概览"></a>二、活动图概览</h1><h2 id="2-1-通过示例学习"><a href="#2-1-通过示例学习" class="headerlink" title="2.1 通过示例学习"></a>2.1 通过示例学习</h2><p>一个基本的活动图，流程图：</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0210115000.png" alt="img"></p>
+<h2 id="2-2-为文字处理器建模"><a href="#2-2-为文字处理器建模" class="headerlink" title="2.2 为文字处理器建模"></a>2.2 为文字处理器建模</h2><p>下面的活动图示例描述了文字处理通过以下步骤创建文档的工作流程：</p>
+<ul>
+<li>打开文字处理包。</li>
+<li>创建一个文件。</li>
+<li>将文件保存在其目录中的唯一名称下。</li>
+<li>键入文档。</li>
+<li>如果需要图形，请打开图形包，创建图形，然后将图形粘贴到文档中。</li>
+<li>如果需要电子表格，请打开电子表格包，创建电子表格，然后将电子表格粘贴到文档最终。</li>
+<li>保存文件。</li>
+<li>打印文档的硬拷贝。</li>
+<li>退出文字处理包。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0210134933.png" alt="img"></p>
+<h1 id="三、活动图示例"><a href="#三、活动图示例" class="headerlink" title="三、活动图示例"></a>三、活动图示例</h1><h2 id="3-1-流程订单"><a href="#3-1-流程订单" class="headerlink" title="3.1 流程订单"></a>3.1 流程订单</h2><p>给定与处理订单的工作流相关的问题描述，让我们使用活动图对描述进行可视化建模：</p>
+<blockquote>
+<p>流程订单-问题描述</p>
+<p>一旦收到订单，活动就会分成两组平行的活动。一方填写并发送订单，另一方处理账单。</p>
+<p>在填写订单方面，交货方式是有条件的决定。根据情况执行隔夜派送或定期派送。</p>
+<p>最后，并行活动结合起来关闭订单。</p>
+</blockquote>
+<p>下面的活动图示例以图形形式可视化流程：</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0210140309.png" alt="img"></p>
+<h2 id="3-2-学生注册"><a href="#3-2-学生注册" class="headerlink" title="3.2 学生注册"></a>3.2 学生注册</h2><p>这个<code>UML</code>活动图示例描述了大学中学生注册的过程，如下图所示。</p>
+<ul>
+<li>申请人想入读大学。</li>
+<li>申请人递交一份填写好的报名表副本。</li>
+<li>登记员检查表格。</li>
+<li>注册商确定表格已正确填写。</li>
+<li>注册商通知学生参加大学概况介绍。</li>
+<li>注册商帮助学生参加研讨会。</li>
+<li>注册商要求学生支付初始学费。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0210141707.png" alt="img"></p>
+<h2 id="3-3-swinlane活动图"><a href="#3-3-swinlane活动图" class="headerlink" title="3.3 swinlane活动图"></a>3.3 <code>swinlane</code>活动图</h2><p><code>swinlane</code>是一种将同一角色在活动图或活动图上执行的活动分组或将活动分组在单个线程中的方法。以下是用于对员工费用提交进行建模的<code>swinlane</code>活动图示例：</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0210142803.png" alt="img"></p>
+<h2 id="3-4-swinlane和非swinlane活动图"><a href="#3-4-swinlane和非swinlane活动图" class="headerlink" title="3.4 swinlane和非swinlane活动图"></a>3.4 <code>swinlane</code>和非<code>swinlane</code>活动图</h2><p>下面的活动图示例描述了使用没有<code>swinlane</code>的活动图会见新客户的业务流程。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0210143932.png" alt="img"></p>
+<p>下图描述了使用带有<code>swinlane</code>的活动图与新客户会面的业务流程。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0210145531.png" alt="img"></p>
+<h1 id="四、活动图符号总结"><a href="#四、活动图符号总结" class="headerlink" title="四、活动图符号总结"></a>四、活动图符号总结</h1><h2 id="4-1-活动符号"><a href="#4-1-活动符号" class="headerlink" title="4.1 活动符号"></a>4.1 活动符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211150525.png" alt="img"></p>
+<p>活动：用于表示一组动作</p>
+<h2 id="4-2-行动符号"><a href="#4-2-行动符号" class="headerlink" title="4.2 行动符号"></a>4.2 行动符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211150616.png" alt="img"></p>
+<p>行动：表示要执行的任务</p>
+<h2 id="4-3-控制流程符号"><a href="#4-3-控制流程符号" class="headerlink" title="4.3 控制流程符号"></a>4.3 控制流程符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211150657.png" alt="img"></p>
+<p>控制流程符号：表示执行的顺序</p>
+<h2 id="4-4-对象流程符号"><a href="#4-4-对象流程符号" class="headerlink" title="4.4 对象流程符号"></a>4.4 对象流程符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211150800.png" alt="img"></p>
+<p>对象流程符号：显示对象从一个活动(或动作)到另一个活动(或动作)的流程。</p>
+<h2 id="4-5-初始节点符号"><a href="#4-5-初始节点符号" class="headerlink" title="4.5 初始节点符号"></a>4.5 初始节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211150856.png" alt="img"></p>
+<p>初始节点符号：描述一组行动或活动的开始</p>
+<h2 id="4-6-终止节点符号"><a href="#4-6-终止节点符号" class="headerlink" title="4.6 终止节点符号"></a>4.6 终止节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211150957.png" alt="img"></p>
+<p>终止节点符号：停止活动（或行动）中的所有控制流和对象流</p>
+<h2 id="4-7-对象节点符号"><a href="#4-7-对象节点符号" class="headerlink" title="4.7 对象节点符号"></a>4.7 对象节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211151040.png" alt="img"></p>
+<p>对象节点符号：连接到一组对象流的对象</p>
+<h2 id="4-8-决策节点符号"><a href="#4-8-决策节点符号" class="headerlink" title="4.8 决策节点符号"></a>4.8 决策节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211151451.png" alt="img"></p>
+<p>决策节点符号：表示一个测试条件，以确保控制流或对象流只沿着一条路径前进</p>
+<h2 id="4-9-合并节点符号"><a href="#4-9-合并节点符号" class="headerlink" title="4.9 合并节点符号"></a>4.9 合并节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211151510.png" alt="img"></p>
+<p>合并节点符号：将使用决策节点创建的不同决策路径重新组合在一起</p>
+<h2 id="4-10-分叉节点符号"><a href="#4-10-分叉节点符号" class="headerlink" title="4.10 分叉节点符号"></a>4.10 分叉节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211151527.png" alt="img"></p>
+<p>分叉节点符号：将行为拆分为一组并行或并发的活动（或行动）流</p>
+<h2 id="4-11-加入节点符号"><a href="#4-11-加入节点符号" class="headerlink" title="4.11 加入节点符号"></a>4.11 加入节点符号</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211151542.png" alt="img"></p>
+<p>加入节点符号：将一组并行或并发的活动（或行动）流重新组合在一起</p>
+<h2 id="4-12-swinlane和分区"><a href="#4-12-swinlane和分区" class="headerlink" title="4.12 swinlane和分区"></a>4.12 <code>swinlane</code>和分区</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E6%B4%BB%E5%8A%A8%E5%9B%BE/assets/0211151557.png" alt="img"></p>
+<p><code>swinlane</code>和分区：一种在活动图上对同一参与者执行的活动进行分组或在单个线程中对活动进行分组的方法</p>
+]]></content>
+      <categories>
+        <category>UML知识</category>
+      </categories>
+      <tags>
+        <tag>UML知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是状态图</title>
+    <url>/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/</url>
+    <content><![CDATA[<p>该篇文章是<span class="label [info]">UML知识</span>的扩充。</p>
+<span id="more"></span>
+
+<h1 id="什么是状态图"><a href="#什么是状态图" class="headerlink" title="什么是状态图"></a>什么是状态图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-state-machine-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-state-machine-diagram/</a></p>
+<p>实体的行为不仅是其输入的直接结果，而且还取决于其先前的状态。实体的过去历史最好用有限状态图或传统上称为自动机的方式建模。<code>UML</code>状态图（或有时称为状态图、状态机）显示实体的不同状态。状态图还可以显示实体如何通过从一种状态更改为另一种状态来响应各种事件。状态图是用于对系统的动态性质进行建模的<code>UML</code>图。    </p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211152828.png" alt="img"></p>
+<h1 id="一、为何要使用状态图？"><a href="#一、为何要使用状态图？" class="headerlink" title="一、为何要使用状态图？"></a>一、为何要使用状态图？</h1><p>状态图通常用于描述对象的状态相关行为。一个对象根据它所处的状态对同一事件做出不同的响应。状态图通常应用于对象，但可以应用于对其他实体具有行为的任何元素。例如：角色、用例、方法、子系统等等，它们通常与交互图(通常是时序图)结合使用。</p>
+<p>例如：</p>
+<p>假设您的银行账户中有100,000美元。取款函数的行为是：余额=余额-取款金额，前提是提款后的余额不少于0美元；无论您从银行取款多少次都是如此。在这种情况下，提取不会影响属性值的抽象，因此对象的总体行为保持不变。</p>
+<p>但是，如果提款后账户余额变为负数，那么提款功能的行为将完全不同。这是因为银行账户的状态由正变为负；在技术语中，从积极状态到消极状态的转换被触发。</p>
+<p>属性值的抽象是系统的属性，而不是全局适用的规则。例如：如果银行更改业务规则，允许银行余额透支2000美元，则将重新定义银行账户的状态，条件是提款后的余额不得少于2000美元的赤字。</p>
+<p>注意：</p>
+<ul>
+<li>状态图描述是所有事件(以及单个对象的状态和转换)</li>
+<li>序列图描述了涉及所有对象的单个交互的事件</li>
+</ul>
+<h1 id="二、状态图的基本概念"><a href="#二、状态图的基本概念" class="headerlink" title="二、状态图的基本概念"></a>二、状态图的基本概念</h1><p><strong>什么是状态</strong>：</p>
+<blockquote>
+<p><em>Rumbaugh</em>定义：状态是对象的属性值和连接的抽象。根据影响对象总体行为的属性，将一组值合成一个状态。</p>
+</blockquote>
+<p><strong>状态符号</strong></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211160715.png" alt="img"></p>
+<h1 id="三、状态图符号的特征"><a href="#三、状态图符号的特征" class="headerlink" title="三、状态图符号的特征"></a>三、状态图符号的特征</h1><p>一般来说，无论其类型如何，状态都有几个特征：</p>
+<ul>
+<li>一个状态占用一个时间间隔。</li>
+<li>状态通常与满足某些条件的实体的属性值的抽象相关联。</li>
+<li>实体更改其状态不仅是当前输入的直接结果，而且还取决于其输入的某些过去历史。</li>
+</ul>
+<h2 id="3-1-状态"><a href="#3-1-状态" class="headerlink" title="3.1 状态"></a>3.1 状态</h2><p>状态是对象生命周期中的一个约束或一种情况，其中一个约束成立，对象执行一个活动或等待一个事件。</p>
+<p>状态图是由以下部分组成的图：</p>
+<ul>
+<li>状态（简单状态或复合状态）</li>
+<li>连接状态的过渡线</li>
+</ul>
+<p>例子：</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211161303.png" alt="img"></p>
+<h3 id="3-1-1-状态特征"><a href="#3-1-1-状态特征" class="headerlink" title="3.1.1 状态特征"></a>3.1.1 状态特征</h3><ul>
+<li>状态表示对象在特定时间点的状态。</li>
+<li>对象(或系统)可以被视为从一个状态移动到另一个状态。</li>
+<li>模型元素生命周期中满足某些条件的点，其中执行某些特定操作或等待某些事件。</li>
+</ul>
+<h3 id="3-1-2-初始状态和最终状态"><a href="#3-1-2-初始状态和最终状态" class="headerlink" title="3.1.2 初始状态和最终状态"></a>3.1.2 初始状态和最终状态</h3><ul>
+<li>状态图的初始状态，称为初始伪状态，用实心圆表示。从此状态的转换将显示第一个真实状态。</li>
+<li>状态机图的最终状态显示为同心圆。开环状态图表示可能在系统终止之前终止的对象，而闭环状态图没有最终状态，如果是这种情况，则该对象将一直存在，直到整个系统终止。</li>
+</ul>
+<p>例子：</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211163926.png" alt="img"></p>
+<h2 id="3-2-事件"><a href="#3-2-事件" class="headerlink" title="3.2 事件"></a>3.2 事件</h2><p>事件签名被描述为事件名称（逗号分隔参数列表）。事件出现在状态的内部转换隔间或状态之间的转换上。事件可能是以下四种类型之一：</p>
+<ol>
+<li>信号事件——对应异步消息或信号的到达</li>
+<li>调用事件——对应于对操作的程序调用的到来</li>
+<li>时间事件——在指定时间过去后发生时间事件</li>
+<li>更改事件——只要满足指定条件，就会发生更改事件。</li>
+</ol>
+<h3 id="3-2-1-事件的特征"><a href="#3-2-1-事件的特征" class="headerlink" title="3.2.1 事件的特征"></a>3.2.1 事件的特征</h3><ul>
+<li>表示导致对象从一种状态转换到另一种状态的事件。</li>
+<li>内部或外部事件触发一些活动，这些活动会改变系统及其某些部分的状态。</li>
+<li>事件传递信息，这些信息由对象操作详细说明。对象实现事件。</li>
+<li>设计涉及检查状态图中的事件并考虑系统对象将如何支持这些事件。</li>
+</ul>
+<h2 id="3-3-过渡线"><a href="#3-3-过渡线" class="headerlink" title="3.3 过渡线"></a>3.3 过渡线</h2><p>过渡线描绘了从一种状态到另一种状态的移动。每条转换线都标有导致转换的事件。</p>
+<ul>
+<li>将系统视为一组状态和状态之间的转换对于描述复杂行为非常有用。</li>
+<li>理解状态转换是系统分析和涉及的一部分。</li>
+<li>转换时从一种状态到另一种状态的运动。</li>
+<li>状态之间的转换发生如下：<ul>
+<li>元素处于源状态</li>
+<li>发生事件</li>
+<li>执行了一个动作</li>
+<li>元素进入目标状态</li>
+</ul>
+</li>
+<li>多个转换发生在不同事件导致状态终止或转换存在保护条件时。</li>
+<li>没有事件和动作的转换称为自动转换。</li>
+</ul>
+<h2 id="3-4-动作和活动"><a href="#3-4-动作和活动" class="headerlink" title="3.4 动作和活动"></a>3.4 动作和活动</h2><p>动作是一种可执行的原子计算，包括操作调用、创建或销毁另一个对象或向对象发送信号。一个动作与转换相关联，在此期间一个动作是不可中断的——例如，进入和退出。</p>
+<p>活动与状态相关联，状态是非原子的或正在进行的计算。活动可能会运行到完成或无限期地继续。一个Activity将被一个事件终止，该事件导致从定义该Activity的状态转换。</p>
+<h3 id="3-4-1-动作和活动的特征"><a href="#3-4-1-动作和活动的特征" class="headerlink" title="3.4.1 动作和活动的特征"></a>3.4.1 动作和活动的特征</h3><ul>
+<li>状态可以触发动作</li>
+<li>状态可以有第二个隔间，其中包含在实体处于给定状态时执行的操作或活动。</li>
+<li>动作是原子执行，因此可以不间断的完成。</li>
+<li>五个动作触发器：<code>On Entry</code>、<code>Do</code>、<code>On Event</code>、<code>On Exit</code>、<code>Include</code></li>
+<li>活动捕获可能长时间运行的复杂行为——活动可能会被事件中断，在这种情况下，当对象到达某个状态时，他不会完成。</li>
+</ul>
+<h1 id="四、简单状态图的符号"><a href="#四、简单状态图的符号" class="headerlink" title="四、简单状态图的符号"></a>四、简单状态图的符号</h1><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211165812.png" alt="img"></p>
+<h2 id="4-1-进入和退出操作"><a href="#4-1-进入和退出操作" class="headerlink" title="4.1 进入和退出操作"></a>4.1 进入和退出操作</h2><p>状态中指定的进入和退出动作。每次进入/退出事件都必须为真。如果不是，那么仅必须在各个过渡线上使用操作。</p>
+<ul>
+<li>Entry进入状态时执行的动作，符号为：<code>Entry/action</code></li>
+<li>Exit退出状态时执行的操作，符号为：<code>Exit/action</code></li>
+</ul>
+<p><strong>示例-进入/退出操作（检查账簿状态）</strong></p>
+<p>这个例子说明了一个从一个类——“BookCopy”派生的状态图。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0211171011.png" alt="img"></p>
+<p>注意：</p>
+<ol>
+<li>此状态图显示了BookCopy类中对象myBkCopy的状态</li>
+<li>进入动作：任何被标记为链接到进入动作的动作都会在通过转换进入给定状态时执行</li>
+<li>退出动作：任何被标记为链接到退出动作的动作都会在状态通过转换离开时执行</li>
+</ol>
+<h2 id="4-2-子状态"><a href="#4-2-子状态" class="headerlink" title="4.2 子状态"></a>4.2 子状态</h2><p>简单状态时没有子结构的状态。具有子状态(嵌套状态)的状态称为复合状态。子状态可以嵌套到任何级别。嵌套状态最多可以有一个初始状态和一个最终状态。子状态用于通过显示某些状态仅在特定上下文(封闭状态)内才可能来简化复杂的平面状态图。</p>
+<p><strong>子状态示例-加热器</strong></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0214093051.png" alt="img"></p>
+<p>状态图通常用于派生测试用例，这里列出了可能的测试思路：</p>
+<ul>
+<li>空闲状态接收太热事件</li>
+<li>空闲状态接收太冷事件</li>
+<li>Cooling/Startup状态接收Compressor Running事件</li>
+<li>Cooling/Ready状态接收Fan Running事件</li>
+<li>Cooling/Running状态接收OK事件</li>
+<li>冷却/运行状态接收故障事件</li>
+<li>失败状态接收失败清除事件</li>
+<li>加热状态接收OK事件</li>
+<li>加热状态接收失败事件</li>
+</ul>
+<h2 id="4-3-历史状态"><a href="#4-3-历史状态" class="headerlink" title="4.3 历史状态"></a>4.3 历史状态</h2><p>除非另有说明，否则当转换进入复合状态时，嵌套状态图的操作会从初始状态重新开始(触发转换直接针对子状态)。历史状态允许状态机重新进入在离开复合状态之前处于活动状态的最后一个子状态。下图展示了一个历史状态使用的例子。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0214094426.png" alt="img"></p>
+<h2 id="4-4-并发状态"><a href="#4-4-并发状态" class="headerlink" title="4.4 并发状态"></a>4.4 并发状态</h2><p>如上所述，状态图中的状态可以嵌套。相关的状态可以组合成一个单一的复合状态。当一个活动涉及并发子活动时，在其他活动中嵌套状态属实必要的。以下状态图对具有两个并发子状态的拍卖进行建模：处理投标和授权支付限额。</p>
+<p><strong>并发状态图示例-拍卖过程</strong></p>
+<p>在此示例中，首先进入拍卖的状态图需要在开始时分叉成两个单独的开始线程。每个子状态都有一个退出状态来标记线程的结束。除非有异常退出(Canceled或Rejected)，否则当两个子状态都退出时才会退出复合状态。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%8A%B6%E6%80%81%E5%9B%BE/assets/0214101331.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>UML知识</category>
+      </categories>
+      <tags>
+        <tag>UML知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是用例图</title>
+    <url>/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/</url>
+    <content><![CDATA[<p>该篇文章是<span class="label [info]">UML知识</span>的扩充。</p>
+<span id="more"></span>
+
+<h1 id="什么是用例图"><a href="#什么是用例图" class="headerlink" title="什么是用例图"></a>什么是用例图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-use-case-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-use-case-diagram/</a></p>
+<p>以下是<code>UML</code>世界中经常被问到的一些问题：什么是用例图？为什么要用用例图？或者简单地说，为什么用例？有些人不知道用例是什么，而其他人则低估了用例在开发好的软件产品中的有用性。用例图被低估了吗？希望你看完这篇文章后能够找到答案。</p>
+<p>那么什么是用例图呢？<code>UML</code>用例图是未开发的新软件程序的系统/软件需求的主要形式。用例指定了预期的行为(什么)，而不是实线它的确切方法(如何)。用例一旦指定，就可以用文本和视觉表示(即用例图)表示。用例建模的一个关键概念是它帮助我们从最终用户的角度涉及系统。它是一种通过指定所有外部可见的系统行为来以用户的方式传达系统行为的有效技术。</p>
+<p>用例图通常很简单。它没有显示用例的详细信息：</p>
+<ul>
+<li>它只总结了用例、参与者和系统之间的一些关系。</li>
+<li>它没有显示为实线每个用例的目标而执行的步骤的顺序。</li>
+</ul>
+<p>如前所述，用例图应该很简单，并且只包含几个形状。如果您的用例包含超过20个用例，则您可能误用了用例图。</p>
+<p>下图显示了<code>UML</code>图层结构和<code>UML</code>用例图的定位。如您所见，用例图属于行为图家族。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209174042.png" alt="img"></p>
+<p>注意：</p>
+<ul>
+<li>有许多不同的<code>UML</code>图用于不同的目的(从上面的<code>UML</code>图树可以看出)。您可以在其他<code>UML</code>图类型和文档中描述这些细节，并将它们与用例链接起来。</li>
+<li>用例仅代表系统的功能需求。其他需求，如业务规则、服务质量需求和实线约束，必须再次用其他<code>UML</code>图单独表示。</li>
+</ul>
+<h1 id="一、用例的起源"><a href="#一、用例的起源" class="headerlink" title="一、用例的起源"></a>一、用例的起源</h1><p>如今，用例建模通过与<code>UML</code>相关联，尽管它是在<code>UML</code>存在之前引入的。其简史如下：</p>
+<ul>
+<li>1986年，<em>Ivar Jacobson</em>首次制定了用于指定用例的文本和视觉建模技术。</li>
+<li>1992年，他与人合著了《面向对象的软件工程———用例驱动方法》一书，帮助普及了捕获功能需求的技术，尤其是在软件开发中。</li>
+</ul>
+<h1 id="二、用例图的目的"><a href="#二、用例图的目的" class="headerlink" title="二、用例图的目的"></a>二、用例图的目的</h1><p>用例图通常在开发的早期阶段开发，人们经常将用例建模用于以下目的：</p>
+<ul>
+<li>指定系统的上下文</li>
+<li>捕获系统的需求</li>
+<li>验证系统架构</li>
+<li>推动实施并生成测试用例</li>
+<li>由分析师与领域专家共同开发</li>
+</ul>
+<h1 id="三、用例图概览"><a href="#三、用例图概览" class="headerlink" title="三、用例图概览"></a>三、用例图概览</h1><p>用统一建模语言定义了标准形式的用例图，如下面的用例图示例所示：</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180046.png" alt="img"></p>
+<h2 id="3-1-用例图使用的符号"><a href="#3-1-用例图使用的符号" class="headerlink" title="3.1 用例图使用的符号"></a>3.1 用例图使用的符号</h2><h3 id="3-1-1-角色"><a href="#3-1-1-角色" class="headerlink" title="3.1.1 角色"></a>3.1.1 角色</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180208.png" alt="img"></p>
+<ul>
+<li>角色与用例(系统功能)交互。</li>
+<li>以名词命名。</li>
+<li>类似于用户的概念，但一个用户可以扮演不同的角色。</li>
+<li>例如：<ul>
+<li>一个教授，可以是讲师，也可以是研究员</li>
+<li>在两个系统中扮演2个角色</li>
+</ul>
+</li>
+<li>Actor对系统负责(输入)，Actor对系统有期望(输出)。</li>
+</ul>
+<h3 id="3-1-2-用例"><a href="#3-1-2-用例" class="headerlink" title="3.1.2 用例"></a>3.1.2 用例</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180304.png" alt="img"></p>
+<ul>
+<li>系统功能(过程-自动或手动)</li>
+<li>以动词+名词(或名词短语)命名。</li>
+<li>即做某事。</li>
+<li>每个Actor必须链接到一个用例，而某些用例可能没有链接到Actor。</li>
+</ul>
+<h3 id="8-1-3-连接线"><a href="#8-1-3-连接线" class="headerlink" title="8.1.3 连接线"></a>8.1.3 连接线</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180409.png" alt="img"></p>
+<ul>
+<li>角色在用例中的参与是通过将角色连接到用例中来显示的。</li>
+<li>角色可以通过关联连接到用例，这表明角色和用例使用消息相互通信。</li>
+</ul>
+<h3 id="8-1-4-系统"><a href="#8-1-4-系统" class="headerlink" title="8.1.4 系统"></a>8.1.4 系统</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0209180522.png" alt="img"></p>
+<ul>
+<li>系统可能是需求文档中定义的整个系统。</li>
+<li>对于大型复杂系统，每个模块都可能是系统边界。</li>
+<li>例如，对于一个组织的ERP系统，每个模块，如人事、工资、会计等。</li>
+<li>可以为特定于这些业务功能中的每一个的用例形成系统。</li>
+<li>整个系统可以跨越所有这些描述整个系统的模块。</li>
+</ul>
+<h2 id="3-2-用关系构建用例图"><a href="#3-2-用关系构建用例图" class="headerlink" title="3.2 用关系构建用例图"></a>3.2 用关系构建用例图</h2><p>用例共享不同类型的关系。定义两个用例之间的关系是用例图的软件分析师的决定。两个用例之间的关系基本上是对两个用例之间的依赖关系进行建模。通过使用不同类型的关系重用现有用例可减少开发系统所需的整体工作量。用例关系如下所示：</p>
+<h3 id="3-2-1-扩展关系"><a href="#3-2-1-扩展关系" class="headerlink" title="3.2.1 扩展关系"></a>3.2.1 扩展关系</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210093248.png" alt="img"></p>
+<ul>
+<li>表示”无效密码”用例可能包括(根据扩展中的规定)由基本用例”登录账户”指定的行为。</li>
+<li>用带有虚线的定向箭头描绘。箭头的尖端指向基本用例，子用例连接在箭头的底部。</li>
+<li>构造型<code>&quot;&lt;&lt;extends&gt;&gt;&quot;</code>标识为扩展关系。</li>
+</ul>
+<h3 id="3-2-1-包含关系"><a href="#3-2-1-包含关系" class="headerlink" title="3.2.1 包含关系"></a>3.2.1 包含关系</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210093450.png" alt="img"></p>
+<ul>
+<li>当一个用例被描述为使用另一个用例的功能时，用例之间的关系被命名为包含或使用关系。</li>
+<li>一个用例包括另一个用例中描述的功能，作为其业务流程的一部分。</li>
+<li>从基本用例到子用例的使用关系表明基本用例的实例将包括在子用例中指定的行为。</li>
+<li>包含关系具有虚线的定向箭头来描绘。箭头的尖端指向连接在箭头底部的子用例和父用例。</li>
+<li>构造型<code>&lt;&lt;include&gt;&gt;</code>将关系标识为包含关系。</li>
+</ul>
+<h3 id="3-2-3-泛化关系"><a href="#3-2-3-泛化关系" class="headerlink" title="3.2.3 泛化关系"></a>3.2.3 泛化关系</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210093647.png" alt="img"></p>
+<ul>
+<li>泛化关系是用例之间的父子关系。</li>
+<li>子用例是父用例的增强。</li>
+<li>泛化显示为带有三角形箭头的定向箭头。</li>
+<li>子用例连接在箭头的底部。箭头的尖端连接到父用例。</li>
+</ul>
+<h2 id="3-3-用例示例"><a href="#3-3-用例示例" class="headerlink" title="3.3 用例示例"></a>3.3 用例示例</h2><h3 id="3-3-1-关联连接"><a href="#3-3-1-关联连接" class="headerlink" title="3.3.1 关联连接"></a>3.3.1 关联连接</h3><p>用例图说明了系统的一组用例，即角色以及角色与用例之间的关系。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210100635.png" alt="img"></p>
+<h3 id="3-3-2-包含关系"><a href="#3-3-2-包含关系" class="headerlink" title="3.3.2 包含关系"></a>3.3.2 包含关系</h3><p>包含关系添加了基本用例中未指定的附加功能。<code>&lt;&lt;include&gt;&gt;</code>关系用于将包含用例中的常见行为包含到基本用例中，以支持常见行为的重用。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210100940.png" alt="img"></p>
+<h3 id="3-3-3-扩展关系"><a href="#3-3-3-扩展关系" class="headerlink" title="3.3.3 扩展关系"></a>3.3.3 扩展关系</h3><p>扩展关系很重要，因为它们显示了可选的功能或系统行为。<code>&lt;&lt;Extend&gt;&gt;</code>关系用于在扩展用例中包含来自扩展用例的可选行为。看看下面的用例图示例，它显示了一个扩展连接器和一个扩展点”搜索”。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210101316.png" alt="img"></p>
+<h3 id="3-3-4-泛化关系"><a href="#3-3-4-泛化关系" class="headerlink" title="3.3.4 泛化关系"></a>3.3.4 泛化关系</h3><p>泛化关系意味着子用例继承父用例的行为和含义。孩子可以添加或覆盖父母的行为。下图通过显示连接三个用例之间的两个泛化连接器提供了一个用例示例。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210101856.png" alt="img"></p>
+<h1 id="四、用例图示例"><a href="#四、用例图示例" class="headerlink" title="四、用例图示例"></a>四、用例图示例</h1><h2 id="车辆销售系统"><a href="#车辆销售系统" class="headerlink" title="车辆销售系统"></a>车辆销售系统</h2><p>下图显示了车辆系统的用例图示例。如您所见，即使是像汽车销售系统一样大的系统也包含不超过10个用例！这就是用例建模的美妙之处。</p>
+<p>用例模型还展示了<code>&lt;&lt;Extend&gt;&gt;</code>和<code>&lt;&lt;include&gt;&gt;</code>的使用。此外，角色和用例之间存在关联。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210105646.png" alt="img"></p>
+<h1 id="五、如何识别角色"><a href="#五、如何识别角色" class="headerlink" title="五、如何识别角色"></a>五、如何识别角色</h1><p>通常，人们发现通过识别参与者来启动需求获取过程是最容易的。以下问题可以帮助您识别系统的参与者。</p>
+<ul>
+<li>谁使用系统？</li>
+<li>谁安装系统？</li>
+<li>谁启动系统？</li>
+<li>谁维护系统？</li>
+<li>谁关闭了系统？</li>
+<li>还有哪些其他系统使用该系统？</li>
+<li>谁从这个系统中获取信息？</li>
+<li>谁向系统提供信息？</li>
+<li>目前有什么事情会自动发生吗？</li>
+</ul>
+<h1 id="六、如何识别用例"><a href="#六、如何识别用例" class="headerlink" title="六、如何识别用例"></a>六、如何识别用例</h1><p>识别用例，然后通过询问每个角色想要什么外部可见、可观察的价值来进行基于场景的启发过程。一旦确定了角色，就可以提出以下问题来确定用例。</p>
+<ul>
+<li>参与者希望系统提供哪些功能？</li>
+<li>系统是否存储信息？哪些参与者会创建、读取、更新或删除这些信息？</li>
+<li>系统是否需要通知参与者内部状态的变化？</li>
+<li>系统是否必须知道任何外部事件？什么参与者通过系统这些事件？</li>
+</ul>
+<h1 id="七、用例图提示"><a href="#七、用例图提示" class="headerlink" title="七、用例图提示"></a>七、用例图提示</h1><p>现在，查看以下提示，了解如何在您的软件项目中有效地应用用例。</p>
+<ul>
+<li>始终从参与者地角度构建和组织用例图。</li>
+<li>用例应该从简单和尽可能高地角度开始。只有这样才能进一步细化。</li>
+<li>用例图基于功能，因此应该关注”什么”而不是”如何”。</li>
+</ul>
+<h1 id="八、用例级别的详细信息"><a href="#八、用例级别的详细信息" class="headerlink" title="八、用例级别的详细信息"></a>八、用例级别的详细信息</h1><p>用例粒度是指在用例规范中组织信息的方式，在某种程度上，是指编写它们的详细程度。实现正确级别的用例粒度可以简化利益相关者和开发人员之间的沟通，并改进项目规划。</p>
+<p><em>Alastair Cockburn</em>在编写有效用例中为我们提供了一种简单的方法，通过从海洋的角度来思考不同级别的目标级别：</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%94%A8%E4%BE%8B%E5%9B%BE/assets/0210110639.png" alt="img"></p>
+<p>注意：</p>
+<ul>
+<li>虽然用例本身可能会深入了解每种可能性的大量细节，但用例图通常用于作为蓝图的系统的更高级别视图。</li>
+<li>当不需要时，以较粗的粒度和较少的细节编写用例是有益的。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>UML知识</category>
+      </categories>
+      <tags>
+        <tag>UML知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是包图</title>
+    <url>/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/</url>
+    <content><![CDATA[<p>该篇文章是<span class="label [info]">UML知识</span>的扩充。</p>
+<span id="more"></span>
+
+<h1 id="什么是包图"><a href="#什么是包图" class="headerlink" title="什么是包图"></a>什么是包图</h1><p>源文连接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-package-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-package-diagram/</a></p>
+<p>包图是一种结构图，显示了中大型项目中模型元素的排列和组合。包图可以显示子系统或模块之间的结构和依赖关系，显示系统的不同视图。例如，多层应用程序模型。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208154046.png" alt="img"></p>
+<h1 id="一、包图的用途"><a href="#一、包图的用途" class="headerlink" title="一、包图的用途"></a>一、包图的用途</h1><p>包图用于构建高级系统元素。包用于组织包含图表，文档和其他关键可交付成果的大型系统。</p>
+<ul>
+<li>包图可用于简化复杂的类图，它可以将类分组到包中。</li>
+<li>包是逻辑上相关的<code>UML</code>元素的集合。</li>
+<li>包被描述为文件夹，可以在任何<code>UML</code>关系图上使用。</li>
+</ul>
+<h1 id="二、包图概览"><a href="#二、包图概览" class="headerlink" title="二、包图概览"></a>二、包图概览</h1><p>包图用于简化复杂的类图，可以将类分组到包中。包是逻辑上相关的<code>UML</code>元素的集合。</p>
+<p>下面是一个业务模型，其中类被分组到包中：</p>
+<ul>
+<li>包显示为矩形，顶部有小选项卡。</li>
+<li>包名称位于选项卡上或矩形内。</li>
+<li>虚线箭头是依赖项。</li>
+<li>如果另一个包中的更改可能会强制更改一个包，则一个包依赖于另一个包。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208155111.png" alt="img"></p>
+<h1 id="三、包图的基本概念"><a href="#三、包图的基本概念" class="headerlink" title="三、包图的基本概念"></a>三、包图的基本概念</h1><p>包图遵循嵌套包的层次结构。嵌套包的原子模块通常是类图。使用包图时几乎没有约束，如下图所示。</p>
+<ul>
+<li>对于系统，包名不应相同，但不同包中的类可以具有相同的名称。</li>
+<li>包可以包含整个关系图、单独的组件名称或根本不包含组件。</li>
+<li>包的完全限定名具有以下语法。</li>
+</ul>
+<p><code>Name owing the package::Name of the package</code></p>
+<p><code>java::util::Date</code></p>
+<p>包可以用符号标识，下面展示了一些示例：</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208160308.png" alt="img"></p>
+<h1 id="四、包图的依赖关系表示法"><a href="#四、包图的依赖关系表示法" class="headerlink" title="四、包图的依赖关系表示法"></a>四、包图的依赖关系表示法</h1><p>依赖关系中涉及两个子类型。它们是<code>&lt;&lt;import&gt;&gt;</code>和<code>&lt;&lt;access&gt;&gt;</code>。尽管有两种构造型，但用户可以使用自己的构造型来表示两个包之间的依赖关系类型。</p>
+<h2 id="4-1-包图示例-导入"><a href="#4-1-包图示例-导入" class="headerlink" title="4.1 包图示例-导入"></a>4.1 包图示例-导入</h2><p><code>&lt;&lt;import&gt;&gt;</code>一个包导入其他包的功能。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208160906.png" alt="img"></p>
+<h2 id="4-2-包图示例-访问"><a href="#4-2-包图示例-访问" class="headerlink" title="4.2 包图示例-访问"></a>4.2 包图示例-访问</h2><p><code>&lt;&lt;access&gt;&gt;</code>一个包需要其他包的功能的帮助。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208160931.png" alt="img"></p>
+<h1 id="五、建模复杂分组"><a href="#五、建模复杂分组" class="headerlink" title="五、建模复杂分组"></a>五、建模复杂分组</h1><p>包图通常用于描述包与其他包或对象之间的层次结构关系(分组)。包表示命名空间。</p>
+<p><strong>包图示例：分层结构</strong></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208162905.png" alt="img"></p>
+<h1 id="六、包图示例"><a href="#六、包图示例" class="headerlink" title="六、包图示例"></a>六、包图示例</h1><h2 id="6-1-订单子系统"><a href="#6-1-订单子系统" class="headerlink" title="6.1 订单子系统"></a>6.1 订单子系统</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208164425.png" alt="img"></p>
+<h2 id="6-2-订单处理系统"><a href="#6-2-订单处理系统" class="headerlink" title="6.2 订单处理系统"></a>6.2 订单处理系统</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208164639.png" alt="img"></p>
+<blockquote>
+<p>订单处理系统-问题描述：</p>
+<p>我们将为在线购物商店的“跟踪订单”方案设计包图。跟踪订单模块复杂为客户订购的产品提供跟踪信息。客户在搜索中填入订单序列号，跟踪订单模块调用系统并向客户更新当前发货状态。</p>
+</blockquote>
+<p><strong>识别系统的包</strong></p>
+<ul>
+<li>有一个跟踪订单模块，他必须与其他模块交流才能了解订单详细信息，姑且称之为“订单详细信息”。</li>
+<li>接下来，在获取订单详细信息后，它必须了解运输详细信息，让我们将其称为“运输”。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208164639.png" alt="img"></p>
+<p><strong>确定系统中的依赖关系</strong></p>
+<ul>
+<li>跟踪订单应从“订单详细信息”中获取订单详细信息，并且“订单详细信息”必须知道客户提供的跟踪信息。两个模块相互访问，这是<code>&lt;&lt;access&gt;&gt;</code>双重依赖关系。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208165650.png" alt="img"></p>
+<ul>
+<li>要了解运输信息，“运输”可以导入“跟踪订单”以使导航更容易。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208165822.png" alt="img"></p>
+<ul>
+<li>最后，还映射了跟踪订单与UI框架的依赖关系，这完成了订单处理子系统的包图。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%85%E5%9B%BE/UML%E7%9F%A5%E8%AF%86/assets/0208170035.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>UML知识</category>
+      </categories>
+      <tags>
+        <tag>UML知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是类图</title>
+    <url>/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/</url>
+    <content><![CDATA[<p>该篇文章是<span class="label [info]">UML知识</span>的扩充。</p>
+<span id="more"></span>
+
+<h1 id="什么是类图"><a href="#什么是类图" class="headerlink" title="什么是类图"></a>什么是类图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-class-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-class-diagram/</a></p>
+<p>在软件工程中，统一建模语言(UML)中的类图是一种静态结构图，它通过显示系统的类、它们的属性、操作（或方法）以及对象之间的关系来描述系统的结构。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0110202740.png" alt="img"></p>
+<h1 id="一、类图的目的"><a href="#一、类图的目的" class="headerlink" title="一、类图的目的"></a>一、类图的目的</h1><ol>
+<li>显示系统中分类器的静态结构。</li>
+<li>图为UML规定的其他结构图提供了基本的表示法。</li>
+<li>对开发人员和其他团队成员也有帮助。</li>
+<li>业务分析师可以使用类图从业务角度对系统建模。</li>
+</ol>
+<p>UML类图由以下部分组成：一组类和一组类之间的关系。</p>
+<h1 id="二、什么是Class"><a href="#二、什么是Class" class="headerlink" title="二、什么是Class"></a>二、什么是Class</h1><p>对系统中具有相似角色的一组对象的描述，包括：</p>
+<ul>
+<li>结构特征(属性)定义了类的对象”知道什么”<ul>
+<li>表示类的对象的状态</li>
+<li>是对类的结构或静态特征的描述</li>
+</ul>
+</li>
+<li>行为特征(操作)定义类的对象”可以做什么”<ul>
+<li>定义对象交互的方式</li>
+<li>操作时对类的行为或动态特征的描述</li>
+</ul>
+</li>
+</ul>
+<h1 id="三、Class的符号"><a href="#三、Class的符号" class="headerlink" title="三、Class的符号"></a>三、Class的符号</h1><p>一个Class的符号由三部分组成：</p>
+<ol>
+<li>Class的名称：Class的名称出现在第一个分区中</li>
+<li>Class的属性：属性显示在第二个分区中，属性类型显示在冒号之后，</li>
+<li>Class的操作(方法)：操作显示在第三个分区中，它们是类提供的服务。方法的返回值类型显示在冒号之后，方法的参数类型显示在参数冒号之后。</li>
+</ol>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0110205210.png" alt="img"></p>
+<p>Class的图形表示-MyClass如上图：</p>
+<ul>
+<li>MyClass有3个属性和2个操作</li>
+<li>操作(方法)op1：in 表示输入参数，冒号后面表示输入参数的类型，最外层冒号表示方法返回值类型 为String。</li>
+<li>操作(方法)op2: inout 表示输入输出型参数，冒号后int表示参数类型，最外层冒号表示方法返回值类型为float。</li>
+</ul>
+<h1 id="四、Class之间的关系"><a href="#四、Class之间的关系" class="headerlink" title="四、Class之间的关系"></a>四、Class之间的关系</h1><p>一个类(Class)可能与其他类(Class)的有一种或多种关系。关系可以是一下类型之一：</p>
+<h2 id="4-1-关系类型"><a href="#4-1-关系类型" class="headerlink" title="4.1 关系类型"></a>4.1 关系类型</h2><h3 id="4-1-1-继承-或泛化"><a href="#4-1-1-继承-或泛化" class="headerlink" title="4.1.1 继承(或泛化)"></a>4.1.1 继承(或泛化)</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0110211010.png" alt="img"></p>
+<ul>
+<li>表示”is-a”关系，比如：”狗是不是动物”。</li>
+<li>抽象类名称以斜体显示。</li>
+<li>SubClass1 和 SubClass2 是 SuperClass 的子类。</li>
+<li>带有空心箭头的实线，从子类指向父类。</li>
+</ul>
+<h3 id="4-1-2-简单关联"><a href="#4-1-2-简单关联" class="headerlink" title="4.1.2 简单关联"></a>4.1.2 简单关联</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0110211156.png" alt="img"></p>
+<ul>
+<li>两个对等类之间的结构链接。</li>
+<li>Class1 和 Class2 之间存在关联。</li>
+<li>链接两个类的实线。</li>
+</ul>
+<h3 id="4-1-3-聚合"><a href="#4-1-3-聚合" class="headerlink" title="4.1.3 聚合"></a>4.1.3 聚合</h3><p>一种特殊类型的关联。它代表”一部分”关系。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0110211753.png" alt="img"></p>
+<ul>
+<li>Class2 是 Class1 的一部分。</li>
+<li>Class2 的许多实例（用 * 表示）可以与 Class1 相关联。</li>
+<li>Class1 和 Class2 的对象具体不同的声明周期。</li>
+<li>在关联端带有未填充菱形的实线连接到组合材料类。</li>
+</ul>
+<h3 id="4-1-4-合成"><a href="#4-1-4-合成" class="headerlink" title="4.1.4 合成"></a>4.1.4 合成</h3><p>一种特殊类型的聚合，其中部分被破坏，整体被破坏。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0110212135.png" alt="img"></p>
+<ul>
+<li>Class2 的对象与 Class2 一起生存和死亡。</li>
+<li>Class2 不能独立存在。</li>
+<li>在关联端带有实心菱形的实线连接到组合材料类。</li>
+</ul>
+<h3 id="4-1-5-依赖"><a href="#4-1-5-依赖" class="headerlink" title="4.1.5 依赖"></a>4.1.5 依赖</h3><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0110212529.png" alt="img"></p>
+<ul>
+<li>如果对一个类的定义的更改可能会导致另一个类的更改(但相反情况不适用)，则依赖关系存在于两个类之间。</li>
+<li>Class1 依赖于 Class2。</li>
+<li>带空心箭头的虚线相连接。</li>
+</ul>
+<h2 id="4-2-关系名称"><a href="#4-2-关系名称" class="headerlink" title="4.2 关系名称"></a>4.2 关系名称</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0110220238.png" alt="img"></p>
+<ul>
+<li><p>关系名称写在关联线的中间。</p>
+</li>
+<li><p>当你看到UML图时，好的关系名称才有意义。</p>
+<ul>
+<li>“每个电子表格都包含一定数量的单元格”</li>
+<li>“一个表达式的计算结果是一个值”</li>
+</ul>
+</li>
+<li><p>它们通常有一个小箭头来表示读取关系的方向，例如：表达式计算为值，但值不计算为表达式。</p>
+</li>
+</ul>
+<h2 id="4-3-关系-角色"><a href="#4-3-关系-角色" class="headerlink" title="4.3 关系-角色"></a>4.3 关系-角色</h2><ul>
+<li>角色是关联的定向目的。</li>
+<li>角色写在关联线的末端，描述了该类在关联关系中的作用。</li>
+<li>例如：单元格和表达式相关，这个关联关系的本质是表达式是单元格的公式。</li>
+</ul>
+<h2 id="4-4-适航性"><a href="#4-4-适航性" class="headerlink" title="4.4 适航性"></a>4.4 适航性</h2><p>箭头表示，给定一个关联关系的实例，是否可以确定与其相关的另一个类的实例。</p>
+<p>上图表面：</p>
+<ul>
+<li>给定义一个电子表格，我们可以找到它所包含的所有单元格，但是如果给定一个单元格，我们无法确定哪个电子表格中包含它。</li>
+<li>给定一个单元格，我们可以获得相关的表达式和值，但是给定一个值（或表达式），我们无法找到具有这些属性的单元格。</li>
+</ul>
+<h1 id="五、类属性和操作的可见性"><a href="#五、类属性和操作的可见性" class="headerlink" title="五、类属性和操作的可见性"></a>五、类属性和操作的可见性</h1><p>在面向对象的设计中，属性和操作的可见性表示法。在UML标识了四种类型的可见性：公共、受保护、私有和包。类中属性和操作名称前面的<code>+</code>、<code>-</code>、<code>#</code>、<code>~</code>符号标识属性和操作的可见性。</p>
+<ul>
+<li><code>+</code>表示公共属性或操作</li>
+<li><code>-</code>表示私有属性或操作</li>
+<li><code>#</code>表示受保护的属性或操作</li>
+<li><code>~</code>表示包属性或操作</li>
+</ul>
+<p>类的可见性示例：</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0111205150.png" alt="img"></p>
+<p>在上图中：</p>
+<ul>
+<li>MyClass类中 attribute1 和 op1 是公开的，即public修饰的。</li>
+<li>attribute3 是受到保护的，即protected修饰的。</li>
+<li>attribute2 和 op2 是私有的，即private修饰的。</li>
+</ul>
+<p>下面显示了不同类的成员对每种可见性类型的访问权限：</p>
+<table>
+<thead>
+<tr>
+<th>访问权限</th>
+<th>公共（+）</th>
+<th>私有（-）</th>
+<th>受保护的（#）</th>
+<th>包装（~）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>同一类的成员</td>
+<td>是的</td>
+<td>是的</td>
+<td>是的</td>
+<td>是的</td>
+</tr>
+<tr>
+<td>派生类的成员</td>
+<td>是的</td>
+<td>否</td>
+<td>是的</td>
+<td>是的</td>
+</tr>
+<tr>
+<td>任何其他类的成员</td>
+<td>是的</td>
+<td>否</td>
+<td>否</td>
+<td>在同一包中</td>
+</tr>
+</tbody></table>
+<h1 id="六、多重性"><a href="#六、多重性" class="headerlink" title="六、多重性"></a>六、多重性</h1><p>每个类中有多少个对象参与关联的多重性可以表示为：</p>
+<table>
+<thead>
+<tr>
+<th>正好一</th>
+<th>零或一</th>
+<th>许多</th>
+<th>一个或多个</th>
+<th>确切数字</th>
+<th>或复杂关系</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>0..1</td>
+<td>0..* 或 *</td>
+<td>1..*</td>
+<td>3..4 或 6</td>
+<td>0..1、3..4、6.* <br>表示除了2或5以外任意数量的对象</td>
+</tr>
+</tbody></table>
+<p>多重性示例：</p>
+<ul>
+<li>要求：一个学生可以参加多门课程，一个课程又可以被许学生选择。</li>
+<li>在下面的示例中，类图(左侧)描述了上述静态模型要求的语句，而对象图(右侧)分别显示了软件工程和数据库管理课程的选择情况。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0111211448.png" alt="img"></p>
+<h1 id="七、类图示例"><a href="#七、类图示例" class="headerlink" title="七、类图示例"></a>七、类图示例</h1><h2 id="7-1-聚合示例-计算机和部件"><a href="#7-1-聚合示例-计算机和部件" class="headerlink" title="7.1 聚合示例-计算机和部件"></a>7.1 聚合示例-计算机和部件</h2><ul>
+<li>聚合是表示”由”层次结构组成关联的特殊情况。</li>
+<li>聚合是父类，组件是子类。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0111212501.png" alt="img"></p>
+<h2 id="7-2-继承示例-细胞分类"><a href="#7-2-继承示例-细胞分类" class="headerlink" title="7.2 继承示例-细胞分类"></a>7.2 继承示例-细胞分类</h2><ul>
+<li>继承是表示”某种”层次结构的关联的另一个特殊情况。</li>
+<li>继承通过引入分类法简化了分析模型。</li>
+<li>子类继承父类的属性和操作。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0111214831.png" alt="img"></p>
+<h2 id="7-3-类图-关系图工具示例"><a href="#7-3-类图-关系图工具示例" class="headerlink" title="7.3 类图-关系图工具示例"></a>7.3 类图-关系图工具示例</h2><p>类图还可以添加类或关系的注释。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%B1%BB%E5%9B%BE/assets/0111222048.png" alt="img"></p>
+<p>在上面的示例中：我们可以通过阅读一下几点来解释上述类图的含义。</p>
+<ol>
+<li>Shape形状是一个抽象类。它以斜体显示。</li>
+<li>Shape形状是一个父类。圆形、矩形、和多边形继承自Shape。换句话说，圆形就是形状，这是一种泛化/继承关系。</li>
+<li>DialogBox 和 DataController之间存在关联。</li>
+<li>Shape形状是Window窗口的一部分。这是一种聚合关系。Shape形状可以在没有窗口的情况下存在。</li>
+<li>Point点是Circle圆的一部分。这是一种组合关系。没有圆，点就不能存在。</li>
+<li>Window窗口依赖于Event事件。但是，事件不依赖于窗口。</li>
+<li>圆的属性是半径和中心。这是一个实体类。</li>
+<li>Circle的方法名称是area()、circum()、setCenter()、setRadius()。</li>
+<li>Circle中的参数半径是float类型的in(输入)参数。</li>
+<li>类Circle的方法area()返回一个双精度类型的值。</li>
+<li>Rectangle的属性和方法名称处于隐藏状态。关系图中的其他一些类也隐藏了其属性和方法名称。</li>
+</ol>
+<h2 id="7-4-复杂系统的处理"><a href="#7-4-复杂系统的处理" class="headerlink" title="7.4 复杂系统的处理"></a>7.4 复杂系统的处理</h2><p>不可避免地，如果您正在对大型系统或大型业务区域进行建模，则必须考虑许多实体。我们应该使用多个还是单个类图来问题进行建模？答案是：</p>
+<ul>
+<li>与其在单个类图上对每个实体及其关系进行建模，不如使用多个类图。</li>
+<li>将一个系统划分为多个类图可以使系统更易于理解，特别是如果每个关系图都是系统特定部分的图形表示。</li>
+</ul>
+<h2 id="7-5-软件开发生命周期中类图的视角"><a href="#7-5-软件开发生命周期中类图的视角" class="headerlink" title="7.5 软件开发生命周期中类图的视角"></a>7.5 软件开发生命周期中类图的视角</h2><p>我们可以在软件开发生命周期的不同开发阶段使用类图，并且通常通过在三个不同的角度（详细级别）中逐步建模类图：</p>
+<p><strong>概念视角</strong>：图表被解释为描述显示世界中的事物。因此，如果您采用概念视角，则可以绘制一个表示所研究领域中概念的图表。这些概念自然会与实现它们的类相关。概念视角被认为是与语言无关的。</p>
+<p><strong>规范视角</strong>：这些图被解释为描述软件抽象或具有规范和接口的组件，但没有对特定实现的承诺。因此，如果您从规范的角度来看，我们关注的是软件的接口，而不是实现。</p>
+<p><strong>实现视角</strong>：图表被解释为描述特定技术和语言中的软件实现。因此，如果您从实现的角度来看，我们正在他研究软件实现。</p>
+]]></content>
+      <categories>
+        <category>UML知识</category>
+      </categories>
+      <tags>
+        <tag>UML知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是组件图</title>
+    <url>/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/</url>
+    <content><![CDATA[<p>该篇文章是<span class="label [info]">UML知识</span>的扩充。</p>
+<span id="more"></span>
+
+<h1 id="什么是组件图"><a href="#什么是组件图" class="headerlink" title="什么是组件图"></a>什么是组件图</h1><p>源文连接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-component-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-component-diagram/</a></p>
+<p><code>UML</code>组件图用于对面向对象系统的物理方面进行建模，这些面向对象系统用于可视化、指定和记录基于组件的系统，还用于通过正向和逆向工程构建可执行系统。组件图本质上关注系统组件的类图，这些组件通常用于对系统的静态实现视图进行建模。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0112100152.png" alt="img"></p>
+<h1 id="一、组件图概览"><a href="#一、组件图概览" class="headerlink" title="一、组件图概览"></a>一、组件图概览</h1><p>组件图将正在开发的实际系统分解成为各种高级功能。每个组件负责整个系统内的一个明确目标，并且仅在需要知道的基础上与其他基本元素进行交互。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0112103325.png" alt="img"></p>
+<p>上面的示例显示了一个较大组件的内部组件：</p>
+<ul>
+<li>数据(账户和验证ID)通过右侧的端口流入组件，并转换为内部组件可以使用的格式。右侧的接口称为必需接口，它表示组件执行其职责所需的服务。</li>
+<li>重要的是注意内部组件被一个大”盒子”包裹，它可以是整个系统本身（在这种情况下，右上角不会有组件符号）或整个系统的子系统或组件（在这种情况下，”盒子”本身就是一个组件）。</li>
+</ul>
+<h1 id="二、组件图的基本概念"><a href="#二、组件图的基本概念" class="headerlink" title="二、组件图的基本概念"></a>二、组件图的基本概念</h1><p>组件表示系统的模块化部分，它封装了其内容，并且其表现形式在其环境中是可替换的。在<code>UML2</code>中，组件被绘制为一个矩形，并带有两个垂直堆叠的小矩形。<code>UML2</code>中组件的高级抽象视图可以建模为：</p>
+<ol>
+<li>带有组件名称的矩形</li>
+<li>带有组件图标的矩形</li>
+<li>带有原型文本和图标的矩形</li>
+</ol>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0112130332.png" alt="img"></p>
+<h1 id="三、接口"><a href="#三、接口" class="headerlink" title="三、接口"></a>三、接口</h1><p>在下面的示例中显示了两种类型的组件接口：</p>
+<p>提供的接口符号末尾有一个完整的圆圈，表示组件提供的接口–这个”棒棒糖”符号是接口分类器实现关系的简写。</p>
+<p>末端只有半圆的必需接口符号（也称为套接字）表示组件需要的接口（在这两种情况下，接口的名称都放在接口符号本身附近）。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0112131142.png" alt="img"></p>
+<p><strong>组件图示例-使用接口(订单系统)</strong></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0112131709.png" alt="img"></p>
+<h1 id="四、子系统"><a href="#四、子系统" class="headerlink" title="四、子系统"></a>四、子系统</h1><p>子系统分类器是组件分类器的专用版本。因此，子系统符号元素继承了与组件符号元素相同的所有规则。唯一的区别是子系统符号元素具有subsystem，而不是component的关键字。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0112133710.png" alt="img"></p>
+<h1 id="五、端口"><a href="#五、端口" class="headerlink" title="五、端口"></a>五、端口</h1><p>端口使用沿系统或组件边缘的正方形表示。端口通常用于帮助公开组件所需和提供的接口。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0112164927.png" alt="img"></p>
+<h1 id="六、组件关系"><a href="#六、组件关系" class="headerlink" title="六、组件关系"></a>六、组件关系</h1><p>从图形上看，组件图是顶点和弧的集合，通常包含组件、接口和依赖关系、聚合、约束、继承、关联和实现关系。它还可能包含注释和约束。</p>
+<h2 id="6-1-关联关系"><a href="#6-1-关联关系" class="headerlink" title="6.1 关联关系"></a>6.1 关联关系</h2><p>关联关系指定了类实例之间可能出现的语义关系。</p>
+<p>它至少有两个由属性表示的端点，每个端点都与类相关联。关联的多个端点可能具有相同的类型。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113092828.png" alt="img"></p>
+<h2 id="6-2-组成关系"><a href="#6-2-组成关系" class="headerlink" title="6.2 组成关系"></a>6.2 组成关系</h2><p>组成关系是一种强聚合的形式，它要求在一个组成关系中，它所包含的部件只要要被实例化一次。</p>
+<p>如果组成关系的主体被删除，它的所有组成部分通常也会随之删除。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113093359.png" alt="img"></p>
+<h2 id="6-3-聚合关系"><a href="#6-3-聚合关系" class="headerlink" title="6.3 聚合关系"></a>6.3 聚合关系</h2><p>它是一种一段被标记成空心菱形的关联关系，这种聚合关系是弱”拥有”关系，即A对象可以包含B对象，但B对象不是A对象的一部分。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113094207.png" alt="img"></p>
+<h2 id="6-4-约束关系"><a href="#6-4-约束关系" class="headerlink" title="6.4 约束关系"></a>6.4 约束关系</h2><p>以自然语言文本或机器可读语言表达得条件或限制，用于声明元素的某些语义。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113094936.png" alt="img"></p>
+<h2 id="6-5-依赖关系"><a href="#6-5-依赖关系" class="headerlink" title="6.5 依赖关系"></a>6.5 依赖关系</h2><p>依赖关系表示单个或一组模型元素需求其他模型元素来进行规范或实现。这意味着依赖元素的完整语义无论是在语义上还是结构上都依赖于提供方元素的定义。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113095540.png" alt="img"></p>
+<h2 id="6-6-继承关系"><a href="#6-6-继承关系" class="headerlink" title="6.6 继承关系"></a>6.6 继承关系</h2><ul>
+<li>继承是更通用的类和更具体地类之间地分类关系。</li>
+<li>具体的类的每个实例也是通用类的间接实例。</li>
+<li>因此，具体的类继承了通用类的特征。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113095829.png" alt="img"></p>
+<h1 id="七、建模"><a href="#七、建模" class="headerlink" title="七、建模"></a>七、建模</h1><h2 id="7-1-源代码建模"><a href="#7-1-源代码建模" class="headerlink" title="7.1 源代码建模"></a>7.1 源代码建模</h2><ul>
+<li>通过正向或逆向工程，识别感兴趣的源代码文件集，并将它们建模为组件，原型为文件。</li>
+<li>对于较大的系统，使用包来显示源代码文件组。</li>
+<li>考虑公开一个标记值，指示源代码文件的版本号、其作者和上次更改日期等信息。使用工具来管理这个标记值。</li>
+<li>使用依赖项对这些文件之间的编译依赖项进行建模。同样，使用工具来帮助生成和管理这些依赖项。</li>
+</ul>
+<p><strong>组件图示例——Java源代码</strong></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113125500.png" alt="img"></p>
+<p><strong>组件图示例-带有版本控制的C++代码</strong></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113130004.png" alt="img"></p>
+<h2 id="7-2-可执行版本建模"><a href="#7-2-可执行版本建模" class="headerlink" title="7.2 可执行版本建模"></a>7.2 可执行版本建模</h2><ul>
+<li>确定你要建模的组件集。通常，这将涉及位于一个节点上的部分或全部组件，或者这些组件集在系统中所有节点上的分布。</li>
+<li>考虑这个集合中每个组件的原型。对于大多数系统，您会发现少量不同种类的组件（例如可执行文件、库、表、文件和文档）。您可以使用<code>UML</code>的可扩展机制为这些原型提供视觉提示(线索)。</li>
+<li>对于该集合中的每个组件，请考虑其与其”邻居”的关系。大多数情况下，这将涉及由某些组件导出(实现)然后由其他组件导入(使用)的接口。如果要公开系统中的接口，请显示建模这些接口。如果您希望您的模型处于更高的抽象级别，请通过仅显示组件之间的依赖关系来消除这些关系。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113130357.png" alt="img"></p>
+<h2 id="7-3-为物理数据库建模"><a href="#7-3-为物理数据库建模" class="headerlink" title="7.3 为物理数据库建模"></a>7.3 为物理数据库建模</h2><ul>
+<li>识别模型中代表逻辑数据库模式的类。</li>
+<li>选择将这些类映射到表的策略。您还需要考虑数据库的物理分布。您的映射策略将收到您希望数据在已部署系统上的位置的影响。</li>
+<li>要可视化、指定、构造和记录您的映射，请创建一个组件图，其中包含原型为表格的组件。</li>
+<li>在可能的情况下，使用工具帮助您将逻辑设计转变为物理设计。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E7%BB%84%E4%BB%B6%E5%9B%BE/assets/0113130837.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>UML知识</category>
+      </categories>
+      <tags>
+        <tag>UML知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是轮廓图</title>
+    <url>/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/</url>
+    <content><![CDATA[<p>该篇文章是<span class="label [info]">UML知识</span>的扩充。</p>
+<span id="more"></span>
+
+<h1 id="什么是轮廓图"><a href="#什么是轮廓图" class="headerlink" title="什么是轮廓图"></a>什么是轮廓图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-profile-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-profile-diagram/</a></p>
+<p>作为一种通用建模语言，<code>UML</code>为各种需求提供了稳定的基础。它没有为特定的应用领域或任何特定的技术定义。然而，在某些情况下，<code>UML</code>过于笼统，使用它需要付出相当大的努力。在这种情况下，使用针对给定领域优化的语言并因此提供特殊概念是有利的。</p>
+<p>轮廓图是统一建模语言(<code>UML</code>)中的一种结构图，它提供了一种通用扩展机制，用于为特定领域和平台定制<code>UML</code>模型。扩展机制允许以严格附加的方式细化标准语义，防止它们与标准语义相矛盾。配置文件是使用构造型、标签值定义和应用于特定模型元素(如类、属性、操作和活动)的约束来定义的。<code>Proflie</code>是这样的扩展集合，它们共同为特定领域(例如：航空航天、医疗保健、金融)或平台(J2EE、.NET)定制UML。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/assets/0209135706.png" alt="img"></p>
+<h1 id="一、轮廓图的基本概念"><a href="#一、轮廓图的基本概念" class="headerlink" title="一、轮廓图的基本概念"></a>一、轮廓图的基本概念</h1><p>轮廓图基本上是一种可扩展性机制，它允许您通过添加新构建块、创建新属性和指定新语义来扩展和自定义<code>UML</code>，以使语言适合您的特定问题域。</p>
+<p>轮廓图具有三种类型的扩展机制：</p>
+<ul>
+<li>构造型</li>
+<li>标签值</li>
+<li>约束</li>
+</ul>
+<p><strong>构造型</strong></p>
+<p>构造型允许您增加<code>UML</code>的词汇量。您可以添加、创建新模型元素，这些元素源自现有元素，但具有适合您的问题域的特定属性。构造型用于引入新的构建块，这些构建块使用您的领域语言并且看起来很原始。它允许您引入新的图形符号。</p>
+<p>例如：在对网络进行建模时，您可能需要为<code>&lt;&lt;router&gt;&gt;</code>、<code>&lt;&lt;switches&gt;&gt;</code>、<code>&lt;&lt;hub&gt;&gt;</code>等提供符号。构造型允许您使这些东西看起来很原始。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/assets/0209140638.png" alt="img"></p>
+<p><strong>标签值</strong></p>
+<p>标签值用于扩展<code>UML</code>的属性，以便您可以在模型元素的规范中添加附加信息。它允许您指定模型的关键字值对，关键字是属性。标签值以图形方式呈现为括在括号中的字符串。</p>
+<p>例如：考虑一个负责组装、测试和部署系统的发布团队。在这种情况下，有必要跟踪主子系统的版本和测试结果。标签值用于添加此类信息。</p>
+<p>标签值可用于为模型添加属性以用于某些有用的目的：</p>
+<ul>
+<li>代码生成</li>
+<li>版本控制</li>
+<li>配置管理</li>
+<li>作者身份</li>
+<li>等等</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/assets/0209144751.png" alt="img"></p>
+<p><strong>约束</strong></p>
+<p>它们是用于指定必须始终保持为真的语义或条件的属性。它允许您通过添加新协议来扩展<code>UML</code>构建块的语义。在图形上，约束被呈现为字符串，包含在关联元素附件的括号中。</p>
+<p>例如：在实时系统的开发中，有必要用一些必要的信息来装饰模型，例如响应时间。约束定义了必须使用*{subset}<em>或</em>{xor}*的模型元素之间的关系。约束可以在属性、派生属性和关联上。它也可以附加到一个或多个显示为注释的模型元素上。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/assets/0209150930.png" alt="img"></p>
+<h1 id="二、何时使用轮廓图-UML-Extension-Meacham"><a href="#二、何时使用轮廓图-UML-Extension-Meacham" class="headerlink" title="二、何时使用轮廓图-UML Extension Meacham"></a>二、何时使用轮廓图-UML Extension Meacham</h1><p>作为创建新元模型的替代方法，您还可以扩展<code>UML</code>元模型的扩展和修改，并根据您的要求修改<code>UML</code>元模型。在<code>UML</code>中，我们称其为基于原型和配置文件的轻量级扩展。<code>UML</code>轮廓图可以通过以下3中方式之一定义：</p>
+<ul>
+<li>创建新的元模型</li>
+<li><code>UML</code>元模型的扩展和修改</li>
+<li>使用语言固有机制扩展<code>UML</code>元模型</li>
+</ul>
+<h1 id="三、轮廓图-工作原理"><a href="#三、轮廓图-工作原理" class="headerlink" title="三、轮廓图-工作原理"></a>三、轮廓图-工作原理</h1><p><code>UML1.1</code>中的扩展机制相对不精确，因为只能基于原始数据类型字符串进行扩展。<code>UML2.0</code>允许您对扩展元素使用任意数据结构，这意味着现在可以进行更广泛和更精确的模型扩展。</p>
+<p>轮廓图机制不是一流的扩展机制。它不允许：</p>
+<ul>
+<li>修改现有元模型</li>
+<li>像MOF一样创建一个新的元模型</li>
+</ul>
+<p>轮廓图仅允许对现有元模型进行调整或定制。在<code>UML2.0</code>或更高版本中，还可以动态组合轮廓图，以便在同一模型上同时应用多个轮廓图。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/assets/0209152722.png" alt="img"></p>
+<h1 id="四、轮廓图概览"><a href="#四、轮廓图概览" class="headerlink" title="四、轮廓图概览"></a>四、轮廓图概览</h1><p>在这个例子中，我们可以看到一个原型可以从一个或多个元类扩展。这种扩展关系被描述为一个带有实线和实心箭头的箭头。箭头从原型指向元类。</p>
+<p>在下图中，我们将EJB的轮廓图定义为一个包。bean本身从组件元模型扩展为抽象bean。抽象bean可以具体化为实体Bean或会话Bean。EJB由两种类型的远程接口和本地接口。EJB还包含一种称为JAR文件的特殊文件，用于存储Java代码的集合。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/assets/0209153636.png" alt="img"></p>
+<h1 id="五、文本与图形图表构造型"><a href="#五、文本与图形图表构造型" class="headerlink" title="五、文本与图形图表构造型"></a>五、文本与图形图表构造型</h1><p>构造型可以是文本或图形标识。图表也可以代替普通的类框。例如：人们经常使用这3个原型类来标识建模软件MVC框架：</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/assets/0209155151.png" alt="img"></p>
+<h1 id="六、UML轮廓图的其他流行用法"><a href="#六、UML轮廓图的其他流行用法" class="headerlink" title="六、UML轮廓图的其他流行用法"></a>六、UML轮廓图的其他流行用法</h1><p>每个技术目标，即编程语言、中间件、库或数据库都是定义UML轮廓图的自然候选者。举些例子：</p>
+<ul>
+<li><code>CORBA</code>、<code>EJB</code>、<code>C++ or JAVA</code>、<code>Oracle or Mysql</code> 等</li>
+</ul>
+<h1 id="七、轮廓图文件的构造型"><a href="#七、轮廓图文件的构造型" class="headerlink" title="七、轮廓图文件的构造型"></a>七、轮廓图文件的构造型</h1><p>要在特定应用程序中使用构造型，您必须首先集成包含构造型的配置文件。您可以使用虚线箭头而不是从应用程序包执行轮廓图文件的空心箭头来执行此操作。该箭头标有关键字<code>&lt;&lt;apply&gt;&gt;</code>。</p>
+<h1 id="八、轮廓图示例"><a href="#八、轮廓图示例" class="headerlink" title="八、轮廓图示例"></a>八、轮廓图示例</h1><h2 id="8-1-IT管理"><a href="#8-1-IT管理" class="headerlink" title="8.1 IT管理"></a>8.1 IT管理</h2><p>轮廓图文件应用于另一个包，以便是轮廓图文件中的构造型可用于该包。下图显示了应用于<code>ITManagement</code>包的网络、电信和软件轮廓图。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/assets/0209162342.png" alt="img"></p>
+<h2 id="8-2-轮廓图示例2-EJB应用程序"><a href="#8-2-轮廓图示例2-EJB应用程序" class="headerlink" title="8.2 轮廓图示例2-EJB应用程序"></a>8.2 轮廓图示例2-EJB应用程序</h2><p>在下图中，我们将EJB的配置文件定义为一个包。bean本身从组件元模型扩展为抽象bean。抽象bean可以具体化为实体Bean或会话Bean。EJB有两种类型的远程接口和本地接口。EJB还包含一种称为JAR文件的特殊文件，用于存储Java代码的集合。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BD%AE%E5%BB%93%E5%9B%BE/assets/0209163344.png" alt="img"></p>
+]]></content>
+      <categories>
+        <category>UML知识</category>
+      </categories>
+      <tags>
+        <tag>UML知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是通讯图</title>
+    <url>/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/</url>
+    <content><![CDATA[<p>该篇文章是<span class="label [info]">UML知识</span>的扩充。</p>
+<span id="more"></span>
+
+<h1 id="什么是通讯图"><a href="#什么是通讯图" class="headerlink" title="什么是通讯图"></a>什么是通讯图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-communication-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-communication-diagram/</a></p>
+<p><code>UML</code>通讯图，就像<code>序列图</code>（一种交互图）一样，显示了对象如何交互。通讯图是对象图的扩展，它显示了对象以及从一个到另一个传播的消息。除了对象之间的关联之外，通讯图还显示了对象相互发送的消息。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/assets/0216141258.png" alt="img"></p>
+<h1 id="一、通讯图的目的"><a href="#一、通讯图的目的" class="headerlink" title="一、通讯图的目的"></a>一、通讯图的目的</h1><ul>
+<li>对传递用例和操作功能的对象或角色之间的消息传递进行建模</li>
+<li>系统架构设计中的模型机制</li>
+<li>捕获显示协作场景中对象和角色之间传递消息的交互</li>
+<li>对涉及不同对象和交互的协作的用例或操作中的替代场景进行建模</li>
+<li>支持识别参与用例的对象（因此是类）及其属性（消息参数）和操作（消息）</li>
+</ul>
+<h1 id="二、通讯图概览"><a href="#二、通讯图概览" class="headerlink" title="二、通讯图概览"></a>二、通讯图概览</h1><p>在通讯图的符号示例中，对象（用例中的参与者）由矩形表示。在示例中（通用通讯图）：</p>
+<ul>
+<li>对象是 Object1、Object2、Object…、ObjectN-1 …和 ObjectN。</li>
+<li>对象之间传递的消息由带标签的箭头表示，这些箭头以发送对象（actor）开始，以接收对象结束。</li>
+<li>对象之间传递的示例消息标记为 1：message1、2：message2、3：message3 等，其中消息名称的数字前缀表示其在序列中的顺序。</li>
+<li>Object1 首先向 Object2 发送消息 message1，Object2 依次向 ObjectN-1 发送消息 message2，以此类推。</li>
+<li>对象发送给自己的消息被表示为循环（例如，消息 message5）。</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/assets/0216145729.png" alt="img"></p>
+<h1 id="三、通讯图示例"><a href="#三、通讯图示例" class="headerlink" title="三、通讯图示例"></a>三、通讯图示例</h1><h2 id="3-1-酒店预订"><a href="#3-1-酒店预订" class="headerlink" title="3.1 酒店预订"></a>3.1 酒店预订</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/assets/0216145820.png" alt="img"></p>
+<ul>
+<li>通讯图中的每条消息都有一个序列号。</li>
+<li>顶级消息编号为 1。</li>
+<li>同一呼叫期间发送的消息具有相同的十进制前缀，但后缀为 1、2 等，具体取决于它们发生的时间。</li>
+</ul>
+<h2 id="3-2-通讯图与序列图"><a href="#3-2-通讯图与序列图" class="headerlink" title="3.2 通讯图与序列图"></a>3.2 通讯图与序列图</h2><p>通讯图和时序图类似。它们在语义上是等价的，即呈现相同的信息，您可以将通讯转换为序列图，反之亦然。它们之间的主要区别在于，通讯图是按空间排列元素，顺序图是按时间排列。</p>
+<p>在两种类型的交互图中，序列图的使用似乎远远超过通讯图。那么，为什么要使用通讯图呢？首先，它们对于可视化协作执行特定任务的对象之间的关系非常有用。这很难从序列图中确定。此外，通讯图还可以帮助您确定静态模型（即类图）的准确性。</p>
+<p><strong>示例 - 序列图与通讯（库项目过期）</strong></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/assets/0216145939.png" alt="img"></p>
+<p>如果你在 Visual Paradigm 中打开这个序列图，你可以自动生成如下图所示的通讯图：</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/assets/0216150000.png" alt="img"></p>
+<p><strong>注意</strong>：如果您比较这两个图表，您会发现它们都包含对象和消息。很明显，通过查看序列图更容易确定消息的时间顺序，通过查看通讯图更容易看到对象之间的关系。</p>
+<h2 id="3-3-通讯图元素"><a href="#3-3-通讯图元素" class="headerlink" title="3.3 通讯图元素"></a>3.3 通讯图元素</h2><p><strong>参与协作的对象</strong>有两种形式：供应商和客户。</p>
+<ul>
+<li><strong>供应商对象</strong>是提供被调用方法并因此接收消息的对象。</li>
+<li><strong>客户端对象</strong>调用供应商对象的方法，因此发送消息。</li>
+</ul>
+<p><strong>链接</strong></p>
+<ul>
+<li>通讯图中的对象之间绘制的连接线是链接。</li>
+<li>这些链接将通讯图与序列图区分开来。它们使您能够查看对象之间的关系。</li>
+<li>每个链接代表了对象之间的一种关系，象征着对象相互发送消息的能力。</li>
+<li>如果一个对象向自己发送消息，则携带这些消息的链接将表示为一个循环图标。这个循环可以在 UI 对象和 Transaction 对象上看到。</li>
+</ul>
+<p>通讯图中的消息显示为从 Client 对象指向 Supplier 对象的箭头。通常，消息表示客户端调用供应商对象上的操作。它们可以通过以下方式与对象一起建模：</p>
+<ul>
+<li>消息图标具有与之关联的一条或多条消息。</li>
+<li>消息由以序列号为前缀的消息文本组成。</li>
+<li>此序列号指示消息的时间顺序。</li>
+</ul>
+<p>例如下图的通讯图中，可以按照序号来确定对象之间的消息顺序：</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/assets/0216150124.png" alt="img"></p>
+<h2 id="3-4-了解通讯图中的消息编号"><a href="#3-4-了解通讯图中的消息编号" class="headerlink" title="3.4 了解通讯图中的消息编号"></a>3.4 了解通讯图中的消息编号</h2><ul>
+<li>通讯图中的第一条消息始终编号为 1，第二条消息编号为 2，依此类推。</li>
+<li>您可以通过将小数点和递增数字添加到父消息的序列号来指示消息嵌套在父消息之下。</li>
+</ul>
+<p>例如：</p>
+<p>基于上面的示例，“CalAmtCanBorrow”消息是“EnquireBorrower”下的第一个嵌套消息，并被赋予序列号 1.1。“EnquireBorrower”下的第二个嵌套消息是“DisplayInvalidMsg”，因此它的序列号为 1.2。</p>
+<h2 id="3-5-示例-从序列图到通讯图"><a href="#3-5-示例-从序列图到通讯图" class="headerlink" title="3.5 示例 - 从序列图到通讯图"></a>3.5 示例 - 从序列图到通讯图</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%80%9A%E8%AE%AF%E5%9B%BE/assets/0216150206.png" alt="img"></p>
+<p><strong>请注意</strong>：</p>
+<ul>
+<li><strong>控制焦点</strong>：也称为<strong>执行发生/激活</strong>。它在生命线上显示为又高又细的矩形，表示元素<strong>执行操作</strong>的时间段。</li>
+<li>矩形的顶部和底部分别与开始时间和完成时间对齐。</li>
+<li>在通讯图中，控制的焦点是明确的，因此可以用消息嵌套编号来表示。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>UML知识</category>
+      </categories>
+      <tags>
+        <tag>UML知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>什么是部署图</title>
+    <url>/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/</url>
+    <content><![CDATA[<p>该篇文章是<span class="label [info]">UML知识</span>的扩充。</p>
+<span id="more"></span>
+
+<h1 id="什么是部署图"><a href="#什么是部署图" class="headerlink" title="什么是部署图"></a>什么是部署图</h1><p>源文链接：<a href="https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-deployment-diagram/">https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-deployment-diagram/</a></p>
+<p><code>UML</code>部署图是现实运行时处理节点的配置以及在它们上的组件的图。部署图是一种结构图，用于面向对象系统的物理方面进行建模。它们通常用于对系统的静态部署视图(硬件拓扑)进行建模。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/assets/0113134940.png" alt="img"></p>
+<h1 id="一、何时使用部署图"><a href="#一、何时使用部署图" class="headerlink" title="一、何时使用部署图"></a>一、何时使用部署图</h1><ul>
+<li>新添加的系统需要与哪些现有系统进行交互或集成？</li>
+<li>系统需要有多健壮（例如：系统故障时的冗余硬件）？</li>
+<li>谁将链接到系统或与系统交互，以及它们将如何做到这一点？</li>
+<li>系统将使用哪些中间件，包括操作系统和通信方法和协议？</li>
+<li>用户甲肮直接与哪些硬件和软件进行交互（PC、网络计算机、浏览器等）？</li>
+<li>部署后您将如何监控系统？</li>
+<li>系统需要有多安全（需要防火墙、物理安全硬件等）？</li>
+</ul>
+<h1 id="二、部署图的目的"><a href="#二、部署图的目的" class="headerlink" title="二、部署图的目的"></a>二、部署图的目的</h1><ul>
+<li>它们显示了运行时系统的结构</li>
+<li>它们捕获将用于实现系统的硬件以及不同硬件项之间的链接。</li>
+<li>它们对物理硬件元素和它们之间的通信路径进行建模。</li>
+<li>它们可用于规划系统的架构。</li>
+<li>它们对于记录软件组件或节点的部署也很有用。</li>
+</ul>
+<h1 id="三、部署图概览"><a href="#三、部署图概览" class="headerlink" title="三、部署图概览"></a>三、部署图概览</h1><p>部署图对于可视化、指定和记录嵌入式、客户端/服务器和分布式系统以及通过正向和逆向工程管理可执行系统非常重要。</p>
+<p>部署图只是一种特殊的类图，它关注系统的节点。从图形上看，部署图时顶点和弧的集合。部署图通常包含一下几个部分：</p>
+<h2 id="3-1-节点"><a href="#3-1-节点" class="headerlink" title="3.1 节点"></a>3.1 节点</h2><ul>
+<li>3D框代表一个节点，无论是软件还是硬件。</li>
+<li>硬件节点可以用<code>&lt;&lt;stereotype&gt;&gt;</code>表示。</li>
+<li>节点之间的连接用一条线表示，可选<code>&lt;&lt;stereotype&gt;&gt;</code>。</li>
+<li>节点可以驻留在节点内。</li>
+</ul>
+<h2 id="3-2-其他符号"><a href="#3-2-其他符号" class="headerlink" title="3.2 其他符号"></a>3.2 其他符号</h2><ul>
+<li>依赖关系</li>
+<li>关联关系</li>
+<li>也可能包含注释和约束</li>
+</ul>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/assets/0113191401.png" alt="img"></p>
+<h1 id="四、建模"><a href="#四、建模" class="headerlink" title="四、建模"></a>四、建模</h1><h2 id="4-1-为嵌入式系统建模的步骤"><a href="#4-1-为嵌入式系统建模的步骤" class="headerlink" title="4.1 为嵌入式系统建模的步骤"></a>4.1 为嵌入式系统建模的步骤</h2><ol>
+<li>识别系统特有的设备和节点。</li>
+<li>通过使用<code>UML</code>的可扩展性机制来定义具有适当图标的系统特定原型，提供视觉提示，特别是对于不寻常的设备。至少，您需要区分处理器（包含软件组件）和设备（在抽象级别，不直接包含软件）。</li>
+<li>在部署图中对这些处理器和设备之间的关系进行建模。同样，指定系统部署图中的组件与系统部署图中的节点之间的关系。</li>
+<li>如有必要，通过使用更详细的部署图对其结构进行建模来扩展任何只能设备。</li>
+</ol>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/assets/0113202805.png" alt="img"></p>
+<h2 id="4-2-为客户端-服务器系统建模的步骤"><a href="#4-2-为客户端-服务器系统建模的步骤" class="headerlink" title="4.2 为客户端/服务器系统建模的步骤"></a>4.2 为客户端/服务器系统建模的步骤</h2><ol>
+<li>识别代表系统客户端和服务器处理器的节点。</li>
+<li>突出显示与系统行为密切相关的那些设备。例如，您需要对特殊设备（例如信用卡阅读器、标记阅读器和显示器以外的显示设备）进行建模。因为它们在系统硬件拓扑中的位置可能在体系结构上很重要。</li>
+<li>通过固定格式为这些处理器和设备提供视觉提示。</li>
+<li>在部署图中对这些节点的拓扑进行建模。同样，指定系统部署图中的组件与系统部署图中的节点之间的关系。</li>
+</ol>
+<p>该示例显示了人力资源系统的拓扑结构，该系统遵循经典的客户端/服务器架构。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/assets/0113204850.png" alt="img"></p>
+<p><strong>TCP/IP 客户端/服务器示例</strong></p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/assets/0114110957.png" alt="img"></p>
+<h2 id="4-3-为分布式系统建模"><a href="#4-3-为分布式系统建模" class="headerlink" title="4.3 为分布式系统建模"></a>4.3 为分布式系统建模</h2><ol>
+<li>识别系统的设备和处理器，就像更简单的客户端/服务器系统一样。</li>
+<li>如果您需要推理系统网络的性能或网络更改的影响，请务必将这些通信设备建模到足以进行这些评估的详细程度。</li>
+<li>密切注意节点的逻辑分组，你可以使用包指定。</li>
+<li>使用部署图对这些设备和处理器进行建模。在可能的情况下，使用通过遍历系统网络来发现系统拓扑的工具。</li>
+<li>如果您需要关注系统的动态，请引入用例图来指定您感兴趣的行为类型，并使用交互图扩展这些用例。</li>
+<li>在对完全分布式系统进行建模时，通常会将网络本身具体化为节点。即Internet、LAN、WAN作为节点。</li>
+</ol>
+<p>该示例显示了一个完全分布式系统的拓扑。</p>
+<p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/assets/0114112446.png" alt="img"></p>
+<h2 id="4-4-企业分布式系统"><a href="#4-4-企业分布式系统" class="headerlink" title="4.4 企业分布式系统"></a>4.4 企业分布式系统</h2><p><img src="/2022/%E4%BB%80%E4%B9%88%E6%98%AF%E9%83%A8%E7%BD%B2%E5%9B%BE/assets/0114113301.png" alt="img"></p>
+<h2 id="4-5-部署规划清单"><a href="#4-5-部署规划清单" class="headerlink" title="4.5 部署规划清单"></a>4.5 部署规划清单</h2><p>当您为您的公司起草部署计划时，您可能会发现您不知道从哪里开始或应该关注什么。以下清单可能会为您提供一些有关规划部署的想法：</p>
+<ul>
+<li>您的系统将如何安装？<ol>
+<li>谁来安装它？安装需要多长时间？</li>
+<li>哪里安装可能失败？</li>
+<li>如果安装失败如何退出？需要多长时间才能退出？</li>
+<li>您的安装窗口期是多少（您可以在什么时间段内安装系统）？</li>
+<li>安装前需要哪些备份？</li>
+<li>您需要进行数据转换吗？</li>
+<li>您怎么知道安装成功了？</li>
+</ol>
+</li>
+<li>如果不同版本的系统将同时投入生产，您将如何解决差异？</li>
+<li>您需要以什么顺序部署到哪些物理站点？<ol>
+<li>您将如何培训您的维护和运营人员？</li>
+<li>您是否需要部署生产测试系统，以便维护人员使用自己的环境来模拟问题？</li>
+</ol>
+</li>
+<li>您将如何培训您的用户？<ol>
+<li>您的用户、维护和操作人员需要哪些文档、格式和语言？</li>
+<li>如何部署文档更新？</li>
+</ol>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>UML知识</category>
+      </categories>
+      <tags>
+        <tag>UML知识</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>设计模式简述</title>
+    <url>/2022/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E8%BF%B0/</url>
+    <content><![CDATA[<p>该篇文章结合《研磨设计模式》以及CSDN上的优质文章，粗略的介绍了设计模式的基本概念。在学习设计模式之前有一个基础的理解，对如何学习设计模式有一个基本的方向。</p>
+<span id="more"></span>
+
+<h1 id="设计模式简述"><a href="#设计模式简述" class="headerlink" title="设计模式简述"></a>设计模式简述</h1><h1 id="一、何为设计模式"><a href="#一、何为设计模式" class="headerlink" title="一、何为设计模式"></a>一、何为设计模式</h1><h2 id="1-1-设计模式的概念"><a href="#1-1-设计模式的概念" class="headerlink" title="1.1 设计模式的概念"></a>1.1 设计模式的概念</h2><p><strong>设计模式</strong>：是指<strong>在软件开发中</strong>，<strong>经过验证的</strong>，用于解决在<strong>特定环境</strong>下、<strong>重复出现</strong>的、<strong>特定问题</strong>的解决方案。</p>
+<span class="label info">软件开发中</span>：并不能说设计模式是软件行业独有的，事实上，很多行业都有自己的设计模式。而书中讲解的设计模式仅限于在软件开发行业中所使用的。
+
+<br>
+
+<span class="label info">经过验证的</span>：客观的说，每个人都可以总结一些用于解决特定环境下、重复出现的、特定问题的解决方案，但并不是每个人的方案都能称为**设计模式**，这些方案必须经过足够的测试验证，并得到同志们的认可和公认，才有可能称得上**设计模式**。
+
+<br>
+
+<span class="label info">特定环境下</span>：问题一定是在某个场景下的出现的，不能脱离实际的环境去讨论问题的解决方法，因为不同的环境下，即使是同一问题，解决方法也有可能大相径庭。
+
+<br>
+
+<span class="label info">重复出现的</span>：如果是对于一些独特的问题，不会重复出现的，这样的解决方案往往是具有独特性的，那么总结它们的解决方案就显得多此一举。只有这些特定问题“重复出现”，那么为这些问题总结出来的解决方案才是有意义的行为，因为当这些问题再次出现的时候，那么就可以复用总结的方案去解决问题。
+
+<br>
+
+<span class="label info">特定问题</span>：说明设计模式不是哆啦A梦，它并不具备神奇的口袋，并不是什么问题都能解决，通常一个设计模式仅仅解决某个或者某些特定的问题。因此不要迷信设计模式，也不要泛滥使用设计模式，设计模式解决不了那么多的问题，它只是“特定问题”的解决方案。
+
+<h2 id="1-2-设计模式的理解"><a href="#1-2-设计模式的理解" class="headerlink" title="1.2 设计模式的理解"></a>1.2 设计模式的理解</h2><div class="note success">
+            <ul><li>设计模式是解决某些问题的办法。</li><li>设计模式不是凭空想象出来的，是经验的积累和总结。</li><li>设计模式并不是一成不变的，而是在不断的发展中。</li><li>设计模式并不是软件行业独有的，各行各业都有自己的设计模式。</li></ul>
+          </div>
+
+<h1 id="二、设计模式有何"><a href="#二、设计模式有何" class="headerlink" title="二、设计模式有何"></a>二、设计模式有何</h1><h2 id="2-1-设计模式的四要素"><a href="#2-1-设计模式的四要素" class="headerlink" title="2.1 设计模式的四要素"></a>2.1 设计模式的四要素</h2><ol>
+<li><p><strong>模式名称(Pattern Name)</strong></p>
+<p>一个助记名，用一两个词来描述模式的问题、解决方案和效果。</p>
+</li>
+<li><p><strong>问题(Problem)</strong></p>
+<p>描述了应该何时使用设计模式。它解决了设计问题和问题存在的前因后果，它可能描述了特定的设计问题，也可能描述了导致不灵活设计的类或对象结构。</p>
+</li>
+<li><p><strong>解决方案(Solution)</strong></p>
+<p>描述了护色剂的组成成分，它们之间的相互关系及各自的职责和协作方式。</p>
+</li>
+<li><p><strong>效果(Consequences)</strong></p>
+<p>描述了模式应用的效果及使用模式应该权衡的问题。</p>
+</li>
+</ol>
+<h2 id="2-2-设计模式的分类"><a href="#2-2-设计模式的分类" class="headerlink" title="2.2 设计模式的分类"></a>2.2 设计模式的分类</h2><p><img src="/2022/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E7%AE%80%E8%BF%B0/0104175659.png" alt="img"></p>
+<table>
+<thead>
+<tr>
+<th>范围</th>
+<th>创建型</th>
+<th>结构性</th>
+<th>行为型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类</td>
+<td>工厂方法模式    Factory Method</td>
+<td>适配器模式(类)      Adapter</td>
+<td>解释器模式                         Interpreter<br>模板方法模式           Template Method</td>
+</tr>
+<tr>
+<td>对象</td>
+<td>抽象工厂模式    Abstract Factory<br>建造者模式      Builder<br>原型模式        Prototype<br>单例模式        Singleton</td>
+<td>适配器模式(对象)      Adapter<br>桥接模式         Bridge<br>组合模式         Composite<br>装饰者模式       Decorator<br>外观模式         Facade<br>享元模式         Flyweight<br>代理模式         Proxy</td>
+<td>职责链模式    Chain Of  Responsibility<br>命令模式                             Command<br>迭代器模式                               Iterator<br>中介者模式                            Mediator<br>备忘录模式                           Memento<br>观察者模式                            Observer<br>状态模式                                      State<br>策略模式                                 Strategy<br>访问者模式                                 Visitor</td>
+</tr>
+</tbody></table>
+<p>进一步细致分类：</p>
+<table>
+<thead>
+<tr>
+<th>范围</th>
+<th>创建型</th>
+<th>结构性</th>
+<th>行为型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>对象创建</td>
+<td>工厂方法模式    Factory Method<br>抽象工厂模式    Abstract Factory<br>建造者模式      Builder<br>原型模式        Prototype<br>单例模式        Singleton</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>接口适配</td>
+<td></td>
+<td>适配器模式  Adapter<br>桥接模式  Bridge<br>外观模式  Facade</td>
+<td></td>
+</tr>
+<tr>
+<td>对象去耦</td>
+<td></td>
+<td></td>
+<td>中介者模式  Mediator<br>观察者模式  Observer</td>
+</tr>
+<tr>
+<td>抽象集合</td>
+<td></td>
+<td>组合模式  Composite</td>
+<td>迭代器模式  Iterator</td>
+</tr>
+<tr>
+<td>行为扩展</td>
+<td></td>
+<td>装饰者模式  Decorator</td>
+<td>访问者模式  Visitor<br>职责链模式  Chain Of Respinsibility</td>
+</tr>
+<tr>
+<td>算法封装</td>
+<td></td>
+<td></td>
+<td>模板方法模式  Template Method<br>策略模式  Strategy<br>命令模式   Command</td>
+</tr>
+<tr>
+<td>性能与对象访问</td>
+<td></td>
+<td>享元模式  Flyweight<br>代理模式  Proxy</td>
+<td></td>
+</tr>
+<tr>
+<td>对象状态</td>
+<td></td>
+<td></td>
+<td>备忘录模式  Memento<br>状态模式  State</td>
+</tr>
+<tr>
+<td>其他</td>
+<td></td>
+<td></td>
+<td>解释器模式  Interpreter</td>
+</tr>
+</tbody></table>
+<h1 id="三、设计模式学习"><a href="#三、设计模式学习" class="headerlink" title="三、设计模式学习"></a>三、设计模式学习</h1><h2 id="3-1-为何学习设计模式"><a href="#3-1-为何学习设计模式" class="headerlink" title="3.1 为何学习设计模式"></a>3.1 为何学习设计模式</h2><ol>
+<li><p><strong>设计模式已经成为软件开发人员的“标准词汇”</strong></p>
+<p>一天小菜遇到了一个开发问题，然后向大鸟去请教讨论。大鸟在知道了具体的问题后说：“你可以尝试使用”XXX模式”（XXX是某个设计模式的名称）去解决这个问题。“此时，小菜一脸茫然，XXX设计模式是个啥，如果是这样的话，就无法交流了。所以我们要学习设计模式，因为很多软件开发人员在平时交流的时候，只是使用设计模式的名称，而不会深入说明其具体的内容。</p>
+</li>
+<li><p><strong>学习设计模式是个人技术能力提高的捷径</strong></p>
+<p>学习设计模式，可以学习到众多前辈的经验，吸收和领会他们的设计思想，掌握他们解决问题的方法，就相当于站在这些巨人的肩膀上，可以让我们个人的技术能力得到快速的提升。学习设计模式虽然有一定的困难，但绝对是快速提高个人技术能力的捷径。</p>
+</li>
+<li><p><strong>不同重复发明轮子</strong></p>
+<p>设计模式是解决某些特定问题的解决方案。当我们再次面对这些问题的时候，就不用自己从头来解决这些问题，复用这些方案即可。</p>
+</li>
+</ol>
+<h2 id="3-2-学习设计模式的层次"><a href="#3-2-学习设计模式的层次" class="headerlink" title="3.2 学习设计模式的层次"></a>3.2 学习设计模式的层次</h2><ol>
+<li><p><strong>基本入门级</strong></p>
+<p>要求能够正确理解和掌握每个设计模式的基本知识，能够识别在什么场景下、出现了什么样的问题、采用何种方案来解决它，并能够在实际的程序设计和开发中套用相应的设计模式。</p>
+</li>
+<li><p><strong>基本掌握级</strong></p>
+<p>除了具备基本入门级的要求外，还要去能够结合实际应用场景，对设计模式进行变形使用。事实上，在实际开发中，经常会碰到与标准模式的应用场景有一些不一样的情况，此时要合理地使用设计模式，就需要对它们进行适当的变形，而不是僵硬的套用。要进行变形的前提是要能准确深入的理解和把握设计模式的本质，只有把握住本质，才能确保正确变形使用而不是误用。</p>
+</li>
+<li><p><strong>深入理解运用级</strong></p>
+<p>要从思想和方法上吸收设计模式的精髓，并融入到自己的思路中，在进行软件的分析和设计的时候，能随意地、自然而然地应用，就如同自己思维的一部分。</p>
+</li>
+</ol>
+<h2 id="3-3-如何学习设计模式"><a href="#3-3-如何学习设计模式" class="headerlink" title="3.3 如何学习设计模式"></a>3.3 如何学习设计模式</h2><ol>
+<li><p>首先要调整好心态，不要指望一蹴而就，不可浮躁。</p>
+<p>学习和掌握设计模式需要一个过程，不同的阶段看这些设计模式绘有不同的领悟和感受。<strong>要向真正理解和掌握，必须要上升到一定的难度和深度，让你看完后思考，思考后应用，然后再看、再思考、再应用，如此反复，方能成就。</strong></p>
+</li>
+<li><p>学习设计模式第一步：准确理解每个设计模式的功能、基本结构、标准实现，了解适合使用它的场景以及使用的效果。</p>
+</li>
+<li><p>学习设计模式的第二步：实际的开发中，尝试着使用这些设计模式，并反复思考和总结是否使用得当，是否需要做一些变化。</p>
+</li>
+<li><p>学习设计模式的第三步：再回头看设计模式的理论，有了实际的模式应用经验再看设计模式，会有不同的感悟，一边看一边结合着应用经验来思考。比如：设计模式的本质功能是什么？它是如何实现的？这种实现方式还可以在什么地方应用？如何才能把这个设计模式和具体的应用结合起来？这个设计模式设计的出发点是什么？等等。</p>
+</li>
+<li><p>学习设计模式的第五步：<strong>多次重复学习设计模式的第二步和第三步</strong>。也就是在实际开发中使用，然后结合理论思考，然后再应用，再思考……如此循环，反复多次，直到达到对设计模式基本掌握的水平。</p>
+</li>
+</ol>
+<p>2022年1月4日</p>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>阿里巴巴命名规范</title>
+    <url>/2022/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<p>该篇文档为《简单工厂模式》的文章所引用的补充说明。</p>
+<span id="more"></span>
+
+<h1 id="阿里巴巴命名规范"><a href="#阿里巴巴命名规范" class="headerlink" title="阿里巴巴命名规范"></a>阿里巴巴命名规范</h1><p>在《阿里Java开发手册-泰山版》中，对命名做了如下规范：</p>
+<ol>
+<li><p>代码中的命名均不能以<strong>下划线或美元符号</strong>开始，也不能以<strong>下划线或美元符号</strong>结束。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//反例</span></span><br><span class="line">_name / __name / $name / name_ / name$ / name__</span><br></pre></td></tr></table></figure></li>
+<li><p>所有编程相关的命名严禁使用拼音与英文混合的方式，更不允许直接使用中文的方式。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//说明：正确的英文拼写和语法可以让阅读者易于理解，避免歧义。注意，纯拼音命名方式更要避免使用</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//正例</span></span><br><span class="line">ali / alibaba / taobao / cainiao / aliyun / youku / hangzhou 等国际通用的名称，可视同英文</span><br><span class="line">    </span><br><span class="line"><span class="comment">//反例    </span></span><br><span class="line">DaZhePromotion[打折] / getPingfenByName() [评分] / <span class="keyword">int</span> 某变量 = <span class="number">3</span>    </span><br></pre></td></tr></table></figure></li>
+<li><p>类名使用大驼峰(UpperCamelCase)风格，但以下情形例外：DO / BO / DTO / VO / AO / PO / UID 等。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//正例</span></span><br><span class="line">ForceCode / UserDO / HtmlDTO / XmlService / TcpUdpDeal / TaPromotion</span><br><span class="line">    </span><br><span class="line"><span class="comment">//反例</span></span><br><span class="line">forcecode / UserDo / HTMLDto / XMLService / TCPUDPDeal / TAPromotion    </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>补充说明：</p>
+<p>源文链接：<a href="https://blog.csdn.net/w605283073/article/details/89715188">https://blog.csdn.net/w605283073/article/details/89715188</a></p>
+<p>DO(Data Object)：此对象与数据库表结构一一对应，通过DAO层向上传输数据源对象。</p>
+<p>BO(Business Object)：用于封装业务逻辑。</p>
+<p>DTO(Data Transfer Object)：数据传输对象，Service 或 Manager 向外传输的对象。</p>
+<p>VO(View Object)：显示层对象，通常是Web向模板渲染引擎层传输的对象。</p>
+<p>AO(Application Object)：应用对象，在Web层与Service层之间抽象的复用对象模型，即为贴近展示层，复用度不高。</p>
+<p>PO(Persistent Object)：用于表示数据库中一条记录映射而成的java对象，仅用于表示数据。</p>
+<p>POJO(Plain Ordinary Java Object)：用于表示一个最基础的Java对象，PO、VO、DTO都是POJO。</p>
+<hr>
+<p>BO的理解方式：</p>
+<p>BO这个对象可以包括一个或多个其他的对象。</p>
+<p>比如一个简历，有教育经历、工作精力、社会关系等等。</p>
+<p>我们可以把教育经历对应一个PO、工作经历对应一个PO、社会关系对应一个PO。</p>
+<p>建立一个对应简历的BO对象处理简历，每个BO包含这些PO。这样处理业务逻辑时，我们就可以针对BO去处理。</p>
+</blockquote>
+</li>
+<li><p>方法名、参数名、成员变量、局部变量都统一使用小驼峰(lowerCamelCase)风格。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//正例</span></span><br><span class="line">localValue / getHttpMessage() / inputUserId</span><br></pre></td></tr></table></figure></li>
+<li><p>常量命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字长。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//正例</span></span><br><span class="line">MAX_STOCK_COUNT　/ CACHE_EXPIRED_TIME</span><br><span class="line"></span><br><span class="line"><span class="comment">//反例</span></span><br><span class="line">MAX_COUNT / EXPIRED_TIME    </span><br></pre></td></tr></table></figure></li>
+<li><p>抽象类命名使用Abstract 或 Base开头；异常类命名使用Exception结尾；测试类命名以他要测试的类的名称开始，以Test结尾。</p>
+</li>
+<li><p>类型与中括号紧挨相连来表示数组。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//正例</span></span><br><span class="line">定义整型数组 <span class="keyword">int</span>[] arrayDemo;</span><br><span class="line"></span><br><span class="line"><span class="comment">//反例</span></span><br><span class="line">在main参数中，使用String args[]来定义。</span><br></pre></td></tr></table></figure></li>
+<li><p>POJO类中的任何布尔类型的变量，都不要加 is 前缀，否则部分框架解析会引起序列化错误。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//反例</span></span><br><span class="line">定义为基本数据类型Boolean isDeleted的属性，它的方式也是isDeleted(),框架在反向解析的时候，“误以为”对应的属性名称是deleted，导致属性获取不到，进而抛出异常。</span><br></pre></td></tr></table></figure></li>
+<li><p>包名统一使用小写，点分隔符之间有且仅有一个自然语义的英语单词。包名统一使用单数形式，但是类名如果有复数含义，类名可以使用复数形式。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//正例</span></span><br><span class="line">应用工具类</span><br><span class="line">    包名为：com.alibaba.ei.kunlun.aap.util</span><br><span class="line">    类名为：MessageUtils</span><br><span class="line">(此规则参考Spring的框架结构)    </span><br></pre></td></tr></table></figure></li>
+<li><p>避免在子父类的成员变量之间、或者不同代码块的局部变量之间采用完全相同的命名，使可读性降低。</p>
+<p>说明：子类、父类成员变量名相同，即使是public类型的变量也是能够通过编译，而局部变量在同一方法内的不同代码块中同名也是合法的，但是要避免使用。对于非setter/getter的参数名称也要避免与成员变量名称相同。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//反例</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConfusingName</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> stock;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//非setter/getter的参数名称，不允许与本类成员变量同名。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">get</span><span class="params">(String alibaba)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(condition) &#123;</span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">int</span> money = <span class="number">666</span>;</span><br><span class="line">            <span class="comment">//....</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">            <span class="comment">//在同一方法体中，不允许与其他代码块中的 money 命名相同。</span></span><br><span class="line">            <span class="keyword">final</span> <span class="keyword">int</span> money = <span class="number">15978</span>;</span><br><span class="line">            <span class="comment">//...</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">ConfusingName</span> </span>&#123;</span><br><span class="line">    <span class="comment">//不允许与父类的成员变量名称相同</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> stock;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>杜绝完全不规范的所写，避免望文不知义。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//反例</span></span><br><span class="line">AbstractClass <span class="string">&quot;缩写&quot;</span> 命名成 AbsClass;</span><br><span class="line">condition     <span class="string">&quot;缩写&quot;</span> 命名成 condi</span><br><span class="line">此类随意缩写严重降低了代码的可阅读性。    </span><br></pre></td></tr></table></figure></li>
+<li><p>为了达到代码自解释的目标，任何自定义编程元素在命名时，使用尽量完整的单词组合来表达。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//正例</span></span><br><span class="line">在JDK中，对某个对象引用的 <span class="keyword">volatile</span> 字段进行原子更新的类名为：AtomicReferenceFieldUpdater</span><br><span class="line"></span><br><span class="line"><span class="comment">//反例</span></span><br><span class="line">常见的方法内变量为 <span class="keyword">int</span> a; 的定义方式。    </span><br></pre></td></tr></table></figure></li>
+<li><p>在常量与变量的命名时，表示类型的名词放在词尾，以提升辨识度。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//正例</span></span><br><span class="line">startTime / workQueue / nameList / TERMINATED_THREAD_COUNT</span><br><span class="line">    </span><br><span class="line"><span class="comment">//反例</span></span><br><span class="line">startedAt / QueueOfWork / listName / COUNT_TERMINATED_THREAD  </span><br></pre></td></tr></table></figure></li>
+<li><p>如果模块、接口、类、方法使用了设计模式，在命名时需体现出具体模式。</p>
+<p>说明：将设计模式体现在名字中，有利于阅读者快速理解架构设计理念。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//正例</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderFactory</span></span>;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginProxy</span></span>;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ResourceObserver</span></span>;</span><br></pre></td></tr></table></figure></li>
+<li><p>接口类中的方法和属性不要加任何修饰符号(public 也不要加)，保持代码的简介性，并加上有效的Javadoc注释。尽量不要在接口里定义变量，如果一定要定义变量，确定与接口方法相关，并且是整个应用的基础常量。</p>
+<p>说明：JDK8中接口允许有默认实现，那么这个 default 方法，是对所有实现类都有价值的默认实现。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//正例</span></span><br><span class="line">接口方法签名 <span class="function"><span class="keyword">void</span> <span class="title">commit</span><span class="params">()</span></span>;</span><br><span class="line">接口基础常量 String COMPANY = <span class="string">&quot;alibaba&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//反例</span></span><br><span class="line">接口方法定义 <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure></li>
+<li><p>接口和实现类的命名有两套规则：</p>
+<ol>
+<li><p>对于 Service 和 DAO 类，基于 SOA 的理念，暴露出来的服务一定是接口，内部的实现类用Impl 的后缀与接口区别。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//正例</span></span><br><span class="line">CacheServiceImpl 实现 CacheService 接口    </span><br></pre></td></tr></table></figure></li>
+<li><p>如果是形容能力的接口名称，取对应的形容词为接口名（通常是-able 的形容词）。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//正例</span></span><br><span class="line">AbstractTranslator 实现 Translatable接口</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>枚举类名带上 Enum 后缀，枚举成员名称需要全大写，单词间用下划线隔开。</p>
+<p>说明：枚举其实就是特殊的常量类，且构造方法被默认强制是私有。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//正例</span></span><br><span class="line">枚举名字为 ProcessStatusEnum 的成名名称：SUCCESS / UNKNOWN_REASON</span><br></pre></td></tr></table></figure></li>
+<li><p>各层命名规约：</p>
+<p>A) Service/DAO 层方法命名规约</p>
+<p>​    1.获取单个对象的方法用 get 做前缀。</p>
+<p>​    2.获取多个对象的方法用 list 做前缀，复数结尾，如：listObjects。</p>
+<p>​    3.获取统计值的方法用 count 做前缀。</p>
+<p>​    4.插入的方法用 save/insert 做前缀。</p>
+<p>​    5.删除的方法用 remove/delete 做前缀。</p>
+<p>​    6.修改的方法用 update 做前缀。</p>
+<p>B) 领域模型命名规约</p>
+<p>​    1.数据对象：xxxDO，xxx即为数据表名。</p>
+<p>​    2.数据传输对象：xxxDTO，xxx为业务领域相关的名称。</p>
+<p>​    3.展示对象：xxxVO，xxx一般为网页名称。</p>
+<p>​    4.POJO 是 DO/DTO/BO/VO 的统称，禁止命名成 xxxPOJO。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>补充说明</category>
+      </categories>
+      <tags>
+        <tag>补充说明</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>简单工厂模式</title>
+    <url>/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<p>该篇文章通过对《大话设计模式》之简单工厂模式的阅读，使用Java编写文中对应的案例，逐步理解文中所讲解的简单工厂模式。</p>
+<span id="more"></span>
+
+<h1 id="简单工厂模式"><a href="#简单工厂模式" class="headerlink" title="简单工厂模式"></a>简单工厂模式</h1><p>该文档基于《大话设计模式》中的内容，因为书中使用的是C#编写的，所以我根据书中的案例自己去写的Java版的，一步一步的去理解实践设计模式。</p>
+<blockquote>
+<p>如果您想阅读此书，请下载《大话设计模式》，有条件请购买正版图书进行学习。</p>
+<p>资源来源于网络，如有侵权，立刻删除。</p>
+<p>阿里云盘链接地址：<a href="https://www.aliyundrive.com/s/FxoBjRd3rd3">https://www.aliyundrive.com/s/FxoBjRd3rd3</a></p>
+</blockquote>
+<hr>
+<h1 id="一、面试落榜"><a href="#一、面试落榜" class="headerlink" title="一、面试落榜"></a>一、面试落榜</h1><h2 id="1-1-计算器程序面试题"><a href="#1-1-计算器程序面试题" class="headerlink" title="1.1 计算器程序面试题"></a>1.1 计算器程序面试题</h2><p><strong>小菜</strong>面试的时候碰到这样的题目：”请用C++、Java、C#或VB.NET”任意一种面向对象语言实现一个计算器控制台程序，要求输入两个数和运算符号，得到结果。”</p>
+<p><strong>小菜</strong>用C#写了一段程序，我在学习过程中按照他的代码使用Java写了一段类似的程序，代码如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cn.hutool.core.convert.Convert;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalculatorProgram</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入数字A：&quot;</span>);</span><br><span class="line">        String A = scanner.nextLine();</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入运算符号B(+、-、*、/)：&quot;</span>);</span><br><span class="line">        String B = scanner.nextLine();</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入数字C：&quot;</span>);</span><br><span class="line">        String C = scanner.nextLine();</span><br><span class="line">        String D = <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (B.equals(<span class="string">&quot;+&quot;</span>))&#123;</span><br><span class="line">            D = Convert.toStr((Convert.toDouble(A) + Convert.toDouble(C)));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (B.equals(<span class="string">&quot;-&quot;</span>))&#123;</span><br><span class="line">            D = Convert.toStr((Convert.toDouble(A) - Convert.toDouble(C)));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (B.equals(<span class="string">&quot;*&quot;</span>))&#123;</span><br><span class="line">            D = Convert.toStr((Convert.toDouble(A) * Convert.toDouble(C)));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (B.equals(<span class="string">&quot;/&quot;</span>))&#123;</span><br><span class="line">            D = Convert.toStr((Convert.toDouble(A) / Convert.toDouble(C)));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;计算结果为：&quot;</span> + D);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是<strong>小菜</strong>，却因为这段代码而没有应聘上，内心郁闷的<strong>小菜</strong>，去询问<strong>大鸟</strong>。<strong>大鸟</strong>指出了它存在的问题，并详细引导他了解简单工厂模式，请细看下述内容。</p>
+<blockquote>
+<p>补充说明：上述程序中使用到了HuTool工具类，需在<code>pom.xml</code>中导入HuTool的依赖。</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>cn.hutool<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>hutool-all<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.6.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="1-2-程序中出现的问题"><a href="#1-2-程序中出现的问题" class="headerlink" title="1.2 程序中出现的问题"></a>1.2 程序中出现的问题</h2><p><img src="/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/0105115503.png" alt="img"></p>
+<h3 id="1-2-1-命名规范问题"><a href="#1-2-1-命名规范问题" class="headerlink" title="1.2.1 命名规范问题"></a>1.2.1 命名规范问题</h3><p>查阅《阿里Java开发手册-泰山版》，对于命名做了如下规范：</p>
+<a href="/2022/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83/" title="点击查看阿里命名规范">点击查看阿里命名规范</a>
+
+<blockquote>
+<p>如果您想查看更为完整的内容，请下载《阿里Java开发手册-泰山版》，有条件请购买正版图书进行学习。</p>
+<p>资源来源于网络，如有侵权，立刻删除。</p>
+<p>阿里云盘链接地址：<a href="https://www.aliyundrive.com/s/PcdEnB8JJpT">https://www.aliyundrive.com/s/PcdEnB8JJpT</a></p>
+</blockquote>
+<h3 id="1-2-2-判断条件问题"><a href="#1-2-2-判断条件问题" class="headerlink" title="1.2.2 判断条件问题"></a>1.2.2 判断条件问题</h3><p>对于上述这种多次无用功的判断，可以考虑通过 switch case 来处理。</p>
+<h3 id="1-2-3-做除法问题"><a href="#1-2-3-做除法问题" class="headerlink" title="1.2.3 做除法问题"></a>1.2.3 做除法问题</h3><p>一旦要做除法运算，应该考虑以下几个问题：</p>
+<ol>
+<li>除数不能为0，或者其他非数字的字符；</li>
+<li>结果有小数，如何做处理；</li>
+</ol>
+<h2 id="1-3-计算器程序代码优化"><a href="#1-3-计算器程序代码优化" class="headerlink" title="1.3 计算器程序代码优化"></a>1.3 计算器程序代码优化</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cn.hutool.core.convert.Convert;</span><br><span class="line"><span class="keyword">import</span> java.util.InputMismatchException;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalculatorProgram</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        String result = <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入数字A：&quot;</span>);</span><br><span class="line">        <span class="keyword">int</span> numberA = scanner.nextInt();</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入运算符号B(+、-、*、/)：&quot;</span>);</span><br><span class="line">        <span class="keyword">char</span> strOperate = scanner.next().charAt(<span class="number">0</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;请输入数字C：&quot;</span>);</span><br><span class="line">        <span class="keyword">int</span> numberC = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            numberC = scanner.nextInt();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InputMismatchException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;请输入正确的非零数字！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">switch</span> (strOperate) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;+&#x27;</span>:</span><br><span class="line">                result = Convert.toStr((Convert.toDouble(numberA) + Convert.toDouble(numberC)));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;-&#x27;</span>:</span><br><span class="line">                result = Convert.toStr((Convert.toDouble(numberA) - Convert.toDouble(numberC)));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;*&#x27;</span>:</span><br><span class="line">                result = Convert.toStr((Convert.toDouble(numberA) * Convert.toDouble(numberC)));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;/&#x27;</span>:</span><br><span class="line">                <span class="keyword">if</span> (<span class="number">0</span> != numberC) &#123;</span><br><span class="line">                    result = Convert.toStr((Convert.toDouble(numberA) / Convert.toDouble(numberC)));</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    System.out.println(<span class="string">&quot;除数不能为0&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;输入的运算符号有误！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;计算结果为：&quot;</span> + result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>switch case 补充说明：</p>
+<a href="/2022/switchcase%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3/" title="点击查看switch case用法详解">点击查看switch case用法详解</a>
+</blockquote>
+<p><strong>小菜</strong>完成这个程序之后，<strong>大鸟</strong>评价道：”不错不错，改的挺快的，但从计算器程序上来说，已经够用了，但是这样的代码是否符合出题人的意思呢？”</p>
+<p><strong>小菜</strong>顿悟：”你的意思是面向对象？“</p>
+<h1 id="二、面向对象编程"><a href="#二、面向对象编程" class="headerlink" title="二、面向对象编程"></a>二、面向对象编程</h1><p><strong>小菜</strong>：”我明白了，出题人说要用任意一种面向对象语言实现，意思就是要使用面向对象的编程方法去实现。这个我学过，只不过当时没有想到而已。”</p>
+<p><strong>大鸟</strong>：”所有编程初学者都会有这样的问题，就是碰到问题就直觉地用计算机能够理解地逻辑来描述和表达待解决的问题及具体的求解过程。这其实是用计算机的方式去思考，比如这个计算器这个程序，先要求输入两个数和运算符号，然后根据运算符号判断如何选择运算，得到结果，这本身没有错，但这样的思维却使得我们的程序只为满足实现当前的需求，程序不容易维护，不容易扩展，更不容易复用。从而达不到高质量代码的要求。”</p>
+<p>小菜：”鸟哥，我有点懵逼了，如何才能容易维护，容易扩展，又容易复用呢，能不能具体说说？”</p>
+<p>不光是小菜懵逼，其实我也懵逼，我也是菜鸟，哈哈。</p>
+<h2 id="2-1-面向对象的故事"><a href="#2-1-面向对象的故事" class="headerlink" title="2.1 面向对象的故事"></a>2.1 面向对象的故事</h2><p>“话说三国时期，曹操带领百万大军攻打东吴，大军在常见赤壁驻扎，军船连成一片，眼看就要灭掉东吴，统一天下，曹操大悦，于是大宴众文武，在酒席间，曹操诗兴大发，不觉吟道：’喝酒唱歌，人生真爽。’众文武齐呼：’丞相好诗’，于是一臣子宿命印刷工匠刻版印刷，以便流传天下。”</p>
+<p><img src="/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/0106135440.png" alt="img"></p>
+<p>样张出来给曹操一看，曹操感觉不妥，说到：”喝与唱，此话过俗，应改为’对酒当歌’较好。”，于是此臣酒命工匠重新来过。工匠眼看连夜刻板之功，彻底白费，心中叫苦不迭，只得照办。</p>
+<p><img src="/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/0106140017.png" alt="img"></p>
+<p>样章再次出来请曹操过目，曹操细细一品，觉得还是不好，说：”人生真爽太过直接，应该为问语才够意境，因此应改为’对酒当歌，人生几何？’当臣转告工匠之时，工匠晕倒……”</p>
+<p><img src="/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/0106140258.png" alt="img"></p>
+<p>上述故事的问题在于，由于需求的改变，之前所有的工作都白费，需要重新来过。</p>
+<p>这里面就涉及到了，可维护、可扩展、可复用。</p>
+<p><img src="/2022/%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/0106140657.png" alt="img"></p>
+<p><strong>大鸟</strong>：”第一，要改只需更改要改之字，此为<strong>可维护</strong>；第二，这些字并非这次用完就无用，完全可以在后来的印刷中重复使用，此乃<strong>可复用</strong>；第三，此诗要加字，只需另外刻字加入即可，这是<strong>可扩展</strong>；第四，字的排列其实可能是竖向排列可能是横向排列，此时只需将活字移动就可做到满足排列需求，此是<strong>灵活性好</strong>。”</p>
+<p>“而在活字印刷术出现之前，上面的四种特性都无法满足，要修改，必须重刻，要加字，必须重刻，要重新排列，必须重刻，印完这本书之后，此版已无任何可再利用价值。”</p>
+<p>对应到上面的计算器程序当中，我们是不是也只顾当前的计算需求所进行的编程，而并未考虑到扩展的情况，比如要进行开根运算，上面的程序就没法用了。</p>
+<h2 id="2-2-面向对象的好处"><a href="#2-2-面向对象的好处" class="headerlink" title="2.2 面向对象的好处"></a>2.2 面向对象的好处</h2><p><strong>大鸟</strong>：”当我学习了面向对象的分析设计编程思想，开始考虑<strong>通过封装、继承、多态把程序的耦合度降低</strong>，传统印刷术的问题就在于所有的字斗刻在同一版面上造成耦合度太高所致，开始<strong>用设计模式使得程序更加的灵活，容易修改，并且易于复用</strong>。”</p>
+<p><strong>小菜</strong>：”那按照题目的意思，要我做出一个可维护，可扩展，可复用的计算器程序，我该怎么做呢？”</p>
+<p><strong>大鸟</strong>：”编程有一原则，尽量避免重复。想想看，你的代码，有哪些是何控制台有关的，哪些适合计算器有关的？”</p>
+<p><strong>小菜</strong>：”你的意思是让计算和显示分开？”</p>
+<h2 id="2-3-业务的封装"><a href="#2-3-业务的封装" class="headerlink" title="2.3 业务的封装"></a>2.3 业务的封装</h2><p><strong>大鸟</strong>：”准确的说，就是让业务逻辑和界面逻辑分开，让它们之间的耦合度下降。只有分离开，才可以达到容易维护或扩展。”</p>
+<p><strong>小菜</strong>：”哦哦哦，让我来试试！”</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.InputMismatchException;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">//计算器程序显示类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Calculator</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">            System.out.println(<span class="string">&quot;请输入数字A：&quot;</span>);</span><br><span class="line">            <span class="keyword">int</span> numberA = scanner.nextInt();</span><br><span class="line">            System.out.println(<span class="string">&quot;请输入运算符号B(+、-、*、/)：&quot;</span>);</span><br><span class="line">            <span class="keyword">char</span> strOperate = scanner.next().charAt(<span class="number">0</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;请输入数字C：&quot;</span>);</span><br><span class="line">            <span class="keyword">int</span> numberC = scanner.nextInt();</span><br><span class="line">            String result = Operator.operate(numberA, strOperate, numberC);</span><br><span class="line">            System.out.println(<span class="string">&quot;计算结果为：&quot;</span> + result);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InputMismatchException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;您的输入有误！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cn.hutool.core.convert.Convert;</span><br><span class="line"></span><br><span class="line"><span class="comment">//计算器程序运算类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Operator</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">operate</span><span class="params">(<span class="keyword">double</span> numberA, <span class="keyword">char</span> operator, <span class="keyword">double</span> numberC)</span> </span>&#123;</span><br><span class="line">        String result = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">switch</span> (operator)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;+&#x27;</span>:</span><br><span class="line">                result = Convert.toStr((Convert.toDouble(numberA) + Convert.toDouble(numberC)));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;-&#x27;</span>:</span><br><span class="line">                result = Convert.toStr((Convert.toDouble(numberA) - Convert.toDouble(numberC)));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;*&#x27;</span>:</span><br><span class="line">                result = Convert.toStr((Convert.toDouble(numberA) * Convert.toDouble(numberC)));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;/&#x27;</span>:</span><br><span class="line">                <span class="keyword">if</span> (<span class="number">0</span> != numberC) &#123;</span><br><span class="line">                    result = Convert.toStr((Convert.toDouble(numberA) / Convert.toDouble(numberC)));</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    System.out.println(<span class="string">&quot;除数不能为0&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;输入的运算符号有误！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>小菜</strong>：”鸟哥，你看，我把计算和界面完全分离了，面向对象也不过如此，下回写类似的代码不怕了。”</p>
+<p><strong>大鸟</strong>：”别急，仅此而已，实在谈不上完全面向对象，你只用了面向对象三大特征中的一个，还有两个没用呢？”</p>
+<p><strong>小菜</strong>：”<strong>面向对象三大特征不就是封装、继承和多态</strong>吗，这里我用到的应该是封装。这还不够吗？我实在看不出，这么小的程序如何用到继承。至于多态，其实我一直也不太了解它到底有什么好处，如何使用它。”</p>
+<p><strong>大鸟</strong>：”你好好想想该如何应用面向对象的继承和多态。慢慢来。”</p>
+<h2 id="2-4-紧耦合和松耦合"><a href="#2-4-紧耦合和松耦合" class="headerlink" title="2.4 紧耦合和松耦合"></a>2.4 紧耦合和松耦合</h2><p><strong>大鸟</strong>：”现在如果我希望增加一个开根(sqrt)运算，你如何改？”</p>
+<p><strong>小菜</strong>：”那只需要改Operator类就行了，在switch中加一个分支就行了。”</p>
+<p><strong>大鸟</strong>：”问题是你要加一个平方根运算，却需要让加减乘除的运算都得来参与编译，如果你一不小心，把加法运算改成了减法，这岂不是很糟糕。”</p>
+<p><strong>小菜</strong>：”那我再改改。”</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//父类</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Operator</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> numberA;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> numberC;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getNumberA</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> numberA;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setNumberA</span><span class="params">(<span class="keyword">double</span> numberA)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.numberA = numberA;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getNumberC</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> numberC;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setNumberC</span><span class="params">(<span class="keyword">double</span> numberC)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.numberC = numberC;</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line">    <span class="comment">//抽象方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">double</span> <span class="title">getResult</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//加法运算类 继承 父类 重写父类的抽象方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OperatorAdd</span> <span class="keyword">extends</span> <span class="title">Operator</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getResult</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> result = <span class="number">0</span>;</span><br><span class="line">        result = <span class="keyword">super</span>.getNumberA() + <span class="keyword">super</span>.getNumberC();</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//减法运算类 继承 父类 重写父类的抽象方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OperatorSub</span> <span class="keyword">extends</span> <span class="title">Operator</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getResult</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> result = <span class="number">0</span>;</span><br><span class="line">        result = <span class="keyword">super</span>.getNumberA() - <span class="keyword">super</span>.getNumberC();</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//乘法运算类 继承 父类 重写父类的抽象方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OperatorMul</span> <span class="keyword">extends</span> <span class="title">Operator</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getResult</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> result = <span class="number">0</span>;</span><br><span class="line">        result = <span class="keyword">super</span>.getNumberA() * <span class="keyword">super</span>.getNumberC();</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//除法运算类 继承 父类 重写父类的抽象方法</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OperatorDiv</span> <span class="keyword">extends</span> <span class="title">Operator</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getResult</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> result = <span class="number">0</span>;</span><br><span class="line">        result = <span class="keyword">super</span>.getNumberA() / <span class="keyword">super</span>.getNumberC();</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>小菜</strong>：”大鸟哥，我按照你说的方法写出来了一部分，首先是一个运算类(父类)，它有两个number字段，主要用于计算器的前后数，然后有一个抽象方法getResult()，用于得到结果，然后我把加减乘除都写成运算类的子类，继承它后，重写了getResult()方法，这样如果要修改任何一个算法，就不需要提供其他算法的代码了。但问题来了，我如何让计算器知道我是希望用哪一个算法呢？”</p>
+<h1 id="三、简单工厂模式"><a href="#三、简单工厂模式" class="headerlink" title="三、简单工厂模式"></a>三、简单工厂模式</h1><p><strong>大鸟</strong>：”写的不错嘛。你现在的问题其实就是如何去实例化对象的问题，也就是说，到底要实例化谁，将来会不会增加实例化的对象，比如增加开根运算，这是很容易变化的地方，应该考虑用一个单独的类来做这个创造实例的过程，这就是工厂，来，我们看看这个类如何写。”</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//运算工厂类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OperatorFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Operator <span class="title">getOperator</span><span class="params">(<span class="keyword">char</span> operator)</span> </span>&#123;</span><br><span class="line">        Operator opera = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">switch</span> (operator)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;+&#x27;</span>:</span><br><span class="line">                opera = <span class="keyword">new</span> OperatorAdd();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;-&#x27;</span>:</span><br><span class="line">                opera = <span class="keyword">new</span> OperatorSub();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;*&#x27;</span>:</span><br><span class="line">                opera = <span class="keyword">new</span> OperatorMul();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;/&#x27;</span>:</span><br><span class="line">                opera = <span class="keyword">new</span> OperatorDiv();</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;输入的运算符号有误！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> opera;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>大鸟</strong>：”哈，看到了吧，这样子，你只需要输入运算符号，工厂就实例化出合适的对象，通过多态，返回父类的方式实现了计算器的结果。”</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cn.hutool.core.convert.Convert;</span><br><span class="line"><span class="keyword">import</span> java.util.InputMismatchException;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">//计算器程序显示类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Calculator</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> result = <span class="number">0.0</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">            System.out.println(<span class="string">&quot;请输入数字A：&quot;</span>);</span><br><span class="line">            <span class="keyword">int</span> numberA = scanner.nextInt();</span><br><span class="line">            System.out.println(<span class="string">&quot;请输入运算符号B(+、-、*、/)：&quot;</span>);</span><br><span class="line">            <span class="keyword">char</span> strOperate = scanner.next().charAt(<span class="number">0</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;请输入数字C：&quot;</span>);</span><br><span class="line">            <span class="keyword">int</span> numberC = scanner.nextInt();</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> (numberC != <span class="number">0</span>) &#123;</span><br><span class="line">                Operator operator = OperatorFactory.getOperator(strOperate);</span><br><span class="line">                operator.setNumberA(Convert.toDouble(numberA));</span><br><span class="line">                operator.setNumberC(Convert.toDouble(numberC));</span><br><span class="line">                result = operator.getResult();</span><br><span class="line">                System.out.println(<span class="string">&quot;计算结果为：&quot;</span> + result);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;除数不能为0&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125; <span class="keyword">catch</span> (InputMismatchException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;您的输入有误！&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h1><p>对于上述的案例来讲，整个的逻辑顺序是：</p>
+<ol>
+<li>先写代码满足于目前的需求；</li>
+<li>然后思考如何将整个业务逻辑进行分离和封装；</li>
+<li>然后思考如何应用继承和多态进行解耦合；</li>
+<li>最后对简单工厂模式进行应用实例化对象。</li>
+</ol>
+<p>对于简单工厂的设计模式的学习，不能止步于此，因为要养成简单工厂设计模式的思维习惯绝不是一蹴而就的，而是不断实践修改的过程中，逐渐融入自己的思维体系当中。</p>
+<p>2022年1月6日</p>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+      </tags>
+  </entry>
+</search>
